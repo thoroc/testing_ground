@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#audit
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:70%;
+    border-collapse:collapse;
+}
+#audit td, #audit th 
+{
+    font-size:1em;
+    border:1px solid #008209;
+    padding:3px 7px 2px 7px;
+    text-align:center;
+}
+#audit th 
+{
+    font-size:1.1em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#26972D;
+    color:#ffffff;
+}
+#audit tr.section
+{
+    color:#000000;
+    background-color:#00C90D;
+}
+#audit td.text
+{
+    text-align:left;
+}
+#audit td.final
+{
+    text-align:right;
+}
+.tablewrapper 
+{
+    position: relative;
+}
+.table 
+{
+    display: table;
+    table-layout: fixed;
+    width: 70%;
+}
+.row 
+{
+    display: table-row;
+    width: 100%;
+}
+.row.header
+{
+    border: none;
+    font-size:1.1em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#26972D;
+    color:#ffffff;
+    text-align: center;
+}
+.row.section
+{
+    color:#000000;
+    background-color:#00C90D;
+}
+.cell 
+{
+  border: 1px solid black;
+  display: table-cell;
+  float: left;
+  
+}
+.cell.description
+{
+  width: 40%;
+}
+.cell.section
+{
+  width: 40%;
+  text-align: left;
+}
+.cell.field-row
+{
+  width: 30%;
+  text-align: left;
+}
+.cell.misc
+{
+  width: 10%;
+  text-align: center;
+}
+</style>
+</head>
+
+
+<div class="tablewrapper">
+    <div class="table">
+        <div class="header row">
+            <div class="misc cell">S.No.</div>
+            <div class="field-row cell">Title</div>
+            <div class="misc cell">Score</div>
+            <div class="misc cell">Weight</div>
+            <div class="description cell">Reviewer's comment</div>
+        </div>
+        <div class="section row">
+            <div class="section cell">Section 1: Customer Contact</div>
+            <div class="misc cell">100.00</div>
+            <div class="misc cell">15</div>
+            <div class="description cell"></div>
+        </div>
+        <div class="row">
+            <div class="misc cell">1</div>
+            <div class="field-row cell">Contact Method</div>
+            <div class="misc cell">Y</div>
+            <div class="misc cell">5</div>
+            <div class="description cell"></div>
+        </div>
+        <div class="row">
+            <div class="misc cell">2</div>
+            <div class="field-row cell">Timely Initial Response</div>
+            <div class="misc cell">Y</div>
+            <div class="misc cell">5</div>
+            <div class="description cell"></div>
+        </div>
+        <div class="row">
+            <div class="misc cell">3</div>
+            <div class="field-row cell">Completeness of the solution offered</div>
+            <div class="misc cell">Y</div>
+            <div class="misc cell">5</div>
+            <div class="description cell"></div>
+        </div>                        
+     
+  </div>
+</div>
+
+    <h2>static html table</h2>
+
+    <table id="audit" border=1 class="data">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Score</th>
+                <th>weight</th>
+                <th>Reviewer's comment</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr class="section">
+                <td class="text" colspan=2>Section 1: Customer Contact</td>
+                <td>100.00</td>   
+                <td>15</td>   
+                <td></td>          
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="text">Contact Method</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="text">Timely Initial Response</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="text">Completeness of the solution offered</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr class="section">
+                <td class="text" colspan=2>Section 2: Case Management</td>
+                <td>100.00</td>
+                <td>20</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="text">Description & Solution proposed</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="text">Solution delivery date & Resolution</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="text">E-mail Attachments/ case notes</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="text">Follow Up / Timely response</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr class="section">
+                <td class="text" colspan=2>Section 3: Technical Review:</td>
+                <td>80.00</td>
+                <td>25</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="text">Understanding customer's requirement</td>
+                <td>Y</td>
+                <td>5</td>
+                <td></td>		
+            </tr>
+            <tr>	
+                <td>9</td>	
+                <td class="text">Technical Approach</td>	
+                <td>Y</td>	
+                <td>5</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>10</td>	
+                <td class="text">Completeness of the solution offered</td>	
+                <td>Y</td>	
+                <td>5</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>11</td>	
+                <td class="text">Upsale ( Bonus Marks )</td>	
+                <td>N</td>	
+                <td>5</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>12</td>	
+                <td class="text">Escalation</td>	
+                <td>N/A</td>	
+                <td>5</td>	
+                <td></td>	
+            </tr>
+            <tr class="section">
+                <td class="text" colspan=2>Section 4:  (Manager needs to be Engaged)</td>	
+                <td>100.00</td>	
+                <td></td>	
+                <td></td>
+            </tr>
+            <tr>	
+                <td>13</td>	
+                <td class="text">Confidential Information</td>	
+                <td>Y</td>	
+                <td>Involve Mgr</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>14</td>	
+                <td class="text">Usage of 3rd Party Confidential Information</td>	
+                <td>Y</td>	
+                <td>Involve Mgr</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>15</td>	
+                <td class="text">Permission to close the case ( mark it resolved in SFDC )</td>	
+                <td>Y</td>	
+                <td>Involve Mgr</td>	
+                <td></td>	
+            </tr>
+            <tr class="section">
+                <td class="text" colspan=2>Section 5: Professionalism</td>	
+                <td>100.00</td>	
+                <td>10</td>	
+                <td></td>	
+            </tr>
+            <tr>	
+                <td>16</td>	
+                <td class="text">Grammar/Spelling/Appropriate language</td>	
+                <td>Y</td>	
+                <td>5</td>	
+                <td></td>
+            </tr>
+            <tr>	
+                <td>17</td>	
+                <td class="text">Templates</td>	
+                <td>Y</td>	
+                <td>5</td>	
+                <td></td>
+            </tr>
+            <tr class="section">	
+                <td class="final" colspan=2>Final Total Score on the Case</td>	
+                <td>92.86</td>	
+                <td>70</td>	
+                <td></td>
+        </tbody>
+    </table>
+    
+    
+<div class="tablewrapper">
+  <div class="table">
+    <div class="row">
+      <div class="cell">
+        Top left
+      </div>
+      <div class="rowspanned cell">
+        Center
+      </div>
+      <div class="cell">
+        Top right
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        Bottom left
+      </div>
+      <div class="empty cell"></div>
+      <div class="cell">
+        Bottom right
+      </div>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>    

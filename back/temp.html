@@ -1,0 +1,135 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="http://static.tumblr.com/1szuamz/tGamjc07z/jquery.datatables.yadcf.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div><table id="results_table" class="pub_table" cellpadding="0" cellspacing="1">
+        <thead>
+            <tr>
+                <th title="identifying number">id</th>
+                <th title="action">act</th>
+                <th title="publication code">Pub Code</th>
+                <th title="publication title">title</th>
+                <th title="authors of publication" class="centered">authors</th>
+                <th title="longer description">description</th>
+                <th title="bookstore price" class="centered">txshop_price</th>
+                <th title="bookstore id number">txshop_item_id</th>
+                <th title="path to image">imagepath</th>
+                <th title="if this item is out of print">
+                    <label for="outofprint">OP</label><br />
+                    <input type="checkbox" id="outofprint" name="outofprint" title="Click to change filter" />
+                </th>
+              </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+        </div>
+
+        <script src="../js/jquery-1.9.1.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../yadcf-master/jquery.dataTables.yadcf.js"></script>
+        <!--<script type="text/javascript" src="https://raw.github.com/vedmack/yadcf/master/jquery.dataTables.yadcf.js"></script>-->
+        <script type="text/javascript" src="../jquery.ui.dropdownchecklist-master/ui.dropdownchecklist.js"></script>
+        <script type="text/javascript">
+            var oTable;  // kept as handy global in window namespace
+
+            $(document).ready( function() {
+                oTable = $('#results_table').dataTable( {
+                    "bProcessing": true,
+                    "bServerSide": true,
+                    "bUseRendered": false,
+                    "bDeferRender": true,
+                    "sAjaxSource": "bookstore_json.php",
+                    "aoColumns": [
+                            { "sName": "id",  "sWidth": 30 },
+                            { "sName": "id",  "sWidth": 30, fnRender: make_delete_link, "bSortable": false, "bSearchable": false  },    // <---- getting ID column again, but will re-write it as delete icon
+                            { "sName": "pubcode", "sWidth": 100},
+                            { "sName": "title", "sWidth": 300, "sClass": "center", "sType": "string"  },
+                            { "sName": "authors", "sWidth": 100, "sClass": "center", "sType": "string" },
+                            { "sName": "description", "sWidth": 300},
+                            { "sName": "txshop_price", "sTitle": "price", "sWidth": 50, "bUseRendered": false, "fnRender": currency},
+                            { "sName": "txshop_item_id", "sTitle": "TxShop ID", "sWidth": 50 },
+                            { "sName": "imagepath", "sTitle": "image", "sWidth": 300, "bUseRendered": false, "fnRender": img},
+                            { "sName": "outofprint", "sWidth": 50, "bSortable": false, "bSearchable": false, "fnRender": bool_yes  }
+
+                    ],
+                    "fnDrawCallback": function () {    // add a class for fancybox call to delete icons' href (defined in make_delete_link()
+                        $(".delete").fancybox({
+                            'titlePosition' : 'top',
+                            'overlayColor' : '#D03B40',
+                            'overlayOpacity' : 0.4,
+                            'transitionOut' : 'elastic',
+                            'transitionIn' : 'elastic',
+                            'height' : '65%',
+                            'width' : '85%',
+                            'scrolling'   : 'auto',
+                            'speedIn' : 500
+                        });
+                    }
+                      // more intializations
+                });
+            });
+
+            // make a link to delete an id's row in the database.  oObj is defined as object passed to <a href="/ref#fnRender">fnRender</a> // you could just make this an anonymous function in-line with the aoColumns definition
+            function make_delete_link(oObj) {
+                    // I'm relying on id being in column 0, but I could just as well used
+                    //  oObj.aData[oObj.iDataColumn]; // since this column also has the ID value
+                var id = oObj.aData[0];
+
+                return "<a href='db_delete.php?table=publications&id=" + id +
+                        "&nojq' class='delete' title='delete " + id +
+                        " from database'><img src='graphics/delete.png' height='12' width='12'></a>";
+            }
+        </script>
+        <graph caption='Response Trend Report for  FY 2013' showValues='0' baseFontSize='11'
+               outCnvBaseFontSze='12' canvasBorderColor='333333' divLineColor='333333'
+               bgColor='e8e8e8' drawAnchors='1' numdivlines='10'decimalPrecision='0'
+               divLineDecimalPrecision='0' yAxisMinValue='0'  formatNumberScale='0'
+               showAreaBorder='1' areaBorderThickness='2' chartRightMargin='50'>
+            <categories>
+                <category name='August'/>
+                <category name='September'/>
+                <category name='October'/>
+                <category name='November'/>
+                <category name='December'/>
+                <category name='January'/>
+                <category name='February'/>
+                <category name='March'/>
+                <category name='April'/>
+                <category name='May'/>
+                <category name='June'/>
+                <category name='July'/>
+            </categories>
+            <dataset seriesName='Average Score' color='#FF0000'>
+                <set value='4.90'/>
+                <set value='4.76'/>
+                <set value='4.79'/>
+                <set value='4.86'/>
+                <set value='4.73'/>
+                <set value='4.88'/>
+                <set value='4.80'/>
+                <set value='4.79'/>
+                <set value='4.74'/>
+                <set value='4.80'/>
+                <set value='4.79'/>
+                <set value='4.73'/>
+            </dataset>
+            <trendLines>
+                <line startValue='4.54' color='FF0000' displayvalue='Goal:4.54'
+                      showOnTop='1' thickness='2' />
+            </trendLines>
+        </graph>
+    </body>
+</html>

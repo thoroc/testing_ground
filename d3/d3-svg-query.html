@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>D3 SVG Query</title>
+
+        <script src="http://d3js.org/d3.v2.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Vis Exploration - D3 - SVG Query</h1>
+
+        <svg id="chart"></svg>
+
+        <script type="text/javascript">
+
+            function getDate( d ) {
+                return new Date( d.DateTime );
+            }
+
+            var weightData = [ {"Session": "Upperbody PUSH", "Exercise": "DB bench press", "DateTime": "10/09/2012", "Weight": 12.5000, "Repititions": 10}, {"Session": "Upperbody PUSH", "Exercise": "DB bench press", "DateTime": "10/17/2012", "Weight": 12.5000, "Repititions": 10} ];
+            var margin = {top: 20, right: 20, bottom: 30, left: 80};
+            var width = 960 - margin.left - margin.right;
+            var height = 500 - margin.top - margin.bottom;
+            var minDate = getDate( weightData[0] );
+            var maxDate = getDate( weightData[weightData.length - 1] );
+
+            var x = d3.time.scale().domain( [ minDate, maxDate ] ).range( [ 0, width ] );
+            var y = d3.scale.linear().domain( [ 0, d3.max( weightData, function( i ) {
+                    return i.Weight;
+                } ) ] ).range( [ height, 0 ] ).nice();
+
+            var xAxis = d3.svg.axis().scale( x ).orient( "bottom" );
+            var yAxis = d3.svg.axis().scale( y ).orient( "left" );
+
+            var line = d3.svg.line()
+                    .x( function( d ) {
+                        return getDate( d );
+                    } )
+                    .y( function( d ) {
+                        return d.Weight;
+                    } );
+
+            var svg = d3.select( "svg#chart" )
+                    .attr( "width", width + margin.left + margin.right )
+                    .attr( "height", height + margin.top + margin.bottom );
+
+            var g = svg.append( "g" )
+                    .attr( "transform", "translate(" + margin.left + "," + margin.top + ")" );
+
+            g.append( "g" ).attr( "class", "points" )
+                    .selectAll( "circle" )
+                    .data( weightData )
+                    .enter().append( "circle" )
+                    .attr( "r", 5 )
+                    .attr( "cx", function( d ) {
+                        return x( getDate( d ) );
+                    } )
+                    .attr( "cy", function( d ) {
+                        return y( d.Weight );
+                    } )
+                    .append( "title" )
+                    .text( function( e ) {
+                        return getDate( e ).getFullYear() + ": " + e.Weight;
+                    } );
+            ;
+
+        </script>
+    </body>
+</html>

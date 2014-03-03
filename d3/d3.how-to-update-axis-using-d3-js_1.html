@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div>http://stackoverflow.com/questions/16919280/how-to-update-axis-using-d3-js</div>
+        <script type="text/javascript">
+            var svg = d3.select("body .main-content").append("svg")
+                .attr("class", "chart")
+                .attr("width", width)
+                .attr("height", height);
+
+            initAxis();
+
+            function initAxis()
+            {
+                var y = d3.scale.linear().domain([0,1000]).range([height-margin, margin]).nice(),
+                    x = d3.scale.linear().domain([0,23]).range([margin,width-margin]),
+                    yAxis = d3.svg.axis().scale(y).orient("left"),
+                    xAxis = d3.svg.axis().scale(x).orient("bottom");
+
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .attr("transform", "translate(" + margin + ",0)")
+                    .call(yAxis);
+
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + (height - margin) + ")")
+                    .call(xAxis);
+            }
+
+            function update(type)
+            {
+                // Get the data
+                type = type || 'default';
+                var m = max[type],
+                    mi = min[type]+0.1,
+                    data = dataset[type],
+                    step = stp[type];
+
+                // Set the functions
+                var y = d3.scale.linear().domain([mi,m]).range([height-margin, margin]).nice();
+                var o = d3.scale.linear().domain([0,m]).range([.5,1]);
+                var r = d3.scale.linear().domain([0,Math.sqrt(m)]).range([0,30]);
+                var x = d3.scale.linear().domain([0,23]).range([margin,width-margin]);
+                var color = function (a, b) {
+                    for (var c = (a - 0) / (m - 0), d = [], e = 0; 3 > e; e++) d.push(Math.round(K[0][e] +
+                            c * (K[1][e] - K[0][e])));
+                    d.push(b || 0.7);
+                    return "rgba(" + d.join(",") + ")"
+                }
+
+                //Attach the data to the graph
+                var circle = svg.selectAll("circle").data(data);
+
+                // Update existing element
+                circle.attr("class", "update");
+
+                // Add new element
+                circle.enter()
+                    .append("circle")
+                    .attr("class", "enter")
+                    .attr("stroke-width", 0)
+                    .attr("stroke", "black")
+                        .transition()
+                        .duration(750)
+                        .attr("y", 0)
+                        .style("fill-opacity", 1);
+
+                // Apply attribute to new and updated element
+                circle.attr("cx", function(d,i) {return x(d.h);})
+                    .attr("cy", function(d,i) {return y(d.v);})
+                    .attr("r", function(d,i) {return r(Math.sqrt(d.v));})
+                    .style("fill", function(d,i) {return color(d.v);})
+                    .style("opacity", function(d,i) {return o(d.v);})
+                    .on("click", function(d,i){window.open(d.name,'_blank');})
+                    .on("mouseover", function(d,i){d3.select(this).style("fill", "red").attr("stroke-width", 1);})
+                    .on("mouseout", function(d,i){d3.select(this).style("fill", function(d,i) {return color(d.v);}).attr("stroke-width", 0);})
+                    .append("title")
+                    .text(function(d) { return d.v+' '+ d.t+' (adjusted) - '+ d.d })
+                        .transition()
+                        .duration(750)
+                        .attr("y", 0)
+                        .style("fill-opacity", 1);
+
+                // Remove old elements
+                circle.exit()
+                    .attr("class", "exit")
+                    .transition(750)
+                    .ease("linear")
+                    .attr("cy", 0)
+                    .style("opacity", 0.2)
+                    .remove();
+
+                // Update the Axis
+                var xAxis = d3.svg.axis().scale(x).orient("bottom");
+                var yAxis = d3.svg.axis().scale(y).orient("left");
+
+                svg.selectAll("g.y.axis")
+                    .call(yAxis)
+
+                svg.selectAll("g.x.axis")
+                    .call(xAxis);
+            }
+        </script>
+    </body>
+</html>

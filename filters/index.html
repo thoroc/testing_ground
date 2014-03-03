@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Filter Testing with German administrative level</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/index.css">
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <div class="mainbox">
+            <div class="table-container">
+                <div class="filters">
+<!--
+
+                </div>
+                <div class="group-filter">
+                    <div>
+                        <select class="select-filter aemter" data-limits="gemeinden" name="aemter">
+                            <option value=""> >> Ämter, Samtgemeinde, Verbandsgemeinde & Verwaltungsgemeinschaft</option>
+                             Ämter
+                             Schleswig-Holstein
+                             Mecklenburg-Western
+                             Pomerania
+                             Brandenburg
+                             amtsfreie Gemeinden
+                             Samtgemeinde
+                             Lower Saxony
+                             Verbandsgemeinde
+                             Rhineland-Palatinate
+                             Verwaltungsgemeinschaft
+                             Baden-Württemberg
+                             Bavaria
+                             Saxony
+                             Saxony-Anhalt
+                             Thuringia
+                            <option value="" data-limited-by="">TODO: populate</option>
+                        </select>
+                        <a class="reset" data-target="aemter">X</a>
+                    </div>
+                    <div>
+                        <select class="select-filter locality" name="locality">
+                            <option value=""> >> Ortslagen</option>
+                             berlin - spandau - spandau
+                            <option value="altstadt-spandau"                        data-limited-by="spandau">Altstadt Spandau</option>
+                            <option value="neustadt-spandau"                        data-limited-by="spandau">Neustadt Spandau</option>
+                            <option value="stresow"                                 data-limited-by="spandau">Stresow</option>
+                            <option value="kolk-spandau"                            data-limited-by="spandau">Kolk-Spandau</option>
+                             berlin - spandau - haselhorst
+                            <option value="havelecku"                               data-limited-by="haselhorst">Haveleck</option>
+                            <option value="pulvermühle"                             data-limited-by="haselhorst">Pulvermühle</option>
+                            <option value="reichsforschungssiedlung-haselhorst"     data-limited-by="haselhorst">Reichsforschungssiedlung Haselhorst</option>
+                            <option value="salzhof"                                 data-limited-by="haselhorst">Salzhof</option>
+                             berlin - spandau - skaaten
+                            <option value="albrechtshof"                            data-limited-by="staaken">Albrechtshof</option>
+                            <option value="dorf-staake"                             data-limited-by="staaken">Dorf Staaken</option>
+                            <option value="gartenstadt-staake"                      data-limited-by="staaken">Gartenstadt Staaken</option>
+                            <option value="louise-schroeder-siedlung"               data-limited-by="staaken">Louise-Schroeder-Siedlung</option>
+                            <option value="neu-jerusalem"                           data-limited-by="staaken">Neu-Jerusalem</option>
+                            <option value="neu-staake"                              data-limited-by="staaken">Neu-Staaken</option>
+                            <option value="siedlung-hahneberg"                      data-limited-by="staaken">Siedlung Hahneberg</option>
+                             berlin - spandau - gatow
+                            <option value="alt-gatow"                               data-limited-by="gatow">Alt-Gatow</option>
+                            <option value="hohengatow"                              data-limited-by="gatow">Hohengatow</option>
+                            <option value="siedlung-habichtswald"                   data-limited-by="gatow">Siedlung Habichtswald</option>
+                            <option value="siedlung-havelblick"                     data-limited-by="gatow">Siedlung Havelblick</option>
+                             berlin - spandau - kladow
+                            <option value="alt-kladow"                              data-limited-by="kladow">Alt-Kladow</option>
+                             berlin - spandau - hakenfelde
+                            <option value="gartenstadt-waldsiedlung-hakenfelde"     data-limited-by="hakenfelde">Gartenstadt Waldsiedlung Hakenfelde</option>
+                            <option value="wasserstadt-spandau"                     data-limited-by="hakenfelde">Wasserstadt Spandau</option>
+                             berlin - spandau - Wilhelmstadt
+                            <option value="dorf-wilhelmstadt"                       data-limited-by="Wilhelmstadt">Dorf Wilhelmstadt</option>
+                            <option value="pichelsdorf"                             data-limited-by="Wilhelmstadt">Pichelsdorf</option>
+                            <option value="weinmeisterhoehe"                        data-limited-by="Wilhelmstadt">Weinmeisterhöhe</option>
+                        </select>
+                        <a class="reset" data-target="locality">X</a>
+                    </div>
+                </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="todo-list">
+                <h3>List of TODO:</h3>
+                <ul>
+                    <li>implement a filter enabler/disabler (see Regierungsbezirke)</li>
+                    <li>further implement the reset function to reset all children filter (see the delete function that is currently not enabled)</li>
+                    <li>further implement the count on reset</li>
+                    <li>disable and visually show unused filters</li>
+                    <li>add data for testing</li>
+                    <li>load data in a json / object ?</li>
+                    <li>check why the last 3 filters are not behaving correctly with the data-limits function)</li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

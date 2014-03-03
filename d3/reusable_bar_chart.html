@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>bar chart example</title>
+        <meta charset="utf-8">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/reusable_bar_chart.js"></script>
+        <style>
+            .bar_chart rect {
+                stroke: white;
+                fill: steelBlue;
+            }
+            .bar_chart text {
+                color: white;
+                font: 10px sans-serif;
+            }
+            #module_2 {
+                float: right;
+            }
+        </style>
+
+        <script>
+            // TODO turn this data into an object with a category (campaign) and a label for metric
+            // TODO what do I need to pass? a dimension (one column from table), a metric (one column from table), a label for the dimension, a label for the metric
+            // TODO what about sort order? is that part of the query? -- I think we sum, group by, and order by in every query.
+            // TODO need to remove height, width, and mod from bar_char -- might leave these in so we can add units of different size latert
+            // TODO need to add labels for dimension and metric in the chart
+            var module_2_data = [
+                {"dimension1": "snow is fun", "dim1_label": "campaign", "metric1": 15, "met1_label": "clicks"},
+                {"dimension1": "painting for art", "dim1_label": "campaign", "metric1": 22, "met1_label": "clicks"},
+                {"dimension1": "renaissance scultpure", "dim1_label": "campaign", "metric1": 12, "met1_label": "clicks"},
+                {"dimension1": "oil painting", "dim1_label": "campaign", "metric1": 34, "met1_label": "clicks"},
+                {"dimension1": "old poetry", "dim1_label": "campaign", "metric1": 46, "met1_label": "clicks"},
+                {"dimension1": "gaugin history", "dim1_label": "campaign", "metric1": 28, "met1_label": "clicks"},
+                {"dimension1": "van gogh color", "dim1_label": "campaign", "metric1": 21, "met1_label": "clicks"},
+                {"dimension1": "cafe at night", "dim1_label": "campaign", "metric1": 18, "met1_label": "clicks"},
+                {"dimension1": "botticelli painting", "dim1_label": "campaign", "metric1": 24, "met1_label": "clicks"}
+            ];
+
+            var module_1_data = [
+                {"dimension1": "snow is fun", "dim1_label": "campaign", "metric1": 15, "met1_label": "opens"},
+                {"dimension1": "painting for art", "dim1_label": "campaign", "metric1": 26, "met1_label": "opens"},
+                {"dimension1": "renaissance scultpure", "dim1_label": "campaign", "metric1": 14, "met1_label": "opens"},
+                {"dimension1": "oil painting", "dim1_label": "campaign", "metric1": 8, "met1_label": "opens"},
+                {"dimension1": "old poetry", "dim1_label": "campaign", "metric1": 28, "met1_label": "opens"},
+                {"dimension1": "gaugin history", "dim1_label": "campaign", "metric1": 21, "met1_label": "opens"},
+                {"dimension1": "van gogh color", "dim1_label": "campaign", "metric1": 16, "met1_label": "opens"},
+                {"dimension1": "cafe at night", "dim1_label": "campaign", "metric1": 24, "met1_label": "opens"},
+                {"dimension1": "botticelli painting", "dim1_label": "campaign", "metric1": 38, "met1_label": "opens"}
+            ];
+        </script>
+    </head>
+
+    <body>
+        <div id="module_1">
+            <script>
+                bar_chart( "220", "400", module_1_data, "1" )();
+            </script>
+        </div>
+
+        <div id="module_2">
+            <script>
+                bar_chart( "220", "400", module_2_data, "2" )();
+            </script>
+        </div>
+
+    </body>
+
+</html>

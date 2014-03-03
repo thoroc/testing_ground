@@ -1,0 +1,2048 @@
+{
+    "bundesland": {
+        "freistaat": {
+            "name": "Freistaat",
+            "freistaat-bayern": {
+                "name": "Freistaat Bayern",
+                "value": "BY",
+                "landkreis": {
+                    "aichach-friedberg": {
+                        "name": "Aichach-Friedberg",
+                        "value": "aichach-friedberg",
+                        "capital": "aichach"
+                    },
+                    "altoetting": {
+                        "name": "Altötting",
+                        "value": "altoetting",
+                        "capital": "altoetting"
+                    },
+                    "amberg-sulzbach": {
+                        "name": "Amberg-Sulzbach",
+                        "value": "amberg-sulzbach",
+                        "capital": "amberg"
+                    },
+                    "ansbach": {
+                        "name": "Ansbach",
+                        "value": "ansbach",
+                        "capital": "ansbach"
+                    },
+                    "aschaffenburg": {
+                        "name": "Aschaffenburg",
+                        "value": "aschaffenburg",
+                        "capital": "aschaffenburg"
+                    },
+                    "augsburg": {
+                        "name": "Augsburg",
+                        "value": "augsburg",
+                        "capital": "augsburg"
+                    },
+                    "Bad-kissingen": {
+                        "name": "Bad Kissingen",
+                        "value": "Bad-kissingen",
+                        "capital": "bad-kissingen"
+                    },
+                    "Bad-toelz-wolfratshausen": {
+                        "name": "Bad Tölz-Wolfratshausen",
+                        "value": "Bad-toelz-wolfratshausen",
+                        "capital": "bad-toelz"
+                    },
+                    "bamberg": {
+                        "name": "Bamberg",
+                        "value": "bamberg",
+                        "capital": "bamberg"
+                    },
+                    "bayreuth": {
+                        "name": "Bayreuth",
+                        "value": "bayreuth",
+                        "capital": "bayreuth"
+                    },
+                    "Berchtesgadener-land": {
+                        "name": "Berchtesgadener Land",
+                        "value": "Berchtesgadener-land",
+                        "capital": "bad-reichenhall"
+                    },
+                    "cham": {
+                        "name": "Cham",
+                        "value": "cham",
+                        "capital": "cham"
+                    },
+                    "coburg": {
+                        "name": "Coburg",
+                        "value": "coburg",
+                        "capital": "coburg"
+                    },
+                    "dachau": {
+                        "name": "Dachau",
+                        "value": "dachau",
+                        "capital": "dachau"
+                    },
+                    "deggendorf": {
+                        "name": "Deggendorf",
+                        "value": "deggendorf",
+                        "capital": "deggendorf"
+                    },
+                    "dillingen": {
+                        "name": "Dillingen",
+                        "value": "dillingen",
+                        "capital": "dillingen"
+                    },
+                    "dingolfing-landau": {
+                        "name": "Dingolfing-Landau",
+                        "value": "dingolfing-landau",
+                        "capital": "dingolfing"
+                    },
+                    "donau-ries": {
+                        "name": "Donau-Ries",
+                        "value": "donau-ries",
+                        "capital": "donauwoerth"
+                    },
+                    "ebersberg": {
+                        "name": "Ebersberg",
+                        "value": "ebersberg",
+                        "capital": "ebersberg"
+                    },
+                    "eichstaett": {
+                        "name": "Eichstaett",
+                        "value": "eichstaett",
+                        "capital": "eichstaett"
+                    },
+                    "erding": {
+                        "name": "Erding",
+                        "value": "erding",
+                        "capital": "erding"
+                    },
+                    "erlangen-hoechstadt": {
+                        "name": "Erlangen-Höchstadt",
+                        "value": "erlangen-hoechstadt",
+                        "capital": "erlangen"
+                    },
+                    "forchheim": {
+                        "name": "Forchheim",
+                        "value": "forchheim",
+                        "capital": "forchheim"
+                    },
+                    "freising": {
+                        "name": "Freising",
+                        "value": "freising",
+                        "capital": "freising"
+                    },
+                    "freyung-grafenau": {
+                        "name": "Freyung-Grafenau",
+                        "value": "freyung-grafenau",
+                        "capital": "freyung"
+                    },
+                    "fuerstenfeldbruck": {
+                        "name": "Fürstenfeldbruck",
+                        "value": "fuerstenfeldbruck",
+                        "capital": "fuerstenfeldbruck"
+                    },
+                    "fuerth": {
+                        "name": "Fürth",
+                        "value": "fuerth",
+                        "capital": "zirndorf"
+                    },
+                    "garmisch-partenkirchen": {
+                        "name": "Garmisch-Partenkirchen",
+                        "value": "garmisch-partenkirchen",
+                        "capital": "garmisch-partenkirchen"
+                    },
+                    "guenzburg": {
+                        "name": "Günzburg",
+                        "value": "guenzburg",
+                        "capital": "guenzburg"
+                    },
+                    "hassberge": {
+                        "name": "Haßberge",
+                        "value": "hassberge",
+                        "capital": "hassfurt"
+                    },
+                    "hof": {
+                        "name": "Hof",
+                        "value": "hof",
+                        "capital": "hof"
+                    },
+                    "kelheim": {
+                        "name": "Kelheim",
+                        "value": "kelheim",
+                        "capital": "kelheim"
+                    },
+                    "kitzingen": {
+                        "name": "Kitzingen",
+                        "value": "kitzingen",
+                        "capital": "kitzingen"
+                    },
+                    "kronach": {
+                        "name": "Kronach",
+                        "value": "kronach",
+                        "capital": "kronach"
+                    },
+                    "kulmbach": {
+                        "name": "Kulmbach",
+                        "value": "kulmbach",
+                        "capital": "kulmbach"
+                    },
+                    "landsberg": {
+                        "name": "Landsberg",
+                        "value": "landsberg",
+                        "capital": "landsberg"
+                    },
+                    "landshut": {
+                        "name": "Landshut",
+                        "value": "landshut",
+                        "capital": "landshut"
+                    },
+                    "lichtenfels": {
+                        "name": "Lichtenfels",
+                        "value": "lichtenfels",
+                        "capital": "lichtenfels"
+                    },
+                    "lindau": {
+                        "name": "Lindau",
+                        "value": "lindau",
+                        "capital": "lindau"
+                    },
+                    "main-spessart": {
+                        "name": "Main-Spessart",
+                        "value": "main-spessart",
+                        "capital": "karlstadt-am-main"
+                    },
+                    "miesbach": {
+                        "name": "Miesbach",
+                        "value": "miesbach",
+                        "capital": "miesbach"
+                    },
+                    "miltenberg": {
+                        "name": "Miltenberg",
+                        "value": "miltenberg",
+                        "capital": "miltenberg"
+                    },
+                    "muehldorf": {
+                        "name": "Mühldorf",
+                        "value": "muehldorf",
+                        "capital": "muehldorf"
+                    },
+                    "muenchen": {
+                        "name": "München",
+                        "value": "muenchen",
+                        "capital": "muenchen"
+                    },
+                    "neu-ulm": {
+                        "name": "Neu-Ulm",
+                        "value": "neu-ulm",
+                        "capital": "neu-ulm"
+                    },
+                    "neuburg-schrobenhausen": {
+                        "name": "Neuburg-Schrobenhausen",
+                        "value": "neuburg-schrobenhausen",
+                        "capital": "neuburg"
+                    },
+                    "neumarkt": {
+                        "name": "Neumarkt",
+                        "value": "neumarkt",
+                        "capital": "neumarkt-in-der-oberpfalz"
+                    },
+                    "neustadt-aisch-bad-windsheim": {
+                        "name": "Neustadt (Aisch)-Bad Windsheim",
+                        "value": "neustadt-aisch-bad-windsheim",
+                        "capital": "neustadt-aisch"
+                    },
+                    "Neustadt-waldnaab": {
+                        "name": "Neustadt (Waldnaab)",
+                        "value": "Neustadt-waldnaab",
+                        "capital": "neustadt-waldnaab"
+                    },
+                    "nuernberger-land": {
+                        "name": "Nürnberger Land",
+                        "value": "nuernberger-land",
+                        "capital": "lauf-an-der-pegnitz"
+                    },
+                    "oberallgaeu": {
+                        "name": "Oberallgaeu",
+                        "value": "oberallgaeu",
+                        "capital": "sonthofen"
+                    },
+                    "ostallgaeu": {
+                        "name": "Ostallgaeu",
+                        "value": "ostallgaeu",
+                        "capital": "marktoberdorf"
+                    },
+                    "passau": {
+                        "name": "Passau",
+                        "value": "passau",
+                        "capital": "passau"
+                    },
+                    "pfaffenhofen": {
+                        "name": "Pfaffenhofen",
+                        "value": "pfaffenhofen",
+                        "capital": "pfaffenhofen-a.d.ilm"
+                    },
+                    "regen": {
+                        "name": "Regen",
+                        "value": "regen",
+                        "capital": "regen"
+                    },
+                    "regensburg": {
+                        "name": "Regensburg",
+                        "value": "regensburg",
+                        "capital": "regensburg"
+                    },
+                    "rhoen-grabfeld": {
+                        "name": "Rhön-Grabfeld",
+                        "value": "rhoen-grabfeld",
+                        "capital": "bad-neustadt"
+                    },
+                    "rosenheim": {
+                        "name": "Rosenheim",
+                        "value": "rosenheim",
+                        "capital": "rosenheim"
+                    },
+                    "roth": {
+                        "name": "Roth",
+                        "value": "roth",
+                        "capital": "roth-bei-nuernberg"
+                    },
+                    "rottal-inn": {
+                        "name": "Rottal-Inn",
+                        "value": "rottal-inn",
+                        "capital": "pfarrkirchen"
+                    },
+                    "schwandorf": {
+                        "name": "Schwandorf",
+                        "value": "schwandorf",
+                        "capital": "schwandorf"
+                    },
+                    "schweinfurt": {
+                        "name": "Schweinfurt",
+                        "value": "schweinfurt",
+                        "capital": "schweinfurt"
+                    },
+                    "starnberg": {
+                        "name": "Starnberg",
+                        "value": "starnberg",
+                        "capital": "starnberg"
+                    },
+                    "straubing-bogen": {
+                        "name": "Straubing-Bogen",
+                        "value": "straubing-bogen",
+                        "capital": "straubing"
+                    },
+                    "tirschenreuth": {
+                        "name": "Tirschenreuth",
+                        "value": "tirschenreuth",
+                        "capital": "tirschenreuth"
+                    },
+                    "traunstein": {
+                        "name": "Traunstein",
+                        "value": "traunstein",
+                        "capital": "traunstein"
+                    },
+                    "unterallgaeu": {
+                        "name": "Unterallgaeu",
+                        "value": "unterallgaeu",
+                        "capital": "mindelheim"
+                    },
+                    "weilheim-schongau": {
+                        "name": "Weilheim-Schongau",
+                        "value": "weilheim-schongau",
+                        "capital": "weilheim"
+                    },
+                    "weissenburg-gunzenhausen": {
+                        "name": "Weißenburg-Gunzenhausen",
+                        "value": "weissenburg-gunzenhausen",
+                        "capital": "weissenburg"
+                    },
+                    "wuerzburg": {
+                        "name": "Würzburg",
+                        "value": "wuerzburg",
+                        "capital": "wuerzburg"
+                    },
+                    "wunsiedel": {
+                        "name": "Wunsiedel",
+                        "value": "wunsiedel",
+                        "capital": "wunsiedel"
+                    }
+                },
+                "stadtkreis": {
+                    "amberg": {
+                        "name": "Amberg",
+                        "value": "amberg"
+                    },
+                    "ansbach": {
+                        "name": "Ansbach",
+                        "value": "ansbach"
+                    },
+                    "aschaffenburg": {
+                        "name": "Aschaffenburg",
+                        "value": "aschaffenburg"
+                    },
+                    "augsburg": {
+                        "name": "Augsburg",
+                        "value": "augsburg"
+                    },
+                    "bamberg": {
+                        "name": "Bamberg",
+                        "value": "bamberg"
+                    },
+                    "bayreuth": {
+                        "name": "Bayreuth",
+                        "value": "bayreuth"
+                    },
+                    "coburg": {
+                        "name": "Coburg",
+                        "value": "coburg"
+                    },
+                    "erlangen": {
+                        "name": "Erlangen",
+                        "value": "erlangen"
+                    },
+                    "fuerth": {
+                        "name": "Fürth",
+                        "value": "fuerth"
+                    },
+                    "hof": {
+                        "name": "Hof",
+                        "value": "hof"
+                    },
+                    "ingolstadt": {
+                        "name": "Ingolstadt",
+                        "value": "ingolstadt"
+                    },
+                    "kaufbeuren": {
+                        "name": "Kaufbeuren",
+                        "value": "kaufbeuren"
+                    },
+                    "kempten": {
+                        "name": "Kempten",
+                        "value": "kempten"
+                    },
+                    "landshut": {
+                        "name": "Landshut",
+                        "value": "landshut"
+                    },
+                    "memmingen": {
+                        "name": "Memmingen",
+                        "value": "memmingen"
+                    },
+                    "munich": {
+                        "name": "Munich",
+                        "value": "munich"
+                    },
+                    "nuernberg": {
+                        "name": "Nürnberg",
+                        "value": "nuernberg"
+                    },
+                    "passau": {
+                        "name": "Passau",
+                        "value": "passau"
+                    },
+                    "regensburg": {
+                        "name": "Regensburg",
+                        "value": "regensburg"
+                    },
+                    "rosenheim": {
+                        "name": "Rosenheim",
+                        "value": "rosenheim"
+                    },
+                    "schwabach": {
+                        "name": "Schwabach",
+                        "value": "schwabach"
+                    },
+                    "schweinfurt": {
+                        "name": "Schweinfurt",
+                        "value": "schweinfurt"
+                    },
+                    "straubing": {
+                        "name": "Straubing",
+                        "value": "straubing"
+                    },
+                    "weiden-in-der-oberpfalz": {
+                        "name": "Weiden in der Oberpfalz",
+                        "value": "weiden-in-der-oberpfalz"
+                    },
+                    "wuerzburg": {
+                        "name": "Würzburg",
+                        "value": "wuerzburg"
+                    }
+                }
+            },
+            "freistaat-sachsen": {
+                "name": "Freistaat Sachsen",
+                "value": "SN",
+                "landkreis": {
+                    "bautzen": {
+                        "name": "Bautzen",
+                        "value": "bautzen",
+                        "capital": "bautzen"
+                    },
+                    "erzgebirgskreis": {
+                        "name": "Erzgebirgskreis",
+                        "value": "erzgebirgskreis",
+                        "capital": "annaberg-buchholz"
+                    },
+                    "goerlitz": {
+                        "name": "Görlitz",
+                        "value": "goerlitz",
+                        "capital": "goerlitz"
+                    },
+                    "leipzig": {
+                        "name": "Leipzig",
+                        "value": "leipzig",
+                        "capital": "borna"
+                    },
+                    "meissen": {
+                        "name": "Meißen",
+                        "value": "meissen",
+                        "capital": "meissen"
+                    },
+                    "mittelsachsen": {
+                        "name": "Mittelsachsen",
+                        "value": "mittelsachsen",
+                        "capital": "freiberg"
+                    },
+                    "nordsachsen": {
+                        "name": "Nordsachsen",
+                        "value": "nordsachsen",
+                        "capital": "torgau"
+                    },
+                    "saechsische-schweiz-osterzgebirge": {
+                        "name": "Saechsische Schweiz-Osterzgebirge",
+                        "value": "saechsische-schweiz-osterzgebirge",
+                        "capital": "pirna"
+                    },
+                    "vogtlandkreis": {
+                        "name": "Vogtlandkreis",
+                        "value": "vogtlandkreis",
+                        "capital": "plauen"
+                    }
+                },
+                "stadtkreis": {
+                    "zwickau": {
+                        "name": "Zwickau",
+                        "value": "zwickau",
+                        "capital": "zwickau"
+                    },
+                    "chemnitz": {
+                        "name": "Chemnitz",
+                        "value": "chemnitz"
+                    },
+                    "dresden": {
+                        "name": "Dresden",
+                        "value": "dresden"
+                    },
+                    "leipzig": {
+                        "name": "Leipzig",
+                        "value": "leipzig"
+                    }
+                }
+            },
+            "freistaat-thuringen": {
+                "name": "Freistaat Thüringen",
+                "value": "TH",
+                "landkreis": {
+                    "altenburger-land": {
+                        "name": "Altenburger Land",
+                        "value": "altenburger-land",
+                        "capital": "altenburg"
+                    },
+                    "eichsfeld": {
+                        "name": "Eichsfeld",
+                        "value": "eichsfeld",
+                        "capital": "heilbad-heiligenstadt"
+                    },
+                    "gotha": {
+                        "name": "Gotha",
+                        "value": "gotha",
+                        "capital": "gotha"
+                    },
+                    "greiz": {
+                        "name": "Greiz",
+                        "value": "greiz",
+                        "capital": "greiz"
+                    },
+                    "hildburghausen": {
+                        "name": "Hildburghausen",
+                        "value": "hildburghausen",
+                        "capital": "hildburghausen"
+                    },
+                    "ilm-kreis": {
+                        "name": "Ilm-Kreis",
+                        "value": "ilm-kreis",
+                        "capital": "arnstadt"
+                    },
+                    "kyffhaeuserkreis": {
+                        "name": "Kyffhaeuserkreis",
+                        "value": "kyffhaeuserkreis",
+                        "capital": "sondershausen"
+                    },
+                    "nordhausen": {
+                        "name": "Nordhausen",
+                        "value": "nordhausen",
+                        "capital": "nordhausen"
+                    },
+                    "saale-holzland": {
+                        "name": "Saale-Holzland",
+                        "value": "saale-holzland",
+                        "capital": "eisenberg"
+                    },
+                    "saale-orla": {
+                        "name": "Saale-Orla",
+                        "value": "saale-orla",
+                        "capital": "schleiz"
+                    },
+                    "saalfeld-rudolstadt": {
+                        "name": "Saalfeld-Rudolstadt",
+                        "value": "saalfeld-rudolstadt",
+                        "capital": "saalfeld"
+                    },
+                    "schmalkalden-meiningen": {
+                        "name": "Schmalkalden-Meiningen",
+                        "value": "schmalkalden-meiningen",
+                        "capital": "meiningen"
+                    },
+                    "soemmerda": {
+                        "name": "Sömmerda",
+                        "value": "soemmerda",
+                        "capital": "soemmerda"
+                    },
+                    "sonneberg": {
+                        "name": "Sonneberg",
+                        "value": "sonneberg",
+                        "capital": "sonneberg"
+                    },
+                    "unstrut-hainich": {
+                        "name": "Unstrut-Hainich",
+                        "value": "unstrut-hainich",
+                        "capital": "muehlhausen"
+                    },
+                    "wartburgkreis": {
+                        "name": "Wartburgkreis",
+                        "value": "wartburgkreis",
+                        "capital": "eisenach"
+                    },
+                    "weimarer-land": {
+                        "name": "Weimarer Land",
+                        "value": "weimarer-land",
+                        "capital": "apolda"
+                    }
+                },
+                "stadtkreis": {
+                    "eisenach": {
+                        "name": "Eisenach",
+                        "value": "eisenach"
+                    },
+                    "erfurt": {
+                        "name": "Erfurt",
+                        "value": "erfurt"
+                    },
+                    "gera": {
+                        "name": "Gera",
+                        "value": "gera"
+                    },
+                    "jena": {
+                        "name": "Jena",
+                        "value": "jena"
+                    },
+                    "suhl": {
+                        "name": "Suhl",
+                        "value": "suhl"
+                    },
+                    "weimar": {
+                        "name": "Weimar",
+                        "value": "weimar"
+                    }
+                }
+            }
+        },
+        "flaechenlaender": {
+            "name": "Flächenländer",
+            "brandenburg": {
+                "name": "Brandenburg",
+                "value": "BB",
+                "landkreis": {
+                    "barnim": {
+                        "name": "Barnim",
+                        "value": "barnim",
+                        "capital": "eberswalde"
+                    },
+                    "dahme-spreewald": {
+                        "name": "Dahme-Spreewald",
+                        "value": "dahme-spreewald",
+                        "capital": "luebben"
+                    },
+                    "elbe-elster": {
+                        "name": "Elbe-Elster",
+                        "value": "elbe-elster",
+                        "capital": "herzberg"
+                    },
+                    "havelland": {
+                        "name": "Havelland",
+                        "value": "havelland",
+                        "capital": "rathenow"
+                    },
+                    "maerkisch-oderland": {
+                        "name": "Maerkisch-Oderland",
+                        "value": "maerkisch-oderland",
+                        "capital": "seelow"
+                    },
+                    "oberhavel": {
+                        "name": "Oberhavel",
+                        "value": "oberhavel",
+                        "capital": "oranienburg"
+                    },
+                    "oberspreewald-lausitz": {
+                        "name": "Oberspreewald-Lausitz",
+                        "value": "oberspreewald-lausitz",
+                        "capital": "senftenberg"
+                    },
+                    "oder-spree": {
+                        "name": "Oder-Spree",
+                        "value": "oder-spree",
+                        "capital": "beeskow"
+                    },
+                    "ostprignitz-ruppin": {
+                        "name": "Ostprignitz-Ruppin",
+                        "value": "ostprignitz-ruppin",
+                        "capital": "neuruppin"
+                    },
+                    "potsdam-mittelmark": {
+                        "name": "Potsdam-Mittelmark",
+                        "value": "potsdam-mittelmark",
+                        "capital": "belzig"
+                    },
+                    "prignitz": {
+                        "name": "Prignitz",
+                        "value": "prignitz",
+                        "capital": "perleberg"
+                    },
+                    "spree-neisse": {
+                        "name": "Spree-Neiße",
+                        "value": "spree-neisse",
+                        "capital": "forst"
+                    },
+                    "teltow-flaeming": {
+                        "name": "Teltow-Flaeming",
+                        "value": "teltow-flaeming",
+                        "capital": "luckenwalde"
+                    },
+                    "uckermark": {
+                        "name": "Uckermark",
+                        "value": "uckermark",
+                        "capital": "prenzlau"
+                    }
+                },
+                "stadtkreis": {
+                    "brandenburg-an-der-havel": {
+                        "name": "Brandenburg an der Havel",
+                        "value": "brandenburg-an-der-havel"
+                    },
+                    "cottbus": {
+                        "name": "Cottbus",
+                        "value": "cottbus"
+                    },
+                    "frankfurt-an-der-oder": {
+                        "name": "Frankfurt an der Oder",
+                        "value": "frankfurt-an-der-oder"
+                    },
+                    "potsdam": {
+                        "name": "Potsdam",
+                        "value": "potsdam"
+                    }
+                }
+            },
+            "baden-wuettemberg": {
+                "name": "Baden-Württemberg",
+                "value": "BW",
+                "landkreis": {
+                    "alb-donau": {
+                        "name": "Alb-Donau",
+                        "value": "alb-donau",
+                        "capital": "ulm"
+                    },
+                    "biberach": {
+                        "name": "Biberach",
+                        "value": "biberach",
+                        "capital": "biberach"
+                    },
+                    "bodenseekreis": {
+                        "name": "Bodenseekreis",
+                        "value": "bodenseekreis",
+                        "capital": "friedrichshafen"
+                    },
+                    "boeblingen": {
+                        "name": "Böblingen",
+                        "value": "boeblingen",
+                        "capital": "boeblingen"
+                    },
+                    "breisgau-hochschwarzwald": {
+                        "name": "Breisgau-Hochschwarzwald",
+                        "value": "breisgau-hochschwarzwald",
+                        "capital": "freiburg"
+                    },
+                    "calw": {
+                        "name": "Calw",
+                        "value": "calw",
+                        "capital": "calw"
+                    },
+                    "emmendingen": {
+                        "name": "Emmendingen",
+                        "value": "emmendingen",
+                        "capital": "emmendingen"
+                    },
+                    "enz": {
+                        "name": "Enz",
+                        "value": "enz",
+                        "capital": "pforzheim"
+                    },
+                    "esslingen": {
+                        "name": "Esslingen",
+                        "value": "esslingen",
+                        "capital": "esslingen-am-neckar"
+                    },
+                    "freudenstadt": {
+                        "name": "Freudenstadt",
+                        "value": "freudenstadt",
+                        "capital": "freudenstadt"
+                    },
+                    "goeppingen": {
+                        "name": "Göppingen",
+                        "value": "goeppingen",
+                        "capital": "goeppingen"
+                    },
+                    "heidenheim": {
+                        "name": "Heidenheim",
+                        "value": "heidenheim",
+                        "capital": "heidenheim"
+                    },
+                    "heilbronn": {
+                        "name": "Heilbronn",
+                        "value": "heilbronn",
+                        "capital": "heilbronn"
+                    },
+                    "hohenlohe": {
+                        "name": "Hohenlohe",
+                        "value": "hohenlohe",
+                        "capital": "kuenzelsau"
+                    },
+                    "karlsruhe": {
+                        "name": "Karlsruhe",
+                        "value": "karlsruhe",
+                        "capital": "karlsruhe"
+                    },
+                    "konstanz": {
+                        "name": "Konstanz",
+                        "value": "konstanz",
+                        "capital": "konstanz"
+                    },
+                    "loerrach": {
+                        "name": "Lörrach",
+                        "value": "loerrach",
+                        "capital": "loerrach"
+                    },
+                    "ludwigsburg": {
+                        "name": "Ludwigsburg",
+                        "value": "ludwigsburg",
+                        "capital": "ludwigsburg"
+                    },
+                    "main-tauber": {
+                        "name": "Main-Tauber",
+                        "value": "main-tauber",
+                        "capital": "tauberbischofsheim"
+                    },
+                    "neckar-odenwald": {
+                        "name": "Neckar-Odenwald",
+                        "value": "neckar-odenwald",
+                        "capital": "mosbach"
+                    },
+                    "ortenaukreis": {
+                        "name": "Ortenaukreis",
+                        "value": "ortenaukreis",
+                        "capital": "offenburg"
+                    },
+                    "ostalbkreis": {
+                        "name": "Ostalbkreis",
+                        "value": "ostalbkreis",
+                        "capital": "aalen"
+                    },
+                    "rastatt": {
+                        "name": "Rastatt",
+                        "value": "rastatt",
+                        "capital": "rastatt"
+                    },
+                    "ravensburg": {
+                        "name": "Ravensburg",
+                        "value": "ravensburg",
+                        "capital": "ravensburg"
+                    },
+                    "rems-murr": {
+                        "name": "Rems-Murr",
+                        "value": "rems-murr",
+                        "capital": "waiblingen"
+                    },
+                    "reutlingen": {
+                        "name": "Reutlingen",
+                        "value": "reutlingen",
+                        "capital": "reutlingen"
+                    },
+                    "rhein-neckar": {
+                        "name": "Rhein-Neckar",
+                        "value": "rhein-neckar",
+                        "capital": "heidelberg"
+                    },
+                    "rottweil": {
+                        "name": "Rottweil",
+                        "value": "rottweil",
+                        "capital": "rottweil"
+                    },
+                    "Schwaebisch-hall": {
+                        "name": "Schwaebisch Hall",
+                        "value": "Schwaebisch-hall",
+                        "capital": "schwaebisch-hall"
+                    },
+                    "schwarzwald-baar": {
+                        "name": "Schwarzwald-Baar",
+                        "value": "schwarzwald-baar",
+                        "capital": "villingen-schwenningen"
+                    },
+                    "sigmaringen": {
+                        "name": "Sigmaringen",
+                        "value": "sigmaringen",
+                        "capital": "sigmaringen"
+                    },
+                    "tuebingen": {
+                        "name": "Tübingen",
+                        "value": "tuebingen",
+                        "capital": "tuebingen"
+                    },
+                    "tuttlingen": {
+                        "name": "Tuttlingen",
+                        "value": "tuttlingen",
+                        "capital": "tuttlingen"
+                    },
+                    "waldshut": {
+                        "name": "Waldshut",
+                        "value": "waldshut",
+                        "capital": "waldshut-tiengen"
+                    },
+                    "zollernalbkreis": {
+                        "name": "Zollernalbkreis",
+                        "value": "zollernalbkreis",
+                        "capital": "balingen"
+                    }
+                },
+                "stadtkreis": {
+                    "baden-baden": {
+                        "name": "Baden-Baden",
+                        "value": "baden-baden"
+                    },
+                    "freiburg-im-breisgau": {
+                        "name": "Freiburg im Breisgau",
+                        "value": "freiburg-im-breisgau"
+                    },
+                    "heidelberg": {
+                        "name": "Heidelberg",
+                        "value": "heidelberg"
+                    },
+                    "heilbronn": {
+                        "name": "Heilbronn",
+                        "value": "heilbronn"
+                    },
+                    "karlsruhe": {
+                        "name": "Karlsruhe",
+                        "value": "karlsruhe"
+                    },
+                    "mannheim": {
+                        "name": "Mannheim",
+                        "value": "mannheim"
+                    },
+                    "pforzheim": {
+                        "name": "Pforzheim",
+                        "value": "pforzheim"
+                    },
+                    "stuttgart": {
+                        "name": "Stuttgart",
+                        "value": "stuttgart"
+                    },
+                    "ulm": {
+                        "name": "Ulm",
+                        "value": "ulm"
+                    }
+                }
+            },
+            "hesse": {
+                "name": "Hesse",
+                "value": "HE",
+                "landkreis": {
+                    "bergstrasse": {
+                        "name": "Bergstraße",
+                        "value": "bergstrasse",
+                        "capital": "heppenheim"
+                    },
+                    "darmstadt-dieburg": {
+                        "name": "Darmstadt-Dieburg",
+                        "value": "darmstadt-dieburg",
+                        "capital": "darmstadt"
+                    },
+                    "fulda": {
+                        "name": "Fulda",
+                        "value": "fulda",
+                        "capital": "fulda"
+                    },
+                    "giessen": {
+                        "name": "Gießen",
+                        "value": "giessen",
+                        "capital": "giessen"
+                    },
+                    "gross-gerau": {
+                        "name": "Groß-Gerau",
+                        "value": "gross-gerau",
+                        "capital": "gross-gerau"
+                    },
+                    "hersfeld-rotenburg": {
+                        "name": "Hersfeld-Rotenburg",
+                        "value": "hersfeld-rotenburg",
+                        "capital": "bad-hersfeld"
+                    },
+                    "hochtaunuskreis": {
+                        "name": "Hochtaunuskreis",
+                        "value": "hochtaunuskreis",
+                        "capital": "bad-homburg"
+                    },
+                    "kassel": {
+                        "name": "Kassel",
+                        "value": "kassel",
+                        "capital": "kassel"
+                    },
+                    "lahn-dill": {
+                        "name": "Lahn-Dill",
+                        "value": "lahn-dill",
+                        "capital": "wetzlar"
+                    },
+                    "limburg-weilburg": {
+                        "name": "Limburg-Weilburg",
+                        "value": "limburg-weilburg",
+                        "capital": "limburg"
+                    },
+                    "main-kinzig": {
+                        "name": "Main-Kinzig",
+                        "value": "main-kinzig",
+                        "capital": "gelnhausen"
+                    },
+                    "main-taunus": {
+                        "name": "Main-Taunus",
+                        "value": "main-taunus",
+                        "capital": "hofheim"
+                    },
+                    "marburg-biedenkopf": {
+                        "name": "Marburg-Biedenkopf",
+                        "value": "marburg-biedenkopf",
+                        "capital": "marburg"
+                    },
+                    "odenwaldkreis": {
+                        "name": "Odenwaldkreis",
+                        "value": "odenwaldkreis",
+                        "capital": "erbach"
+                    },
+                    "offenbach": {
+                        "name": "Offenbach",
+                        "value": "offenbach",
+                        "capital": "dietzenbach"
+                    },
+                    "rheingau-taunus": {
+                        "name": "Rheingau-Taunus",
+                        "value": "rheingau-taunus",
+                        "capital": "bad-schwalbach"
+                    },
+                    "schwalm-eder": {
+                        "name": "Schwalm-Eder",
+                        "value": "schwalm-eder",
+                        "capital": "homberg"
+                    },
+                    "vogelsbergkreis": {
+                        "name": "Vogelsbergkreis",
+                        "value": "vogelsbergkreis",
+                        "capital": "lauterbach"
+                    },
+                    "waldeck-frankenberg": {
+                        "name": "Waldeck-Frankenberg",
+                        "value": "waldeck-frankenberg",
+                        "capital": "korbach"
+                    },
+                    "werra-meissner": {
+                        "name": "Werra-Meißner",
+                        "value": "werra-meissner",
+                        "capital": "eschwege"
+                    },
+                    "wetteraukreis": {
+                        "name": "Wetteraukreis",
+                        "value": "wetteraukreis",
+                        "capital": "friedberg"
+                    }
+                },
+                "stadtkreis": {
+                    "darmstadt": {
+                        "name": "Darmstadt",
+                        "value": "darmstadt"
+                    },
+                    "frankfurt-am-main": {
+                        "name": "Frankfurt am Main",
+                        "value": "frankfurt-am-main"
+                    },
+                    "kassel": {
+                        "name": "Kassel",
+                        "value": "kassel"
+                    },
+                    "offenbach-am-main": {
+                        "name": "Offenbach am Main",
+                        "value": "offenbach-am-main"
+                    },
+                    "wiesbaden": {
+                        "name": "Wiesbaden",
+                        "value": "wiesbaden"
+                    }
+                }
+            },
+            "niedersachsen": {
+                "name": "Niedersachsen",
+                "value": "NI",
+                "landkreis": {
+                    "ammerland": {
+                        "name": "Ammerland",
+                        "value": "ammerland",
+                        "capital": "westerstede"
+                    },
+                    "aurich": {
+                        "name": "Aurich",
+                        "value": "aurich",
+                        "capital": "aurich"
+                    },
+                    "celle": {
+                        "name": "Celle",
+                        "value": "celle",
+                        "capital": "celle"
+                    },
+                    "cloppenburg": {
+                        "name": "Cloppenburg",
+                        "value": "cloppenburg",
+                        "capital": "cloppenburg"
+                    },
+                    "cuxhaven": {
+                        "name": "Cuxhaven",
+                        "value": "cuxhaven",
+                        "capital": "cuxhaven"
+                    },
+                    "diepholz": {
+                        "name": "Diepholz",
+                        "value": "diepholz",
+                        "capital": "diepholz"
+                    },
+                    "emsland": {
+                        "name": "Emsland",
+                        "value": "emsland",
+                        "capital": "meppen"
+                    },
+                    "friesland": {
+                        "name": "Friesland",
+                        "value": "friesland",
+                        "capital": "jever"
+                    },
+                    "gifhorn": {
+                        "name": "Gifhorn",
+                        "value": "gifhorn",
+                        "capital": "gifhorn"
+                    },
+                    "goettingen": {
+                        "name": "Göttingen",
+                        "value": "goettingen",
+                        "capital": "goettingen"
+                    },
+                    "goslar": {
+                        "name": "Goslar",
+                        "value": "goslar",
+                        "capital": "goslar"
+                    },
+                    "grafschaft-bentheim": {
+                        "name": "Grafschaft Bentheim",
+                        "value": "grafschaft-bentheim",
+                        "capital": "nordhorn"
+                    },
+                    "hameln-pyrmont": {
+                        "name": "Hameln-Pyrmont",
+                        "value": "hameln-pyrmont",
+                        "capital": "hameln"
+                    },
+                    "hannover": {
+                        "name": "Hannover",
+                        "value": "hannover",
+                        "capital": "hannover"
+                    },
+                    "harburg": {
+                        "name": "Harburg",
+                        "value": "harburg",
+                        "capital": "winsen"
+                    },
+                    "heidekreis": {
+                        "name": "Heidekreis",
+                        "value": "heidekreis",
+                        "capital": "bad-fallingbostel"
+                    },
+                    "helmstedt": {
+                        "name": "Helmstedt",
+                        "value": "helmstedt",
+                        "capital": "helmstedt"
+                    },
+                    "hildesheim": {
+                        "name": "Hildesheim",
+                        "value": "hildesheim",
+                        "capital": "hildesheim"
+                    },
+                    "holzminden": {
+                        "name": "Holzminden",
+                        "value": "holzminden",
+                        "capital": "holzminden"
+                    },
+                    "leer": {
+                        "name": "Leer",
+                        "value": "leer",
+                        "capital": "leer"
+                    },
+                    "luechow-dannenberg": {
+                        "name": "Lüchow-Dannenberg",
+                        "value": "luechow-dannenberg",
+                        "capital": "luechow"
+                    },
+                    "lueneburg": {
+                        "name": "Lüneburg",
+                        "value": "lueneburg",
+                        "capital": "lueneburg"
+                    },
+                    "nienburg": {
+                        "name": "Nienburg",
+                        "value": "nienburg",
+                        "capital": "nienburg"
+                    },
+                    "northeim": {
+                        "name": "Northeim",
+                        "value": "northeim",
+                        "capital": "northeim"
+                    },
+                    "oldenburg": {
+                        "name": "Oldenburg",
+                        "value": "oldenburg",
+                        "capital": "wildeshausen"
+                    },
+                    "osnabrueck": {
+                        "name": "Osnabrück",
+                        "value": "osnabrueck",
+                        "capital": "osnabrueck"
+                    },
+                    "osterholz": {
+                        "name": "Osterholz",
+                        "value": "osterholz",
+                        "capital": "osterholz-scharmbeck"
+                    },
+                    "osterode": {
+                        "name": "Osterode",
+                        "value": "osterode",
+                        "capital": "osterode"
+                    },
+                    "peine": {
+                        "name": "Peine",
+                        "value": "peine",
+                        "capital": "peine"
+                    },
+                    "rotenburg": {
+                        "name": "Rotenburg",
+                        "value": "rotenburg",
+                        "capital": "rotenburg"
+                    },
+                    "schaumburg": {
+                        "name": "Schaumburg",
+                        "value": "schaumburg",
+                        "capital": "stadthagen"
+                    },
+                    "stade": {
+                        "name": "Stade",
+                        "value": "stade",
+                        "capital": "stade"
+                    },
+                    "uelzen": {
+                        "name": "Uelzen",
+                        "value": "uelzen",
+                        "capital": "uelzen"
+                    },
+                    "vechta": {
+                        "name": "Vechta",
+                        "value": "vechta",
+                        "capital": "vechta"
+                    },
+                    "verden": {
+                        "name": "Verden",
+                        "value": "verden",
+                        "capital": "verden"
+                    },
+                    "wesermarsch": {
+                        "name": "Wesermarsch",
+                        "value": "wesermarsch",
+                        "capital": "brake"
+                    },
+                    "wittmund": {
+                        "name": "Wittmund",
+                        "value": "wittmund",
+                        "capital": "wittmund"
+                    },
+                    "wolfenbuettel": {
+                        "name": "Wolfenbüttel",
+                        "value": "wolfenbuettel",
+                        "capital": "wolfenbuettel"
+                    }
+                },
+                "stadtkreis": {
+                    "braunschweig": {
+                        "name": "Braunschweig",
+                        "value": "braunschweig"
+                    },
+                    "delmenhorst": {
+                        "name": "Delmenhorst",
+                        "value": "delmenhorst"
+                    },
+                    "emden": {
+                        "name": "Emden",
+                        "value": "emden"
+                    },
+                    "goettingen": {
+                        "name": "Göttingen",
+                        "value": "goettingen"
+                    },
+                    "hanover": {
+                        "name": "Hanover",
+                        "value": "hanover"
+                    },
+                    "oldenburg": {
+                        "name": "Oldenburg",
+                        "value": "oldenburg"
+                    },
+                    "osnabrueck": {
+                        "name": "Osnabrück",
+                        "value": "osnabrueck"
+                    },
+                    "salzgitter": {
+                        "name": "Salzgitter",
+                        "value": "salzgitter"
+                    },
+                    "wilhelmshaven": {
+                        "name": "Wilhelmshaven",
+                        "value": "wilhelmshaven"
+                    },
+                    "wolfsburg": {
+                        "name": "Wolfsburg",
+                        "value": "wolfsburg"
+                    }
+                }
+            },
+            "mecklenburg-vorpommern": {
+                "name": "Mecklenburg-Vorpommern",
+                "value": "MV",
+                "landkreis": {
+                    "ludwigslust-parchim": {
+                        "name": "Ludwigslust-Parchim",
+                        "value": "ludwigslust-parchim",
+                        "capital": "parchim"
+                    },
+                    "mecklenburgische-seenplatte": {
+                        "name": "Mecklenburgische Seenplatte",
+                        "value": "mecklenburgische-seenplatte",
+                        "capital": "neubrandenburg"
+                    },
+                    "nordwestmecklenburg": {
+                        "name": "Nordwestmecklenburg",
+                        "value": "nordwestmecklenburg",
+                        "capital": "wismar"
+                    },
+                    "rostock": {
+                        "name": "Rostock",
+                        "value": "rostock",
+                        "capital": "guestrow"
+                    },
+                    "vorpommern-greifswald": {
+                        "name": "Vorpommern-Greifswald",
+                        "value": "vorpommern-greifswald",
+                        "capital": "greifswald"
+                    },
+                    "vorpommern-ruegen": {
+                        "name": "Vorpommern-Rügen",
+                        "value": "vorpommern-ruegen",
+                        "capital": "stralsund"
+                    }
+                },
+                "stadtkreis": {
+                    "rostock": {
+                        "name": "Rostock",
+                        "value": "rostock"
+                    },
+                    "schwerin": {
+                        "name": "Schwerin",
+                        "value": "schwerin"
+                    }
+                }
+            },
+            "nordrhein-westfalen": {
+                "name": "Nordrhein-Westfalen",
+                "value": "NW",
+                "landkreis": {
+                    "aachen": {
+                        "name": "Aachen",
+                        "value": "aachen",
+                        "capital": "aachen"
+                    },
+                    "borken": {
+                        "name": "Borken",
+                        "value": "borken",
+                        "capital": "borken"
+                    },
+                    "coesfeld": {
+                        "name": "Coesfeld",
+                        "value": "coesfeld",
+                        "capital": "coesfeld"
+                    },
+                    "dueren": {
+                        "name": "Düren",
+                        "value": "dueren",
+                        "capital": "dueren"
+                    },
+                    "ennepe-ruhr-kreis": {
+                        "name": "Ennepe-Ruhr-Kreis",
+                        "value": "ennepe-ruhr-kreis",
+                        "capital": "schwelm"
+                    },
+                    "euskirchen": {
+                        "name": "Euskirchen",
+                        "value": "euskirchen",
+                        "capital": "euskirchen"
+                    },
+                    "guetersloh": {
+                        "name": "Gütersloh",
+                        "value": "guetersloh",
+                        "capital": "guetersloh"
+                    },
+                    "heinsberg": {
+                        "name": "Heinsberg",
+                        "value": "heinsberg",
+                        "capital": "heinsberg"
+                    },
+                    "herford": {
+                        "name": "Herford",
+                        "value": "herford",
+                        "capital": "herford"
+                    },
+                    "hochsauerland": {
+                        "name": "Hochsauerland",
+                        "value": "hochsauerland",
+                        "capital": "meschede"
+                    },
+                    "hoexter": {
+                        "name": "Höxter",
+                        "value": "hoexter",
+                        "capital": "hoexter"
+                    },
+                    "kleve": {
+                        "name": "Kleve",
+                        "value": "kleve",
+                        "capital": "kleve"
+                    },
+                    "lippe": {
+                        "name": "Lippe",
+                        "value": "lippe",
+                        "capital": "detmold"
+                    },
+                    "maerkischer-kreis": {
+                        "name": "Maerkischer Kreis",
+                        "value": "maerkischer-kreis",
+                        "capital": "luedenscheid"
+                    },
+                    "mettmann": {
+                        "name": "Mettmann",
+                        "value": "mettmann",
+                        "capital": "mettmann"
+                    },
+                    "minden-luebbecke": {
+                        "name": "Minden-Lübbecke",
+                        "value": "minden-luebbecke",
+                        "capital": "minden"
+                    },
+                    "oberbergischer-kreis": {
+                        "name": "Oberbergischer Kreis",
+                        "value": "oberbergischer-kreis",
+                        "capital": "gummersbach"
+                    },
+                    "olpe": {
+                        "name": "Olpe",
+                        "value": "olpe",
+                        "capital": "olpe"
+                    },
+                    "paderborn": {
+                        "name": "Paderborn",
+                        "value": "paderborn",
+                        "capital": "paderborn"
+                    },
+                    "recklinghausen": {
+                        "name": "Recklinghausen",
+                        "value": "recklinghausen",
+                        "capital": "recklinghausen"
+                    },
+                    "rhein-erft-kreis": {
+                        "name": "Rhein-Erft-Kreis",
+                        "value": "rhein-erft-kreis",
+                        "capital": "bergheim"
+                    },
+                    "rhein-sieg": {
+                        "name": "Rhein-Sieg",
+                        "value": "rhein-sieg",
+                        "capital": "siegburg"
+                    },
+                    "rheinisch-bergischer-kreis": {
+                        "name": "Rheinisch-Bergischer Kreis",
+                        "value": "rheinisch-bergischer-kreis",
+                        "capital": "bergisch-gladbach"
+                    },
+                    "rheinkreis-neuss": {
+                        "name": "Rheinkreis Neuss",
+                        "value": "rheinkreis-neuss",
+                        "capital": "neuss"
+                    },
+                    "siegen-wittgenstein": {
+                        "name": "Siegen-Wittgenstein",
+                        "value": "siegen-wittgenstein",
+                        "capital": "siegen"
+                    },
+                    "soest": {
+                        "name": "Soest",
+                        "value": "soest",
+                        "capital": "soest"
+                    },
+                    "steinfurt": {
+                        "name": "Steinfurt",
+                        "value": "steinfurt",
+                        "capital": "steinfurt"
+                    },
+                    "unna": {
+                        "name": "Unna",
+                        "value": "unna",
+                        "capital": "unna"
+                    },
+                    "viersen": {
+                        "name": "Viersen",
+                        "value": "viersen",
+                        "capital": "viersen"
+                    },
+                    "warendorf": {
+                        "name": "Warendorf",
+                        "value": "warendorf",
+                        "capital": "warendorf"
+                    },
+                    "wesel": {
+                        "name": "Wesel",
+                        "value": "wesel",
+                        "capital": "wesel"
+                    }
+                },
+                "stadtkreis": {
+                    "aachen": {
+                        "name": "Aachen",
+                        "value": "aachen"
+                    },
+                    "bielefeld": {
+                        "name": "Bielefeld",
+                        "value": "bielefeld"
+                    },
+                    "bochum": {
+                        "name": "Bochum",
+                        "value": "bochum"
+                    },
+                    "bonn": {
+                        "name": "Bonn",
+                        "value": "bonn"
+                    },
+                    "bottrop": {
+                        "name": "Bottrop",
+                        "value": "bottrop"
+                    },
+                    "dortmund": {
+                        "name": "Dortmund",
+                        "value": "dortmund"
+                    },
+                    "duesseldorf": {
+                        "name": "Düsseldorf",
+                        "value": "duesseldorf"
+                    },
+                    "duisburg": {
+                        "name": "Duisburg",
+                        "value": "duisburg"
+                    },
+                    "essen": {
+                        "name": "Essen",
+                        "value": "essen"
+                    },
+                    "gelsenkirchen": {
+                        "name": "Gelsenkirchen",
+                        "value": "gelsenkirchen"
+                    },
+                    "hagen": {
+                        "name": "Hagen",
+                        "value": "hagen"
+                    },
+                    "hamm": {
+                        "name": "Hamm",
+                        "value": "hamm"
+                    },
+                    "herne": {
+                        "name": "Herne",
+                        "value": "herne"
+                    },
+                    "koeln": {
+                        "name": "Köln",
+                        "value": "koeln"
+                    },
+                    "krefeld": {
+                        "name": "Krefeld",
+                        "value": "krefeld"
+                    },
+                    "leverkusen": {
+                        "name": "Leverkusen",
+                        "value": "leverkusen"
+                    },
+                    "moenchengladbach": {
+                        "name": "Mönchengladbach",
+                        "value": "moenchengladbach"
+                    },
+                    "muelheim-an-der-ruhr": {
+                        "name": "Mülheim an der Ruhr",
+                        "value": "muelheim-an-der-ruhr"
+                    },
+                    "muenster": {
+                        "name": "Münster",
+                        "value": "muenster"
+                    },
+                    "oberhausen": {
+                        "name": "Oberhausen",
+                        "value": "oberhausen"
+                    },
+                    "remscheid": {
+                        "name": "Remscheid",
+                        "value": "remscheid"
+                    },
+                    "solingen": {
+                        "name": "Solingen",
+                        "value": "solingen"
+                    },
+                    "wuppertal": {
+                        "name": "Wuppertal",
+                        "value": "wuppertal"
+                    }
+                }
+            },
+            "rheinland-pfalz": {
+                "name": "Rheinland-Pfalz",
+                "value": "RP",
+                "landkreis": {
+                    "ahrweiler": {
+                        "name": "Ahrweiler",
+                        "value": "ahrweiler",
+                        "capital": "bad-neuenahr-ahrweiler"
+                    },
+                    "altenkirchen": {
+                        "name": "Altenkirchen",
+                        "value": "altenkirchen",
+                        "capital": "altenkirchen"
+                    },
+                    "alzey-worms": {
+                        "name": "Alzey-Worms",
+                        "value": "alzey-worms",
+                        "capital": "alzey"
+                    },
+                    "bad-duerkheim": {
+                        "name": "Bad Dürkheim",
+                        "value": "bad-duerkheim",
+                        "capital": "bad-duerkheim"
+                    },
+                    "bad-kreuznach": {
+                        "name": "Bad Kreuznach",
+                        "value": "bad-kreuznach",
+                        "capital": "bad-kreuznach"
+                    },
+                    "bernkastel-wittlich": {
+                        "name": "Bernkastel-Wittlich",
+                        "value": "bernkastel-wittlich",
+                        "capital": "wittlich"
+                    },
+                    "birkenfeld": {
+                        "name": "Birkenfeld",
+                        "value": "birkenfeld",
+                        "capital": "birkenfeld"
+                    },
+                    "cochem-zell": {
+                        "name": "Cochem-Zell",
+                        "value": "cochem-zell",
+                        "capital": "cochem"
+                    },
+                    "donnersbergkreis": {
+                        "name": "Donnersbergkreis",
+                        "value": "donnersbergkreis",
+                        "capital": "kirchheimbolanden"
+                    },
+                    "eifelkreis-bitburg-pruem": {
+                        "name": "Eifelkreis Bitburg-Prüm",
+                        "value": "eifelkreis-bitburg-pruem",
+                        "capital": "bitburg"
+                    },
+                    "germersheim": {
+                        "name": "Germersheim",
+                        "value": "germersheim",
+                        "capital": "germersheim"
+                    },
+                    "kaiserslautern": {
+                        "name": "Kaiserslautern",
+                        "value": "kaiserslautern",
+                        "capital": "kaiserslautern"
+                    },
+                    "kusel": {
+                        "name": "Kusel",
+                        "value": "kusel",
+                        "capital": "kusel"
+                    },
+                    "mainz-bingen": {
+                        "name": "Mainz-Bingen",
+                        "value": "mainz-bingen",
+                        "capital": "ingelheim"
+                    },
+                    "mayen-koblenz": {
+                        "name": "Mayen-Koblenz",
+                        "value": "mayen-koblenz",
+                        "capital": "koblenz"
+                    },
+                    "neuwied": {
+                        "name": "Neuwied",
+                        "value": "neuwied",
+                        "capital": "neuwied"
+                    },
+                    "rhein-hunsrueck": {
+                        "name": "Rhein-Hunsrück",
+                        "value": "rhein-hunsrueck",
+                        "capital": "simmern"
+                    },
+                    "rhein-lahn": {
+                        "name": "Rhein-Lahn",
+                        "value": "rhein-lahn",
+                        "capital": "bad-ems"
+                    },
+                    "rhein-pfalz-kreis": {
+                        "name": "Rhein-Pfalz-Kreis",
+                        "value": "rhein-pfalz-kreis",
+                        "capital": "ludwigshafen"
+                    },
+                    "suedliche-weinstrasse": {
+                        "name": "Südliche Weinstraße",
+                        "value": "suedliche-weinstrasse",
+                        "capital": "landau"
+                    },
+                    "suedwestpfalz": {
+                        "name": "Südwestpfalz",
+                        "value": "suedwestpfalz",
+                        "capital": "pirmasens"
+                    },
+                    "trier-saarburg": {
+                        "name": "Trier-Saarburg",
+                        "value": "trier-saarburg",
+                        "capital": "trier"
+                    },
+                    "vulkaneifel": {
+                        "name": "Vulkaneifel",
+                        "value": "vulkaneifel",
+                        "capital": "daun"
+                    },
+                    "westerwaldkreis": {
+                        "name": "Westerwaldkreis",
+                        "value": "westerwaldkreis",
+                        "capital": "montabaur"
+                    }
+                },
+                "stadtkreis": {
+                    "frankenthal": {
+                        "name": "Frankenthal",
+                        "value": "frankenthal"
+                    },
+                    "kaiserslautern": {
+                        "name": "Kaiserslautern",
+                        "value": "kaiserslautern"
+                    },
+                    "koblenz": {
+                        "name": "Koblenz",
+                        "value": "koblenz"
+                    },
+                    "landau": {
+                        "name": "Landau",
+                        "value": "landau"
+                    },
+                    "ludwigshafen": {
+                        "name": "Ludwigshafen",
+                        "value": "ludwigshafen"
+                    },
+                    "mainz": {
+                        "name": "Mainz",
+                        "value": "mainz"
+                    },
+                    "neustadt-an-der-weinstrasse": {
+                        "name": "Neustadt an der Weinstraße",
+                        "value": "neustadt-an-der-weinstrasse"
+                    },
+                    "pirmasens": {
+                        "name": "Pirmasens",
+                        "value": "pirmasens"
+                    },
+                    "speyer": {
+                        "name": "Speyer",
+                        "value": "speyer"
+                    },
+                    "trier": {
+                        "name": "Trier",
+                        "value": "trier"
+                    },
+                    "worms": {
+                        "name": "Worms",
+                        "value": "worms"
+                    },
+                    "zweibruecken": {
+                        "name": "Zweibrücken",
+                        "value": "zweibruecken"
+                    }
+                }
+            },
+            "saarland": {
+                "name": "Saarland",
+                "value": "SL",
+                "landkreis": {
+                    "merzig-wadern": {
+                        "name": "Merzig-Wadern",
+                        "value": "merzig-wadern",
+                        "capital": "merzig"
+                    },
+                    "neunkirchen": {
+                        "name": "Neunkirchen",
+                        "value": "neunkirchen",
+                        "capital": "ottweiler"
+                    },
+                    "saarbruecken": {
+                        "name": "Saarbrücken",
+                        "value": "saarbruecken",
+                        "capital": "saarbruecken"
+                    },
+                    "saarlouis": {
+                        "name": "Saarlouis",
+                        "value": "saarlouis",
+                        "capital": "saarlouis"
+                    },
+                    "saarpfalz": {
+                        "name": "Saarpfalz",
+                        "value": "saarpfalz",
+                        "capital": "homburg"
+                    },
+                    "sankt-wendel": {
+                        "name": "Sankt Wendel",
+                        "value": "sankt-wendel",
+                        "capital": "sankt-wendel"
+                    }
+                }
+            },
+            "schleswig-holstein": {
+                "name": "Schleswig-Holstein",
+                "value": "SH",
+                "landkreis": {
+                    "dithmarschen": {
+                        "name": "Dithmarschen",
+                        "value": "dithmarschen",
+                        "capital": "heide"
+                    },
+                    "herzogtum-lauenburg": {
+                        "name": "Herzogtum Lauenburg",
+                        "value": "herzogtum-lauenburg",
+                        "capital": "ratzeburg"
+                    },
+                    "nordfriesland": {
+                        "name": "Nordfriesland",
+                        "value": "nordfriesland",
+                        "capital": "husum"
+                    },
+                    "ostholstein": {
+                        "name": "Ostholstein",
+                        "value": "ostholstein",
+                        "capital": "eutin"
+                    },
+                    "pinneberg": {
+                        "name": "Pinneberg",
+                        "value": "pinneberg",
+                        "capital": "pinneberg"
+                    },
+                    "ploen": {
+                        "name": "Plön",
+                        "value": "ploen",
+                        "capital": "ploen"
+                    },
+                    "rendsburg-eckernfoerde": {
+                        "name": "Rendsburg-Eckernförde",
+                        "value": "rendsburg-eckernfoerde",
+                        "capital": "rendsburg"
+                    },
+                    "schleswig-flensburg": {
+                        "name": "Schleswig-Flensburg",
+                        "value": "schleswig-flensburg",
+                        "capital": "schleswig"
+                    },
+                    "segeberg": {
+                        "name": "Segeberg",
+                        "value": "segeberg",
+                        "capital": "bad-segeberg"
+                    },
+                    "steinburg": {
+                        "name": "Steinburg",
+                        "value": "steinburg",
+                        "capital": "itzehoe"
+                    },
+                    "stormarn": {
+                        "name": "Stormarn",
+                        "value": "stormarn",
+                        "capital": "bad-oldesloe"
+                    }
+                },
+                "stadtkreis": {
+                    "flensburg": {
+                        "name": "Flensburg",
+                        "value": "flensburg"
+                    },
+                    "kiel": {
+                        "name": "Kiel",
+                        "value": "kiel"
+                    },
+                    "luebeck": {
+                        "name": "Lübeck",
+                        "value": "luebeck"
+                    },
+                    "neumuenster": {
+                        "name": "Neumünster",
+                        "value": "neumuenster"
+                    }
+                }
+            },
+            "sachsen-anhalt": {
+                "name": "Sachsen-Anhalt",
+                "value": "ST",
+                "landkreis": {
+                    "altmarkkreis-salzwedel": {
+                        "name": "Altmarkkreis Salzwedel",
+                        "value": "altmarkkreis-salzwedel",
+                        "capital": "salzwedel"
+                    },
+                    "anhalt-bitterfeld": {
+                        "name": "Anhalt-Bitterfeld",
+                        "value": "anhalt-bitterfeld",
+                        "capital": "koethen-anhalt"
+                    },
+                    "boerde": {
+                        "name": "Börde",
+                        "value": "boerde",
+                        "capital": "haldensleben"
+                    },
+                    "burgenlandkreis": {
+                        "name": "Burgenlandkreis",
+                        "value": "burgenlandkreis",
+                        "capital": "naumburg"
+                    },
+                    "harz": {
+                        "name": "Harz",
+                        "value": "harz",
+                        "capital": "halberstadt"
+                    },
+                    "jerichower-land": {
+                        "name": "Jerichower Land",
+                        "value": "jerichower-land",
+                        "capital": "burg"
+                    },
+                    "mansfeld-suedharz": {
+                        "name": "Mansfeld-Südharz",
+                        "value": "mansfeld-suedharz",
+                        "capital": "sangerhausen"
+                    },
+                    "saalekreis": {
+                        "name": "Saalekreis",
+                        "value": "saalekreis",
+                        "capital": "merseburg"
+                    },
+                    "salzlandkreis": {
+                        "name": "Salzlandkreis",
+                        "value": "salzlandkreis",
+                        "capital": "bernburg"
+                    },
+                    "stendal": {
+                        "name": "Stendal",
+                        "value": "stendal",
+                        "capital": "stendal"
+                    },
+                    "wittenberg": {
+                        "name": "Wittenberg",
+                        "value": "wittenberg",
+                        "capital": "wittenberg"
+                    }
+                },
+                "stadtkreis": {
+                    "dessau-rosslau": {
+                        "name": "Dessau-Roßlau",
+                        "value": "dessau-rosslau"
+                    },
+                    "halle": {
+                        "name": "Halle",
+                        "value": "halle"
+                    },
+                    "magdeburg": {
+                        "name": "Magdeburg",
+                        "value": "magdeburg"
+                    }
+                }
+            }
+        },
+        "stadtstaaten": {
+            "name": "Stadtstaaten",
+            "berlin": {
+                "name": "Berlin",
+                "value": "BE",
+                "stadtkreis": {
+                    "berlin": {
+                        "name": "Berlin",
+                        "value": "berlin"
+                    }
+                }
+            },
+            "freie-hansestadt-bremen": {
+                "name": "Freie Hansestadt Bremen",
+                "value": "HB",
+                "stadtkreis": {
+                    "bremen": {
+                        "name": "Bremen",
+                        "value": "bremen"
+                    },
+                    "bremerhaven": {
+                        "name": "Bremerhaven",
+                        "value": "bremerhaven"
+                    }
+                }
+            },
+            "freie-und-hansestadt-hamburg": {
+                "name": "Freie und Hansestadt Hamburg",
+                "value": "HH",
+                "stadtkreis": {
+                    "hamburg": {
+                        "name": "Hamburg",
+                        "value": "hamburg"
+                    }
+                }
+            }
+        }
+    }
+}

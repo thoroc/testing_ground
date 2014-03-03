@@ -1,0 +1,88 @@
+{
+    "activities": [
+        {
+            "name": "A",
+            "predecessor": "",
+            "estimated_time": [
+                {
+                    "optimum": 2,
+                    "normal": 4,
+                    "pessimistic": 6
+                }
+            ],
+            "expected_time": 4.00
+        },
+        {
+            "name": "B",
+            "predecessor": "",
+            "estimated_time": [
+                {
+                    "optimum": 3,
+                    "normal": 5,
+                    "pessimistic": 9
+                }
+            ],
+            "expected_time": 5.33
+        },
+        {
+            "name": "C",
+            "predecessor": "A",
+            "estimated_time": [
+                {
+                    "optimum": 4,
+                    "normal": 5,
+                    "pessimistic": 7
+                }
+            ],
+            "expected_time": 5.17
+        },
+        {
+            "name": "D",
+            "predecessor": "A",
+            "estimated_time": [
+                {
+                    "optimum": 4,
+                    "normal": 6,
+                    "pessimistic": 10
+                }
+            ],
+            "expected_time": 6.33
+        },
+        {
+            "name": "E",
+            "predecessor": "B,C",
+            "estimated_time": [
+                {
+                    "optimum": 4,
+                    "normal": 5,
+                    "pessimistic": 7
+                }
+            ],
+            "expected_time": 5.17
+        },
+        {
+            "name": "F",
+            "predecessor": "D",
+            "estimated_time": [
+                {
+                    "optimum": 3,
+                    "normal": 4,
+                    "pessimistic": 8
+                }
+            ],
+            "expected_time": 4.50
+        },
+        {
+            "name": "G",
+            "predecessor": "E",
+            "estimated_time": [
+                {
+                    "optimum": 3,
+                    "normal": 5,
+                    "pessimistic": 8
+                }
+            ],
+            "expected_time": 5.17
+        },
+    ]
+}

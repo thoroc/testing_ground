@@ -1,0 +1,87 @@
+div {
+    display: block;
+    float: left;
+}
+
+div.table-container {
+    color: #808B94;
+    border: 1px solid #ccc;
+    padding: 16px;
+    font-size: 12pt;
+    border-radius: 12px;
+    box-shadow: inset 0 -1px 0 #fff;
+    margin-top: 10px;
+    width: auto;
+}
+
+.row {
+    position: relative;
+    padding: 5px 10px;
+    margin: 6px auto;
+    clear: both;
+    vertical-align: bottom;
+}
+
+.select-filter {
+    background: #edecec;
+    background: rgba( 237, 236, 236, 0.7 );
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    /*border: solid #ddd;*/
+    border: solid rgba( 189, 188, 188, 0.4 );
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-right-width: 0;
+    /*border-radius: 6px;*/
+    border-radius: 6px 0px 0px 6px;
+    -moz-border-radius: 6px 0px 0px 6px;
+    -webkit-appearance: none;
+    padding: 1px 1px 2px;
+    vertical-align: top;
+    font-size: 8pt;
+    margin: 4px 0 4px 10px;
+    width: 205px;
+    height: 27px;
+}
+
+a.btn {
+    background: #edecec;
+    background: rgba( 237, 236, 236, 0.7 );
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    border: 4px solid rgba( 189, 188, 188, 0.4 );
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    padding: 2px 2px 2px 2px;
+    vertical-align: top;
+    font-size: 10pt;
+    margin: 4px 0 4px 10px;
+    cursor: pointer;
+}
+
+a.reset {
+    background: #edecec;
+    background: rgba( 237, 236, 236, 0.7 );
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    border: 4px solid rgba( 189, 188, 188, 0.4 );
+    border-radius: 0px 6px 6px 0px;
+    -moz-border-radius: 0px 6px 6px 0px;
+    padding: 2px 2px 2px 2px;
+    vertical-align: top;
+    font-size: 10pt;
+    margin: 4px 10px 4px 0px;
+    position: relative;
+    right: 4px;
+    top: 10px;
+    cursor: pointer;
+}
+
+div.todo-list {
+    font-family: 'IM Fell English';
+}
+

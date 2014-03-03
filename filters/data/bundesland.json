@@ -1,0 +1,91 @@
+{
+    "name": "bundesland",
+    "limits": "kreis regierungsbezirke",
+    "enables": "regierungsbezirke kreis",
+    "default": " >> Länder",
+    "data": {
+        "freistaat": {
+            "name": "Freistaat",
+            "label": "--- freistaat ---",
+            "value": {
+                "freistaat-bayern": {
+                    "name": "Freistaat Bayern",
+                    "value": "BY"
+                },
+                "freistaat-sachsen": {
+                    "name": "Freistaat Sachsen",
+                    "value": "SN"
+
+                },
+                "freistaat-thueringen": {
+                    "name": "Freistaat Thüringen",
+                    "value": "TH"
+                }
+            }
+        },
+        "flaechenlaender": {
+            "name": "Flächenlaender",
+            "label": "--- flächenländer ---",
+            "value": {
+                "baden-wuerttemberg": {
+                    "name": "Baden-Württemberg",
+                    "value": "BW"
+                },
+                "brandenburg": {
+                    "name": "Brandenburg",
+                    "value": "BB"
+                },
+                "hesse": {
+                    "name": "Hesse",
+                    "value": "HE"
+                },
+                "niedersachsen": {
+                    "name": "Niedersachsen",
+                    "value": "NI"
+                },
+                "mecklenburg-vorpommern": {
+                    "name": "Mecklenburg-Vorpommern",
+                    "value": "MV"
+                },
+                "nordrhein-westfalen": {
+                    "name": "Nordrhein-Westfalen",
+                    "value": "NW"
+                },
+                "rheinland-pfalz": {
+                    "name": "Rheinland-Pfalz",
+                    "value": "RP"
+                },
+                "saarland": {
+                    "name": "Saarland",
+                    "value": "SL"
+                },
+                "schleswig-holstein": {
+                    "name": "Schleswig-Holstein",
+                    "value": "SH"
+                },
+                "sachsen-anhalt": {
+                    "name": "Sachsen-Anhalt",
+                    "value": "ST"
+                }
+            }
+        },
+        "stadtstaaten": {
+            "name": "Stadtstaaten",
+            "label": "--- stadtstaaten ---",
+            "value": {
+                "berlin": {
+                    "name":  "Berlin",
+                    "value": "BE"
+                },
+                "freie-hansestadt-bremen": {
+                    "name":  "Freie Hansestadt Bremen",
+                    "value": "HB"
+                },
+                "freie-und-hansestadt-hamburg": {
+                    "name": "Freie und Hansestadt Hamburg",
+                    "value": "HH"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <graph caption='Trend Report for Q2 FY 2013' showValues='0' baseFontSize='11'
+               outCnvBaseFontSze='12' canvasBorderColor='333333' divLineColor='333333'
+               bgColor='e8e8e8' drawAnchors='1' numdivlines='3' decimalPrecision='2'
+               divLineDecimalPrecision='2' yAxisMinValue='3'  formatNumberScale='0'
+               showAreaBorder='1' areaBorderThickness='2' chartRightMargin='50'
+               yAxisMaxValue='5'>
+            <categories>
+                <category name='Period' />
+                <category name='November' />
+                <category name='December' />
+                <category name='January' />
+            </categories>
+            <dataset seriesName='Service' color='FF6600' anchorBorderColor='FF6600'
+                     anchorBgColor='FF6600' lineThickness='2'>
+                <set value='4.64'/>
+                <set value='4.63'/>
+                <set value='4.61'/>
+                <set value='4.67'/>
+            </dataset>
+            <dataset seriesName='Partner Help' color='0066FF' anchorBorderColor='0066FF'
+                     anchorBgColor='0066FF' lineThickness='2'>
+                <set value='4.62'/>
+                <set value='4.61'/>
+                <set value='4.61'/>
+                <set value='4.65'/>
+            </dataset>
+            <dataset seriesName='Technology Solutions Network' color='00FF00'
+                     anchorBorderColor='00FF00' anchorBgColor='00FF00'
+                     lineThickness='2'>
+                <set value='4.83'/>
+                <set value='4.86'/>
+                <set value='4.73'/>
+                <set value='4.88'/>
+            </dataset>
+            <trendLines>
+                <line startValue=4.54 color='FF0000' displayvalue='Goal:4.54'
+                      showOnTop='1' thickness='2' />
+            </trendLines>
+        </graph>
+        <graph caption='Trend Report for  FY 2013' xAxisName='Month' yAxisName='Score'
+               hovercapbg='FFECAA' bgColor='E8E8E8' hovercapborder='F47E00'
+               formatNumberScale='0' decimalPrecision='2' showValues='0'
+               animation='1' numdivlines='3' numVdivlines='0' yAxisMinValue='3'
+               yAxisMaxValue='5' lineThickness='3' rotateNames='0'>
+            <categories>
+                <category name='August' />
+                <category name='September' />
+                <category name='October' />
+                <category name='November' />
+                <category name='December' />
+                <category name='January' />
+                <category name='February' />
+                <category name='March' />
+                <category name='April' />
+                <category name='May' />
+                <category name='June' />
+                <category name='July' />
+            </categories>
+            <trendLines>
+                <line startValue='4.54' endValue='4.54' alpha='100'
+                      isTrendZone='0' color='0066FF' displayvalue='Average: 4.54'
+                      showOnTop='1' thickness='2' />
+            </trendLines>
+        </graph>
+    </body>
+</html>

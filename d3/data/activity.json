@@ -1,0 +1,50 @@
+{
+    "milestone": [{
+            "id": 1,
+            "name": "Received - Not Concept Committed",
+            "activity": [{
+                    "id": 1,
+                    "name": "infrastructure",
+                    "milestone": null
+                },
+                {
+                    "id": 2,
+                    "name": "Employee ACD Tool",
+                    "milestone": [{
+                            "id": 1,
+                            "description": "Automatically commit changes that do not require action by VE Ops (e.g., change to start time or SEVT membership)",
+                            "priority": "P2",
+                            "requester": "James",
+                            "status": "new"
+                        },
+                        {
+                            "id": 2,
+                            "description": "Display only the fields which are actionable for VE Ops",
+                            "priority": "P2",
+                            "requester": "James",
+                            "status": "new"
+                        },
+                        {
+                            "id": 3,
+                            "description": "Display the checklist for “disable” requests (currently only displayed for add and change)",
+                            "priority": "P2",
+                            "requester": "James",
+                            "status": "new"
+                        }
+                    ],
+                },
+                {
+                    "id": 3,
+                    "name": "Employee DB",
+                    "milestone": [{
+                            "id": 1,
+                            "description": "Create separate orgs for \"Ops\" and \"OJE\" in the employee DB like we already have for \"TSN\" and \"PH\"",
+                            "priority": "P3",
+                            "requester": "James",
+                            "status": "hold for Andrew/Moritz"
+                        }]
+                }
+            ]
+        }]
+}
+                

@@ -1,0 +1,158 @@
+{
+    "name": "bezirke",
+    "limits": "gemeinden",
+    "enables": "",
+    "default": " >> Berzike",
+    "data": {
+        "charlottenburg-wilmersdorf": {
+            "name": "Charlottenburg-Wilmersdorf",
+            "value": "charlottenburg-wilmersdorf",
+            "limited-by": "BE"
+        },
+        "friedrichshain-kreuzberg": {
+            "name": "Friedrichshain-Kreuzberg",
+            "value": "friedrichshain-kreuzberg",
+            "limited-by": "BE"
+        },
+        "lichtenberg": {
+            "name": "Lichtenberg",
+            "value": "lichtenberg",
+            "limited-by": "BE"
+        },
+        "marzahn-hellersdorf": {
+            "name": "Marzahn-Hellersdorf",
+            "value": "marzahn-hellersdorf",
+            "limited-by": "BE"
+        },
+        "mitte": {
+            "name": "Mitte",
+            "value": "mitte",
+            "limited-by": "BE"
+        },
+        "neukoelln": {
+            "name": "Neukölln",
+            "value": "neukoelln",
+            "limited-by": "BE"
+        },
+        "pankow": {
+            "name": "Pankow",
+            "value": "pankow",
+            "limited-by": "BE"
+        },
+        "reinickendorf": {
+            "name": "Reinickendorf",
+            "value": "reinickendorf",
+            "limited-by": "BE"
+        },
+        "spandau": {
+            "name": "Spandau",
+            "value": "spandau",
+            "limited-by": "BE"
+        },
+        "steglitz-zehlendorf": {
+            "name": "Steglitz-Zehlendorf",
+            "value": "steglitz-zehlendorf",
+            "limited-by": "BE"
+        },
+        "tempelhof-schoeneberg": {
+            "name": "Tempelhof-Schöneberg",
+            "value": "tempelhof-schoeneberg",
+            "limited-by": "BE"
+        },
+        "treptow-koepenick": {
+            "name": "Treptow-Köpenick",
+            "value": "treptow-koepenick",
+            "limited-by": "BE"
+        },
+        "delmenhorst": {
+            "name": "Delmenhorst",
+            "value": "delmenhorst",
+            "limited-by": "HB"
+        },
+        "stuhr": {
+            "name": "Stuhr",
+            "value": "stuhr",
+            "limited-by": "HB"
+        },
+        "syke": {
+            "name": "Syke",
+            "value": "syke",
+            "limited-by": "HB"
+        },
+        "osterholz-scharmbeck": {
+            "name": "Osterholz-Scharmbeck",
+            "value": "osterholz-scharmbeck",
+            "limited-by": "HB"
+        },
+        "weyhe": {
+            "name": "Weyhe",
+            "value": "weyhe",
+            "limited-by": "HB"
+        },
+        "achim": {
+            "name": "Achim",
+            "value": "achim",
+            "limited-by": "HB"
+        },
+        "lilienthal": {
+            "name": "Lilienthal",
+            "value": "lilienthal",
+            "limited-by": "HB"
+        },
+        "ritterhude": {
+            "name": "Ritterhude",
+            "value": "ritterhude",
+            "limited-by": "HB"
+        },
+        "schwanewede-nur-ortsteil": {
+            "name": "Schwanewede (nur Ortsteil)",
+            "value": "schwanewede-nur-ortsteil",
+            "limited-by": "HB"
+        },
+        "langen": {
+            "name": "Langen",
+            "value": "langen",
+            "limited-by": "HB"
+        },
+        "spaden": {
+            "name": "Spaden",
+            "value": "spaden",
+            "limited-by": "HB"
+        },
+        "hamburg-mitte": {
+            "name": "Hamburg-Mitte",
+            "value": "hamburg-mitte",
+            "limited-by": "HH"
+        },
+        "altona": {
+            "name": "Altona",
+            "value": "altona",
+            "limited-by": "HH"
+        },
+        "eimsbuettel": {
+            "name": "Eimsbüttel",
+            "value": "eimsbuettel",
+            "limited-by": "HH"
+        },
+        "hamburg-nord": {
+            "name": "Hamburg-Nord",
+            "value": "hamburg-nord",
+            "limited-by": "HH"
+        },
+        "wandsbek": {
+            "name": "Wandsbek",
+            "value": "wandsbek",
+            "limited-by": "HH"
+        },
+        "bergedorf": {
+            "name": "Bergedorf",
+            "value": "bergedorf",
+            "limited-by": "HH"
+        },
+        "harburg": {
+            "name": "Harburg",
+            "value": "harburg",
+            "limited-by": "HH"
+        }
+    }
+}

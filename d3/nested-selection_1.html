@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nested Selections</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="d3-master/d3.min.js"></script>
+        <script type="text/javascript" src="js/nested-selection.js"></script>
+        <link type="text/css" href="css/nested-selection.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Nested Selections</h1>
+        <div></div>
+        <script>
+
+tree(
+  {name: "selection", children: [
+    {name: "parentNode: html", children: [
+      {name: "td", children: [{type: "text", name: "0"}]},
+      {name: "td", children: [{type: "text", name: "1"}]},
+      {name: "td", children: [{type: "text", name: "2"}]},
+      {name: "td", children: [{type: "text", name: "3"}]},
+      {name: "td", children: [{type: "text", name: "4"}]},
+      {name: "td", children: [{type: "text", name: "5"}]},
+      {name: "td", children: [{type: "text", name: "6"}]},
+      {name: "td", children: [{type: "text", name: "7"}]},
+      {name: "td", children: [{type: "text", name: "8"}]},
+      {name: "td", children: [{type: "text", name: "9"}]},
+      {name: "td", children: [{type: "text", name: "10"}]},
+      {name: "td", children: [{type: "text", name: "11"}]},
+      {name: "td", children: [{type: "text", name: "12"}]},
+      {name: "td", children: [{type: "text", name: "13"}]},
+      {name: "td", children: [{type: "text", name: "14"}]},
+      {name: "td", children: [{type: "text", name: "15"}]}
+    ]}
+  ]},
+  360
+);
+
+</script>
+
+<script>
+
+tree(
+  {name: "selection", children: [
+    {name: "parentNode: tr", children: [
+      {name: "td", children: [{type: "text", name: "0"}]},
+      {name: "td", children: [{type: "text", name: "1"}]},
+      {name: "td", children: [{type: "text", name: "2"}]},
+      {name: "td", children: [{type: "text", name: "3"}]}
+    ]},
+    {name: "parentNode: tr", children: [
+      {name: "td", children: [{type: "text", name: "4"}]},
+      {name: "td", children: [{type: "text", name: "5"}]},
+      {name: "td", children: [{type: "text", name: "6"}]},
+      {name: "td", children: [{type: "text", name: "7"}]}
+    ]},
+    {name: "parentNode: tr", children: [
+      {name: "td", children: [{type: "text", name: "8"}]},
+      {name: "td", children: [{type: "text", name: "9"}]},
+      {name: "td", children: [{type: "text", name: "10"}]},
+      {name: "td", children: [{type: "text", name: "11"}]}
+    ]},
+    {name: "parentNode: tr", children: [
+      {name: "td", children: [{type: "text", name: "12"}]},
+      {name: "td", children: [{type: "text", name: "13"}]},
+      {name: "td", children: [{type: "text", name: "14"}]},
+      {name: "td", children: [{type: "text", name: "15"}]}
+    ]}
+  ]},
+  360
+);
+
+</script>
+        <script>
+var matrix = [
+  [ 0,  1,  2,  3],
+  [ 4,  5,  6,  7],
+  [ 8,  9, 10, 11],
+  [12, 13, 14, 15],
+];
+            
+            
+        </script>
+    </body>
+</html>
