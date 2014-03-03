@@ -1,0 +1,6 @@
+[
+    { "period": "Global", "send": 21166, "replied": 7224, "rate": 34.13 },
+    { "period": "February", "send": 6334, "replied": 2143, "rate": 33.83 },
+    { "period": "March", "send": 6662, "replied": 2381, "rate": 35.74 },
+    { "period": "April", "send": 8170, "replied": 2700, "rate": 33.05 }
+]

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style>
+
+            .chart .label {
+                font: 10px sans-serif;
+            }
+
+            .chart circle.send {
+                fill: steelblue;
+                stroke: blue;
+            }
+
+            .chart circle.recieved {
+                fill: orange;
+                stroke: red;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            .chart {
+                fill: steelblue;
+            }
+
+            .x.axis path {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2>Period</h2>
+        </div>
+        <div id="container"></div>
+        <script type="text/javascript">
+            /**
+             *             var data = [
+             {"period": "Global", "send": 21166, "replied": 7224, "rate": 34.13},
+             {"period": "February", "send": 6334, "replied": 2143, "rate": 33.83},
+             {"period": "March", "send": 6662, "replied": 2381, "rate": 35.74},
+             {"period": "April", "send": 8170, "replied": 2700, "rate": 33.05}
+             ];
+
+             https://www.dashingd3js.com
+             http://mbostock.github.io/d3/tutorial/bar-1.html
+             http://hdnrnzk.me/2012/07/04/creating-a-bar-graph-using-d3js/
+             http://bl.ocks.org/mbostock
+             http://stackoverflow.com/questions/9268645/d3-creating-a-table-linked-to-a-csv-file
+             http://stackoverflow.com/questions/13808741/bar-chart-with-d3-js-and-an-associative-array
+             */
+            var data = [
+                {"period": "Global", "send": 21166, "received": 7224, "rate": 34.13},
+                {"period": "February", "send": 6334, "received": 2143, "rate": 33.83},
+                {"period": "March", "send": 6662, "received": 2381, "rate": 35.74},
+                {"period": "April", "send": 8170, "received": 2700, "rate": 33.05}
+            ];
+
+
+//            var length = nodes.length + 1;
+//
+//            var height = 480;
+//            var width = 640;
+//            var x = width / length;
+//            var y, x_axis, y_axis;
+
+            /**
+             * Creating the body of the chart
+             */
+//            var chart = d3.select( "div" )
+//                    .append( "svg" )
+//                    .attr( "class", "chart" )
+//                    .attr( "width", width )
+//                    .attr( "height", height );
+
+//            drawCircle( nodes, ["send", "recieved"] );
+//            drawLabel( nodes );
+//            drawBarChart( nodes );
+//            drawTable( nodes );
+
+//            function drawBarChart( data )
+//            {
+
+                var margin = {top: 20, right: 20, bottom: 30, left: 40},
+                    width = 960 - margin.left - margin.right,
+                    height = 500 - margin.top - margin.bottom;
+
+                var y = d3.scale.linear()
+                   .domain([0,100])
+                   .range([height, 0]);
+
+                var x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1)
+                    .domain( d3.entries( data ).map( function( d ) { return d.key; }));
+
+                var xAxis = d3.svg.axis()
+                    .scale(x)
+                    .orient( "bottom" );
+
+                var yAxis = d3.svg.axis()
+                    .scale(y)
+                    .orient( "left" );
+
+                var svg = d3.select( "body" ).append( "svg" )
+                        .attr( "width", width + margin.left + margin.right)
+                        .attr( "height", height + margin.top + margin.bottom)
+                    .append( "g" )
+                        .attr( "transform", "translate( " + margin.left + "," + margin.top + " )" );
+
+                svg.append( "g" )
+                        .attr( "class", "x axis" )
+                        .attr( "transform", "translate(0," + height + " )" )
+                        .call(xAxis);
+
+                svg.append( "g" )
+                        .attr( "class", "y axis" )
+                        .call(yAxis)
+                    .append( "text" )
+                        .attr( "transform", "rotate(-90)" )
+                        .attr( "y", 6)
+                        .attr( "dy", ".71em" )
+                        .style( "text-anchor", "end" )
+                        .text( "Percent" );
+
+                svg.selectAll( ".send-bar" )
+                        .data( d3.entries( data ))
+                    .enter().append( "rect" )
+                        .attr( "class", "send-bar" )
+                        .attr( "x", function( d ) { return x( d.key ); })
+                        .attr( "width", x.rangeBand()/2 )
+                        .attr( "y", function( d ) { return y( d.value.send / 200 ); })
+                        .attr( "height", function( d ) { return height - y( d.value.send / 200 ); })
+                        .style( "fill", "orange" );
+
+                var bar = svg.selectAll( ".received-bar" )
+                        .data( d3.entries( data ))
+                    .enter().append( "rect" )
+                        .attr( "class", "received-bar" )
+                        .attr( "x", function( d) { return x( d.key ) + x.rangeBand()/2; })
+                        .attr( "width", x.rangeBand()/2)
+                        .attr( "y", function( d ) { return y( d.value.received / 200 ); })
+                        .attr( "height", function( d ) { return height - y( d.value.received / 200 ); })
+                        .style( "fill", "red" );
+
+                bar.append( "text" )
+                        .attr( "x", function( d ) { return x( d.key ) + x.rangeBand() / 2; })
+                        .attr( "dx", -3 ) // padding-right
+                        .attr( "dy", ".35em" ) // vertical-align: middle
+                        .attr( "text-anchor", "end" ) // text-align: right
+                        .text( function( d ) { return d.value.period; });
+//            }
+
+            function drawCircle( data, values )
+            {
+                var pi = Math.PI;
+                var r = 0;
+                var n = 0;
+                var container = chart.selectAll( "g" )
+                        .data( data )
+                        .enter()
+                        .append( "g" )
+                        .attr( "class", function( d ) { return d.period })
+                        .attr( "transform", function( d, i ) {
+                            n = i * x;
+                            return "translate( " + n + ",0)";
+                        });
+
+                var circles = container.selectAll( "circle" )
+                        .data( function( container, i ) {
+                            return values.map( function( d ) {
+                                return { column: d, value: container[d] };
+                            });
+                        })
+                        .enter()
+                        .append( "circle" )
+                        .attr( "cy", 200 )
+                        .attr( "cx", 200 )
+                        .attr( "r", function( d ) { r = d.value / 200; ;return r; })
+                        .attr( "class", function( d, i ) { return values[i]; });
+            }
+
+            function drawLabel( data )
+            {
+                var width = 960;
+                var x = 960 / data.length;
+
+                var arc = d3.svg.arc()
+                    .innerRadius( function( d,i ) {
+                        return (5-i)*35;
+                    })
+                    .outerRadius( function( d,i ) {
+                        return (5-i)*35+30;
+                    })
+                    .startAngle(0)
+                    .endAngle(2 * Math.PI);
+
+                var svg = d3.select( "body" ).append( "svg" )
+                    .attr( "width", width )
+                    .attr( "height", 500)
+                    .selectAll( "g" )
+                    .data( data )
+                    .enter()
+                    .append( "g" )
+                    .attr( "transform", "translate( 480, 250 )" );
+//                    .attr( "transform", function( d, i ) {
+//                        return "translate( " + ( i + 1 ) * x + ", 250)";
+//                    });
+
+                var thing = svg.append( "g" )
+                    .attr( "id","thing" )
+                    .style( "fill","navy" )
+                    .attr( "class", "label" );
+
+                var arcs = svg.append( "path" )
+                    .attr( "fill","red" )
+                    .attr( "id", function(d,i){return "s"+i;})
+                    .attr( "d",arc);
+
+                thing.append( "text" )
+                    .style( "font-size",20)
+                    .append( "textPath" )
+                    .attr( "textLength",function(d,i){return 90-i*5 ;})
+                    .attr( "xlink:href",function(d,i){return "#s"+i;})
+                    .attr( "startOffset",function(d,i){return 3/20;})
+                    .attr( "dy","-1em" )
+                    .text(function(d){return d.period;})
+            }
+
+            function drawTable( data ) {
+                var label = [];
+                for( var key in data[0] ) {
+                    label.push( key );
+                }
+                var columns = label;
+
+                var table = d3.select( "#container" ).append( "table" ),
+                    thead = table.append( "thead" ),
+                    tbody = table.append( "tbody" );
+
+                // append the header row
+                thead.append( "tr" )
+                    .selectAll( "th" )
+                    .data(columns)
+                    .enter()
+                    .append( "th" )
+                        .text( function( d ) { return d; });
+
+                // create a row for each object in the data
+                var rows = tbody.selectAll( "tr" )
+                    .data( data )
+                    .enter()
+                    .append( "tr" );
+
+                // create a cell in each row for each column
+                var cells = rows.selectAll( "td" )
+                    .data( function( row ) {
+                        return columns.map( function( d )
+                        {
+                            return { column: d, value: row[d] };
+                        });
+                    })
+                    .enter()
+                    .append( "td" )
+                        .text(function(d) { return d.value; });
+
+                return table;
+            }
+        </script>
+    </body>
+</html>
