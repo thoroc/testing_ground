@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style>
+            .grid .tick line {
+                stroke: lightgrey;
+                opacity: 0.7;
+            }
+            .grid path {
+                  stroke-width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var dataset = [{"id":109, "time":1362145698957, "userName":"perky", "activity":"caught pacman"},
+               {"id":110, "time":1362145696050, "userName":"pinky", "activity":"respawn"},
+               {"id":111, "time":1362145553187, "userName":"perky", "activity":"change direction"},
+               {"id":111, "time":1362145523957, "userName":"perky", "activity":"change direction"},
+               {"id":111, "time":1362068521903, "userName":"perky", "activity":"respawn"},
+               {"id":111, "time":1362067554943, "userName":"perky", "activity":"change direction"},
+               {"id":111, "time":1362066127737, "userName":"perky", "activity":"change direction"},
+               {"id":112, "time":1362063878087, "userName":"clyde", "activity":"caught pacman"},
+               {"id":113, "time":1362060704480, "userName":"perky", "activity":"respawn"},
+               {"id":114, "time":1362055941193, "userName":"perky", "activity":"caught pacman"},
+               {"id":115, "time":1362053409677, "userName":"clyde", "activity":"caught pacman"},
+               {"id":116, "time":1362050389927, "userName":"perky", "activity":"caught pacman"},
+               {"id":117, "time":1362049688533, "userName":"perky", "activity":"caught pacman"},
+               {"id":118, "time":1362048768800, "userName":"pinky", "activity":"respawn"},
+               {"id":119, "time":1361984202243, "userName":"clyde", "activity":"respawn"},
+               {"id":120, "time":1361983730340, "userName":"clyde", "activity":"caught pacman"},
+               {"id":121, "time":1361982886800, "userName":"perky", "activity":"respawn"},
+               {"id":122, "time":1361982415347, "userName":"perky", "activity":"change direction"},
+               {"id":123, "time":1361981332543, "userName":"pinky", "activity":"caught pacman"},
+               {"id":124, "time":1361873308440, "userName":"clyde", "activity":"change direction"}]
+
+            var dateFormat = d3.time.format("%x"),
+                nestedData = d3.nest()
+                .key(function(d) { return d.activity; })
+                .key(function(d) {return dateFormat(new Date(d.time));})
+                .entries(dataset);
+
+            var margin = {top: 20, right: 80, bottom: 30, left: 50},
+                width = 700 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom,
+                min = d3.min(nestedData, function(datum) {
+                    return d3.min(datum.values, function(d) { return d.values.length; });
+                }),
+                max = d3.max(nestedData, function(datum) {
+                    return d3.max(datum.values, function(d) { return d.values.length; });
+                });
+
+            var x = d3.time.scale().range([0, width]);
+            var y = d3.scale.linear().range([height, 0]);
+
+            var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom")
+                .ticks(d3.time.days, 1)
+                .tickFormat(d3.time.format("%d-%b-%Y"))
+                .tickSize(height +6, 6, 0);
+
+            var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient("right")
+                .ticks(max)
+                .tickSubdivide(true)
+                .tickFormat(d3.format("d"))
+                .tickSize(width +6, width +6, 0);
+
+            var color = d3.scale.category10();
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            drawMainGraph();
+
+            function drawMainGraph() {
+
+                var line = d3.svg.line()
+                    .interpolate("monotone") // linear, cardinal or monotone are good
+                    .x( function(d) {return x(dateFormat.parse(d.key)) } )
+                    .y( function(d) {return y(d.values.length) } );
+
+                x.domain(d3.extent( dataset, function(d) { return d3.time.day(new Date(d.time)) } ));
+                y.domain([min, max]);
+
+                // append a rectangle which will be the charts background:
+                svg.append("svg:rect")
+                        .attr("x", 0)
+                        .attr("y", 0)
+                        .attr("height", height)
+                        .attr("width", width)
+                        .attr("fill", "#E6E6E6");
+
+                // Add a title:
+                svg.append("svg:text")
+                        .attr("x", width/4)
+                        .attr("y", 20)
+                        .attr("style", "font-size: 12; font-family: Helvetica, sans-serif")
+                        .text("Daily Activities");
+
+                svg.append("g")
+                    .attr("class", "grid")
+                    //.attr("transform", "translate(0," + height + ")")
+                    .call(xAxis);
+
+                svg.append("g")
+                    .attr("class", "grid")
+                    .call(yAxis)
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .attr("style", "font-size: 10; font-family: Helvetica, sans-serif")
+                    .style("text-anchor", "end")
+                    .text("Count");
+
+                var activityLine = svg.selectAll(".activity")
+                    .data( nestedData )
+                    .enter()
+                    .append("g")
+                    .attr("class", "activity")
+                    .attr("id", function(d) { return d.key } );
+
+                activityLine.append("path")
+                    .attr("class", "line")
+                    .attr("d", function(d) { return line(d.values); } )
+                    .style("stroke", function(d) { return color(d.key); } )
+                    .attr("fill", "none")
+                    .attr("stroke-width", 4.8)
+                    .attr("stroke-opacity", 0.0001)
+                    .transition().duration(2000)
+                    .attr("stroke-opacity", 1)
+                    .attr("stroke-width", 2.8);
+
+                activityLine.selectAll("circle")
+                    .data(function(d) {
+                            console.log(d);
+                            return(d.values);
+                    })
+                    .enter().append("circle")
+                    .attr("stroke", function(d, i) {
+                            if(d.values[i])
+                                    return color(d.values[i].activity);
+                    })
+                    .attr("cx", function(d) {
+                            return x(dateFormat.parse(d.key));
+                    })
+                    .attr("cy", function(d) {
+                            return y(d.values.length);
+                    })
+                    .attr("stroke-width", 4.8)
+                    .attr("fill", "white")
+                    .attr("r", 6)
+                    .attr("stroke-opacity", 0.0001)
+                    .attr("fill-opacity", 0.0001)
+                    .transition().delay(1000).duration(1500)
+                    .attr("stroke-opacity", 1)
+                    .attr("fill-opacity", 1)
+                    .attr("stroke-width", 2.8)
+                    .attr("r", 3.4);
+            }
+        </script>
+    </body>
+</html>

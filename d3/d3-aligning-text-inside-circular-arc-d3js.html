@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3 Start</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style>
+            text {
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="container"></div>
+        <div>http://stackoverflow.com/questions/13202407/aligning-text-inside-circular-arc-d3js</div>
+        <script type="text/javascript">
+            var dataset = [
+                {label:"Hello1", value:5},
+                {label:"Hello2", value:10},
+                {label:"Hello3",value:15},
+                {label:"Hello4", value:20},
+                {label:"Hello5", value:25}
+            ];
+
+            var arc = d3.svg.arc()
+              .innerRadius(function(d,i){return (5-i)*35;})
+              .outerRadius(function(d,i){return (5-i)*35+30;})
+              .startAngle(0)
+              .endAngle(2 * Math.PI);
+
+            var svg = d3.select("body").append("svg")
+              .attr("width", 960)
+              .attr("height", 500)
+              .selectAll("g")
+              .data(dataset)
+              .enter()
+              .append("g")
+              .attr("transform", "translate(480,250)");
+
+            var thing = svg.append("g")
+              .attr("id","thing")
+              .style("fill","navy")
+              .attr("class", "label");
+
+            var arcs = svg.append("path")
+              .attr("fill","red")
+              .attr("id", function(d,i){return "s"+i;})
+              .attr("d",arc);
+
+            thing.append("text")
+              .style("font-size",20)
+              .append("textPath")
+              .attr("textLength",function(d,i){return 90-i*5 ;})
+              .attr("xlink:href",function(d,i){return "#s"+i;})
+              .attr("startOffset",function(d,i){return 3/20;})
+              .attr("dy","-1em")
+              .text(function(d){return d.label;})
+        </script>
+    </body>
+</html>

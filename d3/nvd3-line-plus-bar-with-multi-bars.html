@@ -1,0 +1,1147 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.0.0-beta/nv.d3.min.js" charset="utf-8"></script>
+        <style>
+            /********************
+            * HTML CSS
+            */
+            .chartWrap {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            /********************
+             * TOOLTIP CSS
+             */
+            .nvtooltip {
+                position: absolute;
+                background-color: rgba(255,255,255,0.75);
+                padding: 1px;
+                border: 1px solid rgba(0,0,0,.2);
+                z-index: 10000;
+
+                font-family: Arial;
+                font-size: 13px;
+
+                /*transition: opacity 500ms linear;
+                -moz-transition: opacity 500ms linear;
+                -webkit-transition: opacity 500ms linear;
+
+                transition-delay: 500ms;
+                -moz-transition-delay: 500ms;
+                -webkit-transition-delay: 500ms;
+
+                */
+
+                -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+                -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+                box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+
+                pointer-events: none;
+
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .nvtooltip.x-nvtooltip,
+            .nvtooltip.y-nvtooltip {
+                padding: 8px;
+            }
+
+            .nvtooltip h3 {
+                margin: 0;
+                padding: 4px 14px;
+                line-height: 18px;
+                font-weight: normal;
+                background-color: rgba(247,247,247,0.75);
+                text-align: center;
+
+                border-bottom: 1px solid #ebebeb;
+
+                -webkit-border-radius: 5px 5px 0 0;
+                -moz-border-radius: 5px 5px 0 0;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .nvtooltip p {
+                margin: 0;
+                padding: 5px 14px;
+                text-align: center;
+            }
+
+            .nvtooltip span {
+                display: inline-block;
+                margin: 2px 0;
+            }
+
+            .nvtooltip-pending-removal {
+                position: absolute;
+                pointer-events: none;
+            }
+
+            /********************
+             * SVG CSS
+             */
+            svg {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                /* Trying to get SVG to act like a greedy block in all browsers */
+                display: block;
+                width:100%;
+                height:100%;
+            }
+
+            svg text {
+                font: normal 12px Arial;
+            }
+
+            svg .title {
+                font: bold 14px Arial;
+            }
+
+            .nvd3 .nv-background {
+                fill: white;
+                fill-opacity: 0;
+                /*
+                pointer-events: none;
+                */
+            }
+
+            .nvd3.nv-noData {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            /**********
+            *  Brush
+            */
+            .nv-brush .extent {
+                fill-opacity: .125;
+                shape-rendering: crispEdges;
+            }
+
+            /**********
+            *  Legend
+            */
+            .nvd3 .nv-legend .nv-series {
+                cursor: pointer;
+            }
+
+            .nvd3 .nv-legend .disabled circle {
+                fill-opacity: 0;
+            }
+
+            /**********
+            *  Axes
+            */
+            .nvd3 .nv-axis path {
+                fill: none;
+                stroke: #000;
+                stroke-opacity: .75;
+                shape-rendering: crispEdges;
+            }
+
+            .nvd3 .nv-axis path.domain {
+                stroke-opacity: .75;
+            }
+
+            .nvd3 .nv-axis.nv-x path.domain {
+                stroke-opacity: 0;
+            }
+
+            .nvd3 .nv-axis line {
+                fill: none;
+                stroke: #e5e5e5;
+                shape-rendering: crispEdges;
+            }
+
+            .nvd3 .nv-axis .zero line,
+            /*this selector may not be necessary*/ .nvd3 .nv-axis line.zero {
+                stroke-opacity: .75;
+            }
+
+            .nvd3 .nv-axis .nv-axisMaxMin text {
+                font-weight: bold;
+            }
+
+            .nvd3 .x  .nv-axis .nv-axisMaxMin text,
+            .nvd3 .x2 .nv-axis .nv-axisMaxMin text,
+            .nvd3 .x3 .nv-axis .nv-axisMaxMin text {
+                text-anchor: middle
+            }
+
+            /**********
+            *  Brush
+            */
+
+            .nv-brush .resize path {
+                fill: #eee;
+                stroke: #666;
+            }
+
+            /**********
+            *  Bars
+            */
+            .nvd3 .nv-bars .negative rect {
+                zfill: brown;
+            }
+
+            .nvd3 .nv-bars rect {
+                zfill: steelblue;
+                fill-opacity: .75;
+
+                transition: fill-opacity 250ms linear;
+                -moz-transition: fill-opacity 250ms linear;
+                -webkit-transition: fill-opacity 250ms linear;
+            }
+
+            .nvd3 .nv-bars rect:hover {
+                fill-opacity: 1;
+            }
+
+            .nvd3 .nv-bars .hover rect {
+                fill: lightblue;
+            }
+
+            .nvd3 .nv-bars text {
+                fill: rgba(0,0,0,0);
+            }
+
+            .nvd3 .nv-bars .hover text {
+                fill: rgba(0,0,0,1);
+            }
+
+            /**********
+            *  Bars
+            */
+            .nvd3 .nv-multibar .nv-groups rect,
+            .nvd3 .nv-multibarHorizontal .nv-groups rect,
+            .nvd3 .nv-discretebar .nv-groups rect {
+                stroke-opacity: 0;
+
+                transition: fill-opacity 250ms linear;
+                -moz-transition: fill-opacity 250ms linear;
+                -webkit-transition: fill-opacity 250ms linear;
+            }
+
+            .nvd3 .nv-multibar .nv-groups rect:hover,
+            .nvd3 .nv-multibarHorizontal .nv-groups rect:hover,
+            .nvd3 .nv-discretebar .nv-groups rect:hover {
+                fill-opacity: 1;
+            }
+
+            .nvd3 .nv-discretebar .nv-groups text,
+            .nvd3 .nv-multibarHorizontal .nv-groups text {
+                font-weight: bold;
+                fill: rgba(0,0,0,1);
+                stroke: rgba(0,0,0,0);
+            }
+
+            /***********
+            *  Pie Chart
+            */
+
+            .nvd3.nv-pie path {
+                stroke-opacity: 0;
+
+                transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+                -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+                -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+
+            }
+
+            .nvd3.nv-pie .nv-slice text {
+                stroke: #000;
+                stroke-width: 0;
+            }
+
+            .nvd3.nv-pie path {
+                stroke: #fff;
+                stroke-width: 1px;
+                stroke-opacity: 1;
+            }
+
+            .nvd3.nv-pie .hover path {
+                fill-opacity: .7;
+                /*
+                  stroke-width: 6px;
+                  stroke-opacity: 1;
+                */
+            }
+
+            .nvd3.nv-pie .nv-label rect {
+                fill-opacity: 0;
+                stroke-opacity: 0;
+            }
+
+            /**********
+            * Lines
+            */
+            .nvd3 .nv-groups path.nv-line {
+                fill: none;
+                stroke-width: 2.5px;
+                /*
+                stroke-linecap: round;
+                shape-rendering: geometricPrecision;
+
+                transition: stroke-width 250ms linear;
+                -moz-transition: stroke-width 250ms linear;
+                -webkit-transition: stroke-width 250ms linear;
+
+                transition-delay: 250ms
+                -moz-transition-delay: 250ms;
+                -webkit-transition-delay: 250ms;
+                */
+            }
+
+            .nvd3 .nv-groups path.nv-area {
+                stroke: none;
+                /*
+                stroke-linecap: round;
+                shape-rendering: geometricPrecision;
+
+                stroke-width: 2.5px;
+                transition: stroke-width 250ms linear;
+                -moz-transition: stroke-width 250ms linear;
+                -webkit-transition: stroke-width 250ms linear;
+
+                transition-delay: 250ms
+                -moz-transition-delay: 250ms;
+                -webkit-transition-delay: 250ms;
+                */
+            }
+
+            .nvd3 .nv-line.hover path {
+                stroke-width: 6px;
+            }
+
+            /*
+            .nvd3.scatter .groups .point {
+              fill-opacity: 0.1;
+              stroke-opacity: 0.1;
+            }
+            */
+
+            .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
+                fill-opacity: 0;
+                stroke-opacity: 0;
+            }
+
+            .nvd3.nv-scatter.nv-single-point .nv-groups .nv-point {
+                fill-opacity: .5 !important;
+                stroke-opacity: .5 !important;
+            }
+
+            .nvd3 .nv-groups .nv-point {
+                transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+                -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+            }
+
+            .nvd3.nv-scatter .nv-groups .nv-point.hover,
+            .nvd3 .nv-groups .nv-point.hover {
+                stroke-width: 20px;
+                fill-opacity: .5 !important;
+                stroke-opacity: .5 !important;
+            }
+
+            .nvd3 .nv-point-paths path {
+                stroke: #aaa;
+                stroke-opacity: 0;
+                fill: #eee;
+                fill-opacity: 0;
+            }
+
+            .nvd3 .nv-indexLine {
+                cursor: ew-resize;
+            }
+
+            /**********
+            * Distribution
+            */
+            .nvd3 .nv-distribution {
+                pointer-events: none;
+            }
+
+            /**********
+            *  Scatter
+            */
+            /* **Attempting to remove this for useVoronoi(false), need to see if it's required anywhere
+            .nvd3 .nv-groups .nv-point {
+              pointer-events: none;
+            }
+            */
+
+            .nvd3 .nv-groups .nv-point.hover {
+                stroke-width: 20px;
+                stroke-opacity: .5;
+            }
+
+            .nvd3 .nv-scatter .nv-point.hover {
+                fill-opacity: 1;
+            }
+
+            /*
+            .nv-group.hover .nv-point {
+              fill-opacity: 1;
+            }
+            */
+
+            /**********
+            *  Stacked Area
+            */
+            .nvd3.nv-stackedarea path.nv-area {
+                fill-opacity: .7;
+                /*
+                stroke-opacity: .65;
+                fill-opacity: 1;
+                */
+                stroke-opacity: 0;
+
+                transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+                -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+                -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+
+                /*
+                transition-delay: 500ms;
+                -moz-transition-delay: 500ms;
+                -webkit-transition-delay: 500ms;
+                */
+
+            }
+
+            .nvd3.nv-stackedarea path.nv-area.hover {
+                fill-opacity: .9;
+                /*
+                stroke-opacity: .85;
+                */
+            }
+            /*
+            .d3stackedarea .groups path {
+              stroke-opacity: 0;
+            }
+            */
+
+            .nvd3.nv-stackedarea .nv-groups .nv-point {
+                stroke-opacity: 0;
+                fill-opacity: 0;
+            }
+
+            .nvd3.nv-stackedarea .nv-groups .nv-point.hover {
+                stroke-width: 20px;
+                stroke-opacity: .75;
+                fill-opacity: 1;
+            }
+
+            /**********
+            *  Line Plus Bar
+            */
+
+            .nvd3.nv-linePlusBar .nv-bar rect {
+                fill-opacity: .75;
+            }
+
+            .nvd3.nv-linePlusBar .nv-bar rect:hover {
+                fill-opacity: 1;
+            }
+
+            /**********
+            *  Bullet
+            */
+            .nvd3.nv-bullet { font: 10px sans-serif; }
+            .nvd3.nv-bullet .nv-measure { fill-opacity: .8; }
+            .nvd3.nv-bullet .nv-measure:hover { fill-opacity: 1; }
+            .nvd3.nv-bullet .nv-marker { stroke: #000; stroke-width: 2px; }
+            .nvd3.nv-bullet .nv-markerTriangle { stroke: #000; fill: #fff; stroke-width: 1.5px; }
+            .nvd3.nv-bullet .nv-tick line { stroke: #666; stroke-width: .5px; }
+            .nvd3.nv-bullet .nv-range.nv-s0 { fill: #eee; }
+            .nvd3.nv-bullet .nv-range.nv-s1 { fill: #ddd; }
+            .nvd3.nv-bullet .nv-range.nv-s2 { fill: #ccc; }
+            .nvd3.nv-bullet .nv-title { font-size: 14px; font-weight: bold; }
+            .nvd3.nv-bullet .nv-subtitle { fill: #999; }
+
+            .nvd3.nv-bullet .nv-range {
+                fill: #999;
+                fill-opacity: .4;
+            }
+            .nvd3.nv-bullet .nv-range:hover {
+                fill-opacity: .7;
+            }
+
+            /**********
+            * Sparkline
+            */
+            .nvd3.nv-sparkline path {
+                fill: none;
+            }
+
+            .nvd3.nv-sparklineplus g.nv-hoverValue {
+                pointer-events: none;
+            }
+
+            .nvd3.nv-sparklineplus .nv-hoverValue line {
+                stroke: #333;
+                stroke-width: 1.5px;
+            }
+
+            .nvd3.nv-sparklineplus,
+            .nvd3.nv-sparklineplus g {
+                pointer-events: all;
+            }
+
+            .nvd3 .nv-hoverArea {
+                fill-opacity: 0;
+                stroke-opacity: 0;
+            }
+
+            .nvd3.nv-sparklineplus .nv-xValue,
+            .nvd3.nv-sparklineplus .nv-yValue {
+                /*
+                stroke: #666;
+                */
+                stroke-width: 0;
+                font-size: .9em;
+                font-weight: normal;
+            }
+
+            .nvd3.nv-sparklineplus .nv-yValue {
+                stroke: #f66;
+            }
+
+            .nvd3.nv-sparklineplus .nv-maxValue {
+                stroke: #2ca02c;
+                fill: #2ca02c;
+            }
+
+            .nvd3.nv-sparklineplus .nv-minValue {
+                stroke: #d62728;
+                fill: #d62728;
+            }
+
+            .nvd3.nv-sparklineplus .nv-currentValue {
+                /*
+                stroke: #444;
+                fill: #000;
+                */
+                font-weight: bold;
+                font-size: 1.1em;
+            }
+
+            /**********
+            * historical stock
+            */
+
+            .nvd3.nv-ohlcBar .nv-ticks .nv-tick {
+                stroke-width: 2px;
+            }
+
+            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.hover {
+                stroke-width: 4px;
+            }
+
+            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.positive {
+                stroke: #2ca02c;
+            }
+
+            .nvd3.nv-ohlcBar .nv-ticks .nv-tick.negative {
+                stroke: #d62728;
+            }
+
+            .nvd3.nv-historicalStockChart .nv-axis .nv-axislabel {
+                font-weight: bold;
+            }
+
+            .nvd3.nv-historicalStockChart .nv-dragTarget {
+                fill-opacity: 0;
+                stroke: none;
+                cursor: move;
+            }
+
+            .nvd3 .nv-brush .extent {
+                /*
+                cursor: ew-resize !important;
+                */
+                fill-opacity: 0 !important;
+            }
+
+            .nvd3 .nv-brushBackground rect {
+                stroke: #000;
+                stroke-width: .4;
+                fill: #fff;
+                fill-opacity: .7;
+            }
+
+            /**********
+            * Indented Tree
+            */
+
+            /**
+             * TODO: the following 3 selectors are based on classes used in the example.  I should either make them standard and leave them here, or move to a CSS file not included in the library
+             */
+            .nvd3.nv-indentedtree .name {
+                margin-left: 5px;
+            }
+
+            .nvd3.nv-indentedtree .clickable {
+                color: #08C;
+                cursor: pointer;
+            }
+
+            .nvd3.nv-indentedtree span.clickable:hover {
+                color: #005580;
+                text-decoration: underline;
+            }
+
+
+            .nvd3.nv-indentedtree .nv-childrenCount {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+            .nvd3.nv-indentedtree .nv-treeicon {
+                cursor: pointer;
+                /*
+                cursor: n-resize;
+                */
+            }
+
+            .nvd3.nv-indentedtree .nv-treeicon.nv-folded {
+                cursor: pointer;
+                /*
+                cursor: s-resize;
+                */
+            }
+
+            /**********
+            * Parallel Coordinates
+            */
+
+            .nvd3 .background path {
+                fill: none;
+                stroke: #ccc;
+                stroke-opacity: .4;
+                shape-rendering: crispEdges;
+            }
+
+            .nvd3 .foreground path {
+                fill: none;
+                stroke: steelblue;
+                stroke-opacity: .7;
+            }
+
+            .nvd3 .brush .extent {
+                fill-opacity: .3;
+                stroke: #fff;
+                shape-rendering: crispEdges;
+            }
+
+            .nvd3 .axis line, .axis path {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+
+            .nvd3 .axis text {
+                text-shadow: 0 1px 0 #fff;
+            }
+
+            #chart{
+                height:400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div>http://stackoverflow.com/questions/17455180/line-plus-bar-with-multi-bars</div>
+        <div>
+            <div id="chart">
+                <svg></svg>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var testdata = [ {
+                    "bar": true,
+                    "key": "Recolhidos",
+                    "values": [
+                        [ 1041386400, 81.61 ],
+                        [ 1044064800, 75.99 ],
+                        [ 1046484000, 163.87 ],
+                        [ 1049162400, 285.07 ],
+                        [ 1051754400, 489.2 ],
+                        [ 1054432800, 364.47 ],
+                        [ 1057024800, 734.63 ],
+                        [ 1059703200, 494.24 ],
+                        [ 1062381600, 410.84 ],
+                        [ 1064973600, 891.48 ],
+                        [ 1067652000, 855.89 ],
+                        [ 1070244000, 566.55 ],
+                        [ 1072922400, 14581.34 ],
+                        [ 1075600800, 14925.98 ],
+                        [ 1078106400, 13523.74 ],
+                        [ 1080784800, 14559.16 ],
+                        [ 1083376800, 14742.06 ],
+                        [ 1086055200, 20190.26 ],
+                        [ 1088647200, 13497.87 ],
+                        [ 1091325600, 11357.98 ],
+                        [ 1094004000, 10840.2 ],
+                        [ 1096596000, 12111.04 ],
+                        [ 1099274400, 22540.93 ],
+                        [ 1101866400, 43045.7 ],
+                        [ 1104544800, 33030.89 ],
+                        [ 1107223200, 118242.23 ],
+                        [ 1109642400, 123950.22 ],
+                        [ 1112320800, 31048.69 ],
+                        [ 1114912800, 45429.64 ],
+                        [ 1117591200, 299483.92 ],
+                        [ 1120183200, 323579.09 ],
+                        [ 1122861600, 335601.3 ],
+                        [ 1125540000, 318710.44 ],
+                        [ 1128132000, 315423.96 ],
+                        [ 1130810400, 326531.17 ],
+                        [ 1133402400, 340653.45 ],
+                        [ 1136080800, 310329.98 ],
+                        [ 1138759200, 292405.27 ],
+                        [ 1141178400, 372229.01 ],
+                        [ 1143856800, 410900.28 ],
+                        [ 1146448800, 769055.65 ],
+                        [ 1149127200, 881208.72 ],
+                        [ 1151719200, 814380.77 ],
+                        [ 1154397600, 617003.67 ],
+                        [ 1157076000, 386657.08 ],
+                        [ 1159668000, 385036.95 ],
+                        [ 1162346400, 369162.4 ],
+                        [ 1164938400, 412433.78 ],
+                        [ 1167616800, 380802.49 ],
+                        [ 1170295200, 387705.7 ],
+                        [ 1172714400, 427916.07 ],
+                        [ 1175392800, 451843.78 ],
+                        [ 1177984800, 433297.14 ],
+                        [ 1180663200, 411195.28 ],
+                        [ 1183255200, 380960.75 ],
+                        [ 1185933600, 442464.97 ],
+                        [ 1188612000, 393762.68 ],
+                        [ 1191204000, 427836.22 ],
+                        [ 1193882400, 426247.71 ],
+                        [ 1196474400, 569246.56 ],
+                        [ 1199152800, 446032.68 ],
+                        [ 1201831200, 362597.23 ],
+                        [ 1204336800, 437240.23 ],
+                        [ 1207015200, 408610.64 ],
+                        [ 1209607200, 441071.34 ],
+                        [ 1212285600, 416114.62 ],
+                        [ 1214877600, 472756.57 ],
+                        [ 1217556000, 467570.09 ],
+                        [ 1220234400, 490812.3 ],
+                        [ 1222826400, 533070.93 ],
+                        [ 1225504800, 502065.8 ],
+                        [ 1228096800, 1001814.91 ],
+                        [ 1230775200, 428572.91 ],
+                        [ 1233453600, 383078.24 ],
+                        [ 1235872800, 508550.6 ],
+                        [ 1238551200, 549703 ],
+                        [ 1241143200, 602953.55 ],
+                        [ 1243821600, 539591.34 ],
+                        [ 1246413600, 477383.12 ],
+                        [ 1249092000, 612484.8 ],
+                        [ 1251770400, 654225.89 ],
+                        [ 1254362400, 646573.01 ],
+                        [ 1257040800, 626094.12 ],
+                        [ 1259632800, 245916.7 ],
+                        [ 1262311200, 1839.16 ],
+                        [ 1264989600, 0 ],
+                        [ 1267408800, 0 ],
+                        [ 1270087200, 0 ],
+                        [ 1272679200, 0 ],
+                        [ 1275357600, 0 ],
+                        [ 1277949600, 0 ],
+                        [ 1280628000, 0 ],
+                        [ 1283306400, 0 ],
+                        [ 1285898400, 42.4 ],
+                        [ 1288576800, 0 ],
+                        [ 1291168800, 600 ],
+                        [ 1293847200, 0 ],
+                        [ 1296525600, 4.24 ],
+                        [ 1298944800, 0 ],
+                        [ 1301623200, 35522.65 ],
+                        [ 1304215200, 5.94 ],
+                        [ 1306893600, 1.63 ],
+                        [ 1309485600, 1307.54 ],
+                        [ 1312164000, 61.67 ],
+                        [ 1314842400, 0 ],
+                        [ 1317434400, 0 ],
+                        [ 1320112800, 69.56 ],
+                        [ 1322704800, 0 ],
+                        [ 1325383200, 6.46 ],
+                        [ 1328061600, 50 ],
+                        [ 1330567200, 50 ],
+                        [ 1333245600, 0 ],
+                        [ 1335837600, 0 ],
+                        [ 1338516000, 0 ],
+                        [ 1341108000, 0 ],
+                        [ 1343786400, 0 ],
+                        [ 1346464800, 0 ],
+                        [ 1349056800, 0 ],
+                        [ 1351735200, 7.28 ],
+                        [ 1354327200, 0 ],
+                        [ 1357005600, 510 ],
+                        [ 1359684000, 0 ],
+                        [ 1362103200, 0 ],
+                        [ 1364781600, 0 ],
+                        [ 1367373600, 0 ],
+                        [ 1370052000, 0 ],
+                        [ 1372644000, 0 ],
+                        [ 1375322400, 0 ],
+                        [ 1378000800, 0 ],
+                        [ 1380592800, 0 ],
+                        [ 1383271200, 0 ],
+                        [ 1385863200, 0 ]
+                    ]
+                }, {
+                    "bar": true,
+                    "key": "Inadiplências",
+                    "values": [
+                        [ 1041386400000, 66.04 ],
+                        [ 1044064800000, 59.98 ],
+                        [ 1046487600000, 62.04 ],
+                        [ 1049166000000, 108.15 ],
+                        [ 1051758000000, 99.69 ],
+                        [ 1054436400000, 75.3 ],
+                        [ 1057028400000, 50.28 ],
+                        [ 1059706800000, 104.17 ],
+                        [ 1062385200000, 66.25 ],
+                        [ 1064977200000, 104.94 ],
+                        [ 1067652000000, 86.73 ],
+                        [ 1070244000000, 94.29 ],
+                        [ 1072922400000, 787.92 ],
+                        [ 1075600800000, 381.62 ],
+                        [ 1078110000000, 656.29 ],
+                        [ 1080788400000, 912.27 ],
+                        [ 1083380400000, 3639.66 ],
+                        [ 1086058800000, 1580.62 ],
+                        [ 1088650800000, 1068.64 ],
+                        [ 1091329200000, 989.58 ],
+                        [ 1094007600000, 1005.63 ],
+                        [ 1096599600000, 1433.99 ],
+                        [ 1099274400000, 18595.51 ],
+                        [ 1101866400000, 12411.2 ],
+                        [ 1104544800000, 87034.25 ],
+                        [ 1107223200000, 18203.19 ],
+                        [ 1109646000000, 33053.52 ],
+                        [ 1112324400000, 3390.24 ],
+                        [ 1114916400000, 11231.29 ],
+                        [ 1117594800000, 35699.7 ],
+                        [ 1120186800000, 19104.17 ],
+                        [ 1122865200000, 11098.68 ],
+                        [ 1125543600000, 16778.74 ],
+                        [ 1128135600000, 15370.47 ],
+                        [ 1130810400000, 16486.53 ],
+                        [ 1133402400000, 32325.13 ],
+                        [ 1136080800000, 14142.88 ],
+                        [ 1138759200000, 21897.14 ],
+                        [ 1141182000000, 20027.83 ],
+                        [ 1143860400000, 36859.56 ],
+                        [ 1146452400000, 52563.95 ],
+                        [ 1149130800000, 38514.8 ],
+                        [ 1151722800000, 32574.45 ],
+                        [ 1154401200000, 52109.18 ],
+                        [ 1157079600000, 12928.29 ],
+                        [ 1159671600000, 20481.34 ],
+                        [ 1162346400000, 29635.69 ],
+                        [ 1164938400000, 15075.52 ],
+                        [ 1167616800000, 68983.06 ],
+                        [ 1170295200000, 11200.01 ],
+                        [ 1172718000000, 7722.46 ],
+                        [ 1175396400000, 16552.38 ],
+                        [ 1177988400000, 6765.48 ],
+                        [ 1180666800000, 12154.98 ],
+                        [ 1183258800000, 8347.23 ],
+                        [ 1185937200000, 9265.25 ],
+                        [ 1188615600000, 7580.78 ],
+                        [ 1191207600000, 7790.25 ],
+                        [ 1193882400000, 6780.11 ],
+                        [ 1196474400000, 10023.65 ],
+                        [ 1199152800000, 13763.55 ],
+                        [ 1201831200000, 16451.28 ],
+                        [ 1204340400000, 12339 ],
+                        [ 1207018800000, 18235.77 ],
+                        [ 1209610800000, 14937.46 ],
+                        [ 1212289200000, 329744.96 ],
+                        [ 1214881200000, 23701.89 ],
+                        [ 1217559600000, 23028.55 ],
+                        [ 1220238000000, 24039.7 ],
+                        [ 1222830000000, 25127.03 ],
+                        [ 1225504800000, 23297.09 ],
+                        [ 1228096800000, 27464.59 ],
+                        [ 1230775200000, 47623.53 ],
+                        [ 1233453600000, 44485.68 ],
+                        [ 1235876400000, 37503.09 ],
+                        [ 1238554800000, 54626.55 ],
+                        [ 1241146800000, 37438.62 ],
+                        [ 1243825200000, 80661 ],
+                        [ 1246417200000, 51244.17 ],
+                        [ 1249095600000, 61640.08 ],
+                        [ 1251774000000, 40959.1 ],
+                        [ 1254366000000, 35902.91 ],
+                        [ 1257040800000, 38986.08 ],
+                        [ 1259632800000, 46977.12 ],
+                        [ 1262311200000, 7997.63 ],
+                        [ 1264989600000, 264.73 ],
+                        [ 1267412400000, 1223 ],
+                        [ 1270090800000, 55 ],
+                        [ 1272682800000, 133297 ],
+                        [ 1275361200000, 657.7 ],
+                        [ 1277953200000, 0 ],
+                        [ 1280631600000, 0 ],
+                        [ 1283310000000, 0 ],
+                        [ 1285902000000, 385.96 ],
+                        [ 1288576800000, 588986.34 ],
+                        [ 1291168800000, 1704299.45 ],
+                        [ 1293847200000, 140.05 ],
+                        [ 1296525600000, 63308.93 ],
+                        [ 1298948400000, 4523032.1 ],
+                        [ 1301626800000, 695.46 ],
+                        [ 1304218800000, 49776084.91 ],
+                        [ 1306897200000, 11418.08 ],
+                        [ 1309489200000, 911.5 ],
+                        [ 1312167600000, 86.47 ],
+                        [ 1314846000000, 1101.21 ],
+                        [ 1317438000000, 0 ],
+                        [ 1320112800000, 698.57 ],
+                        [ 1322704800000, 442.04 ],
+                        [ 1325383200000, 506468.81 ],
+                        [ 1328061600000, 17.19 ],
+                        [ 1330570800000, 37.14 ],
+                        [ 1333249200000, 6.13 ],
+                        [ 1335841200000, 12417.04 ],
+                        [ 1338519600000, 107290.84 ],
+                        [ 1341111600000, 90.11 ],
+                        [ 1343790000000, 561.59 ],
+                        [ 1346468400000, 8548.26 ],
+                        [ 1349060400000, 246.23 ],
+                        [ 1351735200000, 2747.06 ],
+                        [ 1354327200000, 195805 ],
+                        [ 1357005600000, 748.8 ],
+                        [ 1359684000000, 0 ],
+                        [ 1362106800000, 1161.08 ],
+                        [ 1364785200000, 29106.42 ],
+                        [ 1367377200000, 0 ],
+                        [ 1370055600000, 47.53 ],
+                        [ 1372647600000, 0 ],
+                        [ 1375326000000, 0 ],
+                        [ 1378004400000, 0 ],
+                        [ 1380596400000, 0 ],
+                        [ 1383271200000, 0 ],
+                        [ 1385863200000, 0 ]
+                    ]
+                }, {
+                    "key": "Estimativa",
+                    "values": [
+                        [ 1041386400000, 0 ],
+                        [ 1044064800000, 0 ],
+                        [ 1046487600000, 0 ],
+                        [ 1049166000000, 0 ],
+                        [ 1051758000000, 0 ],
+                        [ 1054436400000, 0 ],
+                        [ 1057028400000, 0 ],
+                        [ 1059706800000, 0 ],
+                        [ 1062385200000, 0 ],
+                        [ 1064977200000, 0 ],
+                        [ 1067652000000, 0 ],
+                        [ 1070244000000, 0 ],
+                        [ 1072922400000, 0 ],
+                        [ 1075600800000, 0 ],
+                        [ 1078110000000, 0 ],
+                        [ 1080788400000, 0 ],
+                        [ 1083380400000, 0 ],
+                        [ 1086058800000, 0 ],
+                        [ 1088650800000, 0 ],
+                        [ 1091329200000, 0 ],
+                        [ 1094007600000, 0 ],
+                        [ 1096599600000, 0 ],
+                        [ 1099274400000, 0 ],
+                        [ 1101866400000, 0 ],
+                        [ 1104544800000, 0 ],
+                        [ 1107223200000, 0 ],
+                        [ 1109646000000, 0 ],
+                        [ 1112324400000, 0 ],
+                        [ 1114916400000, 0 ],
+                        [ 1117594800000, 0 ],
+                        [ 1120186800000, 0 ],
+                        [ 1122865200000, 0 ],
+                        [ 1125543600000, 0 ],
+                        [ 1128135600000, 0 ],
+                        [ 1130810400000, 0 ],
+                        [ 1133402400000, 0 ],
+                        [ 1136080800000, 0 ],
+                        [ 1138759200000, 0 ],
+                        [ 1141182000000, 0 ],
+                        [ 1143860400000, 0 ],
+                        [ 1146452400000, 0 ],
+                        [ 1149130800000, 0 ],
+                        [ 1151722800000, 0 ],
+                        [ 1154401200000, 0 ],
+                        [ 1157079600000, 0 ],
+                        [ 1159671600000, 0 ],
+                        [ 1162346400000, 0 ],
+                        [ 1164938400000, 0 ],
+                        [ 1167616800000, 0 ],
+                        [ 1170295200000, 154.88 ],
+                        [ 1172718000000, 0 ],
+                        [ 1175396400000, 0 ],
+                        [ 1177988400000, 0 ],
+                        [ 1180666800000, 400 ],
+                        [ 1183258800000, 0 ],
+                        [ 1185937200000, 0 ],
+                        [ 1188615600000, 0 ],
+                        [ 1191207600000, 0 ],
+                        [ 1193882400000, 0 ],
+                        [ 1196474400000, 0 ],
+                        [ 1199152800000, 0 ],
+                        [ 1201831200000, 0 ],
+                        [ 1204340400000, 0 ],
+                        [ 1207018800000, 0 ],
+                        [ 1209610800000, 0 ],
+                        [ 1212289200000, 0 ],
+                        [ 1214881200000, 0 ],
+                        [ 1217559600000, 0 ],
+                        [ 1220238000000, 0 ],
+                        [ 1222830000000, 0 ],
+                        [ 1225504800000, 0 ],
+                        [ 1228096800000, 0 ],
+                        [ 1230775200000, 0 ],
+                        [ 1233453600000, 0 ],
+                        [ 1235876400000, 0 ],
+                        [ 1238554800000, 0 ],
+                        [ 1241146800000, 0 ],
+                        [ 1243825200000, 0 ],
+                        [ 1246417200000, 0 ],
+                        [ 1249095600000, 0 ],
+                        [ 1251774000000, 0 ],
+                        [ 1254366000000, 78.96 ],
+                        [ 1257040800000, 0 ],
+                        [ 1259632800000, 0 ],
+                        [ 1262311200000, 0 ],
+                        [ 1264989600000, 0 ],
+                        [ 1267412400000, 0 ],
+                        [ 1270090800000, 0 ],
+                        [ 1272682800000, 0 ],
+                        [ 1275361200000, 0 ],
+                        [ 1277953200000, 403.79 ],
+                        [ 1280631600000, 0 ],
+                        [ 1283310000000, 7700 ],
+                        [ 1285902000000, 0 ],
+                        [ 1288576800000, 0 ],
+                        [ 1291168800000, 100 ],
+                        [ 1293847200000, 0 ],
+                        [ 1296525600000, 0 ],
+                        [ 1298948400000, 0 ],
+                        [ 1301626800000, 0 ],
+                        [ 1304218800000, 0 ],
+                        [ 1306897200000, 0 ],
+                        [ 1309489200000, 109.44 ],
+                        [ 1312167600000, 61.71 ],
+                        [ 1314846000000, 1249.5 ],
+                        [ 1317438000000, 1497.74 ],
+                        [ 1320112800000, 855.33 ],
+                        [ 1322704800000, 153.06 ],
+                        [ 1325383200000, 16268.41 ],
+                        [ 1328061600000, 113.66 ],
+                        [ 1330570800000, 148.46 ],
+                        [ 1333249200000, 66.04 ],
+                        [ 1335841200000, 11947.32 ],
+                        [ 1338519600000, 1685.65 ],
+                        [ 1341111600000, 1297.76 ],
+                        [ 1343790000000, 819.08 ],
+                        [ 1346468400000, 8597.82 ],
+                        [ 1349060400000, 103.2 ],
+                        [ 1351735200000, 925.89 ],
+                        [ 1354327200000, 156130.46 ],
+                        [ 1357005600000, 959.01 ],
+                        [ 1359684000000, 0.33 ],
+                        [ 1362106800000, 7248.06 ],
+                        [ 1364785200000, 27783.99 ],
+                        [ 1367377200000, 10.88 ],
+                        [ 1370055600000, 109.47 ],
+                        [ 1372647600000, 0 ],
+                        [ 1375326000000, 0 ],
+                        [ 1378004400000, 0 ],
+                        [ 1380596400000, 0 ],
+                        [ 1383271200000, 0 ],
+                        [ 1385863200000, 0 ]
+                    ]
+                } ].map( function( series ) {
+                series.values = series.values.map( function( d ) {
+                    return {
+                        x: d[0],
+                        y: d[1]
+                    }
+                });
+                return series;
+            });
+
+            var chart;
+
+            nv.addGraph( function() {
+                chart = nv.models.linePlusBarChart()
+                        .margin( {
+                    top: 30,
+                    right: 60,
+                    bottom: 50,
+                    left: 70
+                } )
+                        .x( function( d, i ) {
+                    return i
+                } )
+                        .color( d3.scale.category10().range() );
+
+                chart.xAxis.tickFormat( function( d ) {
+                    var dx = testdata[0].values[d] && testdata[0].values[d].x || 0;
+                    return dx ? d3.time.format( '%x' )( new Date( dx ) ) : '';
+                } )
+                        .showMaxMin( false );
+
+                chart.y1Axis.tickFormat( d3.format( ',f' ) );
+
+                chart.y2Axis.tickFormat( function( d ) {
+                    return '$' + d3.format( ',.2f' )( d )
+                });
+
+                chart.bars.forceY( [ 0 ] ).padData( false );
+                //chart.lines.forceY([0]);
+
+                d3.select( '#chart svg' )
+                        .datum( testdata )
+                        .transition().duration( 500 ).call( chart );
+
+                nv.utils.windowResize( chart.update );
+
+                chart.dispatch.on( 'stateChange', function( e ) {
+                    nv.log( 'New State:', JSON.stringify( e ) );
+                });
+
+                return chart;
+            });
+        </script>
+    </body>
+</html>
