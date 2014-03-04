@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SVG test and trial</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <div>svg test and trial</div>
+        <div id="box"></div>
+        <!--<div id="chart"></div>-->
+        <script type="text/javascript">
+            var box = d3.select( 'body' ).selectAll( '#box' );
+            box.html( 'hell world' );
+            var svg = box.append( 'svg' )
+                    .append( 'path' );
+            var corner = svg.append( 'polyline' )
+                    .style( 'stroke', 'black' )
+                    .style( 'fill', 'none' )
+                    .style( 'stroke-width', 6 )
+                    .attr( 'points',
+                            '84,12, 24,12, 24,54, 54,24, 12,24, 12,84'
+                            );
+            var corner = svg.append( 'polyline' )
+                    .style( 'stroke', 'white' )
+                    .style( 'fill', 'none' )
+                    .style( 'stroke-width', 4 )
+                    .attr( 'points',
+                            '84,12, 24,12, 24,54, 54,24, 12,24, 12,84'
+                            );
+            var square = svg.append( 'polyline' )
+                    .style( 'stroke', 'black' )
+                    .style( 'fill', 'none' )
+                    .style( 'stroke-width', 6 )
+                    .attr( 'points',
+                            '4,4, 34,4, 34,34, 4,34, 4,2'
+                            );
+            var square = svg.append( 'polyline' )
+                    .style( 'stroke', 'white' )
+                    .style( 'fill', 'none' )
+                    .style( 'stroke-width', 4 )
+                    .attr( 'points',
+                            '4,4, 34,4, 34,34, 4,34, 4,2'
+                            );
+        </script>
+    </body>
+</html>
