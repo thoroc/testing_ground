@@ -1,0 +1,9 @@
+.axis {
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.line {
+    stroke: lightgrey;
+    stroke-width: 1px;
+}
