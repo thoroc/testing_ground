@@ -11,3 +11,12 @@
 .dashed {
     stroke-dasharray: 0,2 1;
 }
+
+.label {
+  font: 12pt sans-serif;
+}
+
+.equation {
+    stroke: steelblue;
+    stroke-width: 1px;
+}

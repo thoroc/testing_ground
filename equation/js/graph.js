@@ -4,8 +4,28 @@ $( document ).ready( function() {
     var height = 800;
     var step = 20;
 
-    drawGrid( '#graph', width, height, step );
+    var vis = drawGrid( '#graph', width, height, step );
+    drawLine( vis, width, lineFunction );
 });
+
+function lineFunction() {
+    return d3.svg.line()
+            .x( function ( d ) { return d.x; })
+            .y( function ( d ) { return 2( d.x ); })
+            .interpolate( 'linear' );
+}
+
+function drawLine( vis, x, lineFunction ) {
+    var data = d3.range( 0, x );
+    console.log( lineFunction( 1 ) );
+    console.log( lineFunction( 2 ) );
+    console.log( lineFunction( 3 ) );
+//    console.log( data );
+    var visGroup = vis.append( 'svg:g' );
+    visGroup.append( 'svg:path' )
+            .attr( 'd', lineFunction( data ))
+            .attr( 'class', 'equation' );
+}
 
 function drawGrid( DOMElement, width, height, step ) {
     var vis = d3.select( DOMElement ).append( 'svg' )
@@ -27,6 +47,7 @@ function drawGrid( DOMElement, width, height, step ) {
     var xCenter = width / 2;
     var yCenter = height / 2;
 
+    // grid
     var gridGroup = vis.append( 'svg:g' );
 
     gridGroup.selectAll( 'line.vertical' )
@@ -47,6 +68,7 @@ function drawGrid( DOMElement, width, height, step ) {
             .attr( 'x2', width )
             .attr( 'y2', function( d ) { return d; });
 
+    // axis
     var axisGroup = vis.append( 'svg:g' );
 
     axisGroup.append( 'svg:defs' ).append( 'marker' )
@@ -77,15 +99,34 @@ function drawGrid( DOMElement, width, height, step ) {
         .attr( 'x2', xCenter )
         .attr( 'y2', yScale( yMax ) - step / 2 );
 
+    // labels for axis
     axisGroup.append( 'svg:text' )
+        .attr( 'class', 'label' )
         .attr( 'x', width - step /2 )
         .attr( 'y', yCenter + step )
         .attr( 'text-anchor', 'end' )
         .text( 'x' );
 
     axisGroup.append( 'svg:text' )
+        .attr( 'class', 'label' )
+        .attr( 'x', 0 + step /2 )
+        .attr( 'y', yCenter + step )
+        .attr( 'text-anchor', 'end' )
+        .text( '-x' );
+
+    axisGroup.append( 'svg:text' )
+        .attr( 'class', 'label' )
         .attr( 'x', xCenter + step )
         .attr( 'y', height - step / 2 )
         .attr( 'text-anchor', 'end' )
         .text( 'y' );
+
+    axisGroup.append( 'svg:text' )
+        .attr( 'class', 'label' )
+        .attr( 'x', xCenter + step )
+        .attr( 'y', 0 + step / 2 )
+        .attr( 'text-anchor', 'end' )
+        .text( '-y' );
+
+    return vis;
 }
