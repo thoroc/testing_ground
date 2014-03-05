@@ -5,31 +5,40 @@ $( document ).ready( function() {
     var step = 20;
     // draw the grid
     var vis = drawGrid( '#graph', width, height, step );
-    drawLine( vis, getEquationData( width ) );
+    drawLine( vis, getEquationData( width, 'x' ) );
 
     $( 'input[type=button]' ).click( function() {
-        var equation = $( this ).siblings( 'input[type=text]' ).val();
-        decodeEquation( equation );
+        var string = $( this ).siblings( 'input[type=text]' ).val();
+        drawLine( vis, getEquationData( width, string ) );
+//        decodeEquation( string );
 //        console.log( equation );
 //        drawLine( vis, decodeEquation(  ) )
     });
 });
 
-function decodeEquation( equation ) {
-    console.log( equation );
-    var regex = new RegExp( '/([\d\sx+*]+)/', 'i' );
-    var match = regex.test( equation );
-//    var match = /d.test( equation );
-    console.log( match );
+function decodeEquation( inputString, value ) {
+//    console.log( inputString );
+//    console.log( value );
+    var regex = new RegExp( '[\\d\\sx+*]+', 'i' );
+    var match = regex.test( inputString );
+//    console.log( match );
+    if( match ) {
+        var newValue = inputString.replace( /[x]/i, value );
+        console.log( newValue );
+        return newValue;
+    }
+    return false;
 }
 
-function getEquationData( x ) {
+function getEquationData( x, equation ) {
     var range = d3.range( 0, x );
     var data = [];
-    range.forEach( function( x ) {
-        data.push({ 'x':x, 'y': (2 * x) + 1 });
+    range.forEach( function( d ) {
+//        data.push({ 'x':d , 'y': ((2 * d) + d ^ 2 + 1) });
+//        data.push({ 'x':d , 'y': d });
+        data.push({ 'x':d , 'y': (integer) (decodeEquation( equation, d )) });
     });
-
+//    console.log( data );
     return data;
 }
 
