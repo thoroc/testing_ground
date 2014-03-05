@@ -3,7 +3,11 @@
     stroke-width: 1px;
 }
 
-.line {
+.line, .dashed {
     stroke: lightgrey;
     stroke-width: 1px;
+}
+
+.dashed {
+    stroke-dasharray: 0,2 1;
 }
