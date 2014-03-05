@@ -3,14 +3,15 @@ $( document ).ready( function() {
     var width = 600;
     var height = 600;
     var step = 20;
-    var vis = d3.select( '#graph' ).append( 'svg' )
+
+    drawGrid( '#graph', width, height, step );
+});
+
+function drawGrid( DOMElement, width, height, step ) {
+    var vis = d3.select( DOMElement ).append( 'svg' )
         .attr( 'width', width )
         .attr( 'height', height );
 
-    drawGrid( vis, width, height, step );
-});
-
-function drawGrid( vis, width, height, step ) {
     var xRange =    d3.range( step, width, step );
     var xMin =      d3.min( xRange );
     var xMax =      d3.max( xRange );
