@@ -24,7 +24,7 @@ function decodeEquation( inputString, value ) {
 //    console.log( match );
     if( match ) {
         var newValue = inputString.replace( /[x]/i, value );
-        console.log( newValue );
+//        console.log( newValue );
         return newValue;
     }
     return false;
@@ -36,7 +36,8 @@ function getEquationData( x, equation ) {
     range.forEach( function( d ) {
 //        data.push({ 'x':d , 'y': ((2 * d) + d ^ 2 + 1) });
 //        data.push({ 'x':d , 'y': d });
-        data.push({ 'x':d , 'y': (integer) (decodeEquation( equation, d )) });
+        console.log( parseFloat(decodeEquation( equation, d )) );
+        data.push({ 'x':d , 'y': parseFloat(decodeEquation( equation, d )) });
     });
 //    console.log( data );
     return data;
