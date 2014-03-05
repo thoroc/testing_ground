@@ -77,4 +77,15 @@ function drawGrid( DOMElement, width, height, step ) {
         .attr( 'x2', xCenter )
         .attr( 'y2', yScale( yMax ) - step / 2 );
 
+    axisGroup.append( 'svg:text' )
+        .attr( 'x', width - step /2 )
+        .attr( 'y', yCenter + step )
+        .attr( 'text-anchor', 'end' )
+        .text( 'x' );
+
+    axisGroup.append( 'svg:text' )
+        .attr( 'x', xCenter + step )
+        .attr( 'y', height - step / 2 )
+        .attr( 'text-anchor', 'end' )
+        .text( 'y' );
 }
