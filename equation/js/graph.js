@@ -3,28 +3,32 @@ $( document ).ready( function() {
     var width = 800;
     var height = 800;
     var step = 20;
-
+    // draw the grid
     var vis = drawGrid( '#graph', width, height, step );
-    drawLine( vis, width, lineFunction );
+    drawLine( vis, getEquationData( width ) );
 });
 
-function lineFunction() {
-    return d3.svg.line()
+function drawLine( vis, lineData ) {
+    var lineFunction = d3.svg.line()
             .x( function ( d ) { return d.x; })
-            .y( function ( d ) { return 2( d.x ); })
+            .y( function ( d ) { return d.y; })
             .interpolate( 'linear' );
-}
-
-function drawLine( vis, x, lineFunction ) {
-    var data = d3.range( 0, x );
-    console.log( lineFunction( 1 ) );
-    console.log( lineFunction( 2 ) );
-    console.log( lineFunction( 3 ) );
-//    console.log( data );
+//    console.log( lineData );
     var visGroup = vis.append( 'svg:g' );
     visGroup.append( 'svg:path' )
-            .attr( 'd', lineFunction( data ))
+            .attr( 'd', lineFunction( lineData ))
             .attr( 'class', 'equation' );
+}
+
+function getEquationData( x ) {
+    var range = d3.range( 0, x );
+    var data = [];
+    range.forEach( function( x ) {
+        console.log( x );
+        data.push({ 'x':x, 'y':x });
+    });
+
+    return data;
 }
 
 function drawGrid( DOMElement, width, height, step ) {
@@ -109,7 +113,7 @@ function drawGrid( DOMElement, width, height, step ) {
 
     axisGroup.append( 'svg:text' )
         .attr( 'class', 'label' )
-        .attr( 'x', 0 + step /2 )
+        .attr( 'x', 0 + step )
         .attr( 'y', yCenter + step )
         .attr( 'text-anchor', 'end' )
         .text( '-x' );
@@ -124,7 +128,7 @@ function drawGrid( DOMElement, width, height, step ) {
     axisGroup.append( 'svg:text' )
         .attr( 'class', 'label' )
         .attr( 'x', xCenter + step )
-        .attr( 'y', 0 + step / 2 )
+        .attr( 'y', 0 + step )
         .attr( 'text-anchor', 'end' )
         .text( '-y' );
 
