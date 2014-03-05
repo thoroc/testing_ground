@@ -64,16 +64,16 @@ function drawGrid( vis, width, height, step ) {
             .attr( 'class', 'axis' )
             .attr( 'marker-end', 'url( #arrowhead )' )
             .attr( 'x1', xScale( 0 ) )
-            .attr( 'y1', height / 2 )
+            .attr( 'y1', yCenter )
             .attr( 'x2', xScale( xMax ) - step / 2  )
-            .attr( 'y2', height / 2 );
+            .attr( 'y2', yCenter );
 
     axisGroup.append( 'svg:line' )
             .attr( 'class', 'axis' )
             .attr( 'marker-end', 'url( #arrowhead )' )
-            .attr( 'x1', width / 2 )
+            .attr( 'x1', xCenter )
             .attr( 'y1', yScale( 0 ) )
-            .attr( 'x2', width / 2 )
+            .attr( 'x2', xCenter )
             .attr( 'y2', yScale( yMax ) - step / 2 );
 
 }
