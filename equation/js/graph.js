@@ -6,29 +6,42 @@ $( document ).ready( function() {
     // draw the grid
     var vis = drawGrid( '#graph', width, height, step );
     drawLine( vis, getEquationData( width ) );
+
+    $( 'input[type=button]' ).click( function() {
+        var equation = $( this ).siblings( 'input[type=text]' ).val();
+        decodeEquation( equation );
+//        console.log( equation );
+//        drawLine( vis, decodeEquation(  ) )
+    });
 });
 
-function drawLine( vis, lineData ) {
-    var lineFunction = d3.svg.line()
-            .x( function ( d ) { return d.x; })
-            .y( function ( d ) { return d.y; })
-            .interpolate( 'linear' );
-//    console.log( lineData );
-    var visGroup = vis.append( 'svg:g' );
-    visGroup.append( 'svg:path' )
-            .attr( 'd', lineFunction( lineData ))
-            .attr( 'class', 'equation' );
+function decodeEquation( equation ) {
+    console.log( equation );
+    var regex = new RegExp( '/([\d\sx+*]+)/', 'i' );
+    var match = regex.test( equation );
+//    var match = /d.test( equation );
+    console.log( match );
 }
 
 function getEquationData( x ) {
     var range = d3.range( 0, x );
     var data = [];
     range.forEach( function( x ) {
-        console.log( x );
-        data.push({ 'x':x, 'y':x });
+        data.push({ 'x':x, 'y': (2 * x) + 1 });
     });
 
     return data;
+}
+
+function drawLine( vis, lineData ) {
+    var lineFunction = d3.svg.line()
+            .x( function ( d ) { return d.x; })
+            .y( function ( d ) { return d.y; })
+            .interpolate( 'linear' );
+    var visGroup = vis.append( 'svg:g' );
+    visGroup.append( 'svg:path' )
+            .attr( 'd', lineFunction( lineData ))
+            .attr( 'class', 'equation' );
 }
 
 function drawGrid( DOMElement, width, height, step ) {
