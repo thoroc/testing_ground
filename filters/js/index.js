@@ -1,35 +1,27 @@
 var filterSelection = {};
+var dataFolder = 'data/';
+var dataFileType = 'json';
 
 $( document ).ready( function() {
     // populating the filters
-    GetData( 'data/bundesland.json' ).done( function( data ) {
+    GetData( dataFolder + 'bundesland.' + dataFileType ).done( function( data ) {
         createSelect( data );
     });
 
-    GetData( 'data/regierungsbezirke.json' ).done( function( data ) {
+    GetData( dataFolder + 'regierungsbezirke.' + dataFileType ).done( function( data ) {
         createSelect( data );
     });
 
-    GetData( 'data/kreis.json' ).done( function( data ) {
+    GetData( dataFolder + 'kreis.' + dataFileType ).done( function( data ) {
         createSelect( data );
     });
 
-    GetData( 'data/bezirke.json' ).done( function( data ) {
+    GetData( dataFolder + 'bezirke.' + dataFileType ).done( function( data ) {
         createSelect( data );
     });
 
-    GetData( 'data/gemeinde.json' ).done( function( data ) {
+    GetData( dataFolder + 'gemeinde.' + dataFileType ).done( function( data ) {
         createSelect( data );
-    });
-
-    // adding reset btn
-    $( '.select-filter' ).each( function() {
-//        CreateResetBtn( $( this ).closest( 'div' ) );
-        storeSelectOptions( this );
-    });
-
-    $( '.select-filter' ).each( function() {
-        setSelectCollection( this );
     });
 
 //                $( 'a.pop' ).click( function() {
@@ -52,6 +44,15 @@ $( document ).ready( function() {
 //            $( this ).remove();
 //        });
 });
+
+$( document ).on( 'each', 'select.select-filter', function() {
+    storeSelectOptions( this );
+});
+
+$( document ).on( 'each', 'select.select-filter', function() {
+    setSelectCollection( this );
+});
+
 
 /**
  * Set the selectCollection on change event
@@ -128,34 +129,32 @@ function createSelect( dataset ) {
     });
 }
 
-function setSelectCollection( DOMElement, init ) {
-    var stateSelected = $( DOMElement ).val();
-
-    console.log( stateSelected );
-
+function setSelectCollection( selectorDOMElement, init ) {
+//    countOptions( selectorDOMElement );
+    var stateSelected = $( selectorDOMElement ).val();
     var valueSelected = stateSelected ? true : false;
     init = typeof init !== 'undefined' ? init : false;
     // Reset values depending on SELECT elements
     if( init ) {
-        var reset = $( DOMElement ).attr( 'data-reset' );
+        var reset = $( selectorDOMElement ).attr( 'data-reset' );
         reset = reset ? reset.split( ' ' ) : [ ];
     }
 
     // Enable/disable depending SELECT elements
-    var enables = $( DOMElement ).attr( 'data-enables' );
+    var enables = $( selectorDOMElement ).attr( 'data-enables' );
     enables = enables ? enables.split( ' ' ) : [ ];
     for( var it in enables ) {
         var resets = ( init ) ? ( $.inArray( enables[it], reset ) ? true : false ) : true ;
         var element = $( 'select.' + enables[it] );
         if( element.attr( 'name' )) {
             if( element.prop( 'disabled' ) || !valueSelected ) {
-                ToggleDisableAttribute( 'select.' + enables[it], !valueSelected, resets );
+                toggleDisableAttribute( 'select.' + enables[it], !valueSelected, resets );
             }
         }
     }
 
     // Enable/disable incompatible SELECT elements
-    var disables = $( DOMElement ).attr( 'data-disables' );
+    var disables = $( selectorDOMElement ).attr( 'data-disables' );
     disables = disables ? disables.split( ' ' ) : [ ];
     for( var it in disables )
     {
@@ -163,20 +162,27 @@ function setSelectCollection( DOMElement, init ) {
         var resets = ( init ) ? ( $.inArray( enables[it], reset ) ? true : false ) : valueSelected ;
         if( $( 'select.' + disables[it] ).attr( 'name' ) )
         {
-            ToggleDisableAttribute( 'select.' + disables[it], valueSelected, resets );
+            toggleDisableAttribute( 'select.' + disables[it], valueSelected, resets );
         }
     }
 
     // Limit or reset OPTION tags of related SELECT elements
     // based on limited-by on Selected Element and closest limited-by-optgroup
-    var limits = $( DOMElement ).attr( 'data-limits' );
+    var limits = $( selectorDOMElement ).attr( 'data-limits' );
     limits = limits ? limits.split( ' ' ) : [ ];
     for( var it in limits )
     {
         var data = { 'name': limits[it] };
         if( valueSelected )
         {
-            data['limited-by'] = $( ':selected', DOMElement ).val();
+//            data['limited-by'] = $( ':selected', selectorDOMElement ).val();
+            data['limited-by'] = $.trim( $( ':selected', selectorDOMElement ).text() );
+            var optgroup = $( ':selected', selectorDOMElement ).closest( 'optgroup' );
+            var tagName = $( optgroup ).prop( 'tagName' );
+            if( tagName && 'OPTGROUP' === tagName.toUpperCase() )
+            {
+                data['limited-by-optgroup'] = $.trim( optgroup.attr( 'data-name' ) );
+            }
         }
         limitSelectionTo( data );
     }
@@ -188,11 +194,11 @@ function limitSelectionTo( data ) {
     $( 'select.' + data['name'] ).empty();
     if( selection ) selector.append( selection.clone() );
     selector.find( 'optgroup, option' ).filter( function() {
-        if( 1 != this.nodeType ) return true;
+        if( 1 !== this.nodeType ) return true;
         var limitedBy = $( this ).attr( 'data-limited-by' );
         if( limitedBy && data['limited-by'] )
         {
-            if( -1 == limitedBy.indexOf( data['limited-by'] ))
+            if( -1 === limitedBy.indexOf( data['limited-by'] ))
                 return true;
         }
         return false;
@@ -200,23 +206,25 @@ function limitSelectionTo( data ) {
     countOptions( selector );
 }
 
-function storeSelectOptions( DOMElement ) {
+function storeSelectOptions( selectorDOMElement ) {
     // Get name of selector
-    var name = $( DOMElement ).attr( 'name' );
+    var name = $( selectorDOMElement ).attr( 'name' );
     // Create index for it in global storage object if there isn't one yet
     if( !filterSelection[name] ) filterSelection[name] = {};
     // Store contents
-    filterSelection[name] = $( DOMElement ).contents().clone();
+    filterSelection[name] = $( selectorDOMElement ).contents().clone();
 }
 
-function countOptions( DOMElement ) {
-    var name = $( DOMElement ).attr( 'name' );
-    var count = $( DOMElement ).find( 'option' ).length - 1;
+function countOptions( selectorDOMElement ) {
+//    console.log( 'selectorDOMElement' );
+//    console.log( selectorDOMElement );
+    var name = $( selectorDOMElement ).attr( 'name' );
+    var count = $( selectorDOMElement ).find( 'option' ).length - 1;
     var el = $( '.' + name + ' option:first' ).text();
     $( '.' + name + ' option:first' ).text( el + ' (' + count + ')' );
 }
 
-function ToggleDisableAttribute( selector, disable, reset ) {
+function toggleDisableAttribute( selector, disable, reset ) {
     var resetBtn = $( selector ).next( 'a.reset' );
 //                FsatFilter_toggleEventHandlerOverlay( selector, disable );
     $( selector )
@@ -226,22 +234,29 @@ function ToggleDisableAttribute( selector, disable, reset ) {
     if( reset ) $( selector ).val( null );
 }
 
-function resetSelector( DOMElement, ignoreElements ) {
+function resetSelector( selectorDOMElement, ignoreElements ) {
     var groupArray = [];
     var selectArray = [];
-    var selector = 'group-filter';
-    // determine if the current select was set to its default value
-    var isReset = ( DOMElement.selectedIndex === 0 ) ? true : false;
+    var groupClass = '.group-filter';
     // find all the select element from the current group
-    var filterGroup = $( DOMElement ).closest( selector ).find( 'select' );
+    var filterGroup = $( selectorDOMElement ).closest( groupClass ).find( 'select' );
+    console.log( selectorDOMElement );
+    console.log( $( selectorDOMElement ).closest( groupClass ) );
+    console.log( filterGroup );
+    console.log( $( selectorDOMElement ).closest( groupClass ).find( 'select' )[0] );
+//    console.log( $( filterGroup ) );
+    // determine if the current select was set to its default value
+    var isReset = ( null === $( filterGroup ).find( 'select' ).val() ) ? true : false;
+//    var isReset = ( selectorDOMElement.selectedIndex === 0 ) ? true : false;
+    console.log( isReset );
     // check if select is first element or not in the group
     // the group contains 2 element right now
-    if( $( filterGroup[0] ).is( $( DOMElement ) ) ) {
+    if( $( filterGroup[0] ).is( $( selectorDOMElement ) ) ) {
         selectArray.push( filterGroup[1] );
     }
     // get all groups and aggregate them in an array
-    $( DOMElement ).closest( selector )
-            .nextAll( selector )
+    $( selectorDOMElement ).closest( groupClass )
+            .nextAll( groupClass )
             .each( function() {
                 groupArray.push( this );
             });
@@ -254,6 +269,7 @@ function resetSelector( DOMElement, ignoreElements ) {
     // reset the selected option to the default value
     $( selectArray ).each( function() {
         for( var el in ignoreElements ) {
+//            $( this ).val( null );
             if( isReset && $.inArray( $( this ).attr( 'name' ), ignoreElements[el] ) < 0 ) {
                 this.selectedIndex = 0;
             }
