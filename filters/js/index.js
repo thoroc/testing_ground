@@ -1,48 +1,71 @@
 var filterSelection = {};
 
 $( document ).ready( function() {
-
+    // populating the filters
     GetData( 'data/bundesland.json' ).done( function( data ) {
-        CreateAndPopulateSelect( data );
+        createSelect( data );
     });
 
     GetData( 'data/regierungsbezirke.json' ).done( function( data ) {
-        CreateAndPopulateSelect( data );
+        createSelect( data );
     });
 
     GetData( 'data/kreis.json' ).done( function( data ) {
-        CreateAndPopulateSelect( data );
+        createSelect( data );
     });
 
     GetData( 'data/bezirke.json' ).done( function( data ) {
-        CreateAndPopulateSelect( data );
+        createSelect( data );
     });
 
     GetData( 'data/gemeinde.json' ).done( function( data ) {
-        CreateAndPopulateSelect( data );
+        createSelect( data );
+    });
+
+    // adding reset btn
+    $( '.select-filter' ).each( function() {
+//        CreateResetBtn( $( this ).closest( 'div' ) );
+        storeSelectOptions( this );
     });
 
     $( '.select-filter' ).each( function() {
-        CreateAndAddResetBtn( $( this ).closest( 'div' ) );
-        StoreSelectOptions( this );
-    });
-
-    $( '.select-filter' ).each( function() {
-        SetSelectCollection( this );
-    });
-
-    $( '.select-filter' ).change( function() {
-        SetSelectCollection( this );
+        setSelectCollection( this );
     });
 
 //                $( 'a.pop' ).click( function() {
 //                    Populate( this );
 //                });
 
-    $( '.reset' ).click( function() {
-        ResetSelector( this, null );
-        $( 'select.' + $( this ).attr( 'data-target' ) )[0].selectedIndex = 0;
-    });
+
+//    d = document.createElement( 'div' );
+//    $( d ).addClass( 'rubbish' )
+//        .html( 'sometext' )
+//        .appendTo( $( '#test' )) //main div
+//        .click( function() {
+//            $( this ).remove();
+//        })
+//        .hide()
+//        .slideToggle( 300 )
+//        .delay( 2500 )
+//        .slideToggle( 300 )
+//        .queue( function() {
+//            $( this ).remove();
+//        });
+});
+
+/**
+ * Set the selectCollection on change event
+ */
+$( document ).on( 'change', 'select.select-filter', function() {
+    setSelectCollection( this );
+});
+
+/**
+ * reset the linked select on click event
+ */
+$( document ).on( 'click', 'a.reset', function() {
+    resetSelector( this, null );
+    $( 'select.' + $( this ).attr( 'data-target' ) )[0].selectedIndex = 0;
 });
 
 function GetData( filename ) {
@@ -57,7 +80,7 @@ function GetData( filename ) {
     });
 }
 
-function CreateAndPopulateSelect( dataset ) {
+function createSelect( dataset ) {
     var container = $( 'div.filters' );
 
     var divGroup = jQuery( '<div/>', {
@@ -69,6 +92,12 @@ function CreateAndPopulateSelect( dataset ) {
         'data-limits': dataset.limits,
         'data-enables': dataset.enables,
         'name': dataset.name
+    }).appendTo( divGroup );
+
+    $( '<a/>', {
+        'class': 'reset',
+        'data-target': select.attr( 'name' ),
+        'text': 'x'
     }).appendTo( divGroup );
 
     var defaultValue = jQuery( '<option/>', {
@@ -99,17 +128,10 @@ function CreateAndPopulateSelect( dataset ) {
     });
 }
 
-function CreateAndAddResetBtn( DOMElement ) {
-    var resetBtn = jQuery( '<a/>', {
-        'class': 'reset',
-        'data-target': dataset.name,
-        'text': 'x'
-    }).appendTo( DOMElement );
-}
-
-function SetSelectCollection( DOMElement ) {
+function setSelectCollection( DOMElement ) {
     var stateSelected = $( DOMElement ).val();
     var valueSelected = stateSelected ? true : false;
+
     var enables = $( DOMElement ).attr( 'data-enables' );
     enables = enables ? enables.split( ' ' ) : [ ];
     for( var it in enables ) {
@@ -122,7 +144,6 @@ function SetSelectCollection( DOMElement ) {
         }
     }
 
-
     var limits = $( DOMElement ).attr( 'data-limits' );
     limits = limits ? limits.split( ' ' ) : [ ];
     for( var it in limits )
@@ -132,11 +153,11 @@ function SetSelectCollection( DOMElement ) {
         {
             data['limited-by'] = $( ':selected', DOMElement ).val();
         }
-        LimitSelectionTo( data );
+        limitSelectionTo( data );
     }
 }
 
-function LimitSelectionTo( data ) {
+function limitSelectionTo( data ) {
     var selector = $( 'select.' + data['name'] );
     var selection = filterSelection[data['name']];
     $( 'select.' + data['name'] ).empty();
@@ -151,10 +172,10 @@ function LimitSelectionTo( data ) {
         }
         return false;
     }).remove();
-    CountOptions( selector );
+    countOptions( selector );
 }
 
-function StoreSelectOptions( DOMElement ) {
+function storeSelectOptions( DOMElement ) {
     var name = $( DOMElement ).attr( 'name' );
     if( !filterSelection[name] ) {
         filterSelection[name] = {};
@@ -162,11 +183,11 @@ function StoreSelectOptions( DOMElement ) {
     filterSelection[name] = $( DOMElement ).contents().clone();
 }
 
-function CountOptions( DOMElement ) {
+function countOptions( DOMElement ) {
     var name = $( DOMElement ).attr( 'name' );
     var count = $( DOMElement ).find( 'option' ).length - 1;
     var el = $( '.' + name + ' option:first' ).text();
-    $( '.' + name + ' option:first' ).text( el + ' (' + count + ')' )
+    $( '.' + name + ' option:first' ).text( el + ' (' + count + ')' );
 }
 
 function ToggleDisableAttribute( selector, disable, reset ) {
@@ -179,7 +200,7 @@ function ToggleDisableAttribute( selector, disable, reset ) {
     if( reset ) $( selector ).val( null );
 }
 
-function ResetSelector( DOMElement, ignoreElements ) {
+function resetSelector( DOMElement, ignoreElements ) {
     var groupArray = [];
     var selectArray = [];
     var selector = 'group-filter';
@@ -227,29 +248,6 @@ function depthOf( object ) {
             level = Math.max(depth, level);
         }
     }
+
     return level;
 };
-
-
-//            function Populate( DOMElement ) {
-//                var value = $( DOMElement ).attr( 'data-value' );
-//                var targetLabel = $( DOMElement ).attr( 'data-target' );
-//                var targetElement = $( '#' + targetLabel );
-//                var text = $( DOMElement ).text();
-//                switch( value ) {
-//                    case 'delete':
-//                        targetElement.contents().remove();
-//                        value = 'populate';
-//                        text = 'Populate List';
-//                        break;
-//                    case 'populate':
-//                        targetElement.append( filterSelection[targetLabel] );
-//                        value = 'delete';
-//                        text = 'Delete List';
-//                        break;
-//                    default:
-//                        break;
-//                }
-//                $( DOMElement ).attr( 'data-value', value )
-//                               .text( text );
-//            }
