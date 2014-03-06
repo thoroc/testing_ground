@@ -57,7 +57,7 @@ $( document ).ready( function() {
  * Set the selectCollection on change event
  */
 $( document ).on( 'change', 'select.select-filter', function() {
-    setSelectCollection( this );
+    setSelectCollection( this, true );
 });
 
 /**
@@ -128,27 +128,52 @@ function createSelect( dataset ) {
     });
 }
 
-function setSelectCollection( DOMElement ) {
+function setSelectCollection( DOMElement, init ) {
     var stateSelected = $( DOMElement ).val();
-    var valueSelected = stateSelected ? true : false;
 
+    console.log( stateSelected );
+
+    var valueSelected = stateSelected ? true : false;
+    init = typeof init !== 'undefined' ? init : false;
+    // Reset values depending on SELECT elements
+    if( init ) {
+        var reset = $( DOMElement ).attr( 'data-reset' );
+        reset = reset ? reset.split( ' ' ) : [ ];
+    }
+
+    // Enable/disable depending SELECT elements
     var enables = $( DOMElement ).attr( 'data-enables' );
     enables = enables ? enables.split( ' ' ) : [ ];
     for( var it in enables ) {
+        var resets = ( init ) ? ( $.inArray( enables[it], reset ) ? true : false ) : true ;
         var element = $( 'select.' + enables[it] );
         if( element.attr( 'name' )) {
             if( element.prop( 'disabled' ) || !valueSelected ) {
-//                console.log( element );
-                ToggleDisableAttribute( 'select.' + enables[it], !valueSelected, true );
+                ToggleDisableAttribute( 'select.' + enables[it], !valueSelected, resets );
             }
         }
     }
 
+    // Enable/disable incompatible SELECT elements
+    var disables = $( DOMElement ).attr( 'data-disables' );
+    disables = disables ? disables.split( ' ' ) : [ ];
+    for( var it in disables )
+    {
+        // valueSelected
+        var resets = ( init ) ? ( $.inArray( enables[it], reset ) ? true : false ) : valueSelected ;
+        if( $( 'select.' + disables[it] ).attr( 'name' ) )
+        {
+            ToggleDisableAttribute( 'select.' + disables[it], valueSelected, resets );
+        }
+    }
+
+    // Limit or reset OPTION tags of related SELECT elements
+    // based on limited-by on Selected Element and closest limited-by-optgroup
     var limits = $( DOMElement ).attr( 'data-limits' );
     limits = limits ? limits.split( ' ' ) : [ ];
     for( var it in limits )
     {
-        var data = {'name': limits[it]};
+        var data = { 'name': limits[it] };
         if( valueSelected )
         {
             data['limited-by'] = $( ':selected', DOMElement ).val();
@@ -176,10 +201,11 @@ function limitSelectionTo( data ) {
 }
 
 function storeSelectOptions( DOMElement ) {
+    // Get name of selector
     var name = $( DOMElement ).attr( 'name' );
-    if( !filterSelection[name] ) {
-        filterSelection[name] = {};
-    }
+    // Create index for it in global storage object if there isn't one yet
+    if( !filterSelection[name] ) filterSelection[name] = {};
+    // Store contents
     filterSelection[name] = $( DOMElement ).contents().clone();
 }
 
@@ -205,21 +231,21 @@ function resetSelector( DOMElement, ignoreElements ) {
     var selectArray = [];
     var selector = 'group-filter';
     // determine if the current select was set to its default value
-    var reset = ( DOMElement.selectedIndex === 0 ) ? true : false;
+    var isReset = ( DOMElement.selectedIndex === 0 ) ? true : false;
     // find all the select element from the current group
-    var group = $( DOMElement ).closest( selector ).find( 'select' );
+    var filterGroup = $( DOMElement ).closest( selector ).find( 'select' );
     // check if select is first element or not in the group
     // the group contains 2 element right now
-    if( $( group[0] ).is( $( DOMElement ) ) ) {
-        selectArray.push( group[1] );
+    if( $( filterGroup[0] ).is( $( DOMElement ) ) ) {
+        selectArray.push( filterGroup[1] );
     }
-    // get all groups and aggregate in an array
+    // get all groups and aggregate them in an array
     $( DOMElement ).closest( selector )
             .nextAll( selector )
             .each( function() {
                 groupArray.push( this );
             });
-    // get all the select and aggregate in an array
+    // get all the select and aggregate them in an array
     $( groupArray ).each( function() {
         $( this ).find( 'select' ).each( function() {
             selectArray.push( this );
@@ -228,7 +254,7 @@ function resetSelector( DOMElement, ignoreElements ) {
     // reset the selected option to the default value
     $( selectArray ).each( function() {
         for( var el in ignoreElements ) {
-            if( reset && $.inArray( $( this ).attr( 'name' ), ignoreElements[el] ) < 0 ) {
+            if( isReset && $.inArray( $( this ).attr( 'name' ), ignoreElements[el] ) < 0 ) {
                 this.selectedIndex = 0;
             }
         }
