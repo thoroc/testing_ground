@@ -60,7 +60,7 @@
               .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            d3.json("data.json", function(error, data) {
+            d3.json("data/data.json", function(error, data) {
               color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
 
               console.log(data);
