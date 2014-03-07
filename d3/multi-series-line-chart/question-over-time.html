@@ -84,7 +84,7 @@
               .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            d3.json("scores.json", function(d) {
+            d3.json("data/scores.json", function(d) {
 //                color.domain( d3.keys( d ));
 
                 color.domain( d3.keys( d[0].data ).filter( function( key ) { return key !== "question"; }));
