@@ -58,13 +58,15 @@ function drawGrid( DOMElement, width, height, step ) {
     var vis = d3.select( DOMElement ).append( 'svg' )
         .attr( 'width', width )
         .attr( 'height', height );
+    var xCenter = width / 2;
+    var yCenter = height / 2;
 
     var xRange =    d3.range( step, width, step );
     var xMin =      d3.min( xRange );
     var xMax =      d3.max( xRange );
     var xScale =    d3.scale.linear()
             .domain([ xMin, xMax ])
-            .range([0, width]);
+            .range([ 0, width ]);
     var yRange =    d3.range( step, height, step );
     var yMin =      d3.min( yRange );
     var yMax =      d3.max( yRange );
