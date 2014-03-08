@@ -1,0 +1,60 @@
+{
+    "name": "cars",
+    "data": {
+        "alfa-romeo": {
+            "alias": "Alfa Romeo",
+            "name": "Alfa Romeo Automobiles S.p.A.",
+            "cars": ["MITo", "giulietta"]
+        },
+        "audi": {
+            "alias": "Audi",
+            "name": "Audi AG",
+            "cars": ["A1", "A3", "A4"]
+        },
+        "bmw": {
+            "alias": "BMW",
+            "name": "Bayerische Motoren Werke AG",
+            "cars": ["1 Series", "2 Series", "3 Series"]
+        },
+        "citroen": {
+            "alias": "",
+            "name": "Citroën S.A",
+            "cars": ["C1", "C3", "C3 Picasso", "C4", "C4 Picasso", "DS3"]
+        },
+        "fiat": {
+            "alias": "FIAT",
+            "name": "Fiat Automobiles S.p.A.",
+            "cars": ["Panda", "Punto", "500", "Bravo"]
+        },
+        "ford": {
+            "alias": "Ford",
+            "name": "Ford Motor Corporation",
+            "cars": ["Ka", "Fiesta", "Focus", "Mondeo"]
+        },
+        "opel": {
+            "alias": "Opel",
+            "name": "Adam Opel AG",
+            "cars": ["Corsa", "Astra"]
+        },
+        "peugeot": {
+            "alias": "Peugeot",
+            "name": "Peugeot S.A",
+            "cars": ["108", "208", "308", "508"]
+        },
+        "renault": {
+            "alias": "Renault",
+            "name": "Renault S.A.",
+            "cars": ["Twingo", "Clio", "Megane", "Laguna"]
+        },
+        "toyota": {
+            "alias": "toyota",
+            "name": "Toyota Motor Corporation",
+            "cars": ["Yaris", "Auris", "Corolla", "Prius"]
+        },
+        "vw": {
+            "alias": "VW",
+            "name": "Volkswagen",
+            "cars": ["Up!", "Polo", "Golf", "Passat"]
+        }
+    }
+}
