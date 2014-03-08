@@ -20,7 +20,11 @@ and open the template in the editor.
             var map = po.map()
                 .container(document.getElementById("map").appendChild(po.svg("svg")))
                 .add(po.interact())
-                .add(po.image().url("chernarus_south-zagoria.jpg"));
+                .add(po.image().url("chernarus_south-zagoria.jpg"))
+    .add(po.arrow())
+    .add(po.drag())
+    .add(po.dblclick())
+    .add(po.wheel());
 //                .add(po.hash())
 //                .zoom(13)
 //                .zoomRange([12, 16]);
