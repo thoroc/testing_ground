@@ -4,64 +4,17 @@
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            /*method to get an element to change backgound*/
-            /*http://stackoverflow.com/questions/11398333/jquery-pulsate-effect*/
-
-            #contactColumn {
-                height: 200px;
-                width: 300px;
-            }
-
-            /*method to glow on hover (1)*/
-            /*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
-
-            .confirm_selection_2 {
-                -webkit-transition: text-shadow 0.2s linear;
-                -moz-transition: text-shadow 0.2s linear;
-                -ms-transition: text-shadow 0.2s linear;
-                -o-transition: text-shadow 0.2s linear;
-                transition: text-shadow 0.2s linear;
-            }
-            .confirm_selection_2:hover {
-                text-shadow: 0 0 10px red;
-            }
-
-
-            /*method to glow constantly (1)*/
-            /*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
-            .confirm_selection_3 {
-                -webkit-transition: text-shadow 1s linear;
-                -moz-transition: text-shadow 1s linear;
-                -ms-transition: text-shadow 1s linear;
-                -o-transition: text-shadow 1s linear;
-                transition: text-shadow 1s linear;
-            }
-            .confirm_selection_3:hover,
-            .confirm_selection_3.glow {
-                text-shadow: 0 0 10px red;
-            }
-
-            /*method to glow constantly (2)*/
-            /*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
-            .confirm_selection_4 {
-                -webkit-animation: glow .5s infinite alternate;
-            }
-
-            @-webkit-keyframes glow {
-                to {
-                    text-shadow: 0 0 10px red;
-                }
-            }
         </style>
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/base/jquery-ui.css" type="text/css" media="all" />
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css" media="screen">
-        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" media="screen">
+        <link rel="stylesheet" href="//twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" media="screen">
+        <link rel="stylesheet" href="./css/glow.css" media="screen">
     </head>
     <body>
-        <nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+<!--        <nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
+                 Brand and toggle get grouped for better mobile display
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -74,7 +27,7 @@
                     </a>
                 </div>
             </div>
-        </nav>
+        </nav>-->
 
         <div class="container-fluid">
             <div class="container">
@@ -82,8 +35,10 @@
                     <div class="col-lg-offset-2 col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3>method to get an element to change backgound</h3>
-                                <!--http://stackoverflow.com/questions/11398333/jquery-pulsate-effect-->
+                                <h3>
+                                    method to get an element to change backgound
+                                    <a href="http://stackoverflow.com/questions/11398333/jquery-pulsate-effect">(source)</a>
+                                </h3>
                             </div>
                             <div class="panel-body">
                                 <p>Example:</p>
@@ -258,43 +213,6 @@ $( ".confirm_selection_5" ).hover( function() {
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
         <script src="//twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
-        <script>
-            //             method to get an element to change backgound
-            //             http://stackoverflow.com/questions/11398333/jquery-pulsate-effect
-            $( ".confirm_selection_1" ).click( function( e ) {
-                e.preventDefault();
-                for( var i = 0; i < 3; i++ ) {
-                    $( "#contactColumn" )
-                            .animate( {backgroundColor: "#f00"}, 2000 )
-                            .animate( {backgroundColor: "transparent"}, 2000 );
-                }
-            } );
-
-            //             method to glow constantly (1)
-            //             http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text
-            var glow = $( '.confirm_selection_3' );
-            setInterval( function() {
-                glow.hasClass( 'glow' ) ? glow.removeClass( 'glow' ) : glow.addClass( 'glow' );
-            }, 1000 );
-
-            //             method to glow on hover (2)
-            //             http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text
-            $( ".confirm_selection_5" ).hover( function() {
-                $( this ).animate( {
-                    color: "red"
-                }, 2000 );
-            }, function() {
-                $( this ).animate( {
-                    color: "black"
-                }, 2000 );
-            } );
-        </script>
-        <script>
-            !function( $ ) {
-                $( function() {
-                    window.prettyPrint && prettyPrint()
-                } )
-            }( window.jQuery )
-        </script>
+        <script src="./js/glow.js"></script>
     </body>
 </html>

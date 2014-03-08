@@ -1,0 +1,48 @@
+/*method to get an element to change backgound*/
+/*http://stackoverflow.com/questions/11398333/jquery-pulsate-effect*/
+
+#contactColumn {
+    height: 200px;
+    width: 300px;
+}
+
+/*method to glow on hover (1)*/
+/*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
+
+.confirm_selection_2 {
+    -webkit-transition: text-shadow 0.2s linear;
+    -moz-transition: text-shadow 0.2s linear;
+    -ms-transition: text-shadow 0.2s linear;
+    -o-transition: text-shadow 0.2s linear;
+    transition: text-shadow 0.2s linear;
+}
+.confirm_selection_2:hover {
+    text-shadow: 0 0 10px red;
+}
+
+/*method to glow constantly (1)*/
+/*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
+.confirm_selection_3 {
+    -webkit-transition: text-shadow 1s linear;
+    -moz-transition: text-shadow 1s linear;
+    -ms-transition: text-shadow 1s linear;
+    -o-transition: text-shadow 1s linear;
+    transition: text-shadow 1s linear;
+}
+.confirm_selection_3:hover,
+.confirm_selection_3.glow {
+    text-shadow: 0 0 10px red;
+}
+
+/*method to glow constantly (2)*/
+/*http://stackoverflow.com/questions/7061420/how-do-i-animate-a-glowing-effect-on-text*/
+.confirm_selection_4 {
+    -webkit-animation: glow .5s infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    to {
+        text-shadow: 0 0 10px red;
+    }
+}
+
