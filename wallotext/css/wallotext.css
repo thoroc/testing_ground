@@ -1,0 +1,18 @@
+div {
+    text-align: center;
+}
+
+.left-column {
+    float: left;
+    width: 20%;
+}
+
+.center-column {
+    float: left;
+    margin: 0 15% 0 20%; 
+}
+
+.right-column {
+    float: left;
+    width: 20%;
+}
