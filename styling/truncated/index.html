@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="">
+        <meta name="author" content="touristtam">
+        <link rel="shortcut icon" href="icon/favicon.ico">
+        <link rel="stylesheet" href="css/truncated.css">
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                        <th>Column 4</th>
+                        <th>Column 5</th>
+                        <th>Column 6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Column 1 Row 1</td>
+                        <td>Column 2 Row 1</td>
+                        <td>Column 3 Row 1 Column 3 Row 1</td>
+                        <td>Column 4 Row 1</td>
+                        <td>Column 5 Row 1</td>
+                        <td>Timestamp - 01/03/2004 21:03 (GMT)</td>
+                    </tr>
+                    <tr>
+                        <td>Column 1 Row 2</td>
+                        <td>Column 2 Row 2 Column 2 Row 2 Column 2 Row 2</td>
+                        <td>Column 3 Row 2</td>
+                        <td>Column 4 Row 2</td>
+                        <td>Column 5 Row 2</td>
+                        <td>Timestamp - 01/03/2004 21:03 (GMT)</td>
+                    </tr>
+                    <tr>
+                        <td>Column 1 Row 3</td>
+                        <td>Column 2 Row 3</td>
+                        <td>Column 3 Row 3</td>
+                        <td>Column 4 Row 3</td>
+                        <td>Column 5 Row 3</td>
+                        <td>Timestamp - 01/03/2004 21:03 (GMT)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/truncated.js"></script>
+        <script>
+            $( function() {
+                var headers = $( 'th' );
+                $( headers ).each( function() {
+                    $( headers ).thAutoWidth();
+                });
+
+                var cells = $( 'td' );
+                $( cells ).each( function() {
+                    var innerWidth = $( this ).textWidth();
+                    var outerWidth = $( this ).width();
+                    if( outerWidth < innerWidth ) {
+                        $( this ).addClass( 'truncated' );
+                        $( this ).attr( 'title', $( this ).text() )
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

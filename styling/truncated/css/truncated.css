@@ -1,0 +1,39 @@
+table {
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: separate;
+    width: 600px;
+    border: 1px solid black;
+}
+
+td, th {
+    padding: 4px 0px 2px 4px;
+    font-family:arial;
+    font-size:8pt;
+    border: 1px solid black;
+}
+
+td {
+    white-space: nowrap;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+
+td.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    word-break: break-all;
+}
+
+th {
+    font-weight: bold;
+    background-color:silver
+}
+
+div.container {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+}
