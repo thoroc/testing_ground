@@ -28,7 +28,5 @@
         }
     }
 
-    echo json_encode( 'foo' );
-
     echo json_encode( array( $directories, $files ));
 //}
