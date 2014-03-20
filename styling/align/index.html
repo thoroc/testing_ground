@@ -17,24 +17,36 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
-        <div class="container">
-            <div id="button">
-                    <button onclick="showForm()" type="button" id="cTask">
-                    Create Task
-                    </button>
-            </div>
-            <div id="addEventForm">
-                    <form>
-                            <p><label>Customer name: <input></label></p>
-                            <p><label>Telephone: <input type=tel></label></p>
-                            <p><label>E-mail address: <input type=email></label></p>
-                    </form>
-            </div>
-            <div>
-                    <canvas id="myBoard" width="500" height="300">
-                            <p>Your browser doesn't support canvas.</p>
-                    </canvas>
-            </div>
+        <div class="div-container">
+            <form>
+                <div class="panel-left">
+                    <div class="form-row">
+                        <label for="customer_name">Customer name:</label>
+                        <input id="customer_name" type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="customer_telephone">Telephone:</label>
+                        <input id="customer_telephone" type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="customer_email">E-mail address:</label>
+                        <input id="customer_email" type="text">
+                    </div>
+                </div>
+                <div class="panel-right">
+                    <div class="form-row">
+                        <label for="comment">Comments:</label>
+                        <input id="comment" type="text"/>
+                    </div>
+                </div>
+                <div class="panel-center">
+                    <div id="button" class="form-row action">
+                        <button onclick="showForm()" type="button" id="cTask">
+                            Create Task
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </body>

@@ -8,18 +8,46 @@ and open the template in the editor.
     Author     : tam
 */
 
-body {
-    background:#aaa;
-    width:735px;
+div.div-container{
+    background-color: white;
+    border: 4px solid rgba( 189, 188, 188, 0.4 );
+    border-radius: 12px;
+    box-shadow: inset 0 -1px 0 #fff;
+    color: #808B94;
+    display: block;
+    font-size: 12pt;
+    margin: 20px 10px 10px 10px;
+    padding: 16px;
+    position: relative;
+    width: 1024px;
 }
 
-canvas{
-    background:#ccc;
+div.panel-left,
+div.panel-right {
+    width: 50%;
+    float: left;
 }
 
-#button,
-#addEventForm {
-    clear:both;
-    float:right;
-    width:200px
+div.panel-center {
+    clear: both;
+}
+
+div.form-row {
+    padding: 8px;
+}
+/*
+
+div.form-row label {}
+
+*/
+div.form-row label {
+    width: 30%;
+    float: left;
+    text-align: right;
+    margin-right: 8px;
+}
+
+div.form-row input {
+    width: 60%;
+    float: left;
 }
