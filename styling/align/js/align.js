@@ -27,6 +27,7 @@ $( function() {
             'text': '<' + eType + '>'
         }).appendTo( el );
         ( counter < 3 ) ? counter++ : counter = 0;
+        el.attr( 'title', '<' + eType + eId + eClass + '>' );
     });
 });
 

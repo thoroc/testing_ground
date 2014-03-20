@@ -1,21 +1,8 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : Mar 20, 2014, 10:04:00 AM
-    Author     : tam
-*/
-
 div.container{
-    padding: 1em;
-    margin: 0 0 1em 0;
     background-color: white;
-    /*position: relative;*/
 }
 
-#main {
+/*#main {
     max-width: 600px;
     margin: 0 auto;
 }
@@ -27,7 +14,7 @@ nav {
 }
 
 section {
-    /* position is static by default */
+     position is static by default
     margin-left: 200px;
 }
 
@@ -42,11 +29,12 @@ footer {
 
 body {
     margin-bottom: 120px;
-}
+}*/
 
 .elem {
+    padding: 16px 8px 16px 8px;
     border-style: solid;
-    border-width: 3px;
+    border-width: 4px;
     /*border-radius: 12px 0px 12px 0px;*/
     position: relative;
     background-color: white;
@@ -54,14 +42,14 @@ body {
 
 .left,
 .right {
-    width: 49.5%;
+    width: 48%;
 }
 
 .center {
-    width: 99.4%;
+    width: 98.5%;
 }
 
-.panel {
+.panel > div {
     float: left;
     display: inline-block;
     position: relative;
@@ -72,14 +60,29 @@ body {
 .elem h2,
 .elem h3,
 .elem h4,
-.elem h5 {
+.elem h5,
+.elem label {
     padding: 0.4em 1em;
 }
 
-.elem-inline .label,
+.row {
+    padding-bottom: 24px;
+}
+
+.row > div {
+    float: left;
+}
+
+.title {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/*.elem-inline .label,
 .elem-inline .endlabel {
     position: static;
-}
+    font-size: 8pt;
+}*/
 
 .label {
     top: 0;
@@ -97,7 +100,13 @@ body {
     position: absolute;
     color: #414142;
     line-height: 1.2em;
-    padding: 2px 6px 2px 6px;
+    font-size: 8pt;
+    /*padding: 2px 6px 2px 6px;*/
+}
+
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
 }
 
 .simple {

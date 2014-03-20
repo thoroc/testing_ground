@@ -16,118 +16,140 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/align.css">
     </head>
     <body>
-<!--        <div class="container">
-            <div class="simple elem">
-                <h2>see <a href="http://learnlayout.com/">learnlayout.com</a></h2>
+        <!--        <div class="container">
+                    <div class="simple elem">
+                        <h2>see <a href="http://learnlayout.com/">learnlayout.com</a></h2>
+                    </div>
+                </div>-->
+        <div class="container elem clearfix">
+            <div class="elem panel clearfix">
+                <div class="elem left clearfix">
+                    <p>Panel Left</p>
+                    <div class="elem row">
+                        <div class="title">title: </div>
+                        <div class="value">this is some value</div>
+                    </div>
+                    <div class="elem row">
+                        <div class="title">title: </div>
+                        <div class="value">this is some value</div>
+                    </div>
+                    <div class="elem row">
+                        <div class="title">title: </div>
+                        <div class="value">this is some value</div>
+                    </div>
+                    <div class="elem row">
+                        <div class="title">title: </div>
+                        <div class="value">this is some value</div>
+                    </div>
+                </div>
+                <div class="elem right clearfix">
+                    <p>Panel Right</p>
+                    <div class="elem row">
+                        <div class="title">title: </div>
+                        <div class="value">this is some value</div>
+                    </div>
+                </div>
             </div>
-        </div>-->
-        <div class="container elem">
-            <div class="elem panel left">
-                <p>Panel Left</p>
-            </div>
-            <div class="elem panel right">
-                <p>Panel Right</p>
-            </div>
-            <div class="elem panel center">
+            <div class="elem panel center clearfix">
                 <p>Panel Center</p>
             </div>
         </div>
 
-<!--        <div class="container elem">
-            <nav class="elem">
-                <ul>
-                    <li>
-                        <a href="position-example.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="position-example.html">Taco Menu</a>
-                    </li>
-                    <li>
-                        <a href="position-example.html">Draft List</a>
-                    </li>
-                    <li>
-                        <a href="position-example.html">Hours</a>
-                    </li>
-                    <li>
-                        <a href="position-example.html">Directions</a>
-                    </li>
-                    <li>
-                        <a href="position-example.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <section class="elem">
-                <p>
-                    The <code>margin-left</code> style for <code>section</code>s makes sure there is room for the <code>nav</code>. Otherwise the absolute and static elements would overlap
-                </p>
-            </section>
-            <section class="elem ipsum">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
-                </p>
-            </section>
-            <section class="elem">
-                <p>
-                    Notice what happens when you resize your browser. It works nicely!
-                </p>
-            </section>
-            <footer class="elem">
-                <p>
-                    If you use a fixed header or footer, make sure there is room for it! I put a <code>margin-bottom</code> on the <code>body</code>.
-                </p>
-            </footer>
-        </div>-->
-<!--        <div class="container">
-            <div id="main" class="elem">
-                <p>
-                    Using <code>max-width</code> instead of <code>width</code> in this situation will improve the browser's handling of small windows. This is important when making a site usable on mobile. Resize this page to check it out!
-                </p>
-                <p>
-                    By the way, <code>max-width</code> is <a href="http://caniuse.com/#search=max-width" rel="noreferrer">supported by all major browsers</a> including IE7+ so you shouldn't be afraid of using it.
-                </p>
-            </div>
-        </div>-->
-<!--        <div class="container">
-            <div class="simple elem">
-                <p>​
-                    We're the same size now!
-                </p>​
-            </div>
-            <div class="fancy elem">
-                <p>​
-                    Hurray!
-                </p>​
-            </div>
-            <div class="container">
-                <div class="relative elem">
-                    <p>
-                        This element is relatively-positioned. If this element was <code>position: static;</code> its absolutely-positioned child would escape and would be positioned relative to the document body.
-                    </p>
-                    <div class="absolute elem">
+        <!--        <div class="container elem">
+                    <nav class="elem">
+                        <ul>
+                            <li>
+                                <a href="position-example.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="position-example.html">Taco Menu</a>
+                            </li>
+                            <li>
+                                <a href="position-example.html">Draft List</a>
+                            </li>
+                            <li>
+                                <a href="position-example.html">Hours</a>
+                            </li>
+                            <li>
+                                <a href="position-example.html">Directions</a>
+                            </li>
+                            <li>
+                                <a href="position-example.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="elem">
                         <p>
-                            This element is absolutely-positioned. It's positioned relative to its parent.
+                            The <code>margin-left</code> style for <code>section</code>s makes sure there is room for the <code>nav</code>. Otherwise the absolute and static elements would overlap
+                        </p>
+                    </section>
+                    <section class="elem ipsum">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+                        </p>
+                    </section>
+                    <section class="elem">
+                        <p>
+                            Notice what happens when you resize your browser. It works nicely!
+                        </p>
+                    </section>
+                    <footer class="elem">
+                        <p>
+                            If you use a fixed header or footer, make sure there is room for it! I put a <code>margin-bottom</code> on the <code>body</code>.
+                        </p>
+                    </footer>
+                </div>-->
+        <!--        <div class="container">
+                    <div id="main" class="elem">
+                        <p>
+                            Using <code>max-width</code> instead of <code>width</code> in this situation will improve the browser's handling of small windows. This is important when making a site usable on mobile. Resize this page to check it out!
+                        </p>
+                        <p>
+                            By the way, <code>max-width</code> is <a href="http://caniuse.com/#search=max-width" rel="noreferrer">supported by all major browsers</a> including IE7+ so you shouldn't be afraid of using it.
                         </p>
                     </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="relative1 elem">
-                    <p>
-                        <code>relative</code> behaves the same as <code>static</code> unless you add some extra properties.
-                    </p>
-                </div>
-                <div class="relative2 elem">
-                    <p>
-                        Setting the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
-                    </p>
-                </div>
-                <div class="fixed elem">
-                    <p>
-                        Hello! Don't pay attention to me yet.
-                    </p>
-                </div>
-            </div>
-        </div>-->
+                </div>-->
+        <!--        <div class="container">
+                    <div class="simple elem">
+                        <p>​
+                            We're the same size now!
+                        </p>​
+                    </div>
+                    <div class="fancy elem">
+                        <p>​
+                            Hurray!
+                        </p>​
+                    </div>
+                    <div class="container">
+                        <div class="relative elem">
+                            <p>
+                                This element is relatively-positioned. If this element was <code>position: static;</code> its absolutely-positioned child would escape and would be positioned relative to the document body.
+                            </p>
+                            <div class="absolute elem">
+                                <p>
+                                    This element is absolutely-positioned. It's positioned relative to its parent.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="relative1 elem">
+                            <p>
+                                <code>relative</code> behaves the same as <code>static</code> unless you add some extra properties.
+                            </p>
+                        </div>
+                        <div class="relative2 elem">
+                            <p>
+                                Setting the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+                            </p>
+                        </div>
+                        <div class="fixed elem">
+                            <p>
+                                Hello! Don't pay attention to me yet.
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/align.js"></script>
     </body>
