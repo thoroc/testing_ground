@@ -11,9 +11,9 @@ $( function() {
         var eId = ( el.attr( 'id' )) ? ' id="' + el.attr( 'id' ) + '"' : '';
 
         $.each( eClasses, function() {
-            if( this != 'elem' ) activeClass += this;
+            if( this != 'elem' ) activeClass += ' ' + this;
         });
-        var eClass = activeClass !== ''? ' class="' + activeClass + '"': '';
+        var eClass = activeClass !== ''? ' class="' + $.trim( activeClass ) + '"': '';
         el.css( 'border-color', colors[counter] );
         var eColor = el.css( 'border-color' );
         $( '<span/>', {

@@ -12,7 +12,7 @@ div.container{
     padding: 1em;
     margin: 0 0 1em 0;
     background-color: white;
-    position: relative;
+    /*position: relative;*/
 }
 
 #main {
@@ -47,13 +47,32 @@ body {
 .elem {
     border-style: solid;
     border-width: 3px;
-    border-radius: 12px 12px 12px 12px;
+    /*border-radius: 12px 0px 12px 0px;*/
     position: relative;
     background-color: white;
-    margin-top: 10px;
 }
 
-.elem p {
+.left,
+.right {
+    width: 49.5%;
+}
+
+.center {
+    width: 99.4%;
+}
+
+.panel {
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.elem p,
+.elem h1,
+.elem h2,
+.elem h3,
+.elem h4,
+.elem h5 {
     padding: 0.4em 1em;
 }
 
@@ -127,6 +146,7 @@ body {
 .relative1 {
     position: relative;
 }
+
 .relative2 {
     position: relative;
     top: -20px;
