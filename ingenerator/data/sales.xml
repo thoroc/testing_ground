@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sales>
+    <performance id="991392929" capacity="270" sold_count="30">
+    <performance id="991392930" capacity="110" sold_count="90">
+    <performance id="991392931" capacity="150" sold_count="3">
+        <!-- etc -->
+</sales>
