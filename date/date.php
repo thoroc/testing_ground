@@ -5,7 +5,6 @@ echo '<h3>Date manipulation</h3>';
 // set the default timezone to use. Available since PHP 5.1
 date_default_timezone_set('UTC');
 
-
 // Prints something like: Monday
 $day = date( "l" );
 echo '<p>Day of the week ( \'l\' ): ' . $day . '</p>';
@@ -155,10 +154,42 @@ function checkDateTime($data, $format = 'Y-m-d H:i:s')
 }
 
 echo '<p>' . date( 'Y-m-d' ) . ' timestamp is: ' . strtotime( date( 'Y-m-d' ) ). '</p>';
-echo 'now timestamp is: ' . strtotime("now"), '\n';
-echo '10 September 2000 timestamp is: ' . strtotime("10 September 2000"), '\n';
-echo '+1 day timestamp is: ' . strtotime("+1 day"), '\n';
-echo '+1 week timestamp is: ' . strtotime("+1 week"), '\n';
-echo '+1 week 2 days 4 hours 2 seconds timestamp is: ' . strtotime("+1 week 2 days 4 hours 2 seconds"), '\n';
-echo 'next Thursday timestamp is: ' . strtotime("next Thursday"), '\n';
-echo 'last Monday timestamp is: ' . strtotime("last Monday"), '\n';
+echo '<p>' . 'now timestamp is: ' . strtotime("now"), '<br/>';
+echo '<p>' . '10 September 2000 timestamp is: ' . strtotime("10 September 2000"). '</p>';
+echo '<p>' . '+1 day timestamp is: ' . strtotime("+1 day"). '</p>';
+echo '<p>' . '+1 week timestamp is: ' . strtotime("+1 week"). '</p>';
+echo '<p>' . '+1 week 2 days 4 hours 2 seconds timestamp is: ' . strtotime("+1 week 2 days 4 hours 2 seconds"). '</p>';
+echo '<p>' . 'next Thursday timestamp is: ' . strtotime("next Thursday"). '</p>';
+echo '<p>' . 'last Monday timestamp is: ' . strtotime("last Monday"). '</p>';
+
+echo '===================> dates <=======================';
+
+echo '<p>' . date('m-01-Y 00:00:00', strtotime( 'this month' )). '</p>';
+echo '<p>' . date('m-t-Y 12:59:59', strtotime( 'this month' )). '</p>';
+echo '<p>' . date('c', strtotime( 'this month' )). '</p>';
+
+
+
+echo date("c", mktime(0, 0, 0, 7, 1, 2014));
+
+$thisYear = 2014;
+$thisMonth = 2;
+$lastDay = date( "t", mktime(23, 59, 59, $thisMonth, 1, $thisYear) );
+
+$start = date( "Y-m-d H:i:s", mktime(0, 0, 0, $thisMonth, 1, $thisYear) );
+$end = date( "Y-m-t H:i:s", mktime(23, 59, 59, $thisMonth, 1, $thisYear) );
+
+$europe = new DateTimeZone('Europe/Berlin');
+
+//$dt->setTimezone($ESTTZ);
+
+$startISO = date( "c", mktime(0, 0, 0, $thisMonth, 1, $thisYear), $europe );
+//$startISO->setTimezone( $europe );
+$endISO = date( "c", mktime(23, 59, 59, $thisMonth, $lastDay, $thisYear), $europe );
+//$endISO->setTimezone( $europe );
+
+echo '<p>Month = ' . $thisMonth . ', Year = ' . $thisYear . '</p>';
+echo '<p>Start Date</p>';
+echo '<p>' . $startISO . '</p>';
+echo '<p>End Date</p>';
+echo '<p>' . $endISO . '</p>';
