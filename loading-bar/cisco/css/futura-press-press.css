@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'FuturaPressPress';
+	src: url('webfont/FuturaPressPress.eot?') format('eot'),
+	     url('webfont/FuturaPressPress.woff') format('woff'),
+	     url('webfont/FuturaPressPress.ttf')  format('truetype'),
+	     url('webfont/FuturaPressPress.svg#FuturaPressPress') format('svg');
+}
