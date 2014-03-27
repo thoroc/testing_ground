@@ -8,10 +8,10 @@
     margin-right: 40%;
     width: 250px;
     top: 100px;
-    box-shadow: inset 0 -1px 0 #fff,
+/*    box-shadow: inset 0 -1px 0 #fff,
         0px 0px 8px #fff,
         0px 0px 8px #bbb,
-        0px 0px 2px #666;
+        0px 0px 2px #666;*/
     /*box-shadow: inset 0 -1px 0 #fff;*/
     -moz-border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -71,7 +71,7 @@
     animation-name: loadingbar;
 }
 
- /*Delay both the second and third bar at the start*/
+/*Delay both the second and third bar at the start*/
 .loader .bar:nth-child(2) {
     -webkit-animation-delay: 0.2s;
     -moz-animation-delay: 0.2s;
@@ -122,43 +122,60 @@
 
 /* The actual animation */
 @-webkit-keyframes loadingbar {
-      0% { margin-top: 20px; height: 10px; }
-     10% { margin-top: 15px; height: 15px; }
-     20% { margin-top: 10px; height: 20px; }
-     30% { margin-top:  5px; height: 25px; }
-     40% { margin-top:  0px; height: 35px; }
-     50% { margin-top:  0px; height: 40px; }
-     60% { margin-top:  0px; height: 35px; }
-     70% { margin-top:  5px; height: 25px; }
-     80% { margin-top: 10px; height: 20px; }
-     90% { margin-top: 15px; height: 15px; }
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
     100% { margin-top: 20px; height: 10px; }
 }
 
 @-moz-keyframes loadingbar {
-      0% { margin-top: 20px; height: 10px; }
-     10% { margin-top: 15px; height: 15px; }
-     20% { margin-top: 10px; height: 20px; }
-     30% { margin-top:  5px; height: 25px; }
-     40% { margin-top:  0px; height: 35px; }
-     50% { margin-top:  0px; height: 40px; }
-     60% { margin-top:  0px; height: 35px; }
-     70% { margin-top:  5px; height: 25px; }
-     80% { margin-top: 10px; height: 20px; }
-     90% { margin-top: 15px; height: 15px; }
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
     100% { margin-top: 20px; height: 10px; }
 }
 
 @keyframes loadingbar {
-      0% { margin-top: 20px; height: 10px; }
-     10% { margin-top: 15px; height: 15px; }
-     20% { margin-top: 10px; height: 20px; }
-     30% { margin-top:  5px; height: 25px; }
-     40% { margin-top:  0px; height: 35px; }
-     50% { margin-top:  0px; height: 40px; }
-     60% { margin-top:  0px; height: 35px; }
-     70% { margin-top:  5px; height: 25px; }
-     80% { margin-top: 10px; height: 20px; }
-     90% { margin-top: 15px; height: 15px; }
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
     100% { margin-top: 20px; height: 10px; }
+}
+
+.screen {
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+    width:100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha( opacity = 60 );
+    opacity: 0.6;
+    display: none;
+}
+
+.loading {
+    display: none;
 }
