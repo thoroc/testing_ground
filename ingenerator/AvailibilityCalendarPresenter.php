@@ -1,4 +1,4 @@
-<?php
+?<php
 
 namespace Acme\CalendarBundle\Worker;
 
@@ -23,7 +23,7 @@ class AvailabilityCalendarPresenter
         $this->parser = $parser;
     }
 
-    private function getSalesData( $performanceId, $start, $end )
+    private function getSalesData( $performanceId )
     {
         return 'foo';
     }
@@ -43,33 +43,48 @@ class AvailabilityCalendarPresenter
         // - care about error handling - assume all input will be good
         // - care about performance - we'll assume that you'll refactor later if required.
         // - produce something that actually works. We'll ignore the odd typo too if your intent is clear.
-
-        $eventData = $this->getEventData( $venue_name );
+        $dates = $this->getStartAndEndDates( $month, $year, $timeZone );
+        $eventData = $this->getEventData( $venue_name, $dates['start'], $dates['end'] );
     }
 
+    /**
+     * Retrieve the event data based on the parameters passed.
+     *
+     * @param string $venue_name
+     * @param string $start
+     * @param string $end
+     *
+     * @return array
+     */
     private function getEventData( $venue_name, $start, $end )
     {
+        // we will assume that event is an Object that has all the needed
+        // informations. If not, then we will need to create one from the vendor
+        // API and save it.
         $event = $this->dm->getRepository( 'AcmeEventBundle:Event' )
                       ->findBy( array( 'venue' => $venue_name ));
 
         return $event->getPerformances( $start, $end );
     }
 
-    private function getStartAndEndDates( $month, $year )
+    /**
+     * This needs to be moved to a class/service that deals with
+     * Date, Time and TimeZones.
+     *
+     * @param int $month
+     * @param int $year
+     * @param DateTimeZone $timeZone
+     *
+     * @return array
+     */
+    private function getStartAndEndDates( $month, $year, $timeZone )
     {
+        $startDate = date( "Y-m-d H:i:s", mktime(0, 0, 0, $month, 1, $year) );
+        $endDate = date( "Y-m-t H:i:s", mktime(23, 59, 59, $month, 1, $year) );
+
         return array(
-            'start' => date('m-01-Y 00:00:00',strtotime('this month')),
-            'end'   => date('m-01-Y 00:00:00',strtotime('this month'))
+            'start' => new DateTime( $startDate, $timeZone ),
+            'end'   => new DateTime( $endDate, $timeZone )
         );
     }
 }
-
-
-$thisYear = 2014;
-$thisMonth = 2;
-
-echo '<p>Month = ' . $thisMonth . ', Year = ' . $thisYear . '</p>';
-echo '<p>Start Date</p>';
-echo '<p>' . date( "Y-m-d", mktime(0, 0, 0, $thisMonth, 1, $thisYear) ) . '</p>';
-echo '<p>End Date</p>';
-echo '<p>' . date( "Y-m-t", mktime(0, 0, 0, $thisMonth, 1, $thisYear) ) . '</p>';

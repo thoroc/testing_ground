@@ -164,13 +164,13 @@ echo '<p>' . 'last Monday timestamp is: ' . strtotime("last Monday"). '</p>';
 
 echo '===================> dates <=======================';
 
-echo '<p>' . date('m-01-Y 00:00:00', strtotime( 'this month' )). '</p>';
-echo '<p>' . date('m-t-Y 12:59:59', strtotime( 'this month' )). '</p>';
-echo '<p>' . date('c', strtotime( 'this month' )). '</p>';
+echo '<p>first day of this month: ' . date('m-01-Y 00:00:00', strtotime( 'this month' )). '</p>';
+echo '<p>last day of this month: ' . date('m-t-Y 23:59:59', strtotime( 'this month' )). '</p>';
+echo '<p>ISO8601 date for today (this month really): ' . date('c', strtotime( 'this month' )). '</p>';
 
 
 
-echo date("c", mktime(0, 0, 0, 7, 1, 2014));
+echo '<p>ISO8601 date for July 1, 2014: ' . date("c", mktime(0, 0, 0, 7, 1, 2014)). '</p>';
 
 $thisYear = 2014;
 $thisMonth = 2;
@@ -181,6 +181,9 @@ $end = date( "Y-m-t H:i:s", mktime(23, 59, 59, $thisMonth, 1, $thisYear) );
 
 $europe = new DateTimeZone('Europe/Berlin');
 
+$startD1 = new DateTime( $start, $europe );
+$endD1 = new DateTime( $end, $europe );
+
 //$dt->setTimezone($ESTTZ);
 
 $startISO = date( "c", mktime(0, 0, 0, $thisMonth, 1, $thisYear), $europe );
@@ -190,6 +193,6 @@ $endISO = date( "c", mktime(23, 59, 59, $thisMonth, $lastDay, $thisYear), $europ
 
 echo '<p>Month = ' . $thisMonth . ', Year = ' . $thisYear . '</p>';
 echo '<p>Start Date</p>';
-echo '<p>' . $startISO . '</p>';
+echo '<p>' . $startD1->format( 'c' ) . '</p>';
 echo '<p>End Date</p>';
-echo '<p>' . $endISO . '</p>';
+echo '<p>' . $endD1->format( 'c' ) . '</p>';
