@@ -1,0 +1,231 @@
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{
+    margin:0;
+    padding:0;
+}
+
+/* HTML ELEMENTS */
+body {
+    background-color:#272f30;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size:11px;
+}
+h1 {
+    font: bold 65px/60px Helvetica, Arial, Sans-serif;
+    text-align: center;
+    color: #dd3c10;
+    text-shadow: 0px 2px 6px #333333;
+}
+h1 small{
+    font-size: 20px;
+    text-transform:uppercase;
+    letter-spacing: 14px;
+    display: block;
+    color: #ccc;
+}
+h2 a {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 30px 0;
+    font: italic 45px Georgia, Times, Serif;
+    text-align: center;
+    color: #eceff6;
+    text-shadow: 0px 2px 6px #333;
+}
+h2 a:hover {
+    color: #d4dae8;
+}
+
+/* COMMON CLASSES */
+.break {
+    clear:both;
+}
+
+/* WRAPPER */
+#wrapper {
+    width:800px;
+    margin:40px auto;
+}
+
+/* CONTENT */
+#content {
+    width:400px;
+    margin:0 auto;
+}
+
+#content p {
+    margin-bottom:20px;
+    color:#eceff6;
+}
+
+#content p a {
+    color:#3b5998;
+    text-decoration:none;
+}
+
+#content p a:hover {
+    text-decoration:underline;
+}
+
+#content .reference{
+    text-align:center;
+}
+
+#content h3 {
+    color:#e2c822;
+    margin:10px 0;
+    text-align:center;
+}
+
+/* FACEBOOK LOADER */
+.loader {
+    width:32px;
+    height:32px;
+}
+
+/* Initial state */
+.bar {
+    background-color:#99aaca;
+    border:1px solid #96a6c9;
+    float:left;
+    margin-right:4px;
+    margin-top:6px;
+    width:6px;
+    height:18px;
+
+    /* Set the animation properties */
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: loadingbar;
+    -moz-animation-name: loadingbar;
+    animation-name: loadingbar;
+}
+
+/* Delay both the second and third bar at the start */
+.loader .bar:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.loader .bar:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+/* The actual animation */
+@-webkit-keyframes loadingbar {
+    0% { }
+    10% {
+        margin-top:5px;
+        height:22px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    20% {
+        margin-top:0px;
+        height:32px;
+        border-color:#d1d7e2;
+        background-color:#c6ccda;
+    }
+    30% {
+        margin-top:1px;
+        height:30px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    40% {
+        margin-top:3px;
+        height:26px;
+    }
+    50% {
+        margin-top:5px;
+        height:22px;
+    }
+    60% {
+        margin-top:6px;
+        height:18px;
+    }
+    70% { }
+    /* Missing frames will cause the extra delay */
+    100% { }
+}
+
+@-moz-keyframes loadingbar {
+    0% { }
+    10% {
+        margin-top:5px;
+        height:22px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    20% {
+        margin-top:0px;
+        height:32px;
+        border-color:#d1d7e2;
+        background-color:#c6ccda;
+    }
+    30% {
+        margin-top:1px;
+        height:30px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    40% {
+        margin-top:3px;
+        height:26px;
+    }
+    50% {
+        margin-top:5px;
+        height:22px;
+    }
+    60% {
+        margin-top:6px;
+        height:18px;
+    }
+    70% { }
+    /* Missing frames will cause the extra delay */
+    100% { }
+}
+
+@keyframes loadingbar {
+    0% { }
+    10% {
+        margin-top:5px;
+        height:22px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    20% {
+        margin-top:0px;
+        height:32px;
+        border-color:#d1d7e2;
+        background-color:#c6ccda;
+    }
+    30% {
+        margin-top:1px;
+        height:30px;
+        border-color:#d1d8e6;
+        background-color:#bac5db;
+    }
+    40% {
+        margin-top:3px;
+        height:26px;
+    }
+    50% {
+        margin-top:5px;
+        height:22px;
+    }
+    60% {
+        margin-top:6px;
+        height:18px;
+    }
+    70% { }
+    /* Missing frames will cause the extra delay */
+    100% { }
+}

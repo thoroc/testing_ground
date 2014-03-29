@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="thoroc">
+        <link rel="shortcut icon" href="icon/favicon.ico">
+        <link rel="stylesheet" href="css/hover.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="body">
+            <h3>Inline Style are SHITE !!!</h3>
+            <div class="left">
+                <div class="content">Test Value</div>
+                <div class="content" style="background-color: red; color: white;">Background-color: Red;</div>
+                <div class="content" style="background-color: orange">Background-color: Orange;</div>
+                <div class="content" style="background-color: blue; color: white;">Background-color: Blue;</div>
+                <div class="content" style="background-color: green; color: white;">Background-color: Green;</div>
+            </div>
+            <div class="right">
+                <div class="override content">Test Value</div>
+                <div class="override content red">Background-color: Red;</div>
+                <div class="override content orange">Background-color: Orange;</div>
+                <div class="override content blue">Background-color: Blue;</div>
+                <div class="override content green">Background-color: Green;</div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $( function() {
+                $( '.override' ).on( 'hover', function() {
+                    var that = $( this );
+                    if( that.attr( 'style' ) ) {
+
+                        that.removeAttr( 'style' );
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
