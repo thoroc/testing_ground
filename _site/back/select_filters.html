@@ -1,0 +1,627 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../jquery.ui.dropdownchecklist-master/ui.dropdownchecklist.css">
+
+        <style type="text/css">
+            <!--
+            .grid table
+            {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                color: #555555;
+                font-size: 1em;
+                width: 100%;
+            }
+
+            .grid td, .grid th
+            {
+                border: 1px solid #D4E0EE;
+                padding: 3px 7px 2px 7px;
+            }
+            .grid th
+            {
+                background-color: #E6EDF5;
+                vertical-align: top;
+            }
+
+            .grid th a {
+                color: #4F76A3;
+                text-decoration: none;
+            }
+
+            .grid th a.grid-reset {
+                margin-left: 5px;
+                font-weight: normal;
+            }
+
+            .grid tr.even
+            {
+                background-color: #FCFDFE;
+            }
+
+            .grid tr.odd {
+                background-color: #F7F9FC;
+
+            }
+
+            .grid_header, .grid_footer {
+                margin: 5px 0;
+            }
+
+            /* Icons for order */
+            /* You can find this icons in the images directory of the docuementation */
+            th div {
+                height: 10px;
+                width: 20px;
+                float: right;
+                padding-top: 4px;
+            }
+
+            .grid th div.sort_up {
+                background: transparent url("data:image/gif;base64,R0lGODlhFwAKAIABAJCQkO/v7yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAXAAoAAAIajI+py+0GwGsxTmVDvlqe/YCQ52wmyaXqUQAAOw==") no-repeat bottom left;
+            }
+
+            .grid th div.sort_down {
+                background: transparent url("data:image/gif;base64,R0lGODlhFwAKAHAAACH5BAEAAAIALAAAAAAXAAoAgQAAAJCQkAAAAAAAAAIalI+py60RDpTRiZmwvdXozXkdKH6keKZqUwAAOw==") no-repeat bottom left;
+            }
+
+            /* Boolean column */
+            .grid .grid_boolean_true {
+                background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACl0lEQVR42q2T60uTYRiH/Tv2bnttAwlkRCGChFD7FCQSm2ZDMQ/L0nRnj7TNGDbTooychzFSSssstdqc8zB1anNrSpm47FVCzH3pQLVhdLBfzztoJlifvOEHz4fnuu7nGBe311XgOyLMnTmsz/akMBljB8OSEVFY4kpkJM5Efbp9v/C/cJ43VSrzJId0HhluBy3oW+mKpnOpGSWuExD30iFxDy3dFSZdpZkTSZHr80Y41/phe3UDpvnKaNixY60PjbNVOGTjRZJtvJ2SHE+KINOdtMHC7MSaQBkq/CXQzJ6DjqScpNp3HvY3D3B5ugIiC3dDdJMriAlk7iSDajwr2pmFWVDlPQPFTCEU0wVQTxfCvT4Ig1cJB5Hk9hxDwjWuISbIGBExncFmWINNqPAVQ/lUTsB8KKdIPPmYeOsCW6HIOtpeNMI234j4ei4TExy3J2w+Wr2L2oAGWm8RWckAlj4uQDVZiPH1oSj8c+sH2p5fgWGyGH3BTvCN1GZMIH5Ib/avdMPoV6HWr8Xnb5+i0Iev72KwZa4ealc29O6z6A92gF/zt6CHZm4tNKF98Sp0U3KYfdWIfP8Shbd+bcHy7BLKnFnQEEFLoA7tXjPoKmp7C6l3+Ab5QBrsq/dRPSmH2n0adTPlWH6/iLa5BpQOnoTCcQo6Zw7sr7uRbj0KupLaPsRkK09wgFyN2aPBY+YeKkfzoB3OgWpIBqWDDQtn48lyF4xDxeCrORu0mhLseAuJTVxpfAMVMbnL4CCS1oAZ+tEiXBiWo5VswU5gvbMIvFJOhMC7v8Z9DVwpbaJCkg4x2v1m9L60onfBCovXhLSWVPAVnBCt+gf8p+iLXCFtoPR0DcXwtZwwX8UJk44MiZ4upYR7/nt/A+w9sdKFchsrAAAAAElFTkSuQmCC") no-repeat bottom left;
+                display: inline-block;
+                text-indent: 16px;
+                width: 16px;
+                overflow: hidden;
+            }
+
+            .grid .grid_boolean_false {
+                background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACSElEQVR42q2Ty0vUURTHv/5SJ1SmUaGckUYdG5FyVdAicGMkFAXBtEl8gJseIP0FEVEtbNNiFm0iMMUgGKhVIUj0oqKFQ40N2TwwdewxOik6zcy953tbmD/HxFV9d/dwz+f7PXAO8I8q+bugb1xspjFdhuwlWUcSJL+SvEfhaPXgcHxbQOH6hYChCa6WlLvLm/eh1OkEAKjlJWSjUVjZpXlSBvbcehDaAshfOx8w5FB+t7eyosUPSU2DqWkAgOX2wvI0YPljFLmpD6sU6fPefhSyAbmr53wkXxTqvJ7KlhYUXo0BACou3wEArFzpB2hQ3t6JpcgkVqITKSHb/XefJCwAENHdWcux0WwMDI09GjUh2iA7/hjO1v0wVbUerVQ3AFgAoLXucfj9kNkkDA0oBkZzE4BKIAUin4hjV2sblFI9xYD6MpcLeiYJo2k7rksKhKi1ei4WR5mrBlrp+g2A0jBi7MZ1RzUV2RhB/YEIASG0VihKoOby6UVY7gY7qiji18txrDy8b7tTEaV7G5FNp6GVnitOMPwz8h47PI32Z1GEs/8Sqk6fBRUhmhAhHI0+fA+/g9Z62AYopUYKC6lUZjKCio7jNmQxeBMLwUGIrL1dJ07iRySMzMznlNZ6ZNMiTXZ3BCgy5DpwuLK6tQ25ZAK5WBzGGDiafHA0+ZCOhPHl9dgqyb6jTz+FtqzyxJkjASGDO2s87tq2g3C4qmEMkMss4tvEW2RmY/MkB449mwpte0xvTh1qJtlFYS8pm4+JHO18Hovjf+o3Xg+XX4ZLBPIAAAAASUVORK5CYII=") no-repeat bottom left;
+                display: inline-block;
+                text-indent: 16px;
+                width: 16px;
+                overflow: hidden;
+            }
+
+            /* Alignement */
+            .grid .align-left {
+                text-align: left;
+            }
+
+            .grid .align-center {
+                text-align: center;
+            }
+
+            .grid .align-right {
+                text-align: right;
+            }
+
+            /* Column filter */
+            .grid .grid-filter-operator select{
+                width: 70px;
+
+            }
+
+            .grid .grid-filter-input-query input, .grid .grid-filter-select-query select{
+                width: 50px;
+            }
+
+            .grid .grid-filter-input-query-to, .grid .grid-filter-select-query-to{
+                margin-left: 77px;
+                display: block;
+            }
+
+            /* Grid Search */
+
+            .grid-search {
+                border: 1px solid #D4E0EE;
+                padding: 10px;
+            }
+
+            .grid-search label{
+                width: 80px;
+                display: inline-block;
+                text-align: right;
+            }
+
+            .grid-search select, .grid-search .grid-filter-input-query input {
+                width: 150px;
+            }
+            -->
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <form id="grid_audit" action="/app_dev.php/case-reviews/" method="post">
+                <div class="grid_header">
+                </div>
+                <div class="grid_body">
+                    <table>
+                        <tr class="grid-row-titles">
+                            <th class="align-center">SFDC Case ID</th>
+                            <th class="align-center">Owner</th>
+                            <th class="align-center">Role</th>
+                            <th class="align-center">Shift</th>
+                            <th class="align-center">Manager</th>
+                            <th class="align-center">Technology</th>
+                            <th class="align-center">Service Type</th>
+                            <th class="align-center">Queue</th>
+                            <th class="align-center">Fiscal Quarter</th>
+                            <th class="align-center">FSAT Score</th>
+                            <th class=" last-column">Actions</th>
+                        </tr>
+
+
+                        <tr class="grid-row-filters">
+                            <th>
+                                <span class="grid-filter-input">
+                                    <span class="grid-filter-input-query">
+                                        <input type="text" value="" class="grid-filter-input-query-from" name="grid_audit[caseId][from]" id="grid_audit__caseId__query__from" onkeypress="return grid_audit_submitForm( event, this.form );"  />
+                                    </span>
+                                </span>
+                            </th>
+                            <th><span class="grid-filter-input">
+                                    <span class="grid-filter-input-query">
+                                        <input type="text" value="" class="grid-filter-input-query-from" name="grid_audit[username][from]" id="grid_audit__username__query__from" onkeypress="return grid_audit_submitForm( event, this.form );"  />
+                                    </span>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select name="grid_audit[role][from][]" class="grid-filter-select-query-from" id="grid_audit__role__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <optgroup style="border-top: 1px dotted #ccc; margin: 5px 0;"></optgroup>
+                                            <option value="">&nbsp;</option>
+                                            <option value="ASE">ASE</option>
+                                            <option value="Specialist">Specialist</option>
+                                            <option value="VSEgrad">VSEgrad</option>
+                                            <option value="CSS">CSS</option>
+                                            <option value="TechLead">TechLead</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </span>
+                                </span>
+
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select name="grid_audit[shift][from][]" class="grid-filter-select-query-from" id="grid_audit__shift__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option disabled>----------</option>
+                                            <!--<optgroup style="border-bottom: 1px solid black;"></optgroup>-->
+                                            <option value="Shift-1">Shift-1</option>
+                                            <option value="Shift-3">Shift-3</option>
+                                            <option value="Shift-2">Shift-2</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </th>
+                            <th><span class="grid-filter-input">
+                                    <span class="grid-filter-input-query">
+                                        <input type="text" value="" class="grid-filter-input-query-from" name="grid_audit[manager][from]" id="grid_audit__manager__query__from" onkeypress="return grid_audit_submitForm( event, this.form );"  />
+                                    </span>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select name="grid_audit[technology][from][]" class="grid-filter-select-query-from" id="grid_audit__technology__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option value="Routers">Routers</option>
+                                            <option value="Security">Security</option>
+                                            <option value="Blade Servers">Blade Servers</option>
+                                            <option value="Voice and Unified Communications">Voice and Unified Communications</option>
+                                            <option value="Switches">Switches</option>
+                                            <option value="Wireless">Wireless</option>
+                                            <option value="Wide Area Application Services">Wide Area Application Services</option>
+                                            <option value="Data Center Switches">Data Center Switches</option>
+                                            <option value="Interfaces and Modules">Interfaces and Modules</option>
+                                            <option value="Unified Computing and Servers">Unified Computing and Servers</option>
+                                            <option value="Storage Networking">Storage Networking</option>
+                                            <option value="Contact Center Express">Contact Center Express</option>
+                                            <option value="NX-OS Software">NX-OS Software</option>
+                                            <option value="Network Management">Network Management</option>
+                                            <option value="Collaboration">Collaboration</option>
+                                            <option value="Webex">Webex</option>
+                                            <option value="Content Delivery">Content Delivery</option>
+                                            <option value="TelePresence">TelePresence</option>
+                                            <option value="Video">Video</option>
+                                            <option value="Physical Security">Physical Security</option>
+                                            <option value="Routers and Switches">Routers and Switches</option>
+                                            <option value="Contact Center Enterprise">Contact Center Enterprise</option>
+                                            <option value="Cisco IOS">Cisco IOS</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select name="grid_audit[service][from][]" class="grid-filter-select-query-from" id="grid_audit__service__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option value="Preliminary Cisco Bill of Materials (BoM)">Preliminary Cisco Bill of Materials (BoM)</option>
+                                            <option value="Cisco Product Information">Cisco Product Information</option>
+                                            <option value="Cisco Design Assist with Validated BOM">Cisco Design Assist with Validated BOM</option>
+                                            <option value="Multi-Service">Multi-Service</option>
+                                            <option value="Cisco Presentation">Cisco Presentation</option>
+                                            <option value="Customer Engagements (*)">Customer Engagements (*)</option>
+                                            <option value="Competitive Product Information (*)">Competitive Product Information (*)</option>
+                                            <option value="Cisco RFP / RFI Technical Assistance">Cisco RFP / RFI Technical Assistance</option>
+                                            <option value="Special Services for Inside Sales">Special Services for Inside Sales</option>
+                                            <option value="Special Services for Associate Sales Reps">Special Services for Associate Sales Reps</option>
+                                            <option value="Partner Engagements (*)">Partner Engagements (*)</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </th>
+                            <th><span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select multiple size="3" name="grid_audit[architecture][from][]" class="grid-filter-select-query-from" id="grid_audit__architecture__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option value="Multi-Architecture Solutions">Multi-Architecture Solutions</option>
+                                            <option value="Borderless Networks">Borderless Networks</option>
+                                            <option value="Data Center and Virtualization">Data Center and Virtualization</option>
+                                            <option value="Collaboration">Collaboration</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query">
+                                        <select name="grid_audit[quarter][from][]" class="grid-filter-select-query-from" id="grid_audit__quarter__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option value="FY 2013 Q3">FY 2013 Q3</option>
+                                        </select>
+                                    </span>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="grid-filter-select">
+                                    <span class="grid-filter-select-query" style="white-space: nowrap;">
+                                        <select name="#" class="grid-filter-select-query-from cisco-audit-multi-selector" id="grid_audit__fsatQuestion1__query__from" onchange="return grid_audit_submitForm( event, this.form );" >
+                                            <option value="">&nbsp;</option>
+                                            <option value="5">5</option>
+                                            <option value="1">1</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="CR">CR</option>
+                                        </select>
+                                        <input type="submit" value="Go" />
+                                    </span>
+                                </span>
+                            </th>
+                            <th class="last-column">
+                                <a class="grid-reset actions" href="#" onclick="$( this ).closest( 'form' ).submit();">Set Filters</a>
+                                <a class="grid-reset actions" href="#">Reset Filters</a>
+                            </th>
+                        </tr>
+
+
+                        <tr class="grid-row-cells even">
+                            <td class="grid-column-caseId align-center">    648991
+                            </td>
+                            <td class="grid-column-username align-center">    WeiKang
+                            </td
+                            ><td class="grid-column-role align-center">    VSEgrad
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-1
+                            </td>
+                            <td class="grid-column-manager align-center">    zhigwang
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Switches</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Preliminary Cisco Bill of Materials (BoM)</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Borderless Networks</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    1
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/648991">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/648991">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/648991">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells odd"><td class="grid-column-caseId align-center">    699572
+                            </td>
+                            <td class="grid-column-username align-center">    dfrimpon
+                            </td>
+                            <td class="grid-column-role align-center">    ASE
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-3
+                            </td>
+                            <td class="grid-column-manager align-center">    jessieh
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Voice and Unified Communications</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco Product Information</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Collaboration</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    1
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/699572">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/699572">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/699572">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells even"><td class="grid-column-caseId align-center">    679828
+                            </td>
+                            <td class="grid-column-username align-center">    mdhaka
+                            </td>
+                            <td class="grid-column-role align-center">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-2
+                            </td>
+                            <td class="grid-column-manager align-center">    pgonzale
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Wireless</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco Design Assist with Validated BOM</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Borderless Networks</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    3
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/679828">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/679828">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/679828">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells odd"><td class="grid-column-caseId align-center">    698044
+                            </td>
+                            <td class="grid-column-username align-center">    merlands
+                            </td>
+                            <td class="grid-column-role align-center">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-3
+                            </td>
+                            <td class="grid-column-manager align-center">    eholstei
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Wide Area Application Services</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco Design Assist with Validated BOM</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Borderless Networks</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    3
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/698044">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/698044">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/698044">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells even"><td class="grid-column-caseId align-center">    646614
+                            </td>
+                            <td class="grid-column-username align-center">    WeiKang
+                            </td>
+                            <td class="grid-column-role align-center">    VSEgrad
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-1
+                            </td>
+                            <td class="grid-column-manager align-center">    zhigwang
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Security</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Preliminary Cisco Bill of Materials (BoM)</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Borderless Networks</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    4
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/646614">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/646614">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/646614">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells odd"><td class="grid-column-caseId align-center">    676705
+                            </td>
+                            <td class="grid-column-username align-center">    inderpsi
+                            </td>
+                            <td class="grid-column-role align-center">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-2
+                            </td>
+                            <td class="grid-column-manager align-center">    pgonzale
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Switches</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco RFP / RFI Technical Assistance</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Multi-Architecture Solutions</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    4
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/676705">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/676705">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/676705">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells even"><td class="grid-column-caseId align-center">    678777
+                            </td>
+                            <td class="grid-column-username align-center">    jwhitake
+                            </td>
+                            <td class="grid-column-role align-center">    VSEgrad
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-2
+                            </td>
+                            <td class="grid-column-manager align-center">    akupfer
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Data Center Switches</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Preliminary Cisco Bill of Materials (BoM)</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Multi-Architecture Solutions</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    4
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/678777">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/678777">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/678777">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells odd"><td class="grid-column-caseId align-center">    679378
+                            </td>
+                            <td class="grid-column-username align-center">    jriveram
+                            </td>
+                            <td class="grid-column-role align-center">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-3
+                            </td>
+                            <td class="grid-column-manager align-center">    wramirez
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Collaboration</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco Design Assist with Validated BOM</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Collaboration</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    4
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/679378">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/679378">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/679378">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells even"><td class="grid-column-caseId align-center">    680165
+                            </td>
+                            <td class="grid-column-username align-center">    jriveram
+                            </td>
+                            <td class="grid-column-role align-center">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center">    Shift-3
+                            </td>
+                            <td class="grid-column-manager align-center">    wramirez
+                            </td>
+                            <td class="grid-column-technology align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Collaboration</div>
+                            </td>
+                            <td class="grid-column-service align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Cisco Product Information</div>
+                            </td>
+                            <td class="grid-column-architecture align-center">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Collaboration</div>
+                            </td>
+                            <td class="grid-column-quarter align-center">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center">    4
+                            </td>
+                            <td class="grid-column-__actions last-column">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/680165">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/680165">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/680165">testing1</option>
+                                </select></td>    </tr>
+                        <tr class="grid-row-cells odd"><td class="grid-column-caseId align-center last-row">    681048
+                            </td>
+                            <td class="grid-column-username align-center last-row">    anujko
+                            </td>
+                            <td class="grid-column-role align-center last-row">    Specialist
+                            </td>
+                            <td class="grid-column-shift align-center last-row">    Shift-1
+                            </td>
+                            <td class="grid-column-manager align-center last-row">    swchakra
+                            </td>
+                            <td class="grid-column-technology align-center last-row">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Wireless</div>
+                            </td>
+                            <td class="grid-column-service align-center last-row">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Preliminary Cisco Bill of Materials (BoM)</div>
+                            </td>
+                            <td class="grid-column-architecture align-center last-row">
+                                <div style="overflow: hidden; width: 150px; white-space: nowrap;">Borderless Networks</div>
+                            </td>
+                            <td class="grid-column-quarter align-center last-row">    FY 2013 Q3
+                            </td>
+                            <td class="grid-column-fsatQuestion1 align-center last-row">    4
+                            </td>
+                            <td class="grid-column-__actions last-column last-row">
+                                <select class="grid-row-actions cisco-audit-selector"><option data-url="null">Select the Form</option>
+                                    <option data-url="null">----------------</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/1/681048">Technical Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/2/681048">Manager Review</option>
+                                    <option data-url="http://wwwin-ve.cisco.local/app_dev.php/case-reviews/new/3/681048">testing1</option>
+                                </select></td>    </tr>
+
+                    </table>
+                </div>
+                <div class="grid_footer">
+                    <div class="pager" style="float:left">
+                        <script src="../js/jquery-1.9.1.js"></script>
+                        <script src="../js/jquery-ui.min.js"></script>
+                        <script src="../jquery.ui.dropdownchecklist-master/ui.dropdownchecklist.js"></script>
+                        <script type="text/javascript">
+                            $( '.cisco-audit-multi-selector' ).dropdownchecklist( {firstItemChecksAll: true, defaultText: 'Choose...'} );
+                        </script>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

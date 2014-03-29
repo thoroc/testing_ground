@@ -1,0 +1,98 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <button id="opener">open the dialog</button>
+        <div id="dialog" title="Dialog Title">I'm a dialog</div>
+
+        <a id="myButton" href="#">bla</a>
+        <!--<input id="myButton" name="myButton" value="Click Me" type="button"/>-->
+
+        <!--<div id="myDiv" style="display:none" class="ui-dialog ui-widget ui-widget-content ui-corner-all undefined ui-draggable ui-resizable">-->
+        <div id="myDiv" style="display:none" class="ui-dialog ui-widget ui-widget-content">
+            <!--<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">-->
+                <!--<span id="ui-dialog-title-dialog" class="ui-dialog-title">Dialog title</span>-->
+            <!--</div>-->
+            <div id="myDialog" class="ui-dialog-content ui-widget-content">
+                <p>Do you really want to delete this Field?</p>
+            </div>
+        </div>
+        <script>
+        $( "#dialog" ).dialog({ autoOpen: false });
+        $( "#opener" ).click(function() {
+            $( "#dialog" ).dialog({
+//                resizable: false,
+//                height:140,
+//                modal: true,
+//                buttons: {
+//                    "Delete Field": function() {
+//                        $( this ).dialog( "close" );
+//                    },
+//                    Cancel: function() {
+//                        $( this ).dialog( "close" );
+//                    }
+//                }
+            });
+        });
+        $( document ).ready( function()
+        {
+            $( "#myButton" ).click( function( e )
+            {
+                showDialog();
+                e.preventDefault();
+            });
+            //variable to reference window
+            $myWindow = $( '#myDiv' );
+
+            //instantiate the dialog
+            $myWindow.dialog({
+                resizable: false,
+                height:     350,
+                width:      400,
+                modal:      true,
+                position:   'center',
+                autoOpen:   false,
+                title:      'ModalBox',
+                buttons:    {
+                    YES: function()
+                    {
+                        closeDialog();
+                    },
+                    NO: function()
+                    {
+                        closeDialog();
+                    }
+                },
+                //overlay: { opacity: 0.5, background: 'black'}
+            });
+        });
+        //function to show dialog
+        var showDialog = function()
+        {
+            //if the contents have been hidden with css, you need this
+            $myWindow.show();
+            //open the dialog
+            $myWindow.dialog("open");
+        }
+
+        //function to close dialog, probably called by a button in the dialog
+        var closeDialog = function()
+        {
+            $myWindow.dialog("close");
+        }
+        </script>
+
+    </body>
+</html>

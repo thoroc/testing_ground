@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>single selector: jquery</h3>
+        <form id="query" method="post" action="">
+            <fieldset>
+                <legend>Query Modifier Parameters</legend>
+                <div class="option">
+                    <input type="radio" name="choices" value="car_id" />
+                    <label for="car_id">id:</label>
+                    <input type="text" name="car_id" id="car_id" placeholder="car id"/>
+                    <a class="type"></a>
+                </div>
+                <div class="option">
+                    <input type="radio" name="choices" value="car_brand" />
+                    <label for="car_brand">brand:</label>
+                    <select class="selector" name="car_brand" id="car_brand">
+                        <option value="" selected="selected">Select Car Manufacturer</option>
+                        <option disabled="">------------------</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                    <a class="type"></a>
+                </div>
+                <div class="option">
+                    <input type="radio" name="choices" value="car_year" />
+                    <label for="car_year">year:</label>
+                    <select class="selector" name="car_year" id="car_year">
+                        <option value="" selected="selected">Select Year</option>
+                        <option disabled="">------------------</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                    </select> <a class="type"></a>
+                </div>
+                <div class="option">
+                    <input type="radio" name="choices" value="car_cost" />
+                    <label for="car_cost">cost:</label>
+                    <input type="text" name="car_cost" id="car_cost" placeholder="car cost"/>
+                    <a class="type"></a>
+                </div>
+                <div class="option">
+                    <input type="radio" name="choices" value="car_name" />
+                    <label for="car_name">name:</label>
+                    <input type="text" name="car_name" id="car_name" placeholder="car name"/>
+                    <a class="type"></a>
+                </div>
+            </fieldset>
+        <input type="submit" name="submit" value="Submit" />
+        <input type="reset" name="reset" value="Reset" />
+    </form>
+    <div>
+        <div>Choice selected:
+            <div id="result">test</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        // change radio selection
+        $('input[name=choices]').each(function () {
+            var radio = $(this);
+            var input = getInputFromRadio(radio);
+            radio.click(function () {
+                if (radio.is(':checked')) {
+                    writteResultFromElement(radio.val(), input.val());
+                    toggleInputAccess();
+                    resetTextInput();
+                    resetSelectInput();
+                }
+            });
+        });
+
+        // check select input is sole activated input
+        $('select').change(function () {
+            var selector = $(this);
+            getRadioFromInput(selector).prop('checked', true);
+            toggleInputAccess();
+            writteResultFromElement(selector.attr('id'), this.value);
+        });
+
+        // checke textt input is sole activated input
+        $('input[type=text]').focus(function () {
+            var textarea = $(this);
+            //textarea.val(textarea.attr('id')); // populate with id
+            getRadioFromInput(textarea).prop('checked', true);
+            toggleInputAccess();
+            resetTextInput();
+            writteResultFromElement(textarea.attr('id'), this.value);
+        });
+
+        // output text input changes
+        $('input[type=text]').keyup(function () {
+            var textarea = $(this);
+            writteResultFromElement(textarea.attr('id'), this.value);
+        });
+
+        // toggle input activation
+        function toggleInputAccess() {
+            $('input[name=choices]').each(function () {
+                var radio = $(this);
+                var input = getInputFromRadio(radio);
+                if (radio.is(':checked')) {
+                    input.parent().find('.type').html('enabled').css('color', 'green');
+                    input.removeAttr('disabled');
+                } else {
+                    input.parent().find('.type').html('disabled').css('color', 'red');
+                    input.attr('disabled', 'disabled');
+                }
+            });
+        }
+
+        // reset text input (not checked)
+        function resetTextInput() {
+            $('input[type=text]').each(function () {
+                var input = $(this);
+                var radio = getRadioFromInput(input);
+                if (!radio.is(':checked')) {
+                    input.val('');
+                }
+            });
+        }
+
+        // reset select input (not checked)
+        function resetSelectInput() {
+            $('select').each(function () {
+                var selector = $(this);
+                var radio = getRadioFromInput(selector);
+                if (!radio.is(':checked')) {
+                    selector.val(selector.prop('defaultSelected'));
+                }
+            });
+        }
+
+        // get input related to current radio
+        function getInputFromRadio(e) {
+            //return e.siblings('#' + e.val()); // might not work
+            return e.closest('.option').find('#' + e.val());
+        }
+
+        // get radio related to current input
+        function getRadioFromInput(e) {
+            //return e.siblings('input[value=' + e.attr('id') + ']'); // might not work
+            return e.closest('.option').find('input[value=' + e.attr('id') + ']');
+        }
+
+        // write output
+        function writteResultFromElement(id, value) {
+            $('#result').html(id + ': ' + value);
+        }
+    });
+    </script>
+    </body>
+</html>

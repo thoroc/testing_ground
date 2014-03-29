@@ -1,0 +1,103 @@
+{
+    "name": "regierungsbezirke",
+    "limits": "kreis aemter",
+    "enables": "",
+    "default": " >> Regierungsbezirke",
+    "data": {
+        "freiburg": {
+            "name": "Freiburg",
+            "value": "freiburg",
+            "limited-by": "BW"
+        },
+        "karlsruhe": {
+            "name": "Karlsruhe",
+            "value": "karlsruhe",
+            "limited-by": "BW"
+        },
+        "stuttgart": {
+            "name": "Stuttgart",
+            "value": "stuttgart",
+            "limited-by": "BW"
+        },
+        "tuebingen": {
+            "name": "Tübingen",
+            "value": "tuebingen",
+            "limited-by": "BW"
+        },
+        "oberbayern": {
+            "name": "Oberbayern",
+            "value": "oberbayern",
+            "limited-by": "BY"
+        },
+        "niederbayern": {
+            "name": "Niederbayern",
+            "value": "niederbayern",
+            "limited-by": "BY"
+        },
+        "oberpfalz": {
+            "name": "Oberpfalz",
+            "value": "oberpfalz",
+            "limited-by": "BY"
+        },
+        "oberfranken": {
+            "name": "Oberfranken",
+            "value": "oberfranken",
+            "limited-by": "BY"
+        },
+        "mittelfranken": {
+            "name": "Mittelfranken",
+            "value": "mittelfranken",
+            "limited-by": "BY"
+        },
+        "unterfranken": {
+            "name": "Unterfranken",
+            "value": "unterfranken",
+            "limited-by": "BY"
+        },
+        "schwaben": {
+            "name": "Schwaben",
+            "value": "schwaben",
+            "limited-by": "BY"
+        },
+        "darmstadt": {
+            "name": "Darmstadt",
+            "value": "darmstadt",
+            "limited-by": "HE"
+        },
+        "giessen": {
+            "name": "Gießen",
+            "value": "giessen",
+            "limited-by": "HE"
+        },
+        "kassel": {
+            "name": "Kassel",
+            "value": "kassel",
+            "limited-by": "HE"
+        },
+        "arnsberg": {
+            "name": "Arnsberg",
+            "value": "arnsberg",
+            "limited-by": "NW"
+        },
+        "koeln": {
+            "name": "Köln",
+            "value": "koeln",
+            "limited-by": "NW"
+        },
+        "detmold": {
+            "name": "Detmold",
+            "value": "detmold",
+            "limited-by": "NW"
+        },
+        "duesseldorf": {
+            "name": "Düsseldorf",
+            "value": "duesseldorf",
+            "limited-by": "NW"
+        },
+        "muenster": {
+            "name": "Münster",
+            "value": "muenster",
+            "limited-by": "NW"
+        }
+    }
+}

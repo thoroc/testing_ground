@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>$.inArray string check</h3>
+        <div>Value:
+            <div class="value">apple</div>
+        </div>
+        <div>Array:
+            <div class="array">apple banana lemon pear peach</div>
+        </div>
+        <div>Result value against the array:
+            <div class="result1"></div>
+        </div>
+        <div>Result value as string against the array:
+            <div class="result2"></div>
+        </div>
+        <script type="text/javascript">
+            $( document ).ready( function() {
+                var needle = $( 'div.value' ).text();
+                var stack = $( 'div.array' ).text();
+
+                console.log( needle );
+
+                stack = stack ? stack.split( ' ' ) : [ ];
+                console.log( stack );
+
+                ( $.inArray( needle, stack) ) ?
+                    $( 'div.result1' ).text( needle ) :
+                    $( 'div.result1' ).text( 'failed!' );
+
+                ( $.inArray( '"'+needle+'"', stack) ) ?
+                    $( 'div.result2' ).text( needle ) :
+                    $( 'div.result2' ).text( 'failed!' );
+
+            });
+        </script>
+    </body>
+</html>

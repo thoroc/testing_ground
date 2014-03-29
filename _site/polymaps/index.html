@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Polymaps Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="polymaps.min.js"></script>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div>BLAH BLAH BLAH</div>
+        <script type="text/javascript">
+            var po = org.polymaps;
+
+            var map = po.map()
+                .container(document.getElementById("map").appendChild(po.svg("svg")))
+                .add(po.interact())
+                .add(po.image().url("chernarus_south-zagoria.jpg"))
+    .add(po.arrow())
+    .add(po.drag())
+    .add(po.dblclick())
+    .add(po.wheel());
+//                .add(po.hash())
+//                .zoom(13)
+//                .zoomRange([12, 16]);
+        </script>
+    </body>
+</html>

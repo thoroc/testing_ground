@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style>
+            td, th {
+                padding: 2px 4px;
+            }
+
+            th {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="container"></div>
+        <div>http://stackoverflow.com/questions/13903548/draw-text-in-d3-arc-javascript</div>
+        <script type="text/javascript">
+var svg = d3.select("body").append("svg"),
+    pi = Math.PI;
+
+var arc = d3.svg.arc()
+    .innerRadius(150)
+    .outerRadius(180)
+    .startAngle(0)
+    .endAngle(-pi/2)
+
+var path = svg.append("path")
+    .attr("d", arc)
+    .attr("id", "path1")
+    .attr("transform", "translate(200,200)")
+    .attr("fill","#ccf")
+
+// Add a text label.
+var text = svg.append("text")
+    .attr("x", 30)
+    .attr("dy", 20);
+
+text.append("textPath")
+    .attr("stroke","black")
+    .attr("xlink:href","#path1")
+    .text("International Monkey Business.");
+        </script>
+    </body>
+</html>

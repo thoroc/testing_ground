@@ -1,0 +1,45 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div class="content">
+            THIS IS SOME SERIOUS BULLSHIT
+            <button class="remove">remove</button>
+        </div>
+        <div class="btn-group">
+            <button class="addmore">Add some more</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+    $( function()
+    {
+    });
+
+    $( document ).on( 'click', '.addmore', function( event )
+    {
+        var previous = $( this ).parent().prev( '.content' );
+
+        console.log( previous );
+
+        $( previous ).after( '<div class="content">FUCK OFF<button class="remove">remove</button</div>' );
+    });
+
+    $( document ).on( 'click', '.remove', function( event )
+    {
+        var div = $( this ).closest( 'div' );
+
+        console.log( div );
+
+        $( div ).remove();
+    });
+    </script>
+</html>

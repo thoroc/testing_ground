@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<link type="text/css" href="css/nested-selection.css" rel="stylesheet">-->
+        <style>
+            .chart rect {
+                fill: steelblue;
+                stroke: white;
+            }
+
+            .axis path,
+            .axis line {
+                fill: none;
+                stroke: black;
+                shape-rendering: crispEdges;
+            }
+
+            .axis text {
+                font-family: sans-serif;
+                font-size: 11px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <h1>D3 testing</h1>
+        <div class="graph"></div>
+
+        <script>
+//            var nodes = [
+//                {"period": "Global", "send": 21166, "replied": 7224, "rate": 34.13},
+//                {"period": "February", "send": 6334, "replied": 2143, "rate": 33.83},
+//                {"period": "March", "send": 6662, "replied": 2381, "rate": 35.74},
+//                {"period": "April", "send": 8170, "replied": 2700, "rate": 33.05}
+//            ];
+
+            var dataset = [
+                {"period":"Period","send":36272,"received":9635,"rate":26.56},
+                {"period":"August","send":2219,"received":501,"rate":22.58},
+                {"period":"September","send":2613,"received":601,"rate":23},
+                {"period":"October","send":3487,"received":873,"rate":25.04},
+                {"period":"November","send":2787,"received":789,"rate":28.31},
+                {"period":"December","send":2943,"received":790,"rate":26.84},
+                {"period":"January","send":2933,"received":815,"rate":27.79},
+                {"period":"February","send":2771,"received":759,"rate":27.39},
+                {"period":"March","send":3248,"received":896,"rate":27.59},
+                {"period":"April","send":3599,"received":959,"rate":26.65},
+                {"period":"May","send":3075,"received":883,"rate":28.72},
+                {"period":"June","send":3039,"received":834,"rate":27.44},
+                {"period":"July","send":3558,"received":935,"rate":26.28}
+            ];
+//            var length = nodes.length + 1;
+//
+//            var height = 480;
+//            var width = 640;
+//            var x = width / length;
+//            var y, x_axis, y_axis;
+
+            /**
+             * Creating the body of the chart
+             */
+//            var chart = d3.select( "div" )
+//                    .append( "svg" )
+//                    .attr( "class", "chart" )
+//                    .attr( "width", width )
+//                    .attr( "height", height );
+
+//            drawCircle( nodes, ["send", "recieved"] );
+//            drawLabel( nodes );
+//            drawBarChart( nodes );
+//            drawTable( nodes );
+//
+            //Width and height
+            var w = 960;
+            var h = 500;
+//            var padding = 40;
+            var margin = {top: 40, right: 40, bottom: 40, left: 40};
+            var width = w - margin.left - margin.right;
+            var height = h - margin.top - margin.bottom;
+
+//            console.log( dataset.length );
+//            console.log( d3.range( dataset.length ) );
+//            console.log( dataset.map( function( d ) { return d.period; }) );
+
+            //Create scale functions
+            var xScale = d3.scale.ordinal()
+                    .domain( dataset.map( function( d ) { return d.period; } ))
+                    .rangePoints([margin.left, width]);
+
+            var yScale = d3.scale.linear()
+                    .domain([0, d3.max(dataset, function(d) { return d.received; })])
+                    .range([height, margin.top]);
+
+            var zScale = d3.scale.linear()
+                    .domain([0, d3.max(dataset, function(d) { return d.rate; })])
+                    .range([height, margin.top]);
+
+            var svg = d3.select( ".graph" ).append( "svg" )
+                .attr( "class", "svg" )
+                .attr( "width", w )
+                .attr( "height", h );
+
+            var xAxis = d3.svg.axis()
+                .scale( xScale )
+                .orient( "bottom" );
+//                .ticks( 3 );
+//                .tickFormat( function( d, i ) { console.log( d ); return 'foo ' + d + ' bar ' + i; });
+
+            var yAxis = d3.svg.axis()
+                .scale( yScale )
+                .orient( "left" )
+                .ticks( 5 );
+
+            var zAxis = d3.svg.axis()
+                .scale( zScale )
+                .orient( "right" )
+                .ticks( 5 );
+
+            svg.append( "g" )
+                .attr( "class", "x axis" )
+                .attr( "transform", "translate(0," + (height) + ")" )
+                .call( xAxis );
+
+            svg.append( "g" )
+                .attr( "class", "y axis" )
+                .attr( "transform", "translate(" + margin.left + ",0)" )
+                .call( yAxis );
+
+            svg.append( "g" )
+                .attr( "class", "z axis" )
+                .attr( "transform", "translate(" + width + ",0)" )
+                .call( zAxis );
+
+
+            function drawBarChart( data ) {
+
+                var margin = {top: 20, right: 20, bottom: 30, left: 40},
+                    width = 960 - margin.left - margin.right,
+                    height = 500 - margin.top - margin.bottom;
+
+                var y = d3.scale.linear()
+                   .domain([0,100])
+                   .range([height, 0]);
+
+                var x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1)
+                    .domain( d3.entries( data ).map( function( d ) { return d.key; }));
+
+                var xAxis = d3.svg.axis()
+                    .scale(x)
+                    .orient( "bottom" );
+
+                var yAxis = d3.svg.axis()
+                    .scale(y)
+                    .orient( "left" );
+
+                var svg = d3.select( "body" ).append( "svg" )
+                        .attr( "width", width + margin.left + margin.right)
+                        .attr( "height", height + margin.top + margin.bottom)
+                    .append( "g" )
+                        .attr( "transform", "translate( " + margin.left + "," + margin.top + " )" );
+
+                svg.append( "g" )
+                        .attr( "class", "x axis" )
+                        .attr( "transform", "translate(0," + height + " )" )
+                        .call(xAxis);
+
+                svg.append( "g" )
+                        .attr( "class", "y axis" )
+                        .call(yAxis)
+                    .append( "text" )
+                        .attr( "transform", "rotate(-90)" )
+                        .attr( "y", 6)
+                        .attr( "dy", ".71em" )
+                        .style( "text-anchor", "end" )
+                        .text( "Percent" );
+
+                svg.selectAll( ".send-bar" )
+                        .data( d3.entries( data ))
+                    .enter().append( "rect" )
+                        .attr( "class", "send-bar" )
+                        .attr( "x", function( d ) { return x( d.key ); })
+                        .attr( "width", x.rangeBand()/2 )
+                        .attr( "y", function( d ) { return y( d.value.send / 200 ); })
+                        .attr( "height", function( d ) { return height - y( d.value.send / 200 ); })
+                        .style( "fill", "orange" );
+
+                var bar = svg.selectAll( ".received-bar" )
+                        .data( d3.entries( data ))
+                    .enter().append( "rect" )
+                        .attr( "class", "received-bar" )
+                        .attr( "x", function( d) { return x( d.key ) + x.rangeBand()/2; })
+                        .attr( "width", x.rangeBand()/2)
+                        .attr( "y", function( d ) { return y( d.value.received / 200 ); })
+                        .attr( "height", function( d ) { return height - y( d.value.received / 200 ); })
+                        .style( "fill", "red" );
+
+                bar.append( "text" )
+                        .attr( "x", function( d ) { return x( d.key ) + x.rangeBand() / 2; })
+                        .attr( "dx", -3 ) // padding-right
+                        .attr( "dy", ".35em" ) // vertical-align: middle
+                        .attr( "text-anchor", "end" ) // text-align: right
+                        .text( function( d ) { return d.value.period; });
+            }
+
+            function drawCircle( data, values ) {
+                var pi = Math.PI;
+                var r = 0;
+                var n = 0;
+                var container = chart.selectAll( "g" )
+                        .data( data )
+                        .enter()
+                        .append( "g" )
+                        .attr( "class", function( d ) { return d.period })
+                        .attr( "transform", function( d, i ) {
+                            n = i * x;
+                            return "translate( " + n + ",0)";
+                        });
+
+                var circles = container.selectAll( "circle" )
+                        .data( function( container, i ) {
+                            return values.map( function( d ) {
+                                return { column: d, value: container[d] };
+                            });
+                        })
+                        .enter()
+                        .append( "circle" )
+                        .attr( "cy", 200 )
+                        .attr( "cx", 200 )
+                        .attr( "r", function( d ) { r = d.value / 200; ;return r; })
+                        .attr( "class", function( d, i ) { return values[i]; });
+            }
+
+            function drawLabel( data ) {
+                var width = 960;
+                var x = 960 / data.length;
+
+                var arc = d3.svg.arc()
+                    .innerRadius( function( d,i ) {
+                        return (5-i)*35;
+                    })
+                    .outerRadius( function( d,i ) {
+                        return (5-i)*35+30;
+                    })
+                    .startAngle(0)
+                    .endAngle(2 * Math.PI);
+
+                var svg = d3.select( "body" ).append( "svg" )
+                    .attr( "width", width )
+                    .attr( "height", 500)
+                    .selectAll( "g" )
+                    .data( data )
+                    .enter()
+                    .append( "g" )
+                    .attr( "transform", "translate( 480, 250 )" );
+//                    .attr( "transform", function( d, i ) {
+//                        return "translate( " + ( i + 1 ) * x + ", 250)";
+//                    });
+
+                var thing = svg.append( "g" )
+                    .attr( "id","thing" )
+                    .style( "fill","navy" )
+                    .attr( "class", "label" );
+
+                var arcs = svg.append( "path" )
+                    .attr( "fill","red" )
+                    .attr( "id", function(d,i){return "s"+i;})
+                    .attr( "d",arc);
+
+                thing.append( "text" )
+                    .style( "font-size",20)
+                    .append( "textPath" )
+                    .attr( "textLength",function(d,i){return 90-i*5 ;})
+                    .attr( "xlink:href",function(d,i){return "#s"+i;})
+                    .attr( "startOffset",function(d,i){return 3/20;})
+                    .attr( "dy","-1em" )
+                    .text(function(d){return d.period;})
+            }
+
+            function drawTable( data ) {
+                var label = [];
+                for( var key in data[0] ) {
+                    label.push( key );
+                }
+                var columns = label;
+
+                var table = d3.select( "#container" ).append( "table" ),
+                    thead = table.append( "thead" ),
+                    tbody = table.append( "tbody" );
+
+                // append the header row
+                thead.append( "tr" )
+                    .selectAll( "th" )
+                    .data(columns)
+                    .enter()
+                    .append( "th" )
+                        .text( function( d ) { return d; });
+
+                // create a row for each object in the data
+                var rows = tbody.selectAll( "tr" )
+                    .data( data )
+                    .enter()
+                    .append( "tr" );
+
+                // create a cell in each row for each column
+                var cells = rows.selectAll( "td" )
+                    .data( function( row ) {
+                        return columns.map( function( d )
+                        {
+                            return { column: d, value: row[d] };
+                        });
+                    })
+                    .enter()
+                    .append( "td" )
+                        .text(function(d) { return d.value; });
+
+                return table;
+            }
+
+//            var jsonData = [
+//                { "x_axis": 10, "y_axis": 10, "height": 20, "width": 20, "color" : "green" },
+//                { "x_axis": 160, "y_axis": 40, "height": 20, "width": 20, "color" : "purple" },
+//                { "x_axis": 70, "y_axis": 70, "height": 20, "width": 20, "color" : "red" }
+//            ];
+//
+//            var max_x = 0;
+//            var max_y = 0;
+//
+//            for ( var i = 0; i < jsonData.length; i++ )
+//            {
+//                var temp_x, temp_y;
+//                var temp_x = jsonData[i].x_axis + jsonData[i].width;
+//                var temp_y = jsonData[i].y_axis + jsonData[i].height;
+//
+//                if( temp_x >= max_x ) { max_x = temp_x; }
+//                if( temp_y >= max_y ) { max_y = temp_y; }
+//            }
+//
+//            var svgContainer = d3.select( "body" ).append( "svg" )
+//                    .attr( "width", max_x )
+//                    .attr( "height", max_y );
+//
+//            var rectangles = svgContainer.selectAll( "rect" )
+//                    .data( jsonData )
+//                    .enter()
+//                    .append( "rect" );
+//
+//            var rectangleAttributes = rectangles
+//                    .attr("x", function (d) { return d.x_axis; })
+//                    .attr("y", function (d) { return d.y_axis; })
+//                    .attr("height", function (d) { return d.height; })
+//                    .attr("width", function (d) { return d.width; })
+//                    .style("fill", function(d) { return d.color; });
+        </script>
+    </body>
+</html>

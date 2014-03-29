@@ -1,0 +1,226 @@
+.loading {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid #808B94;
+    background-color: #fff;
+    background-position: center center;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 250px;
+    top: 100px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-radius: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: arial,helvetica,clean,sans-serif!important;
+}
+
+
+.loading div {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.cisco-font {
+    color: #C12D21;
+    letter-spacing: .1em;
+    line-height: 1.5em;
+    font-weight: bolder;
+    font-size: 2.4em;
+    left: 4px;
+}
+
+.loading div.loader {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding-left: 20%;
+    padding-right: 20%;
+    position: relative;
+}
+
+.loading div.bar {
+    margin-top: 20px;
+    height: 10px;
+    background-color: #067699;
+    width: 4px;
+    left: 4px;
+    margin-right: 11px;
+    border: 1px solid #0077b3;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #0077b3;
+    /* Set the animation properties */
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: loadingbar;
+    -moz-animation-name: loadingbar;
+    -ms-animation-name: loadingbar;
+    -o-animation-name: loadingbar;
+    animation-name: loadingbar;
+}
+
+/*Delay both the second and third bar at the start*/
+.loader .bar:nth-child(2) {
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.loader .bar:nth-child(3) {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.loader .bar:nth-child(4) {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    -ms-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.loader .bar:nth-child(5) {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    -o-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.loader .bar:nth-child(6) {
+    -webkit-animation-delay: 1.0s;
+    -moz-animation-delay: 1.0s;
+    -ms-animation-delay: 1.0s;
+    -o-animation-delay: 1.0s;
+    animation-delay: 1.0s;
+}
+
+.loader .bar:nth-child(7) {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    -ms-animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+}
+
+.loader .bar:nth-child(8) {
+    -webkit-animation-delay: 1.4s;
+    -moz-animation-delay: 1.4s;
+    -ms-animation-delay: 1.4s;
+    -o-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+
+.loader .bar:nth-child(9) {
+    -webkit-animation-delay: 1.6s;
+    -moz-animation-delay: 1.6s;
+    -ms-animation-delay: 1.6s;
+    -o-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+
+/* The actual animation */
+@-webkit-keyframes loadingbar {
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
+    100% { margin-top: 20px; height: 10px; }
+}
+
+@-moz-keyframes loadingbar {
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
+    100% { margin-top: 20px; height: 10px; }
+}
+
+@-ms-keyframes loadingbar {
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
+    100% { margin-top: 20px; height: 10px; }
+}
+
+@-o-keyframes loadingbar {
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
+    100% { margin-top: 20px; height: 10px; }
+}
+
+@keyframes loadingbar {
+    0% { margin-top: 20px; height: 10px; }
+    10% { margin-top: 15px; height: 15px; }
+    20% { margin-top: 10px; height: 20px; }
+    30% { margin-top:  5px; height: 25px; }
+    40% { margin-top:  0px; height: 35px; }
+    50% { margin-top:  0px; height: 40px; }
+    60% { margin-top:  0px; height: 35px; }
+    70% { margin-top:  5px; height: 25px; }
+    80% { margin-top: 10px; height: 20px; }
+    90% { margin-top: 15px; height: 15px; }
+    100% { margin-top: 20px; height: 10px; }
+}
+
+.screen {
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+    width:100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha( opacity = 60 );
+    opacity: 0.6;
+    display: none;
+}
+
+.loading {
+    display: none;
+}

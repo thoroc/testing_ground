@@ -1,0 +1,169 @@
+div.container{
+    /*background-color: white;*/
+}
+
+/*#main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+}
+
+section {
+     position is static by default
+    margin-left: 200px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: white;
+    width: 100%;
+}
+
+body {
+    margin-bottom: 120px;
+}*/
+
+.elem {
+    padding: 16px 8px 16px 8px;
+    border-style: solid;
+    border-width: 4px;
+    /*border-radius: 12px 0px 12px 0px;*/
+    position: relative;
+    /*background-color: white;*/
+}
+
+.left,
+.right {
+    width: 48%;
+}
+
+.center {
+    width: 98.5%;
+}
+
+.panel > div,
+.row > div {
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.row > div.title {
+    width: 20%;
+}
+
+.elem p,
+.elem h1,
+.elem h2,
+.elem h3,
+.elem h4,
+.elem h5,
+.elem label {
+    padding: 0.4em 1em;
+}
+
+.row {
+    padding-bottom: 24px;
+}
+
+.title {
+    font-weight: bold;
+    margin-right: 8px;
+    text-align: right;
+}
+
+/*.elem-inline .label,
+.elem-inline .endlabel {
+    position: static;
+    font-size: 8pt;
+}*/
+
+.label {
+    top: 0;
+    left: 0;
+    padding: 0 3px 3px 0;
+}
+
+.endlabel {
+    right: 0;
+    bottom: 0;
+    padding: 3px 0 0 3px;
+}
+
+.label, .endlabel {
+    position: absolute;
+    color: #414142;
+    line-height: 1.2em;
+    font-size: 8pt;
+    /*padding: 2px 6px 2px 6px;*/
+}
+
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+
+/* unused classes */
+
+.simple {
+    width: 500px;
+    margin: 20px auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.fancy {
+    width: 500px;
+    margin: 20px auto;
+    padding: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.static {
+    position: static;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+}
+
+.absolute {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 300px;
+    height: 200px;
+}
+
+.relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+}
+
+.relative1 {
+    position: relative;
+}
+
+.relative2 {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+}

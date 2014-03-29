@@ -1,3 +1,5 @@
+name: Testing Ground
 markdown: rdiscount
 pygments: true
 permalink: /:title
+baseurl: /testing_ground

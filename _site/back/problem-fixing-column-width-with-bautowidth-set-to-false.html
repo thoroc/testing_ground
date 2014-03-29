@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Quix Contact</title>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/loadTable.js"></script>
+    <style type="text/css" title="currentStyle">
+        @import "../css/datatables/jquery.dataTables_themeroller.css";
+        @import "../css/ui-lightness/jquery-ui-1.10.2.custom.min.css";
+        @import "../css/other_style.css";
+    </style>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#content').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="table"></table>' );
+            $('#table').dataTable( {
+                "bJQueryUI": true,
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": true,
+                "bSort": true,
+                "bInfo": true,
+                "bAutoWidth": false,
+                "aaData": [["Nome Secondo nome","Cognome","Societa","Reparto","Ufficio","Cellulare","Indirizzo posta elettronica"],
+                        ["AS ","V","test","test","","","test"],
+                        ["asFe ","TE","TEizi","ET","7579","+T76","T@.it"],
+                        ["AS ","V","test","tedfgst","","","test"]]
+                "aoColumns": [
+                    { "sTitle": "Nome", "sWidth": "15%" },
+                    { "sTitle": "Cognome", "sWidth": "15%" },
+                    { "sTitle": "Società", "sWidth": "15%" },
+                    { "sTitle": "Reparto", "sWidth": "25%"},
+                    { "sTitle": "Fisso", "sWidth": "5%"},
+                    { "sTitle": "Mobile", "sWidth": "10%"},
+                    { "sTitle": "eMail", "sWidth": "15%"},
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

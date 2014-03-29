@@ -1,0 +1,22 @@
+.axis {
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.line, .dashed {
+    stroke: lightgrey;
+    stroke-width: 1px;
+}
+
+.dashed {
+    stroke-dasharray: 0,2 1;
+}
+
+.label {
+  font: 12pt sans-serif;
+}
+
+.equation {
+    stroke: steelblue;
+    stroke-width: 2px;
+}

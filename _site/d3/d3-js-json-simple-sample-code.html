@@ -1,0 +1,74 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3 Start</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style>
+            text {
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="container"></div>
+        <div>http://stackoverflow.com/questions/10549585/d3-js-json-simple-sample-code</div>
+        <script type="text/javascript">
+            var dataset = [
+                {"a":"-1.14","b":"4.14"},
+                {"a":"-0.13","b":"1.38"},
+                {"a":"-4.19","b":"1.43"},
+                {"a":"-0.21","b":"3.34"}
+            ];
+
+            var width = 400;
+            var height = 400;
+
+            var x = d3.scale.linear()
+                .domain ([-5, 5])
+                .range([0, width]);
+            var y = d3.scale.linear()
+                .domain ([-5, 5])
+                .range([0, height]);
+
+            var chart = d3.select("body").append("svg")
+                .attr("width", width+70)
+                .attr("height", height+70)
+                .attr("class", chart)
+                .append("g")
+                    .attr("transform", "translate(30, 30)");
+
+            chart.selectAll("xline")
+                .data(x.ticks(11))
+                .enter().append("line")
+                    .attr("x1", x)
+                    .attr("x2", x)
+                    .attr("y1", 0)
+                    .attr("y2", height)
+                    .style("stroke", "#ccc");
+
+            chart.selectAll("yline")
+                .data(y.ticks(11))
+                .enter().append("line")
+                    .attr("y1", y)
+                    .attr("y2", y)
+                    .attr("x1", 0)
+                    .attr("x2", width)
+                .style("stroke", "#ccc");
+
+          chart.selectAll("scatter-dots")
+                .data(dataset)
+                .enter().append("circle")
+                  .attr("cx", function (d) { return x(d.a); } )
+                  .attr("cy", function (d) { return y(d.b); } )
+                  .attr("r", 10)
+                  .style("opacity", 0.6);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,150 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #ruler {
+                visibility: hidden;
+                white-space: nowrap;
+            }
+            div {
+                border: solid #000 1px;
+                width: 160px;
+                white-space: nowrap;
+/*                overflow: hidden;*/
+                margin: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="content"></div>
+        <div id="foo">buongiorno</div>
+        <div id="bar">this is a very long string of uninteresting text for the
+            purpose of testing, which tells how the user is upset about his
+            middly warm coffee.</div>
+        <!--<span id="ruler"></span>-->
+        <script src="../js/jquery-1.9.1.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            //just to avoid 'string ...' with spaces
+            //trim a string http://stackoverflow.com/a/498995
+            String.prototype.trim = function() {
+                return this.replace( /^\s\s*/, '' ).replace( /\s\s*$/, '' );
+            };
+
+//            String.prototype.visualLength = function() {
+//                var ruler = $( "ruler" );
+//                ruler.innerHTML = this;
+//                return ruler.offsetWidth;
+//            };
+
+            String.prototype.visualLength = function( parentNode ) {
+//                var ruler = $( 'ruler' );
+                var ruler = document.getElementById( 'ruler' );
+                //create the ruler span if not existing
+                if ( !ruler ) {
+                    ruler = document.createElement( 'span' );
+                    ruler.id = 'ruler';
+                    document.getElementById( 'content' ).appendChild( ruler );
+//                    $( 'content' ).appendTo( ruler );
+                }
+                    //copy the parent style
+                if ( parentNode ) {
+                    for ( var i = parentNode.style.length; i > 0; i++ ) {
+                        var name = parentNode.style[i];
+                        ruler.style.setProperty(
+                            name,
+                            parentNode.style.getPropertyValue( name ),
+                            priority = parentNode.style.getPropertyPriority( name )
+                        );
+                    }
+                }
+                ruler.innerHTML = this;
+                return ruler.offsetWidth;
+            };
+
+            //improvement of this: http://blog.mastykarz.nl/measuring-the-length-of-a-string-in-pixels-using-javascript/
+//            var visualLength = function( str ) {
+//                var ruler = document.createElement( 'span' );
+//                ruler.style.visibility = 'hidden';
+//                ruler.style['white-space'] = 'nowrap';
+//                document.body.appendChild( ruler );
+//                ruler.innerHTML = str;
+//                var strLen = ruler.offsetWidth;
+//                document.body.removeChild( ruler );
+//                return strLen;
+//            };
+//
+//            var trunc = function( n, element ) {
+//                var str = element.innerHTML;
+//                if( visualLength( str ) > n ) {
+//                    do {
+//                        str = str.substr( 0, str.length - 1 ).trim();
+//                    } while( visualLength( str ) > n );
+//                    element.title = element.innerHTML;
+//                    element.innerHTML = str + '&hellip;';
+//                }
+//            };
+
+            String.prototype.truncate = function( length ) {
+                var tmp = this;
+                var trimmed = this;
+                if ( tmp.visualLength() > length ) {
+                    trimmed += "...";
+                    while ( trimmed.visualLength() > length ) {
+                        tmp = tmp.substring( 0, tmp.length - 1 );
+                        trimmed = tmp + "...";
+                    }
+                }
+                return trimmed;
+            };
+
+            $( document ).ready( function() {
+
+                var s = "Some text";
+                var len = s.visualLength();
+
+                //improvement of this: http://blog.mastykarz.nl/measuring-the-length-of-a-string-in-pixels-using-javascript/
+//                var visualLength = function( str ) {
+//                    var ruler = document.createElement( 'span' );
+//                    ruler.style.visibility = 'hidden';
+//                    ruler.style['white-space'] = 'nowrap';
+//                    document.body.appendChild( ruler );
+//                    ruler.innerHTML = str;
+//                    var strLen = ruler.offsetWidth;
+//                    document.body.removeChild( ruler );
+//                    return strLen;
+//                };
+//
+//                var trunc = function( n, element ) {
+//                    var str = element.innerHTML;
+//                    if( visualLength( str ) > n ) {
+//                        do {
+//                            str = str.substr( 0, str.width() - 1 ).trim();
+//                        } while( visualLength( str ) > n );
+//                        element.title = element.innerHTML;
+//                        element.innerHTML = str + '&hellip;';
+//                    }
+//                };
+
+                $( '#content' ).text( s + ' (has a length of ' + len + 'px)' );
+                var txt = $( '#bar' ).text();
+                $( '#bar' ).text( txt.truncate( len ));
+
+                //usage (http://jsfiddle.net/B3QDd/)
+//                trunc( 10, $( "foo" ));
+            });
+
+/*
+            function $(id) {
+                return document.getElementById(id);
+            }*/
+        </script>
+    </body>
+</html>

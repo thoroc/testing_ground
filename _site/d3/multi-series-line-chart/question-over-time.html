@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+              font: 10px sans-serif;
+            }
+
+            .axis path, .axis line {
+              fill: none;
+              stroke: #000;
+              shape-rendering: crispEdges;
+            }
+
+            .line {
+              fill: none;
+              stroke: steelblue;
+              stroke-width: 1.5px;
+            }
+
+            .area {
+              fill: steelblue;
+              opacity: 0.5;
+            }
+
+
+            .dot {
+              fill: steelblue;
+              stroke: steelblue;
+              stroke-width: 1.5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <h1>Question Score over Time</h1>
+        <div class="graph"></div>
+
+        <script>
+
+            var margin = {top: 20, right: 80, bottom: 30, left: 50},
+                width = 960 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            var x = d3.time.scale()
+                .range([0, width]);
+
+            var y = d3.scale.linear()
+                .range([height, 0]);
+
+            var line = d3.svg.line()
+                .interpolate("basis")
+                .x(function(d,i) { return x(i); })
+                .y(function(d) { return y(d.score); });
+
+            var yScale = d3.scale.linear()
+                .domain([5,2.5
+//                        d3.max(d, function(e){
+//                            return d3.max(e.data, function(f){
+//                                return f.score;
+//                            });
+//                        }),
+//                        d3.min(d, function(e){
+//                            return d3.min(e.data, function(f){
+//                                return f.score;
+//                            });
+//                        })
+                ])
+                .range([0, height]);
+
+            var color = d3.scale.category10();
+
+            var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom");
+
+            var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient("left");
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            d3.json("data/scores.json", function(d) {
+//                color.domain( d3.keys( d ));
+
+                color.domain( d3.keys( d[0].data ).filter( function( key ) { return key !== "question"; }));
+
+//                console.log(color.domain());
+
+                var questions = color.domain().map( function( q ) {
+                    return {
+                        name: d.map( function(e) { return e.question; }),
+                        values: d.map( function(e) {
+//                            console.log(e.data);
+                            return { month: e.data.month, score: e.data.score };
+                        })
+                    };
+                });
+
+//                console.log(questions);
+
+                var xScale = d3.scale.linear()
+                    .domain([0, d[0].data.length])
+                    .range([0, width]);
+
+                var line = d3.svg.line()
+                    .interpolate( "cardinal" )
+                    .x( function( d ) { return xScale( d.month ); })
+                    .y( function( d ) { return yScale( d.score ); });
+
+                var xAxis = d3.svg.axis()
+                    .scale( xScale )
+                    .orient( "bottom" );
+
+                var yAxis = d3.svg.axis()
+                    .scale( yScale )
+                    .orient( "left" );
+
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis);
+
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis)
+                  .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("Score");
+
+                var question = svg.selectAll(".question")
+                    .data(questions)
+                    .enter().append("g")
+                    .attr("class", "question");
+
+                question.append("path")
+                    .datum( function( d ) {
+//                            console.log(d);
+                        return {
+                            name: d.name, values: d.values
+                        };
+                    })
+                    .attr( "class", "line" )
+                    .attr( "d", function( d ) { console.log(d);return line( d.values ); })
+                    .style( "stroke", function( d ) { return color( d.name ); });
+
+//                var lines = svg.selectAll( "g" )
+//                    .data(d);  // number of series in data
+
+//                console.log(lines);
+
+//                var container = lines
+//                  .enter().append("g");
+//
+//                container.append("path")
+//                    .attr("class", "line")
+//                    .attr("d", function(d) { console.log(d); return line(d.data);});
+
+//                console.log(color);
+
+            });
+
+
+        </script>
+    </body>
+</html>

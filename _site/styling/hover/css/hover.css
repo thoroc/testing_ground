@@ -1,0 +1,48 @@
+html, body{
+    background-color: transparent;
+}
+
+.body {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.content, .override {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #bbb;
+    border-radius: 12px;
+}
+
+.content:hover {
+    border: 2px solid blue;
+    background-color: turquoise;
+    box-shadow: 0 0 10px 5px aqua;
+}
+
+.red {
+    color: white;
+    background-color: red;
+}
+
+.orange {
+    color: black;
+    background-color: orange;
+}
+
+.blue {
+    color: white;
+    background-color: blue;
+}
+
+.green {
+    color: white;
+    background-color: green;
+}
+
+.left, .right {
+    width: 40%;
+    float: left;
+    margin-right: 5%;
+}
+

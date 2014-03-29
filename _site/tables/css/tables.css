@@ -1,0 +1,134 @@
+
+#audit
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:70%;
+    border-collapse:collapse;
+}
+#audit td, #audit th
+{
+    font-size:1em;
+    border:1px solid #008209;
+    padding:3px 7px 2px 7px;
+    text-align:center;
+}
+#audit th
+{
+    font-size:1.1em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#26972D;
+    color:#ffffff;
+}
+#audit tr.section
+{
+    color:#000000;
+    background-color:#00C90D;
+}
+#audit td.text
+{
+    text-align:left;
+}
+#audit td.final
+{
+    text-align:right;
+}
+.tablewrapper
+{
+    position: relative;
+}
+.table
+{
+    display: table;
+    table-layout: fixed;
+    width: 70%;
+}
+.row
+{
+    display: table-row;
+    width: 100%;
+}
+.row.header
+{
+    border: none;
+    font-size:1.1em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#26972D;
+    color:#ffffff;
+    text-align: center;
+}
+.row.section
+{
+    color:#000000;
+    background-color:#00C90D;
+}
+.cell
+{
+    border: 1px solid black;
+    display: table-cell;
+    float: left;
+
+}
+.cell.description
+{
+    width: 40%;
+}
+.cell.section
+{
+    width: 40%;
+    text-align: left;
+}
+.cell.field-row
+{
+    width: 30%;
+    text-align: left;
+}
+.cell.misc
+{
+    width: 10%;
+    text-align: center;
+}
+
+.cell-tooltip, .cell-popover {
+    border:solid 2px green;
+    background-color: Yellow;
+}
+.choice-tooltip, .choice-popover {
+    border: solid 2px greenyellow;
+    background-color: orange;
+}
+
+.row {
+    height: 30px;
+}
+
+.body-content {
+    overflow: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.colour-orange {
+    background-color: #FF6400;
+}
+
+.colour-apple {
+    background-color: #C6F500;
+}
+
+.colour-peach {
+    background-color: #FF8B40;
+}
+
+.colour-banana {
+    background-color: #FFE200;
+}
+
+.colour-pear {
+    background-color: #B4F200;
+}
+.inline {
+    text-align:left;
+    float: left;
+}

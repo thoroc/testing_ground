@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dynamic Change of target</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="">
+        <meta name="author" content="touristtam">
+        <link rel="shortcut icon" href="icon/favicon.ico">
+        <link rel="stylesheet" href="css/target.css">
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h3>Target Change</h3>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="120px">Action</th>
+                        <th width="240px" title="Showing Class for Action Column">Class</th>
+                        <th width="120px">Value</th>
+                        <th width="240px" title="Showing Class for Value Column">Class</th>
+                        <th width="120px">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div><a href="#" id="view-action" data-origin="view-content" data-attributes="view-class" class="action view">View Content</a></div></td>
+                        <td><div id="view-class" class="content-class" data-origin="view-action"></div></td>
+                        <td><div id="view-content" class="content">Content A</div></td>
+                        <td><div class="content-class" data-origin="view-content"></div></td>
+                        <td rowspan="3"><div id="click-value"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div><a href="#" id="delete-action" data-origin="delete-content" data-attributes="delete-class" class="action delete">Delete Content</a></div></td>
+                        <td><div id="delete-class" class="content-class" data-origin="delete-action"></div></td>
+                        <td><div id="delete-content" class="content">Content B</div></td>
+                        <td><div class="content-class" data-origin="delete-content"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div><a href="#" id="reset-action" data-origin="reset-content" data-attributes="reset-class" class="action reset">Reset Content</a></div></td>
+                        <td><div id="reset-class" class="content-class" data-origin="reset-action"></div></td>
+                        <td><div id="reset-content" class="content highlight">Default Value</div></td>
+                        <td><div class="content-class" data-origin="reset-content"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/target.js"></script>
+    </body>
+</html>

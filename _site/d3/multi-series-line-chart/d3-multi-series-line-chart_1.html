@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="icon/favicon.ico">
+        <link rel="stylesheet" href="css/d3.multiline.chart.css">
+        <title>Multi Series Line Graph</title>
+    </head>
+    <body>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <h1>Multi Line Graph: http://bl.ocks.org/mbostock/3884955</h1>
+        <div class="graph"></div>
+
+        <script>
+            var dataset = [
+                {
+                    "question":"header",
+                    "data":[
+                        {"month":"February","score":4.54},
+                        {"month":"March","score":4.54},
+                        {"month":"April","score":4.54}
+                    ]
+                },
+                {
+                    "question":"Overall Result",
+                    "data":[
+                        {"month":"February","score":"4.62"},
+                        {"month":"March","score":"4.60"},
+                        {"month":"April","score":"4.68"}
+                    ]
+                },
+                {
+                    "question":"Ease of Access to Help",
+                    "data":[
+                        {"month":"February","score":"4.66"},
+                        {"month":"March","score":"4.63"},
+                        {"month":"April","score":"4.68"}
+                    ]
+                },
+                {
+                    "question":"Timeliness of Problem Resolution",
+                    "data":[
+                        {"month":"February","score":"4.54"},
+                        {"month":"March","score":"4.54"},
+                        {"month":"April","score":"4.63"}
+                    ]
+                },
+                {
+                    "question":"Effectiveness of Solution - Information",
+                    "data":[
+                        {"month":"February","score":"4.59"},
+                        {"month":"March","score":"4.55"},
+                        {"month":"April","score":"4.66"}
+                    ]
+                },
+                {
+                    "question":"Technical Expertise of Technician",
+                    "data":[
+                        {"month":"February","score":"4.60"},
+                        {"month":"March","score":"4.59"},
+                        {"month":"April","score":"4.64"}
+                    ]
+                },
+                {
+                    "question":"The Technician was Courteous and Professional",
+                    "data":[
+                        {"month":"February","score":"4.77"},
+                        {"month":"March","score":"4.73"},
+                        {"month":"April","score":"4.77"}
+                    ]
+                }
+            ];
+            var margin = {top: 20, right: 80, bottom: 30, left: 50};
+            var width = 960 - margin.left - margin.right;
+            var height = 500 - margin.top - margin.bottom;
+            var month = '';
+            var score = '';
+
+            var xRange = dataset[0]['data'].map( function( d ) { return d.month; } );
+
+            var xScale = d3.scale.ordinal()
+                .domain( xRange )
+                .rangePoints([0, width]);
+
+            var yScale = d3.scale.linear()
+                .domain([0, 5])
+                .range([height, 0]);
+
+            var color = d3.scale.category10();
+
+            var xAxis = d3.svg.axis()
+                .scale( xScale )
+                .orient( "bottom" );
+
+            var yAxis = d3.svg.axis()
+                .scale( yScale )
+                .orient( "left" );
+
+            var line = d3.svg.line()
+                .interpolate( "cardinal" )
+                .x( function( d ) { return xScale( d.month ); })
+                .y( function( d ) { return yScale( d.score ); });
+
+            var svg = d3.select( "body" ).append( "svg" )
+                .attr( "width", width + margin.left + margin.right)
+                .attr( "height", height + margin.top + margin.bottom)
+              .append( "g" )
+                .attr( "transform", "translate( " + margin.left + "," + margin.top + " )" );
+
+            d3.json( "test.json", function( error, data ) {
+
+                console.log( data );
+
+                color.domain( d3.keys( data[0] ).filter( function( key ) { return key !== "question"; }));
+
+                var questions = color.domain().map( function( q ) {
+                    return {
+                        name: q.name,
+//                        values: q.data
+                        values: data.map( function( d ) {
+                            return { month: d['data'].month, score: d['data'].score };
+                        })
+                    };
+                });
+
+                console.log( color );
+                console.log( questions );
+
+                svg.append( "g" )
+                    .attr( "class", "x axis" )
+                    .attr( "transform", "translate(0," + height + " )" )
+                    .call( xAxis );
+
+                svg.append( "g" )
+                    .attr( "class", "y axis" )
+                    .call( yAxis )
+                    .append( "text" )
+                    .attr( "transform", "rotate(-90)" )
+                    .attr( "y", 6 )
+                    .attr( "dy", ".71em" )
+                    .style( "text-anchor", "end" )
+                    .text( "Score" );
+
+                var question = svg.selectAll( ".question" )
+                    .data( questions )
+                    .enter().append( "g" )
+                    .attr( "class", "question" );
+
+                question.append( "path" )
+                    .datum( function( d ) {
+                        return {
+                            name: d.name, value: d.values['score']
+                        };
+                    })
+//                    .datum( data )
+                    .attr( "class", "line" )
+                    .attr( "d", function( d ) { return line( d.values ); })
+                    .style( "stroke", function( d ) { return color( d.name ); });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,488 @@
+{
+    "name": "gemeinde",
+    "limits": "locality",
+    "enables": "",
+    "default": " >> Stadtteile & Ortsteil",
+    "data": {
+        "mitte": {
+            "name": "Mitte",
+            "value": "mitte",
+            "limited-by": "mitte berlin"
+        },
+        "moabit": {
+            "name": "Moabit",
+            "value": "moabit",
+            "limited-by": "mitte berlin"
+        },
+        "hansaviertel": {
+            "name": "Hansaviertel",
+            "value": "hansaviertel",
+            "limited-by": "mitte berlin"
+        },
+        "tiergarten": {
+            "name": "Tiergarten",
+            "value": "tiergarten",
+            "limited-by": "mitte berlin"
+        },
+        "wedding": {
+            "name": "Wedding",
+            "value": "wedding",
+            "limited-by": "mitte berlin"
+        },
+        "gesundbrunnen": {
+            "name": "Gesundbrunnen",
+            "value": "gesundbrunnen",
+            "limited-by": "mitte berlin"
+        },
+        "friedrichshain": {
+            "name": "Friedrichshain",
+            "value": "friedrichshain",
+            "limited-by": "friedrichshain-kreuzberg berlin"
+        },
+        "kreuzberg": {
+            "name": "Kreuzberg",
+            "value": "kreuzberg",
+            "limited-by": "friedrichshain-kreuzberg berlin"
+        },
+        "prenzlauer-berg": {
+            "name": "Prenzlauer Berg",
+            "value": "prenzlauer-berg",
+            "limited-by": "pankow berlin"
+        },
+        "weissensee": {
+            "name": "Weißensee",
+            "value": "weissensee",
+            "limited-by": "pankow berlin"
+        },
+        "blankenburg": {
+            "name": "Blankenburg",
+            "value": "blankenburg",
+            "limited-by": "pankow berlin"
+        },
+        "Heinersdorf": {
+            "name": "Heinersdorf",
+            "value": "Heinersdorf",
+            "limited-by": "pankow berlin"
+        },
+        "karow": {
+            "name": "Karow",
+            "value": "karow",
+            "limited-by": "pankow berlin"
+        },
+        "stadtrandsiedlung-malchow": {
+            "name": "Stadtrandsiedlung Malchow",
+            "value": "stadtrandsiedlung-malchow",
+            "limited-by": "pankow berlin"
+        },
+        "pankow": {
+            "name": "Pankow",
+            "value": "pankow",
+            "limited-by": "pankow berlin"
+        },
+        "blankenfelde": {
+            "name": "Blankenfelde",
+            "value": "blankenfelde",
+            "limited-by": "pankow berlin"
+        },
+        "buch": {
+            "name": "Buch",
+            "value": "buch",
+            "limited-by": "pankow berlin"
+        },
+        "franzoesisch-buchholz": {
+            "name": "Französisch Buchholz",
+            "value": "franzoesisch-buchholz",
+            "limited-by": "pankow berlin"
+        },
+        "niederschoenhausen": {
+            "name": "Niederschönhausen",
+            "value": "niederschoenhausen",
+            "limited-by": "pankow belin"
+        },
+        "rosenthal": {
+            "name": "Rosenthal",
+            "value": "rosenthal",
+            "limited-by": "pankow belin"
+        },
+        "wilhelmsruh": {
+            "name": "Wilhelmsruh",
+            "value": "wilhelmsruh",
+            "limited-by": "pankow belin"
+        },
+        "charlottenburg": {
+            "name": "Charlottenburg",
+            "value": "charlottenburg",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "Wilmersdorf": {
+            "name": "Wilmersdorf",
+            "value": "Wilmersdorf",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "schmargendorf": {
+            "name": "Schmargendorf",
+            "value": "schmargendorf",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "grunewald": {
+            "name": "Grunewald",
+            "value": "grunewald",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "westend": {
+            "name": "Westend",
+            "value": "westend",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "charlottenburg-nord": {
+            "name": "Charlottenburg-Nord",
+            "value": "charlottenburg-nord",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "halensee": {
+            "name": "Halensee",
+            "value": "halensee",
+            "limited-by": "charlottenburg-wilmersdorf belin"
+        },
+        "spandau": {
+            "name": "Spandau",
+            "value": "spandau",
+            "limited-by": "spandau belin"
+        },
+        "haselhorst": {
+            "name": "Haselhorst",
+            "value": "haselhorst",
+            "limited-by": "spandau belin"
+        },
+        "siemensstadt": {
+            "name": "Siemensstadt",
+            "value": "siemensstadt",
+            "limited-by": "spandau belin"
+        },
+        "staaken": {
+            "name": "Staaken",
+            "value": "staaken",
+            "limited-by": "spandau belin"
+        },
+        "gatow": {
+            "name": "Gatow",
+            "value": "gatow",
+            "limited-by": "spandau belin"
+        },
+        "kladow": {
+            "name": "Kladow",
+            "value": "kladow",
+            "limited-by": "spandau belin"
+        },
+        "hakenfelde": {
+            "name": "Hakenfelde",
+            "value": "hakenfelde",
+            "limited-by": "spandau belin"
+        },
+        "falkenhagener-feld": {
+            "name": "Falkenhagener Feld",
+            "value": "falkenhagener-feld",
+            "limited-by": "spandau belin"
+        },
+        "Wilhelmstadt": {
+            "name": "Wilhelmstadt",
+            "value": "Wilhelmstadt",
+            "limited-by": "spandau belin"
+        },
+        "steglitz": {
+            "name": "Steglitz",
+            "value": "steglitz",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "lichterfelde": {
+            "name": "Lichterfelde",
+            "value": "lichterfelde",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "lankwitz": {
+            "name": "Lankwitz",
+            "value": "lankwitz",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "zehlendorf": {
+            "name": "Zehlendorf",
+            "value": "zehlendorf",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "dahlem": {
+            "name": "Dahlem",
+            "value": "dahlem",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "nikolassee": {
+            "name": "Nikolassee",
+            "value": "nikolassee",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "wannsee": {
+            "name": "Wannsee",
+            "value": "wannsee",
+            "limited-by": "steglitz-zehlendorf belin"
+        },
+        "schoeneberg": {
+            "name": "Schöneberg",
+            "value": "schoeneberg",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "friedenau": {
+            "name": "Friedenau",
+            "value": "friedenau",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "tempelhof": {
+            "name": "Tempelhof",
+            "value": "tempelhof",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "mariendorf": {
+            "name": "Mariendorf",
+            "value": "mariendorf",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "marienfelde": {
+            "name": "Marienfelde",
+            "value": "marienfelde",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "lichtenrade": {
+            "name": "Lichtenrade",
+            "value": "lichtenrade",
+            "limited-by": "tempelhof-schoeneberg belin"
+        },
+        "neukoelln": {
+            "name": "Neukölln",
+            "value": "neukoelln",
+            "limited-by": "neukoelln belin"
+        },
+        "britz": {
+            "name": "Britz",
+            "value": "britz",
+            "limited-by": "neukoelln belin"
+        },
+        "buckow": {
+            "name": "Buckow",
+            "value": "buckow",
+            "limited-by": "neukoelln belin"
+        },
+        "rudow": {
+            "name": "Rudow",
+            "value": "rudow",
+            "limited-by": "neukoelln belin"
+        },
+        "gropiusstadt": {
+            "name": "Gropiusstadt",
+            "value": "gropiusstadt",
+            "limited-by": "neukoelln belin"
+        },
+        "alt-treptow": {
+            "name": "Alt-Treptow",
+            "value": "alt-treptow",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "plaenterwald": {
+            "name": "Plänterwald",
+            "value": "plaenterwald",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "baumschulenweg": {
+            "name": "Baumschulenweg",
+            "value": "baumschulenweg",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "johannisthal": {
+            "name": "Johannisthal",
+            "value": "johannisthal",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "niederschoeneweide": {
+            "name": "Niederschöneweide",
+            "value": "niederschoeneweide",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "altglienicke": {
+            "name": "Altglienicke",
+            "value": "altglienicke",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "adlershof": {
+            "name": "Adlershof",
+            "value": "adlershof",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "bohnsdorf": {
+            "name": "Bohnsdorf",
+            "value": "bohnsdorf",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "oberschoeneweide": {
+            "name": "Oberschöneweide",
+            "value": "oberschoeneweide",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "koepenick": {
+            "name": "Köpenick",
+            "value": "koepenick",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "friedrichshagen": {
+            "name": "Friedrichshagen",
+            "value": "friedrichshagen",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "rahnsdorf": {
+            "name": "Rahnsdorf",
+            "value": "rahnsdorf",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "gruenau": {
+            "name": "Grünau",
+            "value": "gruenau",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "mueggelheim": {
+            "name": "Müggelheim",
+            "value": "mueggelheim",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "schmoeckwitz": {
+            "name": "Schmöckwitz",
+            "value": "schmoeckwitz",
+            "limited-by": "treptow-koepenick belin"
+        },
+        "marzahn": {
+            "name": "Marzahn",
+            "value": "marzahn",
+            "limited-by": "marzahn-hellersdorf belin"
+        },
+        "biesdorf": {
+            "name": "Biesdorf",
+            "value": "biesdorf",
+            "limited-by": "marzahn-hellersdorf belin"
+        },
+        "kaulsdorf": {
+            "name": "Kaulsdorf",
+            "value": "kaulsdorf",
+            "limited-by": "marzahn-hellersdorf belin"
+        },
+        "mahlsdorf": {
+            "name": "Mahlsdorf",
+            "value": "mahlsdorf",
+            "limited-by": "marzahn-hellersdorf belin"
+        },
+        "hellersdorf": {
+            "name": "Hellersdorf",
+            "value": "hellersdorf",
+            "limited-by": "marzahn-hellersdorf belin"
+        },
+        "friedrichsfelde": {
+            "name": "Friedrichsfelde",
+            "value": "friedrichsfelde",
+            "limited-by": "lichtenberg belin"
+        },
+        "karlshorst": {
+            "name": "Karlshorst",
+            "value": "karlshorst",
+            "limited-by": "lichtenberg belin"
+        },
+        "lichtenberg": {
+            "name": "Lichtenberg",
+            "value": "lichtenberg",
+            "limited-by": "lichtenberg belin"
+        },
+        "falkenberg": {
+            "name": "Falkenberg",
+            "value": "falkenberg",
+            "limited-by": "lichtenberg belin"
+        },
+        "malchow": {
+            "name": "Malchow",
+            "value": "malchow",
+            "limited-by": "lichtenberg belin"
+        },
+        "wartenberg": {
+            "name": "Wartenberg",
+            "value": "wartenberg",
+            "limited-by": "lichtenberg belin"
+        },
+        "neu-hohenschoenhausen": {
+            "name": "Neu-Hohenschönhausen",
+            "value": "neu-hohenschoenhausen",
+            "limited-by": "lichtenberg belin"
+        },
+        "alt-hohenschoenhausen": {
+            "name": "Alt-Hohenschönhausen",
+            "value": "alt-hohenschoenhausen",
+            "limited-by": "lichtenberg belin"
+        },
+        "fennpfuhl": {
+            "name": "Fennpfuhl",
+            "value": "fennpfuhl",
+            "limited-by": "lichtenberg belin"
+        },
+        "rummelsburg": {
+            "name": "Rummelsburg",
+            "value": "rummelsburg",
+            "limited-by": "lichtenberg belin"
+        },
+        "reinickendorf": {
+            "name": "Reinickendorf",
+            "value": "reinickendorf",
+            "limited-by": "reinickendorf belin"
+        },
+        "tegel": {
+            "name": "Tegel",
+            "value": "tegel",
+            "limited-by": "reinickendorf belin"
+        },
+        "konradshoehe": {
+            "name": "Konradshöhe",
+            "value": "konradshoehe",
+            "limited-by": "reinickendorf belin"
+        },
+        "heiligensee": {
+            "name": "Heiligensee",
+            "value": "heiligensee",
+            "limited-by": "reinickendorf belin"
+        },
+        "frohnau": {
+            "name": "Frohnau",
+            "value": "frohnau",
+            "limited-by": "reinickendorf belin"
+        },
+        "hermsdorf": {
+            "name": "Hermsdorf",
+            "value": "hermsdorf",
+            "limited-by": "reinickendorf belin"
+        },
+        "waidmannslust": {
+            "name": "Waidmannslust",
+            "value": "waidmannslust",
+            "limited-by": "reinickendorf belin"
+        },
+        "luebars": {
+            "name": "Lübars",
+            "value": "luebars",
+            "limited-by": "reinickendorf belin"
+        },
+        "wittenau": {
+            "name": "Wittenau",
+            "value": "wittenau",
+            "limited-by": "reinickendorf belin"
+        },
+        "maerkisches-viertel": {
+            "name": "Märkisches Viertel",
+            "value": "maerkisches-viertel",
+            "limited-by": "reinickendorf belin"
+        },
+        "borsigwalde": {
+            "name": "Borsigwalde",
+            "value": "borsigwalde",
+            "limited-by": "reinickendorf belin"
+        }
+    }
+}

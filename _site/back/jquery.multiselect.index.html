@@ -1,0 +1,33 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../jquery-ui-multiselect-widget-master/jquery.multiselect.css">
+    </head>
+    <body>
+        <div>
+            <select id="example" name="example" multiple="multiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+        <script src="../js/jquery-1.9.1.js"></script>
+        <script src="../jquery-ui-1.10.3/jquery-ui.js"></script>
+        <script src="../jquery-ui-1.10.3/jquery.ui.widget.js"></script>
+        <script src="../jquery-ui-multiselect-widget-master/src/jquery.multiselect.js"></script>
+        <script src="../jquery-ui-multiselect-widget-master/src/jquery.multiselect.filter.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#example").multiselect();
+        });
+        </script>
+    </body>
+</html>
