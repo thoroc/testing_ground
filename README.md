@@ -3,6 +3,7 @@ testing_ground
 
 really just to play around with html/js/css
 
+Jekill version of this repo at: http://thoroc.github.io/testing_ground
 
 different project bundled into one for convenience sake.
 
