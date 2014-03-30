@@ -1,8 +1,9 @@
-?<php
+<?php
 
 namespace Acme\CalendarBundle\Worker;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
+use Doctrine\Common\Persistence\ObjectManager;
 
 use Acme\EventBundle\Document\Event;
 use Acme\EventBundle\Entity\Venue;
@@ -10,22 +11,32 @@ use Acme\EventBundle\Entity\Venue;
 // but it could prove useful for data analytics in the
 // future
 //use Acme\EventBundle\Entity\Sales;
-use Acme\SalesProviderBundle\Worker\XmlParser;
+use Acme\SalesProviderBundle\Worker\Sales;
 
 class AvailabilityCalendarPresenter
 {
     protected $dm;
-    protected $parser;
+    protected $om;
+    protected $sales;
 
-    public function __construct( DocumentManager $dm, XmlParser $parser )
+    /**
+     * Constructor
+     *
+     * The arguments passed are service injected in the Symfony2 style
+     * The Sales worker is actually reading the data provided from
+     * sales.xml and is returning an associative array in the form:
+     *
+     * performanceId => array( 'capacity' => int, 'sold' => int )
+     *
+     * @param \Doctrine\ODM\MongoDB\DocumentManager $dm
+     * @param \Doctrine\Common\Persistence\ObjectManager $om
+     * @param \Acme\SalesProviderBundle\Worker\Sales $sales
+     */
+    public function __construct( DocumentManager $dm, ObjectManager $om, Sales $sales )
     {
         $this->dm = $dm;
-        $this->parser = $parser;
-    }
-
-    private function getSalesData( $performanceId )
-    {
-        return 'foo';
+        $this->om = $om;
+        $this->sales = $sales;
     }
 
 
@@ -43,8 +54,37 @@ class AvailabilityCalendarPresenter
         // - care about error handling - assume all input will be good
         // - care about performance - we'll assume that you'll refactor later if required.
         // - produce something that actually works. We'll ignore the odd typo too if your intent is clear.
-        $dates = $this->getStartAndEndDates( $month, $year, $timeZone );
-        $eventData = $this->getEventData( $venue_name, $dates['start'], $dates['end'] );
+
+        $venue = $this->om->getRepository( 'AcmeEventBundle:Venue' )->findOneBy( array(
+            'name' => $venue_name
+        ));
+
+        $dates = $this->getStartAndEndDates( $month, $year, $venue->getTimeZone() );
+
+        // we do not know if there is more than one performance for this venue
+        $performances = $this->getEventPerformances( $venue_name, $dates['start'], $dates['end'] );
+
+        $sales = array();
+        foreach( $performances as $perf )
+        {
+            $sales[] = $this->getCurrentSalesData( $perf->getId() );
+        }
+    }
+
+    /**
+     * Get the current sales data (ie capacity and sold_count
+     *
+     * If none are found for the $id provided return null
+     *
+     * @param int $id
+     *
+     * @return array | null
+     */
+    private function getCurrentSalesData( $id )
+    {
+        return ( in_array( $id, $this->sales ) ) ?
+                $this->sales[ $id ] :
+                null;
     }
 
     /**
@@ -56,7 +96,7 @@ class AvailabilityCalendarPresenter
      *
      * @return array
      */
-    private function getEventData( $venue_name, $start, $end )
+    private function getEventPerformances( $venue_name, $start, $end )
     {
         // we will assume that event is an Object that has all the needed
         // informations. If not, then we will need to create one from the vendor
