@@ -2,11 +2,18 @@
     position: relative;
     width: auto;
     font-size: 12pt;
-    margin-left: 400px;
-    margin-top: 50px;
-    margin-right: 200px;
+    margin-left: 450px;
+    margin-top: 10px;
+    margin-right: 50px;
 }
 
+.menu {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 400px;
+
+}
 
 .container {
     padding: 24px 24px 12px 24px;
@@ -23,13 +30,6 @@
         0px 0px 10px #fff,
         0px 0px 10px #bbb,
         0px 0px 5px #666;
-}
-
-.test {
-    position: fixed;
-    top: 50px;
-    left: 20px;
-    width: 300px;
 }
 
 .info {
@@ -73,7 +73,7 @@
     box-shadow: inset 0 -1px 0 #fff;
 }
 
-.info, .label {
+.info {
     background: #fff;
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff) to(#e4e4e4));
     background: -webkit-linear-gradient(#fff, #e4e4e4);
@@ -85,11 +85,52 @@
     font-size: 10pt;
 }
 
+.label {
+    background: #005EFF;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#4479D4) to(#1049A9));
+    background: -webkit-linear-gradient(#4479D4, #1049A9);
+    background: -moz-linear-gradient(#4479D4, #1049A9);
+    background: -ms-linear-gradient(#4479D4, #1049A9);
+    background: -o-linear-gradient(#4479D4, #1049A9);
+    background: linear-gradient(#4479D4, #1049A9);
+    color: #fff;
+    font-size: 10pt;
+}
+
 .container, .info, .label {
     border: 1px solid #bbb;
 }
 
-/*p {
-    font: 12pt 'IM Fell English';
-    text-indent: 2em;
-}*/
+p.arial{ font-family: "Arial" };
+p.CiscoSansTTBoldOblique { font-family: "CiscoSansTTBoldOblique"; }
+p.CiscoSansTTBold { font-family: "CiscoSansTTBold"; }
+p.CiscoSansTT-CondensedBoldOblique { font-family: "CiscoSansTT-CondensedBoldOblique"; }
+p.CiscoSansTT-CondensedBold { font-family: "CiscoSansTT-CondensedBold"; }
+p.CiscoSansTT-CondensedExtraLightOblique { font-family: "CiscoSansTT-CondensedExtraLightOblique"; }
+p.CiscoSansTT-CondensedExtraLight { font-family: "CiscoSansTT-CondensedExtraLight"; }
+p.CiscoSansTT-CondensedHeavyOblique { font-family: "CiscoSansTT-CondensedHeavyOblique"; }
+p.CiscoSansTT-CondensedHeavy { font-family: "CiscoSansTT-CondensedHeavy"; }
+p.CiscoSansTT-LightOblique { font-family: "CiscoSansTT-LightOblique"; }
+p.CiscoSansTTCondensedLight { font-family: "CiscoSansTTCondensedLight"; }
+p.CiscoSansTT-CondensedOblique { font-family: "CiscoSansTT-CondensedOblique"; }
+p.CiscoSansTT-Condensed { font-family: "CiscoSansTT-Condensed"; }
+p.CiscoSansTT-CondensedThinOblique { font-family: "CiscoSansTT-CondensedThinOblique"; }
+p.CiscoSansTT-CondensedThin { font-family: "CiscoSansTT-CondensedThin"; }
+p.CiscoSansTTExtraLightOblique { font-family: "CiscoSansTTExtraLightOblique"; }
+p.CiscoSansTTExtraLight { font-family: "CiscoSansTTExtraLight"; }
+p.CiscoSansTTHeavyOblique { font-family: "CiscoSansTTHeavyOblique"; }
+p.CiscoSansTTHeavy { font-family: "CiscoSansTTHeavy"; }
+p.CiscoSansTTLightOblique { font-family: "CiscoSansTTLightOblique"; }
+p.CiscoSansTTLight { font-family: "CiscoSansTTLight"; }
+p.CiscoSansTTCHS-Regular { font-family: "CiscoSansCHS-Regular"; }
+p.CiscoSansTTCHT-Regular { font-family: "CiscoSansCHT-Regular"; }
+p.CiscoSansTTGlobal-Regular { font-family: "CiscoSansGlobal-Regular"; }
+p.CiscoSansTTJPN-Regular { font-family: "CiscoSansJPN-Regular"; }
+p.CiscoSansTTKOR-Regular { font-family: "CiscoSansKOR-Regular"; }
+p.CiscoSansTTLatin { font-family: "CiscoSansTTLatin"; }
+p.CiscoSansTTME-Regular { font-family: "CiscoSansME-Regular"; }
+p.CiscoSansTTRegularOblique { font-family: "CiscoSansTTRegularOblique"; }
+p.CiscoSansTTThai-Regular { font-family: "CiscoSansThai-Regular"; }
+p.CiscoSansTTRegular { font-family: "CiscoSansTTRegular"; }
+p.CiscoSansTTThinOblique { font-family: "CiscoSansTTThinOblique"; }
+p.CiscoSansTTThin { font-family: "CiscoSansTTThin"; }

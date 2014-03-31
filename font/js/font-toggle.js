@@ -34,11 +34,37 @@ var fonts = [
     "CiscoSansTTThin"
 ];
 
+var pathname = window.location.pathname;
+
 $( function() {
     populatePage( fonts );
+    createIndex( fonts );
+
+    $( 'input[type=checkbox]' ).on( 'click', function() {
+        var target = $( this ).attr( 'data-target' );
+        var e = $( '#' + target );
+        ( e.attr( 'class' ) === target ) ?
+            e.removeClass( target ) :
+            e.addClass( target );
+    });
 });
 
-function populatePage( data ){
+function  createIndex( data  ) {
+    var list = $( '<ul/>', {
+        'class': 'list'
+    }).appendTo( '.nav' );
+    $.each( data, function( i, d ) {
+        var item = $( '<li/>', {
+        }).appendTo( '.list' );
+        $( '<a/>', {
+            'href': pathname + '#' + d,
+            'text': d
+        }).appendTo( item );
+
+    });
+};
+
+function populatePage( data ) {
     $.each( data, function( i, d ){
         var container = $( '<div/>', {
             'class': 'container',
@@ -50,7 +76,8 @@ function populatePage( data ){
         }).appendTo( container );
         var input = $( '<input/>', {
             'type': 'checkbox',
-            'data-target': d
+            'data-target': d,
+            'checked': true
         }).appendTo( label );
         var content = $( '<div/>', {
             'class': 'content'
