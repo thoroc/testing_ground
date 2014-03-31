@@ -55,13 +55,13 @@ function  createIndex( data  ) {
         'class': 'list'
     }).appendTo( '.nav' );
     $.each( data, function( i, d ) {
+        var id = d.replace( 'CiscoSansTT', '' );
         var item = $( '<li/>', {
         }).appendTo( '.list' );
         $( '<a/>', {
-            'href': pathname + '#' + d,
+            'href': pathname + '#' + id,
             'text': d
         }).appendTo( item );
-
     });
 };
 
@@ -69,14 +69,15 @@ function populatePage( data ) {
     $.each( data, function( i, d ){
         var str = '';
         var arr = d.split(/(?=[A-Z])/);
-        for( i in arr )
-        {
+        var id = d.replace( 'CiscoSansTT', '' );
+        for( i in arr ) {
             str += arr[i] + ' ';
         }
-
+        $.trim( str );
         var container = $( '<div/>', {
             'class': 'container',
-            'data-origin': d
+            'data-origin': d,
+            'id': id
         }).appendTo( '.body' );
         var label = $( '<div/>', {
             'class': 'label',
