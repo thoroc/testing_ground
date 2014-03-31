@@ -3,6 +3,7 @@
 namespace Acme\CalendarBundle\Worker;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
+use Doctrine\Common\Persistence\ObjectManager;
 
 use Acme\EventBundle\Document\Event;
 use Acme\EventBundle\Entity\Venue;
@@ -10,22 +11,32 @@ use Acme\EventBundle\Entity\Venue;
 // but it could prove useful for data analytics in the
 // future
 //use Acme\EventBundle\Entity\Sales;
-use Acme\SalesProviderBundle\Worker\XmlParser;
+use Acme\SalesProviderBundle\Worker\Sales;
 
 class AvailabilityCalendarPresenter
 {
     protected $dm;
-    protected $parser;
+    protected $om;
+    protected $sales;
 
-    public function __construct( DocumentManager $dm, XmlParser $parser )
+    /**
+     * Constructor
+     *
+     * The arguments passed are service injected in the Symfony2 style
+     * The Sales worker is actually reading the data provided from
+     * sales.xml and is returning an associative array in the form:
+     *
+     * performanceId => array( 'capacity' => int, 'sold' => int )
+     *
+     * @param \Doctrine\ODM\MongoDB\DocumentManager $dm
+     * @param \Doctrine\Common\Persistence\ObjectManager $om
+     * @param \Acme\SalesProviderBundle\Worker\Sales $sales
+     */
+    public function __construct( DocumentManager $dm, ObjectManager $om, Sales $sales )
     {
         $this->dm = $dm;
-        $this->parser = $parser;
-    }
-
-    private function getSalesData( $performanceId, $start, $end )
-    {
-        return 'foo';
+        $this->om = $om;
+        $this->sales = $sales;
     }
 
 
@@ -44,32 +55,76 @@ class AvailabilityCalendarPresenter
         // - care about performance - we'll assume that you'll refactor later if required.
         // - produce something that actually works. We'll ignore the odd typo too if your intent is clear.
 
-        $eventData = $this->getEventData( $venue_name );
+        $venue = $this->om->getRepository( 'AcmeEventBundle:Venue' )->findOneBy( array(
+            'name' => $venue_name
+        ));
+
+        $dates = $this->getStartAndEndDates( $month, $year, $venue->getTimeZone() );
+
+        // we do not know if there is more than one performance for this venue
+        $performances = $this->getEventPerformances( $venue_name, $dates['start'], $dates['end'] );
+
+        $sales = array();
+        foreach( $performances as $perf )
+        {
+            $sales[] = $this->getCurrentSalesData( $perf->getId() );
+        }
     }
 
-    private function getEventData( $venue_name, $start, $end )
+    /**
+     * Get the current sales data (ie capacity and sold_count
+     *
+     * If none are found for the $id provided return null
+     *
+     * @param int $id
+     *
+     * @return array | null
+     */
+    private function getCurrentSalesData( $id )
     {
+        return ( in_array( $id, $this->sales ) ) ?
+                $this->sales[ $id ] :
+                null;
+    }
+
+    /**
+     * Retrieve the event data based on the parameters passed.
+     *
+     * @param string $venue_name
+     * @param string $start
+     * @param string $end
+     *
+     * @return array
+     */
+    private function getEventPerformances( $venue_name, $start, $end )
+    {
+        // we will assume that event is an Object that has all the needed
+        // informations. If not, then we will need to create one from the vendor
+        // API and save it.
         $event = $this->dm->getRepository( 'AcmeEventBundle:Event' )
                       ->findBy( array( 'venue' => $venue_name ));
 
         return $event->getPerformances( $start, $end );
     }
 
-    private function getStartAndEndDates( $month, $year )
+    /**
+     * This needs to be moved to a class/service that deals with
+     * Date, Time and TimeZones.
+     *
+     * @param int $month
+     * @param int $year
+     * @param DateTimeZone $timeZone
+     *
+     * @return array
+     */
+    private function getStartAndEndDates( $month, $year, $timeZone )
     {
+        $startDate = date( "Y-m-d H:i:s", mktime(0, 0, 0, $month, 1, $year) );
+        $endDate = date( "Y-m-t H:i:s", mktime(23, 59, 59, $month, 1, $year) );
+
         return array(
-            'start' => date('m-01-Y 00:00:00',strtotime('this month')),
-            'end'   => date('m-01-Y 00:00:00',strtotime('this month'))
+            'start' => new DateTime( $startDate, $timeZone ),
+            'end'   => new DateTime( $endDate, $timeZone )
         );
     }
 }
-
-
-$thisYear = 2014;
-$thisMonth = 2;
-
-echo '<p>Month = ' . $thisMonth . ', Year = ' . $thisYear . '</p>';
-echo '<p>Start Date</p>';
-echo '<p>' . date( "Y-m-d", mktime(0, 0, 0, $thisMonth, 1, $thisYear) ) . '</p>';
-echo '<p>End Date</p>';
-echo '<p>' . date( "Y-m-t", mktime(0, 0, 0, $thisMonth, 1, $thisYear) ) . '</p>';
