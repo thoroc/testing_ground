@@ -32,6 +32,11 @@
         0px 0px 5px #666;
 }
 
+.container:hover {
+    border: 2px solid blue;
+    box-shadow: 0 0 10px 5px aqua;
+}
+
 .info {
     text-indent: 1.5em;
     padding: 16px;
@@ -102,35 +107,36 @@
 }
 
 p.arial{ font-family: "Arial" };
-p.CiscoSansTTBoldOblique { font-family: "CiscoSansTTBoldOblique"; }
 p.CiscoSansTTBold { font-family: "CiscoSansTTBold"; }
-p.CiscoSansTT-CondensedBoldOblique { font-family: "CiscoSansTT-CondensedBoldOblique"; }
-p.CiscoSansTT-CondensedBold { font-family: "CiscoSansTT-CondensedBold"; }
-p.CiscoSansTT-CondensedExtraLightOblique { font-family: "CiscoSansTT-CondensedExtraLightOblique"; }
-p.CiscoSansTT-CondensedExtraLight { font-family: "CiscoSansTT-CondensedExtraLight"; }
-p.CiscoSansTT-CondensedHeavyOblique { font-family: "CiscoSansTT-CondensedHeavyOblique"; }
-p.CiscoSansTT-CondensedHeavy { font-family: "CiscoSansTT-CondensedHeavy"; }
-p.CiscoSansTT-LightOblique { font-family: "CiscoSansTT-LightOblique"; }
+p.CiscoSansTTBoldOblique { font-family: "CiscoSansTTBoldOblique"; }
+p.CiscoSansTTCondensedBold { font-family: "CiscoSansTTCondensedBold"; }
+p.CiscoSansTTCondensedBoldOblique { font-family: "CiscoSansTTCondensedBoldOblique"; }
+p.CiscoSansTTCondensedExtraLight { font-family: "CiscoSansTTCondensedExtraLight"; }
+p.CiscoSansTTCondensedExtraLightOblique { font-family: "CiscoSansTTCondensedExtraLightOblique"; }
+p.CiscoSansTTCondensedHeavy { font-family: "CiscoSansTTCondensedHeavy"; }
+p.CiscoSansTTCondensedHeavyOblique { font-family: "CiscoSansTTCondensedHeavyOblique"; }
 p.CiscoSansTTCondensedLight { font-family: "CiscoSansTTCondensedLight"; }
-p.CiscoSansTT-CondensedOblique { font-family: "CiscoSansTT-CondensedOblique"; }
-p.CiscoSansTT-Condensed { font-family: "CiscoSansTT-Condensed"; }
-p.CiscoSansTT-CondensedThinOblique { font-family: "CiscoSansTT-CondensedThinOblique"; }
-p.CiscoSansTT-CondensedThin { font-family: "CiscoSansTT-CondensedThin"; }
-p.CiscoSansTTExtraLightOblique { font-family: "CiscoSansTTExtraLightOblique"; }
+p.CiscoSansTTCondensedLightOblique { font-family: "CiscoSansTTCondensedLightOblique"; }
+p.CiscoSansTTCondensedOblique { font-family: "CiscoSansTTCondensedOblique"; }
+p.CiscoSansTTCondensedRegular { font-family: "CiscoSansTTCondensedRegular"; }
+p.CiscoSansTTCondensedThin { font-family: "CiscoSansTTCondensedThin"; }
+p.CiscoSansTTCondensedThinOblique { font-family: "CiscoSansTTCondensedThinOblique"; }
 p.CiscoSansTTExtraLight { font-family: "CiscoSansTTExtraLight"; }
-p.CiscoSansTTHeavyOblique { font-family: "CiscoSansTTHeavyOblique"; }
+p.CiscoSansTTExtraLightOblique { font-family: "CiscoSansTTExtraLightOblique"; }
 p.CiscoSansTTHeavy { font-family: "CiscoSansTTHeavy"; }
-p.CiscoSansTTLightOblique { font-family: "CiscoSansTTLightOblique"; }
+p.CiscoSansTTHeavyOblique { font-family: "CiscoSansTTHeavyOblique"; }
 p.CiscoSansTTLight { font-family: "CiscoSansTTLight"; }
+p.CiscoSansTTLightOblique { font-family: "CiscoSansTTLightOblique"; }
+p.CiscoSansTTRegular { font-family: "CiscoSansTTRegular"; }
+p.CiscoSansTTRegularOblique { font-family: "CiscoSansTTRegularOblique"; }
+p.CiscoSansTTThin { font-family: "CiscoSansTTThin"; }
+p.CiscoSansTTThinOblique { font-family: "CiscoSansTTThinOblique"; }
+    /* language specific */
 p.CiscoSansTTCHS-Regular { font-family: "CiscoSansCHS-Regular"; }
 p.CiscoSansTTCHT-Regular { font-family: "CiscoSansCHT-Regular"; }
 p.CiscoSansTTGlobal-Regular { font-family: "CiscoSansGlobal-Regular"; }
 p.CiscoSansTTJPN-Regular { font-family: "CiscoSansJPN-Regular"; }
 p.CiscoSansTTKOR-Regular { font-family: "CiscoSansKOR-Regular"; }
-p.CiscoSansTTLatin { font-family: "CiscoSansTTLatin"; }
+p.CiscoSansTTLatin-Regular { font-family: "CiscoSansTTLatin-Regular"; }
 p.CiscoSansTTME-Regular { font-family: "CiscoSansME-Regular"; }
-p.CiscoSansTTRegularOblique { font-family: "CiscoSansTTRegularOblique"; }
 p.CiscoSansTTThai-Regular { font-family: "CiscoSansThai-Regular"; }
-p.CiscoSansTTRegular { font-family: "CiscoSansTTRegular"; }
-p.CiscoSansTTThinOblique { font-family: "CiscoSansTTThinOblique"; }
-p.CiscoSansTTThin { font-family: "CiscoSansTTThin"; }

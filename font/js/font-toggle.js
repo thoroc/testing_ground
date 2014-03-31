@@ -1,37 +1,38 @@
 
 var fonts = [
-    "CiscoSansTTBoldOblique",
     "CiscoSansTTBold",
-    "CiscoSansTT-CondensedBoldOblique",
-    "CiscoSansTT-CondensedBold",
-    "CiscoSansTT-CondensedExtraLightOblique",
-    "CiscoSansTT-CondensedExtraLight",
-    "CiscoSansTT-CondensedHeavyOblique",
-    "CiscoSansTT-CondensedHeavy",
-    "CiscoSansTT-LightOblique",
+    "CiscoSansTTBoldOblique",
+    "CiscoSansTTCondensedBold",
+    "CiscoSansTTCondensedBoldOblique",
+    "CiscoSansTTCondensedExtraLight",
+    "CiscoSansTTCondensedExtraLightOblique",
+    "CiscoSansTTCondensedHeavy",
+    "CiscoSansTTCondensedHeavyOblique",
     "CiscoSansTTCondensedLight",
-    "CiscoSansTT-CondensedOblique",
-    "CiscoSansTT-Condensed",
-    "CiscoSansTT-CondensedThinOblique",
-    "CiscoSansTT-CondensedThin",
-    "CiscoSansTTExtraLightOblique",
+    "CiscoSansTTCondensedLightOblique",
+    "CiscoSansTTCondensedOblique",
+    "CiscoSansTTCondensedRegular",
+    "CiscoSansTTCondensedThin",
+    "CiscoSansTTCondensedThinOblique",
     "CiscoSansTTExtraLight",
-    "CiscoSansTTHeavyOblique",
+    "CiscoSansTTExtraLightOblique",
     "CiscoSansTTHeavy",
-    "CiscoSansTTLightOblique",
+    "CiscoSansTTHeavyOblique",
     "CiscoSansTTLight",
+    "CiscoSansTTLightOblique",
+    "CiscoSansTTRegular",
+    "CiscoSansTTRegularOblique",
+    "CiscoSansTTThin",
+    "CiscoSansTTThinOblique",
+    /* language specific */
     "CiscoSansTTCHS-Regular",
     "CiscoSansTTCHT-Regular",
     "CiscoSansTTGlobal-Regular",
     "CiscoSansTTJPN-Regular",
     "CiscoSansTTKOR-Regular",
-    "CiscoSansTTLatin",
+    "CiscoSansTTLatin-Regular",
     "CiscoSansTTME-Regular",
-    "CiscoSansTTRegularOblique",
-    "CiscoSansTTThai-Regular",
-    "CiscoSansTTRegular",
-    "CiscoSansTTThinOblique",
-    "CiscoSansTTThin"
+    "CiscoSansTTThai-Regular"
 ];
 
 var pathname = window.location.pathname;
@@ -66,13 +67,20 @@ function  createIndex( data  ) {
 
 function populatePage( data ) {
     $.each( data, function( i, d ){
+        var str = '';
+        var arr = d.split(/(?=[A-Z])/);
+        for( i in arr )
+        {
+            str += arr[i] + ' ';
+        }
+
         var container = $( '<div/>', {
             'class': 'container',
             'data-origin': d
         }).appendTo( '.body' );
         var label = $( '<div/>', {
             'class': 'label',
-            'text': d
+            'text': str
         }).appendTo( container );
         var input = $( '<input/>', {
             'type': 'checkbox',
