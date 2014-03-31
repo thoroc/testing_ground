@@ -68,8 +68,8 @@ function  createIndex( data  ) {
 function populatePage( data ) {
     $.each( data, function( i, d ){
         var str = '';
-        var arr = d.split(/(?=[A-Z])/);
         var id = d.replace( 'CiscoSansTT', '' );
+        var arr = id.split(/(?=[A-Z])/);
         for( i in arr ) {
             str += arr[i] + ' ';
         }
