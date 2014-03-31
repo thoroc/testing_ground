@@ -1,10 +1,12 @@
 .body {
     position: relative;
-    width: 640px;
-    font: 12pt 'Open Sans';
-    margin-left: 200px;
+    width: auto;
+    font-size: 12pt;
+    margin-left: 400px;
     margin-top: 50px;
+    margin-right: 200px;
 }
+
 
 .container {
     padding: 24px 24px 12px 24px;
@@ -21,6 +23,13 @@
         0px 0px 10px #fff,
         0px 0px 10px #bbb,
         0px 0px 5px #666;
+}
+
+.test {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    width: 300px;
 }
 
 .info {
@@ -52,7 +61,7 @@
 .info i.fa {
     position: absolute;
     left: 0px;
-    top: 20px;
+    top: 18px;
 }
 
 .label {
@@ -80,7 +89,7 @@
     border: 1px solid #bbb;
 }
 
-p {
-    font: 11pt 'IM Fell English';
+/*p {
+    font: 12pt 'IM Fell English';
     text-indent: 2em;
-}
+}*/
