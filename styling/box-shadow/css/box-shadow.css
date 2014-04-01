@@ -46,6 +46,7 @@
 
 .container, .info {
     border-radius: 12px;
+    margin-bottom: 24px;
 }
 
 .info i.fa {
