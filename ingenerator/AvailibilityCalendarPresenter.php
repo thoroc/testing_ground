@@ -69,6 +69,15 @@ class AvailabilityCalendarPresenter
         {
             $sales[] = $this->getCurrentSalesData( $perf->getId() );
         }
+
+        // Really if this is to be a service called to return a set of value
+        // the rendering is up to the controller and the template, following
+        // Symfony2 style.
+        return array(
+            'venue'     => $venue,
+            'dates'     => $dates,
+            'sales'     => $sales
+        );
     }
 
     /**
