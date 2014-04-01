@@ -1,39 +1,41 @@
 
 var fonts = [
-    "CiscoSansTTBold",
-    "CiscoSansTTBoldOblique",
-    "CiscoSansTTCondensedBold",
-    "CiscoSansTTCondensedBoldOblique",
-    "CiscoSansTTCondensedExtraLight",
-    "CiscoSansTTCondensedExtraLightOblique",
-    "CiscoSansTTCondensedHeavy",
-    "CiscoSansTTCondensedHeavyOblique",
-    "CiscoSansTTCondensedLight",
-    "CiscoSansTTCondensedLightOblique",
-    "CiscoSansTTCondensedOblique",
-    "CiscoSansTTCondensedRegular",
-    "CiscoSansTTCondensedThin",
-    "CiscoSansTTCondensedThinOblique",
-    "CiscoSansTTExtraLight",
-    "CiscoSansTTExtraLightOblique",
-    "CiscoSansTTHeavy",
-    "CiscoSansTTHeavyOblique",
-    "CiscoSansTTLight",
-    "CiscoSansTTLightOblique",
-    "CiscoSansTTRegular",
-    "CiscoSansTTRegularOblique",
-    "CiscoSansTTThin",
-    "CiscoSansTTThinOblique",
+    "CiscoSansBold",
+    "CiscoSansBoldOblique",
+    "CiscoSansCondensedBold",
+    "CiscoSansCondensedBoldOblique",
+    "CiscoSansCondensedExtraLight",
+    "CiscoSansCondensedExtraLightOblique",
+    "CiscoSansCondensedHeavy",
+    "CiscoSansCondensedHeavyOblique",
+    "CiscoSansCondensedLight",
+    "CiscoSansCondensedLightOblique",
+    "CiscoSansCondensedOblique",
+    "CiscoSansCondensedRegular",
+    "CiscoSansCondensedThin",
+    "CiscoSansCondensedThinOblique",
+    "CiscoSansExtraLight",
+    "CiscoSansExtraLightOblique",
+    "CiscoSansHeavy",
+    "CiscoSansHeavyOblique",
+    "CiscoSansLight",
+    "CiscoSansLightOblique",
+    "CiscoSansRegular",
+    "CiscoSansRegularOblique",
+    "CiscoSansThin",
+    "CiscoSansThinOblique",
     /* language specific */
-    "CiscoSansTTCHS-Regular",
-    "CiscoSansTTCHT-Regular",
-    "CiscoSansTTGlobal-Regular",
-    "CiscoSansTTJPN-Regular",
-    "CiscoSansTTKOR-Regular",
-    "CiscoSansTTLatin-Regular",
-    "CiscoSansTTME-Regular",
-    "CiscoSansTTThai-Regular"
+    "CiscoSansRegularChineseSimplified",
+    "CiscoSansRegularChineseTraditional",
+    "CiscoSansRegularGlobal",
+    "CiscoSansRegularJapanese",
+    "CiscoSansRegularKorean",
+    "CiscoSansRegularLatin",
+    "CiscoSansRegularMe",
+    "CiscoSansRegularThai"
 ];
+var referenceString = 'The quick brown fox jumps over the lazy dog';
+var string = "!\"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƒǺǻǼǽǾǿȘșȚțȷˆˇˉ˘˙˚˛˜˝̣̒;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяѐёђѓєѕіїјљњћќѝўџѢѣѲѳѴѵҐґҒғҖҗҘҙҚқҜҝҠҡҢңҪҫҮүҰұҲҳҸҹҺһӀӋӌӏӘәӢӣӨөӮӯẀẁẂẃẄẅỲỳ‒–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄⁰⁴⁵⁶⁷⁸⁹ⁿ₣₤₧€℅ℓ№™Ω℮⅓⅔⅛⅜⅝⅞←↑→↓↔↕↖↗↘↙↨∂∆∏∑−∕∙√∞∟∩∫≈≠≡≤≥⋆⌂⌐⌠⌡─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓■□▪▫▬▯▲►▼◄◊○●◘◙◦☺☻☼♀♂♠♣♥♦♪♫ﬀﬁﬂﬃﬄ";
 
 var pathname = window.location.pathname;
 
@@ -55,9 +57,9 @@ function  createIndex( data  ) {
         'class': 'list'
     }).appendTo( '.nav' );
     $.each( data, function( i, d ) {
-        var id = d.replace( 'CiscoSansTT', '' );
+        var id = d.replace( 'CiscoSans', '' );
         var item = $( '<li/>', {
-        }).appendTo( '.list' );
+        }).appendTo( list );
         $( '<a/>', {
             'href': pathname + '#' + id,
             'text': d
@@ -68,7 +70,7 @@ function  createIndex( data  ) {
 function populatePage( data ) {
     $.each( data, function( i, d ){
         var str = '';
-        var id = d.replace( 'CiscoSansTT', '' );
+        var id = d.replace( 'CiscoSans', '' );
         var arr = id.split(/(?=[A-Z])/);
         for( i in arr ) {
             str += arr[i] + ' ';
@@ -88,13 +90,24 @@ function populatePage( data ) {
             'data-target': d,
             'checked': true
         }).appendTo( label );
-        var content = $( '<div/>', {
+        var contentType = $( '<div/>', {
             'class': 'content'
         }).appendTo( container );
         var p = $( '<p/>', {
-            'data-lorem': '1p',
+//            'data-lorem': '1p',
+            'text': string,
             'class': d,
             'id': d
-        }).appendTo( content );
+        }).appendTo( contentType );
+        var separator = $( '<div/>', {
+            'class': 'line-separator'
+        }).appendTo( container );
+        var contentRef = $( '<div/>', {
+            'class': 'content'
+        }).appendTo( container );
+        var ref = $( '<p/>', {
+            'class': 'reference',
+            'text': referenceString
+        }).appendTo( contentRef );
     });
 };
