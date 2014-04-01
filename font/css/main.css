@@ -134,6 +134,43 @@ body {
     text-align: center;
 }
 
+ul.font-attributes {
+    display: none;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+li.font-attribute {
+    display: inline;
+    font-size: 9pt;
+}
+
+li.font-attribute a {
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    color: #999;
+    padding: 2px 6px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 2px;
+    font-size: 8pt;
+}
+
+li.font-attribute a.active {
+    color: #fff;
+    background-color: #407BB3;
+    border-color: #fff;
+}
+
+.font-attributes li:before {
+    content: '';
+}
+
+.font-attribute input[type=checkbox] {
+    display: none;
+}
+
 p.arial{ font-family: "Arial" };
 p.CiscoSansBold { font-family: "CiscoSansBold"; }
 p.CiscoSansBoldOblique { font-family: "CiscoSansBoldOblique"; }

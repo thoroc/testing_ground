@@ -36,12 +36,23 @@ var fonts = [
 ];
 var referenceString = 'The quick brown fox jumps over the lazy dog';
 var string = "!\"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƒǺǻǼǽǾǿȘșȚțȷˆˇˉ˘˙˚˛˜˝̣̒;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяѐёђѓєѕіїјљњћќѝўџѢѣѲѳѴѵҐґҒғҖҗҘҙҚқҜҝҠҡҢңҪҫҮүҰұҲҳҸҹҺһӀӋӌӏӘәӢӣӨөӮӯẀẁẂẃẄẅỲỳ‒–—―‗‘’‚‛“”„†‡•…‰′″‹›‼‾⁄⁰⁴⁵⁶⁷⁸⁹ⁿ₣₤₧€℅ℓ№™Ω℮⅓⅔⅛⅜⅝⅞←↑→↓↔↕↖↗↘↙↨∂∆∏∑−∕∙√∞∟∩∫≈≠≡≤≥⋆⌂⌐⌠⌡─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▀▄█▌▐░▒▓■□▪▫▬▯▲►▼◄◊○●◘◙◦☺☻☼♀♂♠♣♥♦♪♫ﬀﬁﬂﬃﬄ";
-
 var pathname = window.location.pathname;
+//var attributes = [ 'bold', 'oblique', 'regular', 'condensed', 'light', 'extra', 'heavy', 'thin' ];
 
 $( function() {
-    populatePage( fonts );
-    createIndex( fonts );
+    var nav = $( '.nav' );
+    var body = $( '.body' );
+    var attr = $( '.font-attributes' );
+
+    var attributes = getAttributes( fonts, [ 'Cisco', 'Sans'] );
+
+    populatePage( fonts, body );
+    createIndex( fonts, nav );
+    createAttributes( fonts, attr );
+
+    var selectors = $( '.list' ).children( 'li' );
+
+//    console.log( attributes ) ;
 
     $( 'input[type=checkbox]' ).on( 'click', function() {
         var target = $( this ).attr( 'data-target' );
@@ -52,38 +63,63 @@ $( function() {
     });
 });
 
-function  createIndex( data  ) {
-    var list = $( '<ul/>', {
+function createIndex( data, DOMElement  ) {
+    var ul = $( '<ul/>', {
         'class': 'list'
-    }).appendTo( '.nav' );
+    }).appendTo( DOMElement );
     $.each( data, function( i, d ) {
         var id = d.replace( 'CiscoSans', '' );
-        var item = $( '<li/>', {
-        }).appendTo( list );
+        var li = $( '<li/>', {
+            'data-value': SplitName( d, 'CiscoSans' ).toLowerCase()
+        }).appendTo( ul );
         $( '<a/>', {
             'href': pathname + '#' + id,
             'text': d
-        }).appendTo( item );
+        }).appendTo( li );
     });
 };
 
-function populatePage( data ) {
+function getAttributes( data, ignore ) {
+    var ret = [];
+    $.each( data, function( i, d ) {
+        var arr = d.split(/(?=[A-Z])/);
+        $.each( arr, function( k, v ) {
+            if( $.inArray( v, ret ) < 0 && $.inArray( v, ignore ) < 0 ) {
+                ret.push( v );
+            }
+        });
+    });
+
+    return ret;
+}
+
+
+function createAttributes( data, DOMElement ) {
+    var attributes = getAttributes( fonts, [ 'Cisco', 'Sans'] );
+    var ul = $( '<ul/>' ).appendTo( DOMElement );
+    $.each( attributes, function( i, d ) {
+        var li = $( '<li/>', {
+            'class': 'font-attribute'
+        }).appendTo( ul );
+        $( '<a/>', {
+            'href': '#',
+            'text': d,
+            'data-target': d,
+            'class': 'active'
+        }).appendTo( li );
+    });
+}
+
+function populatePage( data, DOMElement ) {
     $.each( data, function( i, d ){
-        var str = '';
-        var id = d.replace( 'CiscoSans', '' );
-        var arr = id.split(/(?=[A-Z])/);
-        for( i in arr ) {
-            str += arr[i] + ' ';
-        }
-        $.trim( str );
         var container = $( '<div/>', {
             'class': 'container',
             'data-origin': d,
-            'id': id
-        }).appendTo( '.body' );
+            'id': d.replace( 'CiscoSans', '' )
+        }).appendTo( DOMElement );
         var label = $( '<div/>', {
             'class': 'label',
-            'text': str
+            'text': SplitName( d, 'CiscoSans' )
         }).appendTo( container );
         var input = $( '<input/>', {
             'type': 'checkbox',
@@ -94,7 +130,6 @@ function populatePage( data ) {
             'class': 'content'
         }).appendTo( container );
         var p = $( '<p/>', {
-//            'data-lorem': '1p',
             'text': string,
             'class': d,
             'id': d
@@ -111,3 +146,16 @@ function populatePage( data ) {
         }).appendTo( contentRef );
     });
 };
+
+function SplitName( data, removeStr )
+{
+    var str = '';
+    var id = data.replace( removeStr, '' );
+    var arr = id.split(/(?=[A-Z])/);
+    for( i in arr ) {
+        str += arr[i] + ' ';
+    }
+    $.trim( str );
+
+    return str;
+}
