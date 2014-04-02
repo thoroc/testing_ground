@@ -104,7 +104,7 @@ function createAttributes( data, DOMElement ) {
         $( '<a/>', {
             'href': '#',
             'text': d,
-            'data-target': d,
+            'data-target': d.toLowerCase(),
             'class': 'active'
         }).appendTo( li );
     });
