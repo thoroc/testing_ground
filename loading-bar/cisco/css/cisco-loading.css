@@ -43,10 +43,11 @@
     padding-right: 20%;
     position: relative;
     /* testing */
-    border: 1px solid #808B94;
+    /*border: 1px solid #808B94;*/
 }
 
-.loading div.bar-alt,
+.loading div.bar-bis,
+.loading div.bar-ter,
 .loading div.bar {
     margin-top: 20px;
     height: 10px;
@@ -54,156 +55,137 @@
     width: 4px;
     left: 4px;
     margin-right: 11px;
+    box-shadow: 0 0 2px #0077b3;
     border: 1px solid #0077b3;
     border-radius: 4px;
-    box-shadow: 0 0 2px #0077b3;
 }
 
 .loading div.bar {
-    -webkit-animation: loadingbar 1s infinite;
-    -moz-animation: loadingbar 1s infinite;
-    -ms-animation: loadingbar 1s infinite;
-    -o-animation: loadingbar 1s infinite;
-    animation: loadingbar 1s infinite;
+    /* Set the animation properties */
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: loadingbar;
+    -moz-animation-name: loadingbar;
+    -ms-animation-name: loadingbar;
+    -o-animation-name: loadingbar;
+    animation-name: loadingbar;
 }
 
-.loading div.bar-alt {
-    -webkit-animation: resize 1s infinite;
-    -moz-animation: resize 1s infinite;
-    -ms-animation: resize 1s infinite;
-    -o-animation: resize 1s infinite;
-    animation: resize 1s infinite;
-    /*animation-timing-function: ease-in-out;*/
+.loading div.bar-bis {
+    -webkit-animation: resize-bis 1.2s infinite;
+    animation: resize-bis 1.2s infinite;
+}
+
+.loading div.bar-ter {
+    -webkit-animation: resize-bis 1.8s infinite;
+    animation: resize-bis 1.8s infinite;
 }
 
 /*Delay child bar at the start*/
 .loader .bar:nth-child(2) {
     -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    -ms-animation-delay: 0.2s;
-    -o-animation-delay: 0.2s;
-    animation-delay: 0.2s;
 }
 
 .loader .bar:nth-child(3) {
     -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    -ms-animation-delay: 0.4s;
-    -o-animation-delay: 0.4s;
-    animation-delay: 0.4s;
 }
 
 .loader .bar:nth-child(4) {
     -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    -ms-animation-delay: 0.6s;
-    -o-animation-delay: 0.6s;
-    animation-delay: 0.6s;
 }
 
 .loader .bar:nth-child(5) {
     -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    -ms-animation-delay: 0.8s;
-    -o-animation-delay: 0.8s;
-    animation-delay: 0.8s;
 }
 
 .loader .bar:nth-child(6) {
     -webkit-animation-delay: 1.0s;
-    -moz-animation-delay: 1.0s;
-    -ms-animation-delay: 1.0s;
-    -o-animation-delay: 1.0s;
-    animation-delay: 1.0s;
 }
 
 .loader .bar:nth-child(7) {
     -webkit-animation-delay: 1.2s;
-    -moz-animation-delay: 1.2s;
-    -ms-animation-delay: 1.2s;
-    -o-animation-delay: 1.2s;
-    animation-delay: 1.2s;
 }
 
 .loader .bar:nth-child(8) {
     -webkit-animation-delay: 1.4s;
-    -moz-animation-delay: 1.4s;
-    -ms-animation-delay: 1.4s;
-    -o-animation-delay: 1.4s;
-    animation-delay: 1.4s;
 }
 
 .loader .bar:nth-child(9) {
     -webkit-animation-delay: 1.6s;
-    -moz-animation-delay: 1.6s;
-    -ms-animation-delay: 1.6s;
-    -o-animation-delay: 1.6s;
-    animation-delay: 1.6s;
 }
 
 /*Delay child bar at the start*/
-.loader .bar-alt:nth-child(2) {
-    -webkit-animation-delay: 0.2s;
-    -moz-animation-delay: 0.2s;
-    -ms-animation-delay: 0.2s;
-    -o-animation-delay: 0.2s;
-    animation-delay: 0.2s;
+.loader .bar-bis:nth-child(2) {
+    -webkit-animation-delay: 0.3s;
 }
 
-.loader .bar-alt:nth-child(3) {
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    -ms-animation-delay: 0.4s;
-    -o-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-}
-
-.loader .bar-alt:nth-child(4) {
+.loader .bar-bis:nth-child(3) {
     -webkit-animation-delay: 0.6s;
-    -moz-animation-delay: 0.6s;
-    -ms-animation-delay: 0.6s;
-    -o-animation-delay: 0.6s;
-    animation-delay: 0.6s;
 }
 
-.loader .bar-alt:nth-child(5) {
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    -ms-animation-delay: 0.8s;
-    -o-animation-delay: 0.8s;
-    animation-delay: 0.8s;
+.loader .bar-bis:nth-child(4) {
+    -webkit-animation-delay: 0.9s;
 }
 
-.loader .bar-alt:nth-child(6) {
-    -webkit-animation-delay: 1.0s;
-    -moz-animation-delay: 1.0s;
-    -ms-animation-delay: 1.0s;
-    -o-animation-delay: 1.0s;
-    animation-delay: 1.0s;
-}
-
-.loader .bar-alt:nth-child(7) {
+.loader .bar-bis:nth-child(5) {
     -webkit-animation-delay: 1.2s;
-    -moz-animation-delay: 1.2s;
-    -ms-animation-delay: 1.2s;
-    -o-animation-delay: 1.2s;
-    animation-delay: 1.2s;
 }
 
-.loader .bar-alt:nth-child(8) {
-    -webkit-animation-delay: 1.4s;
-    -moz-animation-delay: 1.4s;
-    -ms-animation-delay: 1.4s;
-    -o-animation-delay: 1.4s;
-    animation-delay: 1.4s;
+.loader .bar-bis:nth-child(6) {
+    -webkit-animation-delay: 1.5s;
 }
 
-.loader .bar-alt:nth-child(9) {
+.loader .bar-bis:nth-child(7) {
+    -webkit-animation-delay: 1.8s;
+}
+
+.loader .bar-bis:nth-child(8) {
+    -webkit-animation-delay: 2.1s;
+}
+
+.loader .bar-bis:nth-child(9) {
+    -webkit-animation-delay: 2.4s;
+}
+
+/*Delay child bar at the start*/
+.loader .bar-ter:nth-child(2) {
+    -webkit-animation-delay: 0.4s;
+}
+
+.loader .bar-ter:nth-child(3) {
+    -webkit-animation-delay: 0.8s;
+}
+
+.loader .bar-ter:nth-child(4) {
+    -webkit-animation-delay: 1.2s;
+}
+
+.loader .bar-ter:nth-child(5) {
     -webkit-animation-delay: 1.6s;
-    -moz-animation-delay: 1.6s;
-    -ms-animation-delay: 1.6s;
-    -o-animation-delay: 1.6s;
-    animation-delay: 1.6s;
+}
+
+.loader .bar-ter:nth-child(6) {
+    -webkit-animation-delay: 2.0s;
+}
+
+.loader .bar-ter:nth-child(7) {
+    -webkit-animation-delay: 2.4s;
+}
+
+.loader .bar-ter:nth-child(8) {
+    -webkit-animation-delay: 2.8s;
+}
+
+.loader .bar-ter:nth-child(9) {
+    -webkit-animation-delay: 3.2s;
 }
 
 /* The actual animation */
@@ -279,17 +261,52 @@
 
 /* The actual animation */
 @-webkit-keyframes resize {
-    0% { margin-top: 20px; height: 10px; }
-    10% { margin-top: 15px; height: 15px; }
-    20% { margin-top: 10px; height: 20px; }
-    30% { margin-top:  5px; height: 25px; }
-    40% { margin-top:  0px; height: 35px; }
-    50% { margin-top:  0px; height: 40px; }
-    60% { margin-top:  0px; height: 35px; }
-    70% { margin-top:  5px; height: 25px; }
-    80% { margin-top: 10px; height: 20px; }
-    90% { margin-top: 15px; height: 15px; }
-    100% { margin-top: 20px; height: 10px; }
+    0% { margin-top: 20px; -webkit-transform: scaleY( 1 ); }
+    10% { margin-top: 15px; -webkit-transform: scaleY( 1 ); }
+    20% { margin-top: 10px; -webkit-transform: scaleY( 2 ); }
+    30% { margin-top:  5px; -webkit-transform: scaleY( 3 ); }
+    40% { margin-top:  0px; -webkit-transform: scaleY( 4 ); }
+    50% { margin-top:  0px; -webkit-transform: scaleY( 5 ); }
+    60% { margin-top:  0px; -webkit-transform: scaleY( 4 ); }
+    70% { margin-top:  5px; -webkit-transform: scaleY( 3 ); }
+    80% { margin-top: 10px; -webkit-transform: scaleY( 2 ); }
+    90% { margin-top: 15px; -webkit-transform: scaleY( 1 ); }
+    100% { margin-top: 20px; -webkit-transform: scaleY( 1 ); }
+/*    0% { margin-top: 20px; transform: scaleX( 2 ); }
+    25% { margin-top: 10px; transform: scaleX( 3 ); }
+    50% { margin-top: 0px; transform: scaleX( 5 ); }
+    75% { margin-top: 10px; transform: scaleX( 3 ); }
+    100% { margin-top: 20px; transform: scaleX( 2 ); }*/
+}
+
+/* The actual animation */
+@-webkit-keyframes resize-bis {
+    0% { height: 10px; -webkit-transform: translateY( 0px ); }
+    10% { height: 15px; -webkit-transform: translateY( -5px ); }
+    20% { height: 20px; -webkit-transform: translateY( -10px ); }
+    30% { height: 25px; -webkit-transform: translateY( -15px ); }
+    40% { height: 35px; -webkit-transform: translateY( -20px ); }
+    50% { height: 40px; -webkit-transform: translateY( -25px ); }
+    60% { height: 35px; -webkit-transform: translateY( -20px ); }
+    70% { height: 25px; -webkit-transform: translateY( -15px ); }
+    80% { height: 20px; -webkit-transform: translateY( -10px ); }
+    90% { height: 15px; -webkit-transform: translateY( -5px ); }
+    100% { height: 10px; -webkit-transform: translateY( 0px ); }
+}
+
+/* The actual animation */
+@-webkit-keyframes resize-ter {
+    0% { -webkit-transform: translateY( 0px ) scaleY( 1 ); }
+    10% { -webkit-transform: translateY( 0px ) scaleY( 1 ); }
+    20% { -webkit-transform: translateY( -2px ) scaleY( 2 ); }
+    30% { -webkit-transform: translateY( -4px ) scaleY( 3 ); }
+    40% { -webkit-transform: translateY( -6px ) scaleY( 4 ); }
+    50% { -webkit-transform: translateY( -8px ) scaleY( 5 ); }
+    60% { -webkit-transform: translateY( -6px ) scaleY( 4 ); }
+    70% { -webkit-transform: translateY( -4px ) scaleY( 3 ); }
+    80% { -webkit-transform: translateY( -2px ) scaleY( 2 ); }
+    90% { -webkit-transform: translateY( 0px ) scaleY( 1 ); }
+    100% { -webkit-transform: translateY( 0px ) scaleY( 1 ); }
 }
 
 .screen {
