@@ -321,6 +321,12 @@
     opacity: 0.6;
     display: none;
 }
+
+.logo {
+    width: 120px;
+}
+
+
 /*
 .loading {
     display: none;
