@@ -1,0 +1,190 @@
+body {
+    font-size: 100%;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+}
+
+/*
+    Tabs CSS code starts here
+*/
+.tabs_wrapper {
+    width: 622px;
+    margin: 30px;
+}
+
+.tab_content {
+    display: none;
+}
+
+/* Original tabs */
+#original_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#original_tabs ul {
+    list-style: none;
+    padding: 5px 0 4px 0;
+    margin: 0 0 0 10px;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#original_tabs ul li {
+    display: inline;
+}
+
+#original_tabs ul li a {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-bottom: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#original_tabs ul li a:hover {
+    background-color: #dddddd;
+}
+
+#original_tabs ul li.active a {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    padding: 4px 6px 5px;
+    border-bottom: none;
+}
+
+#original_tabs ul li.active a:hover {
+    background-color: #eeeeee;
+}
+
+#original_tabs ul li a.icon_accept {
+    background-image: url(accept.png);
+    background-position: 5px 3px;
+    background-repeat: no-repeat;
+    padding-left: 24px;
+}
+
+#original_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+/* 1st new tabs */
+#new_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#new_tabs ul {
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#new_tabs ul li {
+    display: inline;
+}
+
+#new_tabs ul li a {
+    border: 1px solid #cccccc;
+    padding: 10px 25px 10px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-bottom: none;
+    outline: none;
+    color: #444444;
+}
+
+#new_tabs ul li a:hover {
+    color: #888888;
+}
+
+#new_tabs ul li.active a {
+    border-bottom: none;
+    color: #888888;
+    padding-bottom: 11px;
+}
+
+#new_tabs ul li.active a:hover {
+    color: #444444;
+}
+
+#new_tabs ul li a.icon {
+    background-image: url('products.png');
+    background-position: 13px 9px;
+    background-repeat: no-repeat;
+    padding-left: 36px;
+}
+
+#new_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+/* 2nd new tabs */
+#new2_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#new2_tabs ul {
+    list-style: none;
+    padding: 11px 0 10px 0;
+    margin: 0;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+    border-left: 1px solid #cccccc;
+}
+
+#new2_tabs ul li {
+    display: inline;
+}
+
+#new2_tabs ul li a {
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 25px 10px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-bottom: none;
+    outline: none;
+    color: #444444;
+}
+
+#new2_tabs ul li a:hover {
+    color: #888888;
+}
+
+#new2_tabs ul li.active a {
+    border-bottom: none;
+    color: #888888;
+    padding-bottom: 11px;
+}
+
+#new2_tabs ul li.active a:hover {
+    color: #444444;
+}
+
+#new2_tabs ul li a.icon {
+    background-image: url('jquery.png');
+    background-position: 13px 9px;
+    background-repeat: no-repeat;
+    padding-left: 36px;
+}
+
+#new2_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}

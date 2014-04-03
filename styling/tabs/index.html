@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Tabs</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="thoroc">
+        <link rel="shortcut icon" href="icon/favicon.ico">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <p>You can set active tabs by setting the "rel" value of tab link as a hash separated by comma</p>
+        <a href="#tab1,productstab,phptab">Set active tabs: Tab 1, Products and PHP.</a>
+
+        <div class="tabs_wrapper">
+            <!-- Original tabs START -->
+            <div id="original_tabs">
+                <ul>
+                    <li class="active">
+                        <a href="#tab1" rel="tab1">Tab 1</a>
+                    </li>
+                    <li>
+                        <a class="icon_accept" href="#tab2" rel="tab2">Tab with icon</a>
+                    </li>
+                    <li>
+                        <a href="#tab3" rel="tab3">Long name for the last tab</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="original_tabs_content">
+                <div id="tab1" class="tab_content" style="display: block;">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="tab2" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="tab3" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+            </div>
+            <!-- Original tabs END -->
+        </div>
+
+        <div class="tabs_wrapper">
+            <!-- 1st new tab design START -->
+            <div id="new_tabs">
+                <ul>
+                    <li class="active">
+                        <a href="#hometab" rel="hometab">Home</a>
+                    </li>
+                    <li>
+                        <a class="icon" href="#productstab" rel="productstab">Products</a>
+                    </li>
+                    <li>
+                        <a href="#abouttab" rel="abouttab">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="new_tabs_content">
+                <div id="hometab" class="tab_content" style="display: block;">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="productstab" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="abouttab" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+            </div>
+            <!-- 1st new tab design END -->
+        </div>
+
+        <div class="tabs_wrapper">
+            <!-- 2nd new tab design START -->
+            <div id="new2_tabs">
+                <ul>
+                    <li class="active">
+                        <a href="#csstab" rel="csstab">CSS</a>
+                    </li>
+                    <li>
+                        <a class="icon" href="#jquerytab" rel="jquerytab">jQuery</a>
+                    </li>
+                    <li>
+                        <a href="#phptab" rel="phptab">PHP</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="new2_tabs_content">
+                <div id="csstab" class="tab_content" style="display: block;">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="jquerytab" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+                <div id="phptab" class="tab_content">
+                    <p data-lorem="1p"></p>
+                </div>
+            </div>
+            <!-- 2nd new tab design END -->
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="../../vendor/lorem.min.js" type="text/javascript"></script>
+        <script src="js/tabs.js" type="text/javascript"></script>
+    </body>
+</html>
