@@ -1,0 +1,295 @@
+body {
+    font-size: 100%;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+}
+
+/*
+    Tabs CSS code starts here
+*/
+.tabs_wrapper {
+    width: 622px;
+    margin: 30px;
+}
+
+.tab_content {
+    display: none;
+}
+
+/* Original tabs */
+#original_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#original_tabs ul {
+    list-style: none;
+    padding: 5px 0 4px 0;
+    margin: 0 0 0 10px;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#original_tabs ul li {
+    display: inline;
+}
+
+#original_tabs ul li a {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-bottom: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#original_tabs ul li a:hover {
+    background-color: #dddddd;
+}
+
+#original_tabs ul li.active a {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    padding: 4px 6px 5px;
+    border-bottom: none;
+}
+
+#original_tabs ul li.active a:hover {
+    background-color: #eeeeee;
+}
+
+#original_tabs ul li a.icon_accept {
+    background-image: url(accept.png);
+    background-position: 5px 3px;
+    background-repeat: no-repeat;
+    padding-left: 24px;
+}
+
+#original_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+/* 1st new tabs */
+#new_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#new_tabs ul {
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#new_tabs ul li {
+    display: inline;
+}
+
+#new_tabs ul li a {
+    border: 1px solid #cccccc;
+    padding: 10px 25px 10px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-bottom: none;
+    outline: none;
+    color: #444444;
+}
+
+#new_tabs ul li a:hover {
+    color: #888888;
+}
+
+#new_tabs ul li.active a {
+    border-bottom: none;
+    color: #888888;
+    padding-bottom: 11px;
+}
+
+#new_tabs ul li.active a:hover {
+    color: #444444;
+}
+
+#new_tabs ul li a.icon {
+    background-image: url('products.png');
+    background-position: 13px 9px;
+    background-repeat: no-repeat;
+    padding-left: 36px;
+}
+
+#new_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+/* 2nd new tabs */
+#new2_tabs {
+    border-bottom: 1px solid #cccccc;
+}
+
+#new2_tabs ul {
+    list-style: none;
+    padding: 11px 0 10px 0;
+    margin: 0;
+    font-size: 0.75em;
+    font-family: Arial, Verdana, sans-serif;
+    border-left: 1px solid #cccccc;
+}
+
+#new2_tabs ul li {
+    display: inline;
+}
+
+#new2_tabs ul li a {
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 25px 10px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-bottom: none;
+    outline: none;
+    color: #444444;
+}
+
+#new2_tabs ul li a:hover {
+    color: #888888;
+}
+
+#new2_tabs ul li.active a {
+    border-bottom: none;
+    color: #888888;
+    padding-bottom: 11px;
+}
+
+#new2_tabs ul li.active a:hover {
+    color: #444444;
+}
+
+#new2_tabs ul li a.icon {
+    background-image: url('jquery.png');
+    background-position: 13px 9px;
+    background-repeat: no-repeat;
+    padding-left: 36px;
+}
+
+#new2_tabs_content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+#content {
+    padding: 25px; background: #FFF;
+}
+
+#tabs {
+    border: 1px solid #DEDEDE;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+.tabs-content {
+    padding: 25px;
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.tabs {
+    overflow: hidden;
+    background: #e1e1e1;
+    background: -moz-linear-gradient(center top , #f2f2f2, #e1e1e1);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#e1e1e1));
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: 0 1px 0 #FFF inset;
+    -moz-box-shadow: 0 1px 0 #FFF inset;
+    box-shadow: 0 1px 0 #FFF inset;
+}
+
+.tabs a {
+    display: block;
+    float: left;
+    font: 15px/35px Arial, Helvetica, Sans-serif;
+    padding: 0 20px 0 40px;
+    color: #999;
+    text-shadow: 0 1px 0 #FFF;
+    border-left: solid 1px rgba(0,0,0,0.05);
+    border-right: solid 1px rgba(255,255,255,0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.tabs a:first-child {
+    border-left-width: 0;
+}
+
+.tabs a:last-child {
+    border-right-width: 0;
+}
+
+.tabs a:after {
+    content: '✔';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    line-height: 21px;
+    font-size: 10px;
+    width: 21px;
+    text-align: center;
+    margin: 7px 10px 5px 0;
+    background: #000;
+    font-size: 12px;
+    -moz-border-radius: 21px;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+    background: #bdbdbd;
+    background: -moz-linear-gradient(center top , #d4d4d4, #bdbdbd);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4d4d4), color-stop(100%,#bdbdbd));
+    -webkit-box-shadow: 0 1px 0 0 #FFF, 0 1px 0 0 rgba(0,0,0,0.25) inset;
+    -moz-box-shadow: 0 1px 0 0 #FFF, 0 1px 0 0 rgba(0,0,0,0.25) inset;
+    box-shadow: 0 1px 0 0 #FFF, 0 1px 0 0 rgba(0,0,0,0.25) inset;
+    text-shadow: 0 1px 0 #999;
+    color: #ffffff;
+}
+
+.tabs a:hover {
+    background: #FFF;
+    border-left-color: #CCC;
+}
+
+.tabs a:hover:after {
+    background: #038bd5;
+    background: -moz-linear-gradient(center top , #2dc3fc, #038bd5);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2dc3fc), color-stop(100%,#038bd5));
+    text-shadow: 0 1px 0 #096c9e;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.45), 0 1px 0 0 rgba(0, 0, 0, 0.25) inset, 0 0 5px 0 rgba(0,148,255,0.85);
+    -moz-box-shadow: 0 1px 0 0 rgba(255,255,255,0.45), 0 1px 0 0 rgba(0, 0, 0, 0.25) inset, 0 0 5px 0 rgba(0,148,255,0.85);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.45), 0 1px 0 0 rgba(0, 0, 0, 0.25) inset, 0 0 5px 0 rgba(0,148,255,0.85)
+}
+
+.tabs a:hover + .tabs-content {
+    display: block;
+}
+
+.tabs-content:hover {
+    display: block;
+}
