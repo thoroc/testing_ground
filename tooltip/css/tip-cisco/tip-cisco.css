@@ -1,0 +1,85 @@
+.tip-cisco {
+	opacity:0.8;
+	z-index:1000;
+	text-align:left;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+    border: 1px solid #bbb;
+	padding: 8px 8px;
+	max-width: 200px;
+	color: #666;
+	background-color:#fff;
+    box-shadow:
+        0px 0px 8px #fff,
+        0px 0px 8px #bbb,
+        0px 0px 2px #666;
+	/**
+	 * - If you set a background-image, border/padding/background-color will be ingnored.
+	 *   You can set any padding to .tip-inner instead if you need.
+	 * - If you want a tiled background-image and border/padding for the tip,
+	 *   set the background-image to .tip-inner instead.
+	 */
+}
+.tip-cisco .tip-inner {
+	font:bold 11px/14px 'CiscoSans',sans-serif;
+}
+
+/*.tip-cisco:after,
+.tip-cisco:after,
+.tip-cisco:after,
+.tip-cisco:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #000 transparent transparent transparent;
+      top: 44px;
+      left: 50px;
+}*/
+
+/* Configure an arrow image - the script will automatically position it on the correct side of the tip */
+.tip-cisco .tip-arrow-top {
+	margin-top:-5px;
+	margin-left:-5px;
+	top:0;
+	left:50%;
+	width:9px;
+	height:5px;
+    border-color: #bbb transparent transparent transparent;
+	background:url(tip-cisco_arrows.gif) no-repeat;
+}
+.tip-cisco .tip-arrow-right {
+	margin-top:-4px;
+	margin-left:0;
+	top:50%;
+	left:100%;
+	width:5px;
+	height:9px;
+    border-color: #bbb transparent transparent transparent;
+	background:url(tip-cisco_arrows.gif) no-repeat -9px 0;
+}
+.tip-cisco .tip-arrow-bottom {
+	margin-top:0;
+	margin-left:-5px;
+	top:100%;
+	left:50%;
+	width:9px;
+	height:5px;
+    border-color: #bbb transparent transparent transparent;
+	background:url(tip-cisco_arrows.gif) no-repeat -18px 0;
+}
+.tip-cisco .tip-arrow-left {
+	margin-top:-4px;
+	margin-left:-5px;
+	top:50%;
+	left:0;
+	width:5px;
+	height:9px;
+    border-color: #bbb transparent transparent transparent;
+	background:url(tip-cisco_arrows.gif) no-repeat -27px 0;
+}

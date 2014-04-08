@@ -1,0 +1,117 @@
+div {
+    display: block;
+    float: left;
+}
+
+.body {
+    position: relative;
+    width: auto;
+    font: 12pt 'CiscoSans';
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+.container {
+    padding: 24px 24px 12px 24px;
+    position: relative;
+    -moz-box-shadow:
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666,
+        inset 0 0 100px rgba( 128, 96, 255, 0.8 );
+    -webkit-box-shadow:
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666,
+        inset 0 0 100px rgba( 128, 96, 255, 0.8 );
+    box-shadow:
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666,
+        inset 0 0 100px rgba( 128, 96, 255, 0.8 );
+}
+
+.info {
+    text-indent: 1.5em;
+    padding: 16px;
+    margin-bottom: 24px;
+    -moz-box-shadow:
+        0 -1px 0 #fff inset,
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666;
+    -webkit-box-shadow:
+        0 -1px 0 #fff inset,
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666;
+    box-shadow:
+        0 -1px 0 #fff inset,
+        0px 0px 10px #fff,
+        0px 0px 10px #bbb,
+        0px 0px 5px #666;
+}
+
+.container, .info {
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.info i.fa {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+}
+
+.label {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 12px 0px;
+    box-shadow: inset 0 -1px 0 #fff;
+}
+
+.info, .label {
+    background: #fff;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff) to(#e4e4e4));
+    background: -webkit-linear-gradient(#fff, #e4e4e4);
+    background: -moz-linear-gradient(#fff, #e4e4e4);
+    background: -ms-linear-gradient(#fff, #e4e4e4);
+    background: -o-linear-gradient(#fff, #e4e4e4);
+    background: linear-gradient(#fff, #e4e4e4);
+    color: #666;
+    font-size: 10pt;
+}
+
+.container, .info, .label {
+    border: 1px solid #bbb;
+}
+
+p {
+    font: 11pt 'IM Fell English';
+    text-indent: 2em;
+}
+
+.content {
+    height: 200px;
+    overflow-y: scroll;
+    padding-right: 40px;
+    border: 1px solid black;
+}
+
+.nano {
+    background: #fff;
+    width: auto;
+}
+.nano .nano-content {
+    /*padding: 10px;*/
+    position: inherit;
+}
+.nano .nano-pane   {
+    background: #888;
+}
+.nano .nano-slider {
+    background: #111;
+}
