@@ -75,6 +75,7 @@ body {
 .masonry .item,
 .masonry .grid-sizer {
     width:  20%;
+    margin-bottom: 20px;
 }
 
 .masonry .item,
@@ -149,4 +150,17 @@ body {
     background: linear-gradient(#4479D4, #1049A9);
     color: #fff;
     border: 1px solid rgb(0, 64, 128);
+}
+
+.filter {
+    padding: 4px;
+    position: relative;
+    display: list-item;
+}
+
+.filter > label,
+.filter > input,
+.filter > .out {
+    padding-right: 20px;
+    float: left;
 }

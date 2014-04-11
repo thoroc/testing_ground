@@ -18,7 +18,7 @@ and open the template in the editor.
     <!-- the "no-js" class is for Modernizr. -->
     <html>
         <head>
-            <title>TODO supply a title</title>
+            <title>Masonry</title>
 
             <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -57,7 +57,26 @@ and open the template in the editor.
         <body>
             <div class="container">
                 <h1>Filters</h1>
-
+                <div class="filter">
+                    <label for="item-width">Item Width</label>
+                    <input data-target="width" type="range" name="item-width" min="0" max="800" step="5" value="210" />
+                    <div class="out"></div>
+                </div>
+                <div class="filter">
+                    <label for="col-width">Col Width</label>
+                    <input data-target="columnWidth" type="range" name="col-width" min="0" max="150" step="5" value="20" />
+                    <div class="out"></div>
+                </div>
+                <div class="filter">
+                    <label for="gutter-width">Gutter With</label>
+                    <input data-target="gutter" type="range" name="gutter-width" min="0" max="150" step="5" value="20" />
+                    <div class="out"></div>
+                </div>
+                <div class="filter">
+                    <label for="margin-bottom">Margin Bottom</label>
+                    <input data-target="margin-bottom" type="range" name="margin-bottom" min="0" max="150" step="5" value="20" />
+                    <div class="out"></div>
+                </div>
             </div>
 
             <div class="container">
@@ -80,7 +99,7 @@ and open the template in the editor.
             </div>
             <div class="container">
                 <h1>Masonry - columnWidth</h1>
-                <div class="masonry js-masonry" data-masonry-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item" }'>
+                <div class="masonry js-masonry" data-masonry-options='{ "columnWidth": ".grid-sizer", "itemSelector": ".item", "gutter": 20 }'>
                     <div class="grid-sizer"></div>
                     <div class="item"></div>
                     <div class="item w2 h2"></div>

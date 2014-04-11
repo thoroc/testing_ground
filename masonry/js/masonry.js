@@ -22,17 +22,38 @@ $( function() {
     });
 
     $( '#test' ).masonry({
-        columnWidth: 250,
-        itemSelector: '.item'
+        columnWidth: '.item',
+        itemSelector: '.item',
+        gutter: 20
+    });
+
+    $( 'input[type=range]' ).on( 'change', function() {
+        var attr = $( this ).attr( 'data-target' );
+        var value = $( this ).val();
+        var out = $( this ).siblings( 'div' );
+        out.text( value );
+        // dirty hacks
+        switch( attr ) {
+            case 'columnWidth':
+                $( '#test' ).masonry({ columnWidth: parseInt( value ) }).masonry();
+                break;
+            case 'gutter':
+                $( '#test' ).masonry({ gutter: parseInt( value ) }).masonry();
+                break;
+            case 'margin-bottom':
+            case 'width':
+                $( '.item' ).css( attr, parseInt( value ));
+                $( '#test' ).masonry();
+                break;
+        }
     });
 });
 
 function getLorem( DOMElement ) {
-    var str = '';
+    var str = '1p';
     if( DOMElement.hasClass( 'h2' ) ) { str = '2p'; }
     else if( DOMElement.hasClass( 'h3' ) ) { str = '3p'; }
     else if( DOMElement.hasClass( 'h4' ) ) { str = '4p'; }
-    else { str = '1p'; }
 
     return str;
 }
