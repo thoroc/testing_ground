@@ -21,6 +21,12 @@ $( function() {
         }).appendTo( e );
     });
 
+    $( '.filter' ).each( function() {
+        var input = $( this ).children( 'input' );
+        var output = $( this ).children( '.out' );
+        output.text( input.attr( 'value' ) );
+    });
+
     $( '#test' ).masonry({
         columnWidth: '.item',
         itemSelector: '.item',
