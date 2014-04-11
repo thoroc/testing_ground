@@ -42,6 +42,7 @@ $( function() {
                 break;
             case 'margin-bottom':
             case 'width':
+            case 'height':
                 $( '.item' ).css( attr, parseInt( value ));
                 $( '#test' ).masonry();
                 break;
