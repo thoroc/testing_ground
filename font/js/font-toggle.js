@@ -40,7 +40,7 @@ var pathname = window.location.pathname;
 //var attributes = [ 'bold', 'oblique', 'regular', 'condensed', 'light', 'extra', 'heavy', 'thin' ];
 var attributes;
 var selectors;
-var selectedAttr = [];
+var selectedAttr;
 
 $( function() {
     var nav = $( '.nav' );
@@ -48,14 +48,14 @@ $( function() {
     var attr = $( '.font-attributes' );
 
     attributes = getAttributes( fonts, [ 'Cisco', 'Sans'] );
+    selectedAttr = attributes;
+    populateTest( selectedAttr );
 
     populatePage( fonts, body );
     createIndex( fonts, nav );
     createAttributes( fonts, attr );
 
     selectors = $( '.list' ).children( 'li' );
-
-    populateTest( selectedAttr );
 
     $( 'input[type=checkbox]' ).on( 'click', function() {
         var target = $( this ).attr( 'data-target' );
@@ -81,17 +81,24 @@ function toggleAttributes( targetName ) {
         console.log( targetName );
         console.log( arr );
         var str = targetName.toLowerCase()
+        /**
+         * condition to be checked:
+         *
+         * 1. if targetName is in one of the selectors's name
+         * 2. if targetName is equal to one of the selectedAttr
+         */
         if( $.inArray( str, arr ) > -1
-                && $.inArray( str, selectedAttr ) < 0 ) {
-            selectedAttr.push( targetName.toLowerCase() );
-            a.addClass( 'active' );
+                && $.inArray( str, selectedAttr ) > -1 ) {
+            selectedAttr.push( targetName );
+//            a.addClass( 'active' );
         } else {
-            a.removeClass( 'active' );
+//            a.removeClass( 'active' );
         }
     });
 }
 
 function createIndex( data, DOMElement  ) {
+    DOMElement.html( '' );
     var ul = $( '<ul/>', {
         'class': 'list'
     }).appendTo( DOMElement );
@@ -179,7 +186,7 @@ function populateTest( data ) {
     var test = $( '#test' );
     var str = '';
     $.each( data, function( i, d ){
-        str += d;
+        str += d + ' ';
     });
 
     test.text( str );
