@@ -1,8 +1,8 @@
 $( function() {
     $( 'a' ).on( 'click', function() {
-        var target = $( this ).attr( 'data-target' );
+        var target = './pages/' + $( this ).attr( 'data-target' ) + '.html';
         var include = $( '.include' );
-        include.load( './' + target + '.html' );
+        include.load( target );
     });
 });
 
