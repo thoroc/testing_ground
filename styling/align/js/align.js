@@ -27,7 +27,7 @@ $( function() {
         $( '<span/>', {
             'class': 'endlabel',
             'css': { 'background-color': eColor },
-            'text': '<' + eType + '>'
+            'text': '<' + eType + '/>'
         }).appendTo( el );
         el.attr( 'title', '<' + eType + eId + eClass + '>' );
     });
@@ -42,7 +42,6 @@ function getDepth( DOMElement )
 
     return i;
 }
-
 
 function hexToRGBA( hex, alpha ) {
     return 'rgba(' + hexToR( hex ) + ',' + hexToG( hex ) + ',' + hexToB( hex ) + ',' + alpha +  ')';
