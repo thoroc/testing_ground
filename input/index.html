@@ -73,57 +73,73 @@ and open the template in the editor.
             <meta property="og:image" content="" />
 
             <link rel="stylesheet" href="css/main.css" type="text/css">
+            <!--<link rel="stylesheet" href="../assets/css/developpeurs-sans-frontieres.css" type="text/css">-->
             <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         </head>
         <body>
-            <div>TODO write content</div>
-            <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
                 <header>
-                    <h1><a href=".">Page Title</a></h1>
-                    <nav>
-                        <ol>
-                            <li><a href="">Nav Link 1</a></li>
-                            <li><a href="">Nav Link 2</a></li>
-                            <li><a href="">Nav Link 3</a></li>
-                        </ol>
-                    </nav>
+                    <div class="container">
+                        <h1><a href=".">Page Title</a></h1>
+                        <nav>
+                            <ul>
+                                <li><a href="#article1">Nav Link 1</a></li>
+                                <li><a href="#article2">Nav Link 2</a></li>
+                                <li><a href="#article3">Nav Link 3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </header>
-                <div>
-                    <input type="checkbox" name="foo" value="bar" />
-                    <input type="button" id="btn_show" value="Show" />
-                    <input type="button" id="btn_on" value="On" />
-                    <input type="button" id="btn_off" value="Off" />
-                </div>
-                <div>
-                    <input type="checkbox" name="checkme" />Check Me
-                    <input type="button" value="Is Check" id="isCheck">
-                    <input type="button" value="Check It" id="checkIt">
-                    <input type="button" value="UnCheck It" id="UnCheckIt">
-                </div>
-                <div>
-                    <input type="checkbox" name="test" />TEST Check Me
-                    <input type="text" name="controle">
-                    <label for="controle">Controle Value</label>
-                </div>
-                <article>
-                    <h1>Article Header</h1>
-                    <p data-lorem="1p"></p>
-                    <h2>Article Subhead</h2>
-                    <p data-lorem="1p"></p>
-                </article>
-                <article>
-                    <h1>Article Header</h1>
-                    <p data-lorem="1p"></p>
-                    <h2>Article Subhead</h2>
-                    <p data-lorem="1p"></p>
-                </article>
+                <section>
+                    <div>
+                        <input type="checkbox" name="foo" value="bar" />
+                        <input type="button" id="btn_show" value="Show" />
+                        <input type="button" id="btn_on" value="On" />
+                        <input type="button" id="btn_off" value="Off" />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="checkme" />Check Me
+                        <input type="button" value="Is Check" id="isCheck">
+                        <input type="button" value="Check It" id="checkIt">
+                        <input type="button" value="UnCheck It" id="UnCheckIt">
+                    </div>
+                    <div>
+                        <input type="checkbox" name="test" />TEST Check Me
+                        <input type="text" name="controle">
+                        <label for="controle">Controle Value</label>
+                    </div>
+                </section>
+                <section id="paragraph">
+                    <article id="article1">
+                        <h1>Article Header</h1>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                        <h2>Article Subhead</h2>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                    </article>
+                    <article id="article2">
+                        <h1>Article Header</h1>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                        <h2>Article Subhead</h2>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                    </article>
+                    <article id="article3">
+                        <h1>Article Header</h1>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                        <h2>Article Subhead</h2>
+                        <p data-lorem="1p"></p>
+                        <p data-lorem="1p"></p>
+                    </article>
+                </section>
                 <aside>
                     <h2>Sidebar Content</h2>
                 </aside>
                 <footer>
                     <p><small>&copy; Copyright Your Name Here 2013. All Rights Reserved.</small></p>
                 </footer>
-            </div>
 
             <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

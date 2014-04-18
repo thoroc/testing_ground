@@ -17,16 +17,16 @@ $( function() {
 
     $( "#checkIt" ).click( function() {
         $( 'input:checkbox[name=checkme]' ).prop( 'checked', true );
+        $( 'input:checkbox[name=checkme]' ).attr( 'checked', true );
     });
 
     $( "#UnCheckIt" ).click( function() {
         $( 'input:checkbox[name=checkme]' ).prop( 'checked', false );
+        $( 'input:checkbox[name=checkme]' ).attr( 'checked', false );
     });
 
     $( 'input[name=test]' ).click( function() {
-//        $( 'input[name=controle]' ).val( 'foo' );
         $( 'input[name=controle]' ).val( $( this ).is(':checked') ? 'foo' : 'baa' );
-//        $( 'input[name=controle]' ).text( $( this ).is(':checked') );
     });
 });
 
