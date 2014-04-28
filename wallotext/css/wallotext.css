@@ -1,18 +1,62 @@
-div {
+body {
+    background-color: #252525;
+    margin: 0;
+}
+
+.container {
+    font: 10pt 'Ubuntu';
     text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    min-height: 100%;
+    background-color: #fff;
+    min-width: 40%;
 }
 
-.left-column {
-    float: left;
-    width: 20%;
+h1, h2, h3 {
+    font-family: 'Open Sans';
+    margin: 0;
 }
 
-.center-column {
-    float: left;
-    margin: 0 15% 0 20%; 
+h1 {
+    font-size: 4em;
 }
 
-.right-column {
-    float: left;
-    width: 20%;
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 9pt;
+    padding-left: 7%;
+    padding-right: 7%;
+    text-align: left;
+}
+
+.header,
+.footer {
+    background-color: red;
+}
+
+.header {
+    min-height: 40px;
+}
+
+.footer {
+    /*min-height: 230px;*/
+}
+
+.stretch-it{
+    white-space: nowrap;
+    display: block;
+}
+
+.justify{
+    text-align:justify;
 }
