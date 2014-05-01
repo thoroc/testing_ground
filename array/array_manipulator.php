@@ -2,6 +2,10 @@
 
 use TestingGround\ArrayManipulator as Manipulator;
 
+namespace TestingGround;
+
+echo 'foo';
+
 $displayMe = array();
 
 $array1 = array ( 'a' => 1, 'b' => 2, 'c' => 3, 'd' => 2, 'e' => 5, 'f' => 6 );
@@ -47,8 +51,6 @@ $displayMe['array_remove2'] = Manipulator::array_remove($array2, 7);
 
 echo '<pre>'; print_r( $displayMe ); echo '</pre>'; die(); exit;
 
-namespace TestingGround;
-
 class ArrayManipulator
 {
 
@@ -70,11 +72,8 @@ class ArrayManipulator
             if ( array_key_exists( $key, $array2 ) )
             {
                 // is value from $array[$key] equal to value from $array2[$key] ?
-                if ( $array1[ $key ] == $array2[ $key ] )
-                {
-                    $sameElement[ $key ] = $value;
-                }
-                else $diffValue[ $key ] = $value;
+                if( $array1[ $key ] == $array2[ $key ] ) { $sameElement[ $key ] = $value; }
+                else { $diffValue[ $key ] = $value; }
             }
             else
             {
@@ -102,11 +101,10 @@ class ArrayManipulator
         // $arrayKeyAsValue = ( a, b, c, a, b, d )
         // foreach loop for $array1 -> $key, $value
 
-
         while ( list( $key, $value) = each( $array1 ) )
         {
-            if ( array_key_exists( $key, $array2 ) ) $newArray[ $key . '_1' ] = $value;
-            else $newArray[ $key ] = $value;
+            if ( array_key_exists( $key, $array2 ) ) { $newArray[ $key . '_1' ] = $value; }
+            else { $newArray[ $key ] = $value; }
         }
         while ( list( $key, $value) = each( $array2 ) )
         {
@@ -287,9 +285,9 @@ class ArrayManipulator
     {
         $count = 0;
 
-        foreach ( $haystack as $key => $value )
+        foreach ( $haystack as $value )
         {
-            if ( $value == $needle )
+            if ( $value === $needle )
             {
                 $count++;
             }
@@ -413,7 +411,7 @@ class ArrayManipulator
             foreach ( $source as $key => $value )
             {
                 $result[ $key ] = $value;
-                if ( $key == $position ) $result = array_merge( $result, $add );
+                if ( $key == $position ) { $result = array_merge( $result, $add ); }
             }
         }
         return $result;
@@ -483,4 +481,3 @@ class ArrayManipulator
         return false;
     }
 }
-?>

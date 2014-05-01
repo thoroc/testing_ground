@@ -1,0 +1,108 @@
+{
+    "cars": [
+        {
+            "name": "fiesta",
+            "class": "compact"
+        },
+        {
+            "name": "focus",
+            "class": "compact"
+        },
+        {
+            "name": "serie 3",
+            "class": "compact"
+        },
+        {
+            "name": "serie 5",
+            "class": "compact"
+        },
+        {
+            "name": "500",
+            "class": "compact"
+        },
+        {
+            "name": "punto",
+            "class": "compact"
+        },
+        {
+            "name": "golf",
+            "class": "compact"
+        },
+        {
+            "name": "passat",
+            "class": "compact"
+        },
+        {
+            "name": "polo",
+            "class": "compact"
+        },
+        {
+            "name": "yaris",
+            "class": "compact"
+        },
+        {
+            "name": "corolla",
+            "class": "compact"
+        },
+        {
+            "name": "corsa",
+            "class": "compact"
+        },
+        {
+            "name": "astra",
+            "class": "compact"
+        },
+        {
+            "name": "clio",
+            "class": "compact"
+        },
+        {
+            "name": "megane",
+            "class": "compact"
+        },
+        {
+            "name": "207",
+            "class": "compact"
+        },
+        {
+            "name": "Qashqai",
+            "class": "compact"
+        },
+        {
+            "name": "Panda",
+            "class": "compact"
+        },
+        {
+            "name": "Octavia",
+            "class": "compact"
+        },
+        {
+            "name": "C3",
+            "class": "compact"
+        },
+        {
+            "name": "C Class",
+            "class": "compact"
+        },
+        {
+            "name": "Fabia",
+            "class": "compact"
+        },
+        {
+            "name": "A1",
+            "class": "compact"
+        },
+        {
+            "name": "Giulietta",
+            "class": "compact"
+        },
+        {
+            "name": "mini",
+            "class": "compact"
+        },
+        {
+            "name": "DS 5",
+            "class": "compact"
+        }
+    ]
+}

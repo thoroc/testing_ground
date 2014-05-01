@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--
+    HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
+    Free to use
+-->
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <!-- the "no-js" class is for Modernizr. -->
+    <html>
+        <head>
+            <title>testing_ground</title>
+
+            <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="author" content="thoroc">
+            <meta name="description" content="">
+
+            <!-- Don't forget to set your site up: http://google.com/webmasters -->
+            <meta name="google-site-verification" content="" />
+
+            <!-- Who owns the content of this site? -->
+            <meta name="Copyright" content="" />
+
+            <!--  Mobile Viewport
+            http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+            device-width : Occupy full width of the screen in its current orientation
+            initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+            maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
+            -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="icon/favicon.ico">
+
+            <!-- concatenate and minify for production -->
+            <link rel="stylesheet" href="../assets/css/reset.css" />
+            <link rel="stylesheet" href="../assets/css/style.css" />
+            <link rel="stylesheet" href="../vendor/fancybox/jquery.fancybox.css" />
+
+            <!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files -->
+            <script src="../assets/js/libs/prefixfree.min.js"></script>
+
+            <!-- This is an un-minified, complete version of Modernizr.
+                 Before you move to production, you should generate a custom build that only has the detects you need. -->
+            <script src="../assets/js/libs/modernizr-2.7.1.dev.js"></script>
+
+
+            <link rel="stylesheet" href="css/main.css" type="text/css">
+            <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        </head>
+        <body>
+            <div class="wrapper">
+                <a class="fancybox" href="#fancyme">clickMe</a>
+            </div>
+            <div id="fancyme" style="display: none; width: 800px;" class="overlay-container">
+                <div class="table-container">
+                    <table class="case-comment-detail">
+                        <thead>
+                            <tr>
+                                <th colspan="4">SFDC Case Comments Detail View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="label">Subject</td>
+                                <td class="value">GDIT RSAF A Cyber Protection System RFQ: NGFW</td>
+                                <td class="label">Case ID</td>
+                                <td class="value">1044981</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Created</td>
+                                <td class="value">24/04/2014</td>
+                                <td class="label">Case Owner</td>
+                                <td class="value">Martin Rulec</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Closed</td>
+                                <td class="value"></td>
+                                <td class="label">Case Manager</td>
+                                <td class="value">John Kucernak</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Requester</td>
+                                <td class="value">MAJED ALWINEYAN</td>
+                                <td class="label">Triage Engineer</td>
+                                <td class="value">Arveemyl Agustin</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Origin</td>
+                                <td class="value">Security Team</td>
+                                <td class="label">Triage Manager</td>
+                                <td class="value">Xuewei Wang</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Queue</td>
+                                <td class="value">Email</td>
+                                <td class="label">Case Architecture</td>
+                                <td class="value">Security</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Case Service Type</td>
+                                <td class="value">Cisco Product Information</td>
+                                <td class="label">Case Status Reason</td>
+                                <td class="value">Client Response</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Status Reason Comments</td>
+                                <td class="value"></td>
+                                <td class="label">Category</td>
+                                <td class="value">Case Not Declined - No Deal ID</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <div class="label">Comments</div>
+                        <fieldset>
+                            <legend>Martin Rulec wrote on 25/04/2014</legend>
+                            SEC RFP case triaged without DealID to the wrong queue (EN) with only 1 due date request
+                        </fieldset>
+                        <fieldset>
+                            <legend>Thomas Roche wrote on 01/05/2014</legend>
+                            boo
+                        </fieldset>
+                        <fieldset>
+                            <legend>Thomas Roche wrote on 01/05/2014</legend>
+                            faa
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script>window.jQuery || document.write( "<script src='../assetsjs/libs/jquery-1.11.0.min.js'>\x3C/script>" )</script>
+
+            <!-- this is where we put our custom functions -->
+            <!-- don't forget to concatenate and minify if needed -->
+            <script src="../assets/js/functions.js"></script>
+            <script src="../assets/js/lorem.min.js"></script>
+            <script src="../assets/js/fonts.js"></script>
+            <script src="../vendor/fancybox/jquery.fancybox.pack.js"></script>
+            <script type="text/javascript">
+                $( function() {
+                    $( '.fancybox' ).fancybox( {
+                        'padding': 20,
+                        'transitionIn': 'elastic',
+                        'transitionOut': 'elastic',
+                        'autoSize': true,
+                        'openEffect': 'fade',
+                        'speedIn': 500,
+                        'speedOut': 300,
+                        'autoDimensions': true,
+                        'centerOnScroll': true,
+                        'type': 'inline',
+                        'titleShow': false,
+                    } );
+                } );
+            </script>
+        </body>
+    </html>
