@@ -55,14 +55,15 @@ and open the template in the editor.
             <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         </head>
         <body>
-            <div class="body"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
-                <div class="container">
-                    <div class="label">Article Header</div>
+            <div class="body">
+                <span id="ruler"></span>
+                <div class="container" id="container-1">
+                    <div class="label">Article Header 1</div>
                     <p data-lorem="2p"></p>
                     <p data-lorem="2p"></p>
                 </div>
-                <div class="container">
-                    <div class="label">Article Header</div>
+                <div class="container" id="container-2">
+                    <div class="label">Article Header 2</div>
                     <p data-lorem="2p"></p>
                     <p data-lorem="2p"></p>
                 </div>
@@ -76,6 +77,102 @@ and open the template in the editor.
             <!-- don't forget to concatenate and minify if needed -->
             <script src="../../../assets/js/functions.js"></script>
             <script src="../../../assets/js/lorem.min.js"></script>
+
+            <script>
+                $( function() {
+                    var posW = 0;
+                    var posH = 0;
+
+                    $.each( $( '.label' ), function() {
+
+//                        var h = $( this ).outerHeight();
+                        var w = $( this ).outerWidth();
+                        var text = ' >>';
+
+                        $( '<div/>', {
+                            text: ' >>',
+                            class: 'settings',
+                            css: {
+                                position: 'absolute',
+                                top: $( this ).position().top,
+                                left: $( this ).position().left,
+                                width: $( this ).outerWidth( true ) + text.length,
+                                'text-align': 'right'
+                            },
+                        }).insertBefore( this );
+
+
+//                        console.log( text );
+//                        console.log( $( text ) );
+//                        console.log( $( text ).text() );
+//                        console.log( $( text ).text );
+//                        console.log( $( this ).textWidth(), $( text ).textWidth() );
+                        var s = "Some text";
+                        var len = s.visualLength();
+
+
+                        console.log( len );
+                    });
+
+
+                });
+
+//                $.fn.textWidth = function() {
+//                    var e = $( this );
+//                    var str = '';
+//                    if( e === typeof string ) {
+//                        str = e;
+//                    } else {
+//                        str = e.text();
+//                    }
+//
+////                    console.log( str );
+////                    var original = e.html();
+//                    var node = $( '<span/>', {
+//                        'position': 'absolute',
+//                        'width': 'auto',
+//                        'left': '-9999px',
+//                        'font-family': e.css( 'font-family' ),
+//                        'font-size': e.css( 'font-size' ),
+//                        'text': str,
+////                        'html': original
+//                    }).appendTo( 'body' );
+//                    var width = node.width();
+//                    node.remove();
+//
+//                    return width;
+//                };
+
+
+//                function $(id)
+//                {
+//                    return document.getElementById(id);
+//                }
+
+                String.prototype.visualLength = function()
+                {
+                    var ruler = $("#ruler");
+                    ruler.innerHTML = this;
+                    return ruler.offsetWidth;
+                }
+
+                String.prototype.trimToPx = function(length)
+                {
+                    var tmp = this;
+                    var trimmed = this;
+                    if (tmp.visualLength() > length)
+                    {
+                        trimmed += "...";
+                        while (trimmed.visualLength() > length)
+                        {
+                            tmp = tmp.substring(0, tmp.length-1);
+                            trimmed = tmp + "...";
+                        }
+                    }
+
+                    return trimmed;
+                }
+            </script>
 
         </body>
     </html>

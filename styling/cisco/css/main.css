@@ -120,6 +120,15 @@ li.font-attribute a.active,
     border: 1px solid rgb(0, 64, 128);
 }
 
+.settings {
+	background-color: #e5e5e5;
+    border: 1px solid rgb(0, 64, 128);
+    padding: 4px 8px 4px 8px;
+    border-radius: 12px 0px;
+    box-shadow: inset 0px -1px 8px #93ADFF;
+    font-size: 10pt;
+}
+
 .content {
     word-wrap: break-word;
 }
@@ -218,3 +227,5 @@ p.CiscoSansRegularKorean { font-family: "CiscoSansRegularKorean"; }
 p.CiscoSansRegularLatin { font-family: "CiscoSansRegularLatin"; }
 p.CiscoSansRegularMe { font-family: "CiscoSansRegularMe"; }
 p.CiscoSansRegularThai { font-family: "CiscoSansRegularThai"; }
+
+#ruler { visibility: hidden; white-space: nowrap; }
