@@ -1,0 +1,59 @@
+.fiscal_period_list {
+    display: block;
+}
+
+.fiscal_period_list li div {
+    width: 80px;
+}
+
+.date_range,
+.date_range_option {
+    border: 1px solid red;
+}
+
+.fiscal_period_list li {
+    float: left;
+    height: 60px;
+    /*width: 10%;*/
+    border: 1px solid #e0434a;
+    white-space: nowrap;
+}
+
+ul.fiscal_period_list > li > ul {
+    float: left;
+    /*overflow: hidden;*/
+    /*z-index: 1;*/
+    /*width: 80px;*/
+}
+
+.fiscal_period_list ul,
+.fiscal_period_list li,
+.fiscal_period_list a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    display: block;
+}
+
+.fiscal_period_list li:not(.active) ul {
+    display: none;
+}
+
+.red ul li,
+.red {
+    background-color: red;
+    color: green;
+}
+
+.green ul li,
+.green {
+    background-color: green;
+    color: red;
+}
+
+.blue ul li,
+.blue {
+    background-color: blue;
+    color: white;
+}

@@ -43,7 +43,6 @@ and open the template in the editor.
             <!-- concatenate and minify for production -->
             <link rel="stylesheet" href="../assets/css/reset.css" />
             <link rel="stylesheet" href="../assets/css/style.css" />
-            <link rel="stylesheet" href="../vendor/flipcountdown/jquery.flipcountdown.css" />
 
             <!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files -->
             <script src="../assets/js/libs/prefixfree.min.js"></script>
@@ -51,27 +50,11 @@ and open the template in the editor.
             <!-- This is an un-minified, complete version of Modernizr.
                  Before you move to production, you should generate a custom build that only has the detects you need. -->
             <script src="../assets/js/libs/modernizr-2.7.1.dev.js"></script>
-
-            <link rel="stylesheet" href="css/main.css" type="text/css">
+            <!--<link rel="stylesheet" href="css/main.css" type="text/css">-->
             <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         </head>
         <body>
             <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
-                <header>
-                    <h1><a href="/">Page Title</a></h1>
-                    <nav>
-                        <ol id="menu">
-                            <li><a href="">Nav Link 1</a></li>
-                            <li><a href="">Nav Link 2</a></li>
-                            <li><a href="">Nav Link 3</a></li>
-                        </ol>
-                    </nav>
-                </header>
-                <div class="content"></div>
-                <footer>
-                    <p><small>&copy; Copyright Your Name Here 2013. All Rights Reserved.</small></p>
-                </footer>
-            </div>
 
             <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -80,34 +63,9 @@ and open the template in the editor.
             <!-- this is where we put our custom functions -->
             <!-- don't forget to concatenate and minify if needed -->
             <script src="../assets/js/functions.js"></script>
-            <script src="../assets/js/fonts.js"></script>
-            <script src="../assets/js/masonry.pkgd.min.js"></script>
-            <script src="../vendor/flipcountdown/jquery.flipcountdown.js"></script>
-            <script src="js/dashboard.js"></script>
-            <script>
-                $( function() {
-                    var dash = $( '.content' ).dashboard({
-                        title: 'Princess was being kidnapped',
-                        height: 860,
-                        width: 1280
-                    });
-                    console.log(dash);
-
-                    $( '.content' ).dashboard( 'addTimer' );
-                    $( '.content' ).dashboard( 'addClock' );
-                    $( '.content' ).dashboard( 'addArticle', { title: 'Mario was a plumber', length: '2', nunberOfParagraphs: '2' } );
-                    $( '.content' ).dashboard( 'addArticle', { title: 'Luigi was his borther', length: '2', nunberOfParagraphs: '2' } );
-                    $( '.content' ).dashboard( 'addWidget', { content: 'I like football ..... ' });
-//                    $( '.dashboard' ).dashboard( 'title' );
-
-//                    $( '.dashboard' ).dashboard().addTimer();
-//                    $( '.dashboard' ).addTimer();
-//                    $( '.dashboard' ).addClock();
-//                    $( '.dashboard' ).addArticle({ title: 'Mario was a plumber', length: '2', nunberOfParagraphs: '2' });
-//                    $( '.dashboard' ).addArticle({ title: 'Luigi was his borther', length: '2', nunberOfParagraphs: '2' });
-//                    $( '#menu' ).animateMenu({ padding: 20 });
-                });
-            </script>
             <script src="../assets/js/lorem.min.js"></script>
+            <script src="../assets/js/fonts.js"></script>
+            <script>
+            </script>
         </body>
     </html>

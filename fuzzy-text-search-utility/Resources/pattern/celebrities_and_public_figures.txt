@@ -1,0 +1,16 @@
+/(adolf)?\s*hitler/
+/2\s*pac/
+/^\s*barac?k\s*(hussein)?\s*obama\s*$/
+/^\s*madon+a\s*$/
+/agent\s*007/
+/batman/
+/britne'?(j|y)\s*sp(ea|i)rs/
+/bruce\s*lee/
+/chuck\s*nor+is/
+/grim\s*reaper/
+/james\s*bond/
+/lenin/
+/leon\s*zawodowiec/
+/monty\s*p(aj|y)th?on/
+/stalin/
+/stra(z|ż)nik\s*teksasu/

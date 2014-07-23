@@ -1,0 +1,11 @@
+/(\s|[^a-zA-Z]|^)ul\s*\./
+/(^\s*|\s+)[a-z0-9]{2}\s[a-z0-9]{2}\s[a-z0-9]{2}(\s+|\s*$)/
+/,\s*(anglia|bristol|eg(i|y)pt|england|gdynia|krak(o|ó)w|mexico|poland|polska|portugal(ia)?|pozna(n|ń)|toru(n|ń)|warszawa)\s*$/
+/[0-9]+\s*(maja?|listopada?)/
+/[0-9]{2}\s*(\-|\.)\s*[0-9]{2,3}/
+/[0-9]{2}\s*[0-9]{4}\s*[0-9]{4}/
+/[0-9]{3}[\s\-\.]+[0-9]{3}[\s\-\.]+[0-9]{3}/
+/^\s*(pas(l|ł)(e|ę)k|pary(z|ż))\s*$/
+/^\s*[a-zA-Z]+,\s*[a-zA-Z]+\s*$/
+/ca(l|ł)(a|y)\s*(europa|kraj|polska)/
+/pi(e|ę)tr(a|o)/

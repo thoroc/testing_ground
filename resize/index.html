@@ -43,7 +43,6 @@ and open the template in the editor.
             <!-- concatenate and minify for production -->
             <link rel="stylesheet" href="../assets/css/reset.css" />
             <link rel="stylesheet" href="../assets/css/style.css" />
-            <link rel="stylesheet" href="../vendor/flipcountdown/jquery.flipcountdown.css" />
 
             <!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files -->
             <script src="../assets/js/libs/prefixfree.min.js"></script>
@@ -51,26 +50,86 @@ and open the template in the editor.
             <!-- This is an un-minified, complete version of Modernizr.
                  Before you move to production, you should generate a custom build that only has the detects you need. -->
             <script src="../assets/js/libs/modernizr-2.7.1.dev.js"></script>
-
-            <link rel="stylesheet" href="css/main.css" type="text/css">
+            <!--<link rel="stylesheet" href="css/main.css" type="text/css">-->
             <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+            <style>
+                .box {
+                    float: left;
+                    height: 50px;
+                    width: 50px;
+                    background: black;
+                    margin: 20px;
+                    /*margin: 0 5px 5px 0;*/
+                    transition: all 500ms ease;
+                }
+
+                .row-start {
+                    clear: left;
+                }
+
+                .box.active {
+                    height: 70px;
+                    width: 70px;
+                    background: red;
+                    margin: 15px;
+                }
+
+                .box.shrink {
+                    height: 40px;
+                    width: 40px;
+/*                    padding: 20px;*/
+                    margin: 30px;
+                }
+
+                #content div{
+                    width: 100px;
+                    height: 100px;
+                    display: inline-block;
+                    background: #444;
+                    margin: 10px 12px;
+                    transition: all 500ms ease;
+                }
+
+                #content .small {
+                    width: 70px;
+                    height: 70px;
+                    margin: 25px 27px;
+                }
+            </style>
         </head>
         <body>
             <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
-                <header>
-                    <h1><a href="/">Page Title</a></h1>
-                    <nav>
-                        <ol id="menu">
-                            <li><a href="">Nav Link 1</a></li>
-                            <li><a href="">Nav Link 2</a></li>
-                            <li><a href="">Nav Link 3</a></li>
-                        </ol>
-                    </nav>
-                </header>
-                <div class="content"></div>
-                <footer>
-                    <p><small>&copy; Copyright Your Name Here 2013. All Rights Reserved.</small></p>
-                </footer>
+                <div id="boxes">
+                    <div class="box row-start"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box row-start"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box row-start"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box row-start"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+<!--                <div id="content">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>-->
             </div>
 
             <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
@@ -80,34 +139,25 @@ and open the template in the editor.
             <!-- this is where we put our custom functions -->
             <!-- don't forget to concatenate and minify if needed -->
             <script src="../assets/js/functions.js"></script>
+            <script src="../assets/js/lorem.min.js"></script>
             <script src="../assets/js/fonts.js"></script>
-            <script src="../assets/js/masonry.pkgd.min.js"></script>
-            <script src="../vendor/flipcountdown/jquery.flipcountdown.js"></script>
-            <script src="js/dashboard.js"></script>
             <script>
                 $( function() {
-                    var dash = $( '.content' ).dashboard({
-                        title: 'Princess was being kidnapped',
-                        height: 860,
-                        width: 1280
+                    $( '.box' ).hover( function() {
+                        $( this ).addClass( 'active' );
+                        $( '.box:not(.active)' ).addClass( 'shrink' );
+                    }, function() {
+                        $( this ).removeClass( 'active' );
+                        $( '.box' ).removeClass( 'shrink' );
                     });
-                    console.log(dash);
-
-                    $( '.content' ).dashboard( 'addTimer' );
-                    $( '.content' ).dashboard( 'addClock' );
-                    $( '.content' ).dashboard( 'addArticle', { title: 'Mario was a plumber', length: '2', nunberOfParagraphs: '2' } );
-                    $( '.content' ).dashboard( 'addArticle', { title: 'Luigi was his borther', length: '2', nunberOfParagraphs: '2' } );
-                    $( '.content' ).dashboard( 'addWidget', { content: 'I like football ..... ' });
-//                    $( '.dashboard' ).dashboard( 'title' );
-
-//                    $( '.dashboard' ).dashboard().addTimer();
-//                    $( '.dashboard' ).addTimer();
-//                    $( '.dashboard' ).addClock();
-//                    $( '.dashboard' ).addArticle({ title: 'Mario was a plumber', length: '2', nunberOfParagraphs: '2' });
-//                    $( '.dashboard' ).addArticle({ title: 'Luigi was his borther', length: '2', nunberOfParagraphs: '2' });
-//                    $( '#menu' ).animateMenu({ padding: 20 });
+                    $( '#content div' ).hover( function() {
+                        $( this ).siblings().addClass( 'small' );
+                        $( this ).removeClass( 'small' );
+                    }, function() {
+//                        $( this ).addClass( 'small' );
+                        $( this ).siblings().removeClass( 'small' );
+                    });
                 });
             </script>
-            <script src="../assets/js/lorem.min.js"></script>
         </body>
     </html>
