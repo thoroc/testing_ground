@@ -1,59 +1,340 @@
-.fiscal_period_list {
-    display: block;
+body {
+    color: black;
+    background: cyan;
 }
 
-.fiscal_period_list li div {
-    width: 80px;
+.row {
+    position: relative;
+    padding: 5px 10px;
+    margin: 6px auto;
+    clear: both;
+    vertical-align: bottom;
 }
 
-.date_range,
-.date_range_option {
-    border: 1px solid red;
+form div.row.title {
+    font-size: 14pt;
+    padding-top: 15px;
 }
 
-.fiscal_period_list li {
-    float: left;
-    height: 60px;
-    /*width: 10%;*/
-    border: 1px solid #e0434a;
+form div.row.info {
+    text-indent: 1em;
+}
+
+.row.input label {
+    display: inline-block;
+    width: 90px;
+    color: #808B94;
+    text-indent: 1em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: top;
     white-space: nowrap;
+    font-size: 10pt;
 }
 
-ul.fiscal_period_list > li > ul {
-    float: left;
-    /*overflow: hidden;*/
-    /*z-index: 1;*/
-    /*width: 80px;*/
+.row.input.narrow label {
+    width: 50px;
+    font-size: 0.8em;
 }
 
-.fiscal_period_list ul,
-.fiscal_period_list li,
-.fiscal_period_list a {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.row.input div.field,
+.row.input div.options {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 0px;
+    height: 28px;
+    padding: 7px 0 0 7px!important;
+}
+
+.row.input input[type=date],
+.row.input input[type=text],
+.row.input input[type=number],
+.row.input input[type=password] {
+    height: 16px;
+}
+
+.row .multiselect,
+.row select,
+.row textarea,
+.row.input input[type=date],
+.row input[type=text],
+.row.input input[type=number],
+.row input[type=password],
+div.fake-input {
+    background: #edecec; /* default setting for browsers without rgba support */
+    background: rgba( 237, 236, 236, 0.7 );
+    -moz-background-clip: padding; /* for Mozilla browsers*/
+    -webkit-background-clip: padding;   /* Webkit */
+    background-clip: padding-box; /*  browsers with full support */
+    border: 4px solid #ddd; /* default setting for browsers without rgba support */
+    border: 4px solid rgba( 189, 188, 188, 0.4 );
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-appearance: none;
+    padding: 1px 1px 2px;
+    vertical-align: top;
+    font-size: 8pt;
+    line-height: 1em;
+}
+
+.row.select select,
+.row.input select {
+    height: 27px;
+    padding-top: 0;
+    vertical-align: top;
+}
+
+.row .multiselect:focus,
+.row select:focus,
+.row textarea:focus,
+.row input[type=date]:focus,
+.row input[type=text]:focus,
+.row.input input[type=number]:focus,
+.row input[type=password]:focus,
+div.fake-input:focus {
+    outline: none;
+    background: #f8f8f8; /* default setting for browsers without rgba support */
+    background: rgba( 248, 248, 248, 0.9 );
+    -moz-background-clip: padding; /* for Mozilla browsers*/
+    -webkit-background-clip: padding;   /* Webkit */
+    background-clip: padding-box; /*  browsers with full support */
+}
+
+form .row.submit {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+form .row.submit input {
+    font-weight: bold;
+}
+
+.row span,
+.row div.fake-input {
+    width: 45%;
+}
+
+.row span {
+    padding-right: 8px;
+}
+
+/*
+ * Copyright (c) 2013 Thibaut Courouble
+ * http://www.cssflow.com
+ *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+/* Note: this implementation is very hacky.
+   You may not want to use it in production. ;) */
+/*body {
+    font: 12px/20px 'Lucida Grande', Verdana, sans-serif;
+    color: #404040;
+    background: #eee;
+}
+
+*/
+.widget {
+    position: relative;
+    margin: 50px auto;
+    width: 380px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+}
+
+.widget-tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    text-align: left;
+    background: rgba(0, 51, 255, .4);
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, white 40%, #BED1F0);
+    background-image: -moz-linear-gradient(top, white 40%, #BED1F0);
+    background-image: -o-linear-gradient(top, white 40%, #BED1F0);
+    background-image: linear-gradient(to bottom, white 40%, #BED1F0);
+}
+
+.widget-tab,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child ~ .widget-tab,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2) ~ .widget-tab,
+.widget-list:target:nth-of-type(3) ~ .widget-tabs > .widget-tab:nth-child(3) ~ .widget-tab,
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child ~ .widget-tab {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 38px;
+    font-weight: normal;
+    color: #999;
+    background: #eceeef;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    min-width: 84px;
+    min-height: 40px;
+}
+
+.widget-tab:last-child,
+.widget-list:target:first-of-type ~ .widget-tabs > .widget-tab:first-child,
+.widget-list:target:nth-of-type(2) ~ .widget-tabs > .widget-tab:nth-child(2),
+.widget-list:target:nth-of-type(3) ~ .widget-tabs > .widget-tab:nth-child(3),
+.widget-list:target:last-of-type ~ .widget-tabs > .widget-tab:last-child {
+    background: #4cc8f1;
+}
+
+.widget-tab-link {
+    display: block;
+    min-width: 60px;
+    color: inherit;
+    text-align: center;
     text-decoration: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.widget-list {
+    display: none;
+    padding-top: 58px;
+    border: 1px solid #ddd;
+}
+
+.widget-list > li {
+    float: left;
+    background: white;
+    min-width: 94px;
+    list-style: none;
+}
+
+.widget-list > li:first-of-type {
+    padding-left: 5px;
+}
+
+.widget-list:last-of-type,
+.widget-list:target {
     display: block;
 }
 
-.fiscal_period_list li:not(.active) ul {
+.widget-list:target ~ .widget-list {
     display: none;
 }
 
-.red ul li,
-.red {
-    background-color: red;
-    color: green;
+.widget-list-link {
+    /*display: block;*/
+    line-height: 30px;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    line-height: 30px !important;
 }
 
-.green ul li,
-.green {
-    background-color: green;
-    color: red;
-}
-
-.blue ul li,
-.blue {
-    background-color: blue;
+a.widget-list-link.active,
+a.widget-list-link:hover {
+    background: #4cc8f1;
     color: white;
+    cursor: pointer;
+}
+
+div.widget-list-link {
+    line-height: 38px !important;
+    width: 185px !important;
+}
+
+a.widget-list-link {
+    text-align: center;
+}
+
+.widget-list-link > input {
+    height: 30px !important;
+    width: 125px;
+    /*padding: 0px 6px;*/
+    margin-top: 5px;
+}
+
+.widget-list-link > label {
+    width: 45px !important;
+}
+
+.widget-list-link > span {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #999;
+}
+
+.button:first-child {
+    padding-left: 5px;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    line-height: 30px;
+    margin: 2px;
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 7px;
+    outline: 0;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+    min-width: 80px;
+    text-align: center;
+    vertical-align: bottom;
+}
+.button:before, .button:after {
+    content: '';
+    position: absolute;
+}
+.button:before {
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
+    border-radius: 9px;
+}
+.button:after {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0;
+    border-radius: 7px;
+}
+
+ul.white {
+    background: white;
+}
+
+.button.white {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, white 40%, #eceeef);
+    background-image: -moz-linear-gradient(top, white 40%, #eceeef);
+    background-image: -o-linear-gradient(top, white 40%, #eceeef);
+    background-image: linear-gradient(to bottom, white 40%, #eceeef);
+}
+
+.button.white.selected,
+.button.white:active {
+    background-color: rgba(0, 51, 255, .4);
+    border-radius: 10px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    background-image: -webkit-linear-gradient(top, #eceeef, white 25px);
+    background-image: -moz-linear-gradient(top, #eceeef, white 25px);
+    background-image: -o-linear-gradient(top, #eceeef, white 25px);
+    background-image: linear-gradient(to bottom, #eceeef, white 25px);
+}
+.button.white:active:after {
+    border-color: #eceeef;
 }

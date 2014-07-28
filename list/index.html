@@ -82,188 +82,222 @@ and open the template in the editor.
                     <div id="fiscal_date_range">
                         <div class="row input">
                             <label>Fiscal date range</label>
-                            <ul id="fiscal_date_range_fiscal_date_range" class="fiscal_period_list">
-                                <li class="active red">
-                                    <div>
-                                        <a href="#" id="last_period" class="date_range">Last</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#" class="date_range_option" data-start="2014-07-16" data-end="2014-07-23" title="from 2014-07-16 to 2014-07-23">7 Days</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-06-23" data-end="2014-07-23" title="from 2014-06-23 to 2014-07-23">30 Days</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-04-24" data-end="2014-07-23" title="from 2014-04-24 to 2014-07-23">90 Days</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2013-07-23" data-end="2014-07-23" title="from 2013-07-23 to 2014-07-23">365 Days</a></li>
-                                    </ul>
-                                </li>
-                                <li class="green">
-                                    <div>
-                                        <a href="#" id="current_fiscal_period" class="date_range">Current</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#" class="date_range_option" data-start="2014-07-21" data-end="2014-07-27" title="from 2014-07-21 to 2014-07-27">Week</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-06-22" data-end="2014-07-26" title="from 2014-06-22 to 2014-07-26">Month</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-04-27" data-end="2014-07-26" title="from 2014-04-27 to 2014-07-26">Quarter</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2013-07-28" data-end="2014-07-26" title="from 2013-07-28 to 2014-07-26">Year</a></li>
-                                    </ul>
-                                </li>
-                                <li class="blue">
-                                    <div>
-                                        <a href="#" id="previous_fiscal_period" class="date_range">Previous</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#" class="date_range_option" data-start="2014-07-14" data-end="2014-07-20" title="from 2014-07-14 to 2014-07-20">Week</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-05-25" data-end="2014-06-21" title="from 2014-05-25 to 2014-06-21">Month</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2014-01-26" data-end="2014-04-26" title="from 2014-01-26 to 2014-04-26">Quarter</a></li>
-                                        <li><a href="#" class="date_range_option" data-start="2012-07-29" data-end="2013-07-27" title="from 2012-07-29 to 2013-07-27">Year</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-<!--                        <div class="row input active">
-                            <label title="Last x days">Last</label>
-                            <ul id="fiscal_date_range_last_period" class="fiscal_period_list">
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-07-15" data-end="2014-07-22" title="from 2014-07-15 to 2014-07-22">7D</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-06-22" data-end="2014-07-22" title="from 2014-06-22 to 2014-07-22">30D</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-04-23" data-end="2014-07-22" title="from 2014-04-23 to 2014-07-22">90D</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2013-07-22" data-end="2014-07-22" title="from 2013-07-22 to 2014-07-22">365D</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row input">
-                            <label title="Current Fiscal Period">Current</label>
-                            <ul id="fiscal_date_range_current_fiscal_period" class="fiscal_period_list">
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-07-21" data-end="2014-07-27" title="from 2014-07-21 to 2014-07-27">Week</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-06-22" data-end="2014-07-26" title="from 2014-06-22 to 2014-07-26">Month</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-04-27" data-end="2014-07-26" title="from 2014-04-27 to 2014-07-26">Quarter</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2013-07-28" data-end="2014-07-26" title="from 2013-07-28 to 2014-07-26">Year</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row input">
-                            <label title="Previous Fiscal Period">Previous</label>
-                            <ul id="fiscal_date_range_previous_fiscal_period" class="fiscal_period_list">
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-07-14" data-end="2014-07-20" title="from 2014-07-14 to 2014-07-20">Week</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-05-25" data-end="2014-06-21" title="from 2014-05-25 to 2014-06-21">Month</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2014-01-26" data-end="2014-04-26" title="from 2014-01-26 to 2014-04-26">Quarter</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="date_range" data-start="2012-07-29" data-end="2013-07-27" title="from 2012-07-29 to 2013-07-27">Year</a>
-                                </li>
-                            </ul>
-                        </div>-->
-<!--                        <div class="row input">
-                            <label>Custom</label>
-                            <div class="custom_range">
-                                <label for="fiscal_date_range_start" class="required">From</label>
-                                <input type="text" id="fiscal_date_range_start" name="fiscal_date_range[start]" required="required" class="datepicker rangedate hasDatepicker">
-                                <label for="fiscal_date_range_end" class="required">To</label>
-                                <input type="text" id="fiscal_date_range_end" name="fiscal_date_range[end]" required="required" class="datepicker rangedate hasDatepicker">
+                            <div class="widget">
+                                <ol class="widget-list" id="last_period">
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-07-17" data-end="2014-07-24" title="from 2014-07-17 to 2014-07-24">7 Days</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-06-24" data-end="2014-07-24" title="from 2014-06-24 to 2014-07-24">30 Days</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-04-25" data-end="2014-07-24" title="from 2014-04-25 to 2014-07-24">90 Days</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2013-07-24" data-end="2014-07-24" title="from 2013-07-24 to 2014-07-24">365 Days</a>
+                                    </li>
+                                </ol>
+                                <ol class="widget-list" id="current_period">
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-07-21" data-end="2014-07-27" title="from 2014-07-21 to 2014-07-27">Week</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-06-22" data-end="2014-07-26" title="from 2014-06-22 to 2014-07-26">Month</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-04-27" data-end="2014-07-26" title="from 2014-04-27 to 2014-07-26">Quarter</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2013-07-28" data-end="2014-07-26" title="from 2013-07-28 to 2014-07-26">Year</a>
+                                    </li>
+                                </ol>
+                                <ol class="widget-list" id="previous_period">
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-07-14" data-end="2014-07-20" title="from 2014-07-14 to 2014-07-20">Week</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-05-25" data-end="2014-06-21" title="from 2014-05-25 to 2014-06-21">Month</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2014-01-26" data-end="2014-04-26" title="from 2014-01-26 to 2014-04-26">Quarter</a>
+                                    </li>
+                                    <li>
+                                        <a class="widget-list-link button white" data-start="2012-07-29" data-end="2013-07-27" title="from 2012-07-29 to 2013-07-27">Year</a>
+                                    </li>
+                                </ol>
+                                <ol class="widget-list" id="custom_range">
+                                    <li>
+                                        <div class="widget-list-link">
+                                            <label for="fiscal_date_range_start" class="required">From</label>
+                                            <input type="text" id="fiscal_date_range_start" name="fiscal_date_range[start]" required="required" class="datepicker rangedate hasDatepicker">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="widget-list-link">
+                                            <label for="fiscal_date_range_end" class="required">To</label>
+                                            <input type="text" id="fiscal_date_range_end" name="fiscal_date_range[end]" required="required" class="datepicker rangedate hasDatepicker">
+                                        </div>
+                                    </li>
+                                </ol>
+                                <ul class="widget-tabs white">
+                                    <li class="widget-tab">
+                                        <a href="#last_period" class="widget-tab-link button white">Last</a>
+                                        <!--<a href="#last_period" class="widget-tab-link button white alt">Last</a>-->
+                                    </li>
+                                    <li class="widget-tab white">
+                                        <a href="#current_period" class="widget-tab-link button white">Current</a>
+                                        <!--<a href="#current_period" class="widget-tab-link button white al">Current</a>-->
+                                    </li>
+                                    <li class="widget-tab white">
+                                        <a href="#previous_period" class="widget-tab-link button white">Previous</a>
+                                        <!--<a href="#previous_period" class="widget-tab-link button white al">Previous</a>-->
+                                    </li>
+                                    <li class="widget-tab white">
+                                        <a href="#custom_range" class="widget-tab-link button white">Custom</a>
+                                        <!--<a href="#custom_range" class="widget-tab-link button white al">Custom</a>-->
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
+<!--                        <div class="row input">
+                            <label for="fiscal_date_range_start" class="required">From</label>
+                            <input type="text" id="fiscal_date_range_start" name="fiscal_date_range[start]" required="required" class="datepicker rangedate hasDatepicker">
+                        </div>
+                        <div class="row input">
+                            <label for="fiscal_date_range_end" class="required">To</label>
+                            <input type="text" id="fiscal_date_range_end" name="fiscal_date_range[end]" required="required" class="datepicker rangedate hasDatepicker">
                         </div>-->
                     </div>
+                    <!--                    <div id="fiscal_date_range">
+                                            <div class="row input">
+                                                <label>Fiscal date range</label>
+                                                <ul id="fiscal_date_range_fiscal_date_range" class="fiscal_period_list">
+                                                    <li class="active red">
+                                                        <div>
+                                                            <a href="#" id="last_period" class="date_range">Last</a>
+                                                        </div>
+                                                        <ul>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-07-16" data-end="2014-07-23" title="from 2014-07-16 to 2014-07-23">7 Days</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-06-23" data-end="2014-07-23" title="from 2014-06-23 to 2014-07-23">30 Days</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-04-24" data-end="2014-07-23" title="from 2014-04-24 to 2014-07-23">90 Days</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2013-07-23" data-end="2014-07-23" title="from 2013-07-23 to 2014-07-23">365 Days</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="green">
+                                                        <div>
+                                                            <a href="#" id="current_fiscal_period" class="date_range">Current</a>
+                                                        </div>
+                                                        <ul>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-07-21" data-end="2014-07-27" title="from 2014-07-21 to 2014-07-27">Week</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-06-22" data-end="2014-07-26" title="from 2014-06-22 to 2014-07-26">Month</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-04-27" data-end="2014-07-26" title="from 2014-04-27 to 2014-07-26">Quarter</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2013-07-28" data-end="2014-07-26" title="from 2013-07-28 to 2014-07-26">Year</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="blue">
+                                                        <div>
+                                                            <a href="#" id="previous_fiscal_period" class="date_range">Previous</a>
+                                                        </div>
+                                                        <ul>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-07-14" data-end="2014-07-20" title="from 2014-07-14 to 2014-07-20">Week</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-05-25" data-end="2014-06-21" title="from 2014-05-25 to 2014-06-21">Month</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2014-01-26" data-end="2014-04-26" title="from 2014-01-26 to 2014-04-26">Quarter</a></li>
+                                                            <li><a href="#" class="date_range_option" data-start="2012-07-29" data-end="2013-07-27" title="from 2012-07-29 to 2013-07-27">Year</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>-->
+                    <!--                        <div class="row input active">
+                                                <label title="Last x days">Last</label>
+                                                <ul id="fiscal_date_range_last_period" class="fiscal_period_list">
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-07-15" data-end="2014-07-22" title="from 2014-07-15 to 2014-07-22">7D</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-06-22" data-end="2014-07-22" title="from 2014-06-22 to 2014-07-22">30D</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-04-23" data-end="2014-07-22" title="from 2014-04-23 to 2014-07-22">90D</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2013-07-22" data-end="2014-07-22" title="from 2013-07-22 to 2014-07-22">365D</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="row input">
+                                                <label title="Current Fiscal Period">Current</label>
+                                                <ul id="fiscal_date_range_current_fiscal_period" class="fiscal_period_list">
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-07-21" data-end="2014-07-27" title="from 2014-07-21 to 2014-07-27">Week</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-06-22" data-end="2014-07-26" title="from 2014-06-22 to 2014-07-26">Month</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-04-27" data-end="2014-07-26" title="from 2014-04-27 to 2014-07-26">Quarter</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2013-07-28" data-end="2014-07-26" title="from 2013-07-28 to 2014-07-26">Year</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="row input">
+                                                <label title="Previous Fiscal Period">Previous</label>
+                                                <ul id="fiscal_date_range_previous_fiscal_period" class="fiscal_period_list">
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-07-14" data-end="2014-07-20" title="from 2014-07-14 to 2014-07-20">Week</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-05-25" data-end="2014-06-21" title="from 2014-05-25 to 2014-06-21">Month</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2014-01-26" data-end="2014-04-26" title="from 2014-01-26 to 2014-04-26">Quarter</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="date_range" data-start="2012-07-29" data-end="2013-07-27" title="from 2012-07-29 to 2013-07-27">Year</a>
+                                                    </li>
+                                                </ul>
+                                            </div>-->
+                    <!--                        <div class="row input">
+                                                <label>Custom</label>
+                                                <div class="custom_range">
+                                                    <label for="fiscal_date_range_start" class="required">From</label>
+                                                    <input type="text" id="fiscal_date_range_start" name="fiscal_date_range[start]" required="required" class="datepicker rangedate hasDatepicker">
+                                                    <label for="fiscal_date_range_end" class="required">To</label>
+                                                    <input type="text" id="fiscal_date_range_end" name="fiscal_date_range[end]" required="required" class="datepicker rangedate hasDatepicker">
+                                                </div>
+                                            </div>-->
                 </div>
             </div>
+        </div>
 
-            <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <script>window.jQuery || document.write( "<script src='../assetsjs/libs/jquery-1.11.0.min.js'>\x3C/script>" )</script>
+        <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write( "<script src='../assetsjs/libs/jquery-1.11.0.min.js'>\x3C/script>" )</script>
 
-            <!-- this is where we put our custom functions -->
-            <!-- don't forget to concatenate and minify if needed -->
-            <script src="../assets/js/functions.js"></script>
-            <script src="../assets/js/lorem.min.js"></script>
-            <script src="../assets/js/fonts.js"></script>
-            <script src="js/main.js"></script>
-<!--            <script>
-//                var menuItems = $( '.fiscal_period_list' ).children( 'li' );
-//                var div = menuItems.first().children( 'div' );
-//                var pos = div.position();
-//                var width = div.outerWidth();
-//                var height = div.outerHeight();
+        <!-- this is where we put our custom functions -->
+        <!-- don't forget to concatenate and minify if needed -->
+        <script src="../assets/js/functions.js"></script>
+        <script src="../assets/js/lorem.min.js"></script>
+        <script src="../assets/js/fonts.js"></script>
+        <script src="js/main.js"></script>
 
-                $( function() {
-                    var menuItems = $( '.fiscal_period_list' ).children( 'li' );
-                    var div = menuItems.first().children( 'div' );
-                    var pos = div.position();
-                    var width = div.outerWidth();
-                    var height = div.outerHeight();
+        <!-- Asynchronous google analytics; this is the official snippet.
+             Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
 
-                    alignOptions( menuItems.first(), pos, height );
-//                    console.log( pos, width, height );
+        <script>
 
-                    $( '.date_range' ).on( 'click', function( e ) {
-                        e.preventDefault();
-                        $( this ).parents( 'li' ).siblings( '.active' ).removeClass( 'active' );
-                        $( this ).parents( 'li' ).addClass( 'active' );
-                        alignOptions( this, pos, height );
-//                        var options = $( this ).closest( 'div' ).siblings( 'ul' );
-//
-//                        options.css({
-//                            position: 'absolute',
-//                            top: ( pos.top + height ) + 'px',
-//                            left: pos.left + 'px'
-//                        });
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+          _gaq.push(['_trackPageview']);
 
-//                        console.log( options );
-                    });
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
 
-                    $( document ).on( 'click', '.date_range', function( e ) {
-                        $( '#fiscal_date_range_start' ).val( $( this ).attr( 'data-start' ) );
-                        $( '#fiscal_date_range_end' ).val( $( this ).attr( 'data-end' ) );
-                        e.preventDefault();
-                        $( this ).siblings( '.current' ).removeClass( 'current' );
-                        $( this ).addClass( 'current' );
-
-                        return false;
-                    });
-                });
-
-                function alignOptions( e, p, h ) {
-                    var options = $( e ).closest( 'div' ).siblings( 'ul' );
-
-                    options.css({
-                        position: 'absolute',
-                        top: ( p.top + h ) + 'px',
-                        left: p.left + 'px'
-                    });
-                }
-
-            </script>-->
-
-            <!-- Asynchronous google analytics; this is the official snippet.
-                 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
-
-            <script>
-
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-
-            </script>
-            -->
-        </body>
-    </html>
+        </script>
+        -->
+    </body>
+</html>
