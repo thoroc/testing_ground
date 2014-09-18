@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--
+    HTML5 Reset: https://github.com/murtaugh/HTML5-Reset
+    Free to use
+-->
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <!-- the "no-js" class is for Modernizr. -->
+    <html>
+        <head>
+            <title>testing_ground</title>
+
+            <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="author" content="thoroc">
+            <meta name="description" content="">
+
+            <!-- Don't forget to set your site up: http://google.com/webmasters -->
+            <meta name="google-site-verification" content="" />
+
+            <!-- Who owns the content of this site? -->
+            <meta name="Copyright" content="" />
+
+            <!--  Mobile Viewport
+            http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+            device-width : Occupy full width of the screen in its current orientation
+            initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+            maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
+            -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="shortcut icon" href="icon/favicon.ico">
+
+            <!-- concatenate and minify for production -->
+            <link rel="stylesheet" href="../assets/css/reset.css" />
+            <link rel="stylesheet" href="../assets/css/style.css" />
+
+            <!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files -->
+            <script src="../assets/js/libs/prefixfree.min.js"></script>
+
+            <!-- This is an un-minified, complete version of Modernizr.
+                 Before you move to production, you should generate a custom build that only has the detects you need. -->
+            <script src="../assets/js/libs/modernizr-2.7.1.dev.js"></script>
+
+            <!-- Application-specific meta tags -->
+            <!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
+            <meta name="application-name" content="" />
+            <meta name="msapplication-TileColor" content="" />
+            <meta name="msapplication-TileImage" content="" />
+            <meta name="msapplication-square150x150logo" content="" />
+            <meta name="msapplication-square310x310logo" content="" />
+            <meta name="msapplication-square70x70logo" content="" />
+            <meta name="msapplication-wide310x150logo" content="" />
+            <!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
+            <meta name="twitter:card" content="">
+            <meta name="twitter:site" content="">
+            <meta name="twitter:title" content="">
+            <meta name="twitter:description" content="">
+            <meta name="twitter:url" content="">
+            <!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
+            <meta property="og:title" content="" />
+            <meta property="og:description" content="" />
+            <meta property="og:url" content="" />
+            <meta property="og:image" content="" />
+
+            <link rel="stylesheet" href="css/main.css" type="text/css">
+            <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        </head>
+        <body>
+            <div>TODO write content</div>
+            <div class="post">
+                <h2>Travelling Salesman Problem in JavaScript Canvas</h2>
+                <p class="post-info">Posted by joe | Filed under <a href="http://blog.johannes-beck.name/?cat=23" title="View all posts in Javascript" rel="category">Javascript</a>, <a href="http://blog.johannes-beck.name/?cat=3" title="View all posts in Software Development" rel="category">Software Development</a></p>
+                <div class="wdgpo wdgpo_small_count"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 70px; height: 15px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" tabindex="0" vspace="0" width="100%" id="I0_1407922689316" name="I0_1407922689316" src="https://apis.google.com/se/0/_/+1/fastbutton?usegapi=1&amp;size=small&amp;count=true&amp;hl=en-US&amp;origin=http%3A%2F%2Fblog.johannes-beck.name&amp;url=http%3A%2F%2Fblog.johannes-beck.name%2F%3Fp%3D222&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.lTjAystOwhw.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAItRSTNJb5hn3_9YHF5t8iy7ApomC-ZZPw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1407922689316&amp;parent=http%3A%2F%2Fblog.johannes-beck.name&amp;pfname=&amp;rpctoken=39102452" data-gapiattached="true" title="+1"></iframe></div></div> <p>A long a time ago – when I was student at university – I wrote a small, but somewhat impressing program. It is a heuristic (and thus suboptimal) solver for the travelling salesman problem, using an algorithm from the field of neuronal network which is called a <em>self organizing feature map</em></p>
+                <p>You can read details on the neuronal network and the algorithm in my university paper <a href="http://johannes-beck.name/university/neuro/tsp.html">self organising maps based on a Kohonen neuronal network</a> (in german) or follow the literature references given.</p>
+                <p>Now I took the chance of a rainy winter evening to convert the original code to JavaScript and render the output with the <a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas/">HTML5 Canvas 2D API</a> – for me the chance to learn and keep up with the different HTML5 specs which have now step by step have become reality. So first have a look on the application:</p>
+                <div>
+                    <!--                    <script type="text/javascript" src="http://johannes-beck.name/js/salesman.js">
+                                        </script><script type="text/javascript" src="http://johannes-beck.name/js/jquery-1.9.1.min.js"></script><br>-->
+                    <section id="content" style="width: 1000px; padding-top: 20px;"><canvas id="canvas" width="540" height="480" style="float:left; border: 1px solid silver; background: url(http://johannes-beck.name/images/grid-20-20.png) top left; display: block; margin-left: 20px;"></canvas><br>
+                        <form id="parameters" style="float:left; margin-left: 2em; margin-right: 1em; margin-top: 0; margin-bottom: 0; font-size: medium;">
+                            <fieldset>
+                                <h3 style="padding-top: 0px; font-size: x-large">Parameters</h3>
+                                <p>
+                                    <span>
+                                        <label for="cities">No. of cities</label>
+                                        <input id="cities" type="number" name="cities" size="4" maxlength="4" style="float: right;"/>
+                                    </span>
+                                    <br clear="all/"><br>
+                                    <label for="maxCycles">Max. No. of cycles</label>
+                                    <input id="maxCycles" type="number" name="maxCycles" size="4" maxlength="4" style="float: right;">
+                                    <br clear="all/"><br>
+                                    <label for="gain">Gain</label>
+                                    <input id="gain" type="number" name="gain" size="3" maxlength="3" style="float: right;"><br clear="all/"><br>
+                                    <label for="alpha">α</label>
+                                    <input id="alpha" type="number" name="alpha" size="6" maxlength="6" style="float: right;"><br clear="all/"><br>
+                                    <input id="run" type="button" value="Run" style="margin-right: 10px;"><input id="stop" type="button" value="Stop" disabled="disabled"></p>
+                            </fieldset>
+                            <fieldset>
+                                <h3 style="padding-top: 0px; font-size: x-large;">Simulation status</h3>
+                                <p>
+                                    <label for="cycle">Cycle</label>
+                                    <input id="cycle" type="text" name="cycle" disabled="disabled" size="4" style="float: right;">
+                                    <br clear="all/"><br>
+                                    <label for="length">Length of tour</label>
+                                    <input id="length" type="text" name="length" disabled="disabled" size="16" style="float: right;"><br clear="all/"><br>
+                                    <label for="done">Finished?</label>
+                                    <input id="done" type="checkbox" name="done" disabled="disabled" style="float: right;"><br clear="all/">
+                                </p>
+                            </fieldset>
+                        </form>
+                    </section>
+                    <p>
+                        <script type="text/javascript">$( document ).ready( function() {
+                                var tsp = new TravelingSalesman();
+                                tsp.setupForm();
+                            } );
+                        </script>
+                    </p>
+                </div>
+                <p>If you look at the JavaScript code, the part which takes care of the painting is remarkable simple, consisting of 3 sections.<br>
+                    Creating the drawing context on the canvas element:<br>
+                    <code><br>
+                        elem = document.getElementById('#canvas');<br>
+                        ctx = elem.getContext('2d');<br>
+                        height = elem.height;<br>
+                        width= elem.width;<br>
+                    </code><br>
+                    Drawing the cities as filled circles:<br>
+                    <code><br>
+                        var centerX = city.x * width + 0.5;<br>
+                        var centerY = height - city.y * height + 0.5;<br>
+                        ctx.fillStyle = "#C06060";<br>
+                        ctx.beginPath();<br>
+                        ctx.arc(centerX, centerY, 3, 0, Math.PI*2, true);<br>
+                        ctx.closePath();<br>
+                        ctx.fill();<br>
+                    </code><br>
+                    and drawing the candidates and connecting them to a tour:<br>
+                    <code><br>
+                        ctx.strokeStyle = "#80D080";<br>
+                        ctx.beginPath();<br>
+                        // move to first node<br>
+                        n = neurons.start;<br>
+                        ctx.moveTo(n.x * width + 0.5, height - n.y * height + 0.5);
+                    </code>
+                </p>
+                <p>
+                    <code>for each node n<br>
+                        // each node as a small dot<br>
+                        var centerX = n.x * width + 0.5;<br>
+                        var centerY = height - n.y * height + 0.5;<br>
+                        ctx.fillStyle = "#208020";<br>
+                        ctx.fillRect(centerX, centerY, 1, 1);<br>
+                        // draw a line to the next node<br>
+                        ctx.lineTo(n.right.x * width + 0.5, height - n.right.y * height + 0.5);
+                    </code>
+                </p>
+                <p>
+                    <code>// draw all lines<br>
+                        ctx.lineWidth = 1;<br>
+                        ctx.stroke();<br>
+                        ctx.closePath();<br>
+                    </code>
+                </p>
+                <p class="tags">
+                    <strong>Tagged : </strong>
+                    <a href="http://blog.johannes-beck.name/?tag=html5-canvas" rel="tag">HTML5 Canvas</a>, <a href="http://blog.johannes-beck.name/?tag=javascript" rel="tag">Javascript</a>, <a href="http://blog.johannes-beck.name/?tag=kohonen-network" rel="tag">Kohonen Network</a>, <a href="http://blog.johannes-beck.name/?tag=neuronal-network" rel="tag">Neuronal Network</a>, <a href="http://blog.johannes-beck.name/?tag=traveling-salesman-problem" rel="tag">Traveling Salesman Problem</a></p>
+                <p class="postmeta">
+                    <a href="http://blog.johannes-beck.name/?p=222#comments" class="comments">Comments (0)</a> |
+                    <span class="date">March 10th, 2013</span>
+                </p>
+                <!-- /post -->
+
+            </div>
+            <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+                <footer>
+                    <p><small>&copy; Copyright Your Name Here 2013. All Rights Reserved.</small></p>
+                </footer>
+            </div>
+
+            <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script>window.jQuery || document.write( "<script src='../assetsjs/libs/jquery-1.11.0.min.js'>\x3C/script>" )</script>
+
+            <!-- this is where we put our custom functions -->
+            <!-- don't forget to concatenate and minify if needed -->
+            <script src="../assets/js/functions.js"></script>
+            <script src="../assets/js/lorem.min.js"></script>
+            <script src="../assets/js/fonts.js"></script>
+            <script src="js/salesman.js"></script>
+
+            <!-- Asynchronous google analytics; this is the official snippet.
+                 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
+
+            <script>
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+            -->
+        </body>
+    </html>
