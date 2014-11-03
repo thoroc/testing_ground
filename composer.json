@@ -1,0 +1,41 @@
+{
+    "name": "testing_ground",
+    "owner": "IMBC",
+    "repositories": [{
+            "type": "package",
+            "package": {
+                "name": "jpgraph/jpgraph",
+                "version": "3.5",
+                "source": {
+                    "url": "https://github.com/ztec/JpGraph.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }],
+    "config": {
+        "vendor-dir": "vendor/"
+    },
+    "autoload": {
+        "psr-0": {
+            "Imbc": "src/",
+            "PHPExcel": "vendor/phpexcel/phpexcel/Classes",
+            "JpGraph": "vendor/jpgraph/jpgraph/lib",
+            "DebugBar": "vendor/maximebf/debugbar/src",
+            "Upload": "vendor/codeguy/upload/src"
+        }
+    },
+    "require": {
+        "phpexcel/phpexcel": "dev-master",
+        "jpgraph/jpgraph": "3.5",
+        "maximebf/debugbar": "1.*",
+        "colshrapnel/safemysql": "dev-master",
+        "codeguy/upload": "dev-master",
+        "silex/silex": "~1.2",
+        "twbs/bootstrap": "3.3.*@dev",
+        "mbostock/d3": "dev-master",
+        "components/font-awesome": "4.2.*@dev",
+        "components/jquery": "dev-master",
+        "datatables/datatables": "dev-master"
+    }
+}
